@@ -1,7 +1,7 @@
 # Adventure RPG - Project Specification
 
 ## Document Status: DRAFT - In Development
-**Last Updated:** 2026-03-27
+**Last Updated:** 2026-03-29
 **Status:** Active design exploration phase. Many sections require further discussion.
 
 ---
@@ -84,6 +84,24 @@ A handful of distinct factions that drive the world's politics and conflicts. Ea
 - **01:** Always a critical hit.
 - **Critical range:** For every 25% of your skill rating, you gain 1 point of crit range at the top end. (0-25: 0 crit range; 26-50: 1; 51-75: 2; 76-99: 3). Crits are counted down from your skill value. *Example: Skill 59 = crit range 2, so rolls of 57-59 are critical successes.*
 - **Critical hits:** Double damage on attacks. Spectacular success on skill checks with a narrative bonus.
+
+### 3.1b Opposed Checks
+
+When two characters act in direct opposition — resisting a spell, arm wrestling, chasing, sneaking past a guard — both sides roll d100 against their relevant stat or skill target number.
+
+**Resolution:**
+- **Both succeed:** Whoever succeeded by the **larger margin** (target number minus roll) wins.
+- **One succeeds, one fails:** The one who succeeded wins.
+- **Both fail:** Stalemate — the situation doesn't change. GM adjudication.
+
+**Examples:**
+- **Sever vs caster:** Ley Weaver rolls casting target, defending caster rolls PW to resist. Larger margin wins.
+- **Arm wrestling:** Both roll PP. Larger margin wins.
+- **Chase:** Both roll Running. Larger margin gains or closes distance.
+- **Stealth vs Observation:** Sneaker rolls Stealth, watcher rolls Observation. Larger margin determines if they're spotted.
+- **Resisting Persuasion:** Speaker rolls Persuasion, target rolls an appropriate resistance (AW, SP, or relevant skill — GM decides based on how they're resisting).
+
+This is the same d100 roll-under system used everywhere else. Higher-skilled characters naturally win opposed checks more often because they have higher target numbers and therefore larger possible margins. No special modifiers needed.
 
 ### 3.2 Stats
 
@@ -285,92 +303,36 @@ When a character is reduced past Incapacitated: **death saves** (mechanics TBD).
 
 ## 6. Magic System
 
-### 6.1 Nature of Magic
+> **Full magic system design document:** [MAGIC_SYSTEM.md](MAGIC_SYSTEM.md)
 
-Magic is **new to the world** — it has recently erupted from the aether and nobody fully understands it. It is:
+### 6.1 Summary
 
-- **Primal and wild** at its core
-- **Wondrous** — it inspires awe
-- **Dangerous** — backlash, exhaustion, and unpredictability are real
-- **Feared** — casters are somewhat feared by the general populace
-- **Present but not domesticated** — magic is leaking into the world and is fairly common to encounter, but it is NOT part of daily life and remains a hazard
+Magic is new, wild, dangerous, wondrous, and feared. Casting uses a **tiered results system** (inspired by DCC): roll d100, and how well you roll determines what tier of effect is available (Misfire / Weak / Standard / Strong / Spectacular). Each spell is a broad concept with a full tier table describing effects, costs, and casting times at each level.
 
-### 6.2 Two Paths of Magic
+**Two Paths:** Scholarly casters have spellbooks, can choose their tier, and have lower backlash. Wild casters can cast any spell in their schools but are locked to whatever tier the magic gives them, with higher backlash risk. Spells are concept-based — broad tools that players and GMs interpret within structured scope/scale guidelines.
 
-There is a meaningful trade-off between formal training and raw instinct:
+**Six Schools, 37 Spells:**
+- Aetheric Manipulation (7) — raw force, energy, elemental power
+- Vivimancy (7) — life, body, biology
+- Warding (6) — protection, sealing, banishment
+- Divination (6) — perception, knowledge, detection
+- Transmutation (6) — altering matter and properties
+- Ley Weaving (5) — manipulating magic itself
 
-**Scholarly/Ritualistic Path:**
-- Training, study, and discipline to harness inherently wild forces
-- Better control, reduced backlash, more predictable outcomes
-- Dampens the negative effects of spellcasting
-- Reliable but potentially lower ceiling in the moment
+**Dark Magic** is NOT player-accessible. It is a setting-level evil.
 
-**Wild/Instinctive Path:**
-- Raw, untrained connection to mana flows
-- Unpredictable power spikes — can be dramatically more powerful than expected
-- Higher backlash risk, less control
-- Exciting but dangerous
+**Supernatural Entities** (ancient beings, beasts of legend) exist but are rare, alien, and not understood. Interaction is more Cthulhu than D&D — unsettling and never fully within the caster's control.
 
-> **NOTE:** Mechanical implementation needed. How do these paths differ in character creation and play? Possible approaches: a "Control" stat or skill that modifies backlash tables? A wild magic surge table for untrained casters? Trained casters get to choose spell effects from a narrower but reliable range, while wild casters roll on a table that includes both better and worse outcomes?
+### 6.2 Key Mechanics (see MAGIC_SYSTEM.md for full details)
 
-### 6.3 Becoming a Caster
+- **Tier qualification** based on roll margin: 1-10 under = Weak, 11-30 = Standard, 31-50 = Strong, 51+ = Spectacular
+- **Hard cap** from casting target number (e.g., target 30 can never reach Strong)
+- **Costs per tier** built into each spell using hidden design parameters (complexity, scope, duration, unnaturalness)
+- **Backlash** is separate from misfire, scales with tier used (5%/10%/15%/25%)
+- **Push It** mechanic for trying to exceed your result at additional cost/risk
+- **Exhaustion track** mirrors HP death spiral (OK / Weakened / Severely Weak / Incapacitated)
 
-Anyone can potentially tap into magic. The "awakening" can come from:
-- Formal training and study
-- A life shock or traumatic experience
-- A spontaneous mystical experience
-- Exposure to a wild zone or magical artifact
-
-Regardless of how you awaken, the core mechanics and costs (exhaustion, backlash) are the same. The path you take afterward (scholarly vs. wild) affects your reliability and risk profile.
-
-### 6.4 Core Casting Mechanics
-
-**Magic Points:** 7 + PW per magic level (mirrors HP structure).
-
-Four exhaustion tiers with penalties:
-
-| Level | Status | Penalty |
-|-------|--------|---------|
-| 1 | OK | None |
-| 2 | Weakened | -10% to all rolls |
-| 3 | Severely Weak | -25% to all rolls |
-| 4 | Incapacitated | -50% to all rolls |
-
-**Exhaustion cost:** Casting a spell causes exhaustion equal to **2 × spell level**.
-
-**Casting time:**
-```
-(spell level × 2) - PW     (minimum 2)
-```
-
-**Spell cancellation:** Cancelling mid-cast still costs exhaustion equal to the **spell level** (half normal). Additionally, there is a **10% chance of magical backlash**, dealing 1d4 physical damage per 2 spell levels AND causing full casting exhaustion.
-
-### 6.5 Schools of Magic
-
-Schools should be **thematic and setting-flavored**, not generic elemental categories.
-
-> **NOTE: Schools of magic are not yet defined.** This is a major design task. Candidates to discuss:
-> - Aetheric Manipulation (raw energy, force, barriers)
-> - Ley Weaving (connecting to and manipulating mana flows)
-> - Spirit Binding (communion with and summoning of spirits)
-> - Transmutation (altering matter and form)
-> - Divination (seeing, knowing, predicting)
-> - Warding (protection, sealing, banishing)
-> - Vivimancy (life, healing, biological manipulation)
-> - Chronomancy (time manipulation — may be too powerful)
->
-> **Dark Magic / Corruption** exists in the world but is **NOT player-accessible**. It is a setting-level evil — one of the things heroes fight against. Cultists, dead god resurrection, soul-corrupting cybernetic mutations — these are antagonist tools.
-
-### 6.6 Spell Acquisition
-
-- **Base number of spells:** 7 + PW modifier
-- Spells known can be increased by spending **3 skill points per additional spell** (magic is expensive)
-- Maximum spell level equals the base formula result
-- Number of schools accessible equals PW modifier (minimum 1)
-
-> **NOTE:** Individual spells are not yet designed. A spell list is a major deliverable for this project. Each school needs spells across multiple levels.
-
-### 6.7 Magic & Technology Interference
+### 6.3 Magic & Technology Interference
 
 > **NOTE:** Mechanical rules for magic/tech interference zones are not yet designed. Need to define:
 > - How zones are classified (levels of magic/tech intensity?)
@@ -440,7 +402,7 @@ Inspirations:
 The following topics need further discussion and design work:
 
 ### High Priority
-1. **Schools of Magic** — Define schools, design spell lists
+1. ~~**Schools of Magic** — Define schools, design spell lists~~ **DONE** (Session 2 — see MAGIC_SYSTEM.md)
 2. **Firearms & Steampunk Equipment** — Tables for guns, gadgets, vehicles
 3. **Magic/Tech Interference Mechanics** — How zones work mechanically
 4. **Leveling System** — Detailed progression mechanics
@@ -448,14 +410,15 @@ The following topics need further discussion and design work:
 6. **Races** — Whether to include, and if so, what options
 7. **Archetype Names** — Setting-flavored class labels
 8. **Factions** — Define the major power groups
+9. **Individual Spell Tier Tables** — 37 spells each need full tier descriptions, costs, casting times, misfire effects
 
 ### Medium Priority
-9. **Hinder Mechanic** — Full definition of armor hindrance effects
-10. **Wild vs. Scholarly Magic** — Mechanical differentiation
-11. **Skill List Revision** — Update for steampunk setting (add Firearms, Pilot, Occult Lore, etc.)
-12. **Equipment Prices & Economy** — Currency system, costs
-13. **Bestiary** — Monsters, cultists, corrupted beings, magical creatures
-14. **NPC Creation** — Simplified stat blocks for GM use
+10. **Hinder Mechanic** — Full definition of armor hindrance effects
+11. ~~**Wild vs. Scholarly Magic** — Mechanical differentiation~~ **DONE** (Session 2 — see MAGIC_SYSTEM.md, details TBD for exact variance mechanic)
+12. **Skill List Revision** — Update for steampunk setting (add Firearms, Pilot, Occult Lore, etc.)
+13. **Equipment Prices & Economy** — Currency system, costs
+14. **Bestiary** — Monsters, cultists, corrupted beings, magical creatures
+15. **NPC Creation** — Simplified stat blocks for GM use
 
 ### Lower Priority
 15. **Sample Adventures** — Starter scenarios
