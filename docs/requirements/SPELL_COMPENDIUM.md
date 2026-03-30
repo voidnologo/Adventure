@@ -191,7 +191,7 @@ Cleanse corruption, magical contamination, parasites, and foreign influences fro
 | **Standard** | 8 | 6ct | Drive out moderate corruption — break a standard curse, cleanse magical disease, purge parasitic magic, remove foreign magical influence. Target convulses briefly. The corruption exits visibly — dark wisps, foul-smelling vapor. |
 | **Strong** | 12 | 8ct | Purge deep corruption — break powerful curses, cleanse long-term magical contamination, drive out an entity's influence, reverse early-stage dark magic mutation. Violent process — target screams, bleeds from the nose, may lose consciousness. What comes out is disturbing. |
 | **Spectacular** | 18 | 12ct | Total purification — purge even deeply-rooted corruption, reverse advanced mutations, break bindings placed by powerful entities, cleanse an area of dark magic contamination. Traumatic for the target — they relive the moment of corruption. The expelled corruption manifests physically and must be contained or it will re-infect. |
-| *Misfire* | 4 | — | The purge draws corruption toward the caster instead of expelling it. Any magical contamination the target carries partially transfers. Caster gains a faint sense of whatever corruption the target has — disturbing visions, whispered urges — lasting 1d4 hours. |
+| *Misfire* | 4 | — | The purge draws corruption toward the caster instead of expelling it. The caster absorbs a minor echo of the target's contamination — disturbing visions, whispered urges — lasting 1d4 hours. The target's corruption is not reduced. |
 
 ### 2.7 Bloom
 *Complexity: 2*
@@ -394,11 +394,11 @@ Change a material property: make iron brittle, stone flexible, wood fireproof, w
 
 | Tier | Exhaust | Time | Effect |
 |------|---------|------|--------|
-| **Weak** | 3 | 3ct | Alter one property of a small object slightly — make a rope slippery, a blade duller, wood slightly fire-resistant, metal slightly flexible. Lasts 1d4 minutes. Subtle enough to miss. |
+| **Weak** | 3 | 3ct | Alter one property of a small object by a noticeable but minor degree — make a rope slippery, a blade duller (-1 damage), wood fire-resistant (smolders instead of burns), metal pliable enough to bend by hand. Lasts 1d4 minutes. Subtle enough to miss visually. |
 | **Standard** | 6 | 5ct | Significantly alter one property of a moderate object — make iron brittle enough to shatter with a hammer, wood as fireproof as stone, cloth as tough as leather (+1 soak for improvised armor), water too viscous to flow. Lasts up to an hour. |
 | **Strong** | 9 | 7ct | Dramatically alter properties of a large object or multiple smaller ones — make stone as flexible as rubber, metal transparent, wood as hard as steel. Can alter multiple properties simultaneously. Lasts up to a day. Material looks normal but behaves impossibly. |
 | **Spectacular** | 14 | 10ct | Reality-bending property alteration — make air solid enough to walk on (small area), water as hard as ice without freezing, fire cold, stone lighter than wood. Can affect structural materials in a small building. Lasts several days. The altered materials feel fundamentally wrong to touch — everyone senses something is off. |
-| *Misfire* | 3 | — | A random property of the caster's clothing or equipment shifts — leather becomes brittle, metal becomes rubbery, fabric becomes abrasive. Uncomfortable and potentially dangerous. Lasts 1d4 hours. |
+| *Misfire* | 3 | — | A random property of the caster's clothing or equipment shifts — leather becomes brittle, metal becomes rubbery, fabric becomes abrasive. One random worn item becomes unusable until the effect fades. Lasts 1d4 hours. |
 
 ### 5.3 Refine
 *Complexity: 2*
@@ -411,7 +411,7 @@ Purify, separate, distill. Extract metals from ore, purify water, separate compo
 | **Standard** | 6 | 5ct | Significant separation — extract metal from a chunk of ore, distill a potion to identify its components, separate poison from food, purify a barrel of contaminated water. Takes several minutes to complete fully. |
 | **Strong** | 9 | 7ct | Complex refinement — extract specific trace elements, separate alchemical compounds with precision, purify a room's air of toxins, distill magical essence from an enchanted object (temporarily suppresses its properties). |
 | **Spectacular** | 14 | 10ct | Master-level refinement — extract rare elements from common materials, perfectly purify any substance, separate intertwined magical effects from each other, distill the magical essence of an area. Can produce materials of extraordinary purity — valuable to craftsmen and alchemists. |
-| *Misfire* | 3 | — | The refinement process runs backward — pure components re-mix chaotically. If working with potions or chemicals, they combine into something unexpected and potentially volatile. If working with water, it becomes fouler than before. |
+| *Misfire* | 3 | — | The refinement process runs backward — pure components re-mix chaotically. If working with potions or chemicals, they combine into a volatile, useless compound (GM determines specific hazard). If working with water, it becomes fouler than before. |
 
 ### 5.4 Enlarge/Reduce
 *Complexity: 3*
@@ -446,11 +446,11 @@ Change one material into another entirely. Lead to gold, wood to stone, water to
 
 | Tier | Exhaust | Time | Effect |
 |------|---------|------|--------|
-| **Weak** | 6 | 5ct | Transmute a handful of simple material into a related substance — iron to copper, sandstone to limestone, dirty water to clean water. The transmutation is imperfect — flaws, impurities, a slightly "off" quality that experts can detect. Lasts permanently but may slowly revert over weeks. |
+| **Weak** | 6 | 5ct | Transmute a handful of simple material into a related substance — iron to copper, sandstone to limestone, dirty water to clean water. The transmutation is imperfect — visible flaws and impurities that an expert would recognize on inspection. Permanent, but reverts over 1d4 weeks. |
 | **Standard** | 10 | 7ct | Transmute a moderate amount of material into a different substance — wood to stone, iron to silver, sand to glass. Permanent and clean. Up to roughly 10 lbs. The transmuted material is genuine — it can be worked, sold, and used. Quality is good but not exceptional. |
 | **Strong** | 16 | 10ct | Transmute large quantities or into rare substances — stone to marble, iron to gold, wood to ivory, water to acid. Up to roughly 100 lbs. Transmutation is perfect — indistinguishable from natural material. This is the tier that attracts corporate attention and criminal interest. |
 | **Spectacular** | 24 | 14ct | Transmute at massive scale or into exotic substances — create materials that don't normally exist, transmute an entire wall from stone to glass, create precious metals by the hundredweight. The transmutation is flawless and permanent. Word of a Spectacular Transmuter gets out. Powerful people will come calling. |
-| *Misfire* | 6 | — | Uncontrolled transmutation — the caster's equipment partially transmutes. Metal becomes glass, leather becomes paper, cloth becomes something brittle and crumbling. 1d3 random items are rendered useless. |
+| *Misfire* | 6 | — | Uncontrolled transmutation — 1d3 random items on the caster's person transmute into fragile materials. Metal becomes glass, leather becomes paper, cloth becomes something brittle and crumbling. Affected items are rendered useless. |
 
 ---
 
@@ -518,7 +518,7 @@ Cut a caster's connection to mana flows. Temporarily strip magical ability. Oppo
 | **Weak** | 6 | 5ct | Brief disruption — interrupts current casting (forces concentration check at -20%), -10% to casting for 1d4 rounds. Target feels a sudden headache. |
 | **Standard** | 10 | 7ct | Connection frays — target cannot cast for 1d4 minutes. Sustained effects fade. Target feels hollow and dizzy — a sense cut off. |
 | **Strong** | 16 | 10ct | Connection severed — target cannot cast for 1d4 hours. All sustained effects collapse. Target feels deaf and blind to magic. Many panic. |
-| **Spectacular** | 24 | 14ct | Complete severance — target cannot cast for 1d4 days. Mana connection utterly silenced. Magical items may lose attunement. Described as the worst experience of a caster's life. Other casters nearby feel the severance as a shockwave of absence. |
+| **Spectacular** | 24 | 14ct | Complete severance — target cannot cast for 1d4 days. Mana connection utterly silenced. Magical items on target's person lose attunement for the same duration. Described as the worst experience of a caster's life. Other casters nearby feel the severance as a shockwave of absence. |
 | *Misfire* | 6 | — | Rebounds — caster severs their own connection. Cannot cast for 1d4 hours, all active effects collapse. 1d4 damage from psychic shock. |
 
 ---

@@ -17,6 +17,7 @@ A rules-lite, OSR-inspired tabletop RPG set in a 1920s-flavored secondary world 
 3. **OSR Lethality** — Combat is dangerous. The death spiral (wound penalties) means getting hurt forces tactical decisions. Character death is not common but is expected. Players should think before they fight.
 4. **Mechanical Consistency** — Everything works the same way mechanically. One core resolution system, not special subsystems for every situation.
 5. **Magic is Wondrous and Wild** — Magic is new, poorly understood, and dangerous. The world is still grappling with its emergence. It inspires awe and fear in equal measure.
+6. **Rulings Over Rules** — The GM has authority to interpret and adjudicate. Crunch exists to smooth gameplay and set flavor, not because mathematicians mapped optimal balance points. However, "rulings over rules" does not mean "be vague." Every mechanic must provide concrete anchor points (numbers, durations, clear conditions) that the GM can interpret flexibly. "Absorbs 8 points of damage" is good — the GM decides the narrative. "Partially deflects damage" is bad — the GM has to guess the mechanic. Give solid mechanical floors, then trust the table to adjudicate from there. This game is not designed for a general audience. It is designed for people who want to play it.
 
 ---
 
