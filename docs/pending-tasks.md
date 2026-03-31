@@ -7,9 +7,10 @@
 - [ ] Design magic/tech interference zone mechanics
 
 ## Backlog
+- [ ] Update MAGIC_SYSTEM.md: wild suppress cap at 2 (not 3 at master)
+- [ ] Update MAGIC_SYSTEM.md: wild backlash modifier — finalize exact value (sim uses +5% flat)
 - [ ] Design death save mechanics
 - [ ] Push It mechanic — exact costs and risks
-- [ ] Wild vs Scholarly backlash rates — exact modifier
 - [ ] Scholarly bonus to school count — how many extra?
 - [ ] Casting interruption/concentration check mechanics
 - [ ] Brainstorm setting-flavored archetype (class) names
