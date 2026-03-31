@@ -1,7 +1,7 @@
 # Adventure RPG - Project Specification
 
 ## Document Status: DRAFT - In Development
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-03-31
 **Status:** Active design exploration phase. Many sections require further discussion.
 
 ---
@@ -204,40 +204,55 @@ Combat uses a **timing track** instead of traditional initiative. This is a core
 
 > **NOTE:** This table needs expansion for steampunk/magic actions: reloading firearms, activating gadgets, starting vehicles, etc.
 
-### 4.2 Weapons
+### 4.2 Weapons — Category System
 
-| Weapon | Speed | Damage |
-|--------|-------|--------|
-| Battle Axe | 7 | 1d10 |
-| Blow Gun | 5 | 1d2 |
-| Bow - Composite | 7 | 1d8 |
-| Bow - Long | 8 | 1d10 |
-| Club | 4 | 1d6 |
-| Crossbow - Hand | 6 | 1d6 |
-| Crossbow - Heavy | 12 | 3d6 |
-| Crossbow - Light | 10 | 2d8 |
-| Dagger | 3 | 1d4 |
-| Hand/Throwing Axe | 4 | 1d6 |
-| Knife | 3 | 1d3 |
-| Mace | 7 | 1d8+1 |
-| Morning Star | 7 | 3d4 |
-| Polearm - Glaive | 8 | 1d10 |
-| Polearm - Halberd | 9 | 1d12 |
-| Quarterstaff | 4 | 1d6 |
-| Sling | 6 | 1d4+1 |
-| Spear | 6 | 1d8 |
-| Sword - Bastard | 7 | 1d8+1 |
-| Sword - Broad | 5 | 2d4 |
-| Sword - Long | 5 | 1d8 |
-| Sword - Short | 3 | 1d6 |
-| Sword - Two Handed | 8 | 1d10+1 |
-| Trident | 7 | 1d6+1 |
-| Warhammer | 5 | 2d4+1 |
-| Whip | 8 | 1d3 |
-| Punch (unarmed) | 2 | 1d3+PP |
-| Kick (unarmed) | 3 | 1d4+PP |
+Weapons use a **category-based system** rather than individual stat lines. Each category defines the Speed and Damage; players choose a specific weapon within the category for narrative flavor. A longsword and a battle axe are both **Medium** — the player picks what fits their character.
 
-> **NOTE:** Firearms table needed. Pistols, revolvers, rifles, shotguns, tommy guns, etc. Also: steampunk weapons (arc guns, aether blasters, etc.)?  Reload times, ammo, jamming in magic zones. Further discussion needed.
+#### Melee Weapons
+
+| Category | Speed | Damage | Examples |
+|----------|-------|--------|----------|
+| Unarmed | 2 | 1d3+PP | Punch, kick, headbutt |
+| Small | 2 | 1d4 | Knife, dagger, stiletto, knuckle dusters |
+| Light | 3 | 1d6 | Short sword, hatchet, club, baton, rapier |
+| Medium | 5 | 1d8+1 | Longsword, battle axe, mace, saber, warhammer, spear |
+| Heavy | 7 | 1d10+1 | Bastard sword, morning star, heavy mace, war flail |
+| Great | 9 | 2d6 | Greatsword, halberd, great axe, claymore, polearm |
+
+**Balance note:** Lighter weapons are more damage-efficient per timing count against unarmored targets. Heavier weapons penetrate armor soak better — a knife can't hurt someone in chainmail, but a greatsword gets through 72% of the time. Speed vs. armor penetration is the core tradeoff. No weapon category is strictly better; the right choice depends on the opponent.
+
+#### Ranged Weapons (Martial)
+
+Martial ranged weapons are immune to magic zone interference. Crossbows require reloading; bows do not.
+
+| Category | Speed | Damage | Reload | Examples |
+|----------|-------|--------|--------|----------|
+| Light Ranged | 5 | 1d6 | — | Short bow, sling |
+| Medium Ranged | 7 | 1d8+1 | — | Composite bow, longbow |
+| Light Crossbow | 7 | 2d6 | 6 | Hand crossbow, light crossbow |
+| Heavy Crossbow | 10 | 3d6 | 10 | Heavy crossbow, arbalest |
+
+#### Weapon Tags
+
+Tags differentiate weapons within the same category. A longsword and a mace are both **Medium**, but one has **Piercing** and the other has **Crushing**. Each weapon gets 1–2 tags chosen at character creation (with GM approval). Tags also apply to firearms (see [FIREARMS_EQUIPMENT.md](FIREARMS_EQUIPMENT.md)).
+
+| Tag | Effect | Typical Weapons |
+|-----|--------|-----------------|
+| Concealable | Can be hidden on person. Draw speed 1 | Knife, dagger, derringer, stiletto |
+| Throwable | Can throw as ranged attack at +2 speed, one die step lower damage | Hatchet, spear, throwing knife |
+| Reach | Can strike before an approaching enemy closes to melee range | Spear, halberd, glaive, polearm |
+| Piercing | Ignores 2 points of armor soak | Stiletto, war pick, rapier, spear |
+| Crushing | On armor degradation, overflow counts 1-for-1 instead of 2-for-1 | Mace, warhammer, morning star, war maul |
+| Parrying | +10% to active defense rolls when wielded | Rapier, sword-and-buckler, quarterstaff |
+| Entangling | On hit, target's next action costs +2 speed | Whip, flail, chain |
+| Two-Handed | Requires both hands (already factored into category damage) | Greatsword, halberd, great axe |
+| Versatile | Can use one- or two-handed. Two-handed: one die step up | Bastard sword, spear |
+
+#### Firearms & Steampunk Exotics
+
+> **Full firearms design document:** [FIREARMS_EQUIPMENT.md](FIREARMS_EQUIPMENT.md)
+>
+> Firearms are significantly more lethal than melee (roughly 2x damage efficiency at comparable speeds). The tradeoff is Magic Accumulation — spellcasting in the area degrades firearm Reliability, causing jams, misfires, and failures. Steampunk exotic weapons are rarer, less reliable, and generate Tech Accumulation that penalizes enemy spellcasting. See FIREARMS_EQUIPMENT.md for full tables, the malfunction system, and accumulation rules.
 
 ### 4.3 Armor & Degradation
 
@@ -404,8 +419,8 @@ The following topics need further discussion and design work:
 
 ### High Priority
 1. ~~**Schools of Magic** — Define schools, design spell lists~~ **DONE** (Session 2 — see MAGIC_SYSTEM.md)
-2. **Firearms & Steampunk Equipment** — Tables for guns, gadgets, vehicles
-3. **Magic/Tech Interference Mechanics** — How zones work mechanically
+2. ~~**Firearms & Steampunk Equipment** — Tables for guns, gadgets, vehicles~~ **DONE** (Session 4 — see FIREARMS_EQUIPMENT.md, DESIGN_PHILOSOPHY.md)
+3. **Magic/Tech Interference Mechanics** — How zones work mechanically (framework established in FIREARMS_EQUIPMENT.md §5, full zone rules TBD)
 4. **Leveling System** — Detailed progression mechanics
 5. **Death Saves** — Mechanics for dying and near-death
 6. **Races** — Whether to include, and if so, what options

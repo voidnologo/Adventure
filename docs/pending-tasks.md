@@ -1,10 +1,11 @@
 # Pending Tasks
 
 ## Next Up
-- [ ] Design firearms & steampunk equipment tables
-- [ ] Design leveling/progression mechanics (Mouse Guard / Symbaroum inspired)
+- [ ] Codify combat system — to-hit rolls, dodging, armor/soak, timing track workflow, wounds, healing, recovery
+- [ ] Review and clarify base mechanics — stats, skills, dice rolls (consolidate into playtest-ready reference)
 - [ ] Define major factions and their Adventuring Societies
-- [ ] Design magic/tech interference zone mechanics
+- [ ] Design leveling/progression mechanics (Mouse Guard / Symbaroum inspired)
+- [ ] Design magic/tech interference zone mechanics (framework in FIREARMS_EQUIPMENT.md §5, full rules needed)
 
 ## Backlog
 - [ ] Update MAGIC_SYSTEM.md: wild suppress cap at 2 (not 3 at master)
