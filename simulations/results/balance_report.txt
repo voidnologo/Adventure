@@ -1,0 +1,235 @@
+====================================================================================================
+MAGIC SYSTEM BALANCE SIMULATION — POWER-MAXIMIZING STRATEGY
+====================================================================================================
+
+Strategy: Casters use the HIGHEST tier they can afford without overflow.
+          Scholarly choose freely. Wild suppress only when forced by MP.
+          Each session = one caster casting until MP fully exhausted.
+
+----------------------------------------------------------------------------------------------------
+1. CASTS BEFORE EXHAUSTION (core sustainability metric)
+----------------------------------------------------------------------------------------------------
+Config                    MP Pool  Avg Casts   Median    Min    Max  Overflow%
+---------------------------------------------------------------------------
+high/scholarly                 67       11.1       11      7     18      66.6%
+high/wild                      67        7.5        7      4     13      67.8%
+low/scholarly                 37        9.6       10      6     13      69.2%
+low/wild                      37        8.2        8      4     12      70.0%
+master/scholarly                 82       10.9       11      6     17      70.6%
+master/wild                      82        7.6        8      5     12      69.2%
+mid/scholarly                 52       11.1       11      6     16      66.2%
+mid/wild                      52        8.4        8      3     14      66.0%
+
+  'Overflow%' = sessions where the final cast overflowed into HP damage.
+  Higher = casters are regularly pushing past their limits.
+
+----------------------------------------------------------------------------------------------------
+2. CASTS BEFORE EXHAUSTION BY SPELL COMPLEXITY
+   (how many times can you cast ONLY spells of this complexity?)
+----------------------------------------------------------------------------------------------------
+
+  Complexity 1 (Weak=2, Std=4, Str=6, Spec=10):
+  Config                     Avg Casts   Median   Avg Tier
+  ----------------------------------------------------------
+  high/scholarly                  18.1       18       2.33
+  high/wild                       11.8       12       2.94
+  low/scholarly                  16.3       16       1.58
+  low/wild                       13.9       14       2.19
+  master/scholarly                  16.0       16       2.74
+  master/wild                       11.2       11       3.27
+  mid/scholarly                  17.9       18       2.05
+  mid/wild                       12.9       13       2.68
+
+  Complexity 2 (Weak=3, Std=6, Str=9, Spec=14):
+  Config                     Avg Casts   Median   Avg Tier
+  ----------------------------------------------------------
+  high/scholarly                  12.5       12       2.30
+  high/wild                        8.4        8       2.89
+  low/scholarly                  11.2       11       1.55
+  low/wild                        9.7       10       2.11
+  master/scholarly                  12.0       12       2.57
+  master/wild                        8.5        9       3.11
+  mid/scholarly                  12.8       13       1.90
+  mid/wild                        9.3        9       2.49
+
+  Complexity 3 (Weak=4, Std=8, Str=12, Spec=18):
+  Config                     Avg Casts   Median   Avg Tier
+  ----------------------------------------------------------
+  high/scholarly                  10.0       10       2.19
+  high/wild                        6.9        7       2.73
+  low/scholarly                   8.8        9       1.48
+  low/wild                        7.5        7       2.12
+  master/scholarly                   9.4        9       2.51
+  master/wild                        6.5        6       3.10
+  mid/scholarly                   8.9        9       2.01
+  mid/wild                        6.8        7       2.52
+
+  Complexity 4 (Weak=6, Std=10, Str=16, Spec=24):
+  Config                     Avg Casts   Median   Avg Tier
+  ----------------------------------------------------------
+  high/scholarly                   7.5        7       2.14
+  high/wild                        5.4        5       2.66
+  low/scholarly                   6.3        6       1.43
+  low/wild                        5.5        6       2.00
+  master/scholarly                   7.1        7       2.48
+  master/wild                        5.2        5       3.01
+  mid/scholarly                   7.1        7       1.85
+  mid/wild                        5.5        6       2.36
+
+----------------------------------------------------------------------------------------------------
+3. MISFIRE RATES
+----------------------------------------------------------------------------------------------------
+Config                     Total Casts   Misfires     Rate
+----------------------------------------------------------
+high/scholarly                    5573       2292    41.1%
+high/wild                         3773        701    18.6%
+low/scholarly                    4810       3433    71.4%
+low/wild                         4108       2796    68.1%
+master/scholarly                    5437       1440    26.5%
+master/wild                         3779        197     5.2%
+mid/scholarly                    5536       3122    56.4%
+mid/wild                         4182       1772    42.4%
+
+----------------------------------------------------------------------------------------------------
+4. RAW TIER DISTRIBUTIONS (what the dice produce)
+----------------------------------------------------------------------------------------------------
+Config                        Weak   Standard     Strong  Spectacular
+----------------------------------------------------------------------
+high/scholarly               16.9%     33.0%     35.7%     14.4%
+high/wild                     3.0%     18.8%     34.7%     43.5%
+low/scholarly               34.6%     65.4%      0.0%      0.0%
+low/wild                     5.9%     53.9%     40.2%      0.0%
+master/scholarly               13.2%     27.2%     26.9%     32.7%
+master/wild                     2.0%     14.8%     23.1%     60.0%
+mid/scholarly               21.9%     45.7%     32.4%      0.0%
+mid/wild                     4.1%     28.2%     54.6%     13.0%
+
+----------------------------------------------------------------------------------------------------
+5. FINAL TIER DISTRIBUTIONS (after choice/suppression)
+----------------------------------------------------------------------------------------------------
+Config                        Weak   Standard     Strong  Spectacular
+----------------------------------------------------------------------
+high/scholarly               26.1%     32.2%     31.1%     10.7%
+high/wild                     9.1%     26.1%     32.5%     32.3%
+low/scholarly               45.3%     54.7%      0.0%      0.0%
+low/wild                    14.4%     54.3%     31.2%      0.0%
+master/scholarly               22.5%     26.8%     24.7%     26.0%
+master/wild                     6.0%     22.8%     23.3%     47.8%
+mid/scholarly               31.4%     41.8%     26.8%      0.0%
+mid/wild                    14.9%     30.4%     45.8%      8.9%
+
+----------------------------------------------------------------------------------------------------
+6. BACKLASH & WILD EFFECTS (per session = one caster's full MP pool)
+----------------------------------------------------------------------------------------------------
+Config                     Backlash/Ses  BL HP/Ses  WildFx/Ses   Esc   PERM
+---------------------------------------------------------------------------
+high/scholarly                     0.81        2.0        0.22     0      0
+high/wild                          1.25        3.1        0.31     0      0
+low/scholarly                     0.24        0.6        0.07     0      0
+low/wild                          0.41        1.0        0.10     1      0
+master/scholarly                     1.20        3.0        0.31     0      0
+master/wild                          1.69        4.3        0.38     4      0
+mid/scholarly                     0.51        1.3        0.12     0      0
+mid/wild                          0.86        2.1        0.21     2      0
+
+  Backlash/Ses = avg backlash events per session (one full MP drain)
+  PERM = total permanent wild effects across ALL sessions
+
+----------------------------------------------------------------------------------------------------
+7. EXHAUSTION OVERFLOW DETAIL
+----------------------------------------------------------------------------------------------------
+Config                    Sessions  Overflow%  AvgOvHP  MaxOvHP
+----------------------------------------------------------------
+high/scholarly                 500      66.6%     0.7        2
+high/wild                      500      67.8%     1.1        4
+low/scholarly                 500      69.2%     0.7        2
+low/wild                      500      70.0%     0.9        4
+master/scholarly                 500      70.6%     0.7        2
+master/wild                      500      69.2%     1.4        4
+mid/scholarly                 500      66.2%     0.7        2
+mid/wild                      500      66.0%     0.8        4
+
+----------------------------------------------------------------------------------------------------
+8. WILD CASTER TIER SUPPRESSION
+----------------------------------------------------------------------------------------------------
+Config                     Supp Events    Supp%   AvgTiers  ForcedHigh%
+------------------------------------------------------------------------
+high/wild                          585    19.0%      1.62        90.9%
+low/wild                          230    17.5%      1.00        85.6%
+master/wild                          618    17.3%      1.63        94.0%
+mid/wild                          440    18.3%      1.53        85.1%
+
+  ForcedHigh% = % of successful casts where wild caster ended above Weak
+  (either by choice because they could afford it, or forced because suppression limit)
+
+----------------------------------------------------------------------------------------------------
+9. SCHOLARLY vs WILD HEAD-TO-HEAD
+----------------------------------------------------------------------------------------------------
+
+  === LOW (scholarly target 30, wild effective 40) ===
+  Metric                                 Scholarly         Wild        Delta
+  -------------------------------------------------------------------------
+  Casts before exhaustion (avg)                9.6          8.2        -1.4
+  Casts before exhaustion (med)                 10            8          -2
+  Success rate                               28.6%        31.9% +       3.3%
+  Avg raw tier (1-4)                          1.65         2.34 +       0.69
+  Avg final tier (1-4)                        1.55         2.17 +       0.62
+  Spectacular (raw) %                         0.0%         0.0% +       0.0%
+  Spectacular (final) %                       0.0%         0.0% +       0.0%
+  Backlash rate                               8.6%        15.8% +       7.1%
+  Backlash HP / session                        0.6          1.0 +        0.4
+
+  === MID (scholarly target 45, wild effective 55) ===
+  Metric                                 Scholarly         Wild        Delta
+  -------------------------------------------------------------------------
+  Casts before exhaustion (avg)               11.1          8.4        -2.7
+  Casts before exhaustion (med)                 11            8          -3
+  Success rate                               43.6%        57.6% +      14.0%
+  Avg raw tier (1-4)                          2.10         2.77 +       0.66
+  Avg final tier (1-4)                        1.95         2.49 +       0.53
+  Spectacular (raw) %                         0.0%        13.0% +      13.0%
+  Spectacular (final) %                       0.0%         8.9% +       8.9%
+  Backlash rate                              10.5%        17.8% +       7.2%
+  Backlash HP / session                        1.3          2.1 +        0.9
+
+  === HIGH (scholarly target 60, wild effective 70) ===
+  Metric                                 Scholarly         Wild        Delta
+  -------------------------------------------------------------------------
+  Casts before exhaustion (avg)               11.1          7.5        -3.6
+  Casts before exhaustion (med)                 11            7          -4
+  Success rate                               58.9%        81.4% +      22.5%
+  Avg raw tier (1-4)                          2.48         3.19 +       0.71
+  Avg final tier (1-4)                        2.26         2.88 +       0.62
+  Spectacular (raw) %                        14.4%        43.5% +      29.1%
+  Spectacular (final) %                      10.7%        32.3% +      21.6%
+  Backlash rate                              12.3%        20.4% +       8.1%
+  Backlash HP / session                        2.0          3.1 +        1.0
+
+  === MASTER (scholarly target 75, wild effective 85) ===
+  Metric                                 Scholarly         Wild        Delta
+  -------------------------------------------------------------------------
+  Casts before exhaustion (avg)               10.9          7.6        -3.3
+  Casts before exhaustion (med)                 11            8          -3
+  Success rate                               73.5%        94.8% +      21.3%
+  Avg raw tier (1-4)                          2.79         3.41 +       0.62
+  Avg final tier (1-4)                        2.54         3.13 +       0.59
+  Spectacular (raw) %                        32.7%        60.0% +      27.3%
+  Spectacular (final) %                      26.0%        47.8% +      21.8%
+  Backlash rate                              15.0%        23.6% +       8.6%
+  Backlash HP / session                        3.0          4.3 +        1.3
+
+----------------------------------------------------------------------------------------------------
+10. AUTOMATED BALANCE FLAGS
+----------------------------------------------------------------------------------------------------
+  [low] WILD COST PRESSURE: 31.2% of wild casts land at Strong/Spectacular — high exhaust drain
+  [mid] WILD COST PRESSURE: 54.7% of wild casts land at Strong/Spectacular — high exhaust drain
+  [high] MISFIRE GAP: Wild 18.6% vs scholarly 41.1%
+  [high] WILD SPECTACULAR: 43.5% of wild successes are Spectacular (scholarly: 14.4%)
+  [high] WILD COST PRESSURE: 64.8% of wild casts land at Strong/Spectacular — high exhaust drain
+  [master] MISFIRE GAP: Wild 5.2% vs scholarly 26.5%
+  [master] WILD SPECTACULAR: 60.0% of wild successes are Spectacular (scholarly: 32.7%)
+  [master] WILD COST PRESSURE: 71.1% of wild casts land at Strong/Spectacular — high exhaust drain
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
