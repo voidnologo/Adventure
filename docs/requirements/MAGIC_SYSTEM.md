@@ -122,7 +122,7 @@ Wild casters are not purely at the mercy of their roll. As they grow in power, t
 - *Scholarly casters* choose any tier at or below what they qualified for. Want to save exhaustion? Take the Weak result even though you rolled Strong. Full control at any skill level.
 - *Wild casters* can suppress their result by a number of tiers based on their casting target (see §2.5). A novice (target 1-25) is locked to what they rolled. A master (target 76+) can step down up to 3 tiers.
 
-**Step 4 — Apply costs:** Each tier of each spell has its own exhaustion cost and casting time. Higher tiers cost more. These are listed in the spell description.
+**Step 4 — Apply costs:** Each tier of each spell has its own exhaustion cost. Higher tiers cost more. Casting time is fixed per spell (not per tier) — tier measures power drawn, not time spent. See SPELL_COMPENDIUM.md for casting times and exhaustion costs.
 
 **Step 5 — Backlash check:** Separate from spell success. Even a clean, successful cast can burn you. Backlash chance scales with the tier used — more power pulled, more risk of getting burned.
 
@@ -419,10 +419,12 @@ Each spell tier's costs are derived from these hidden parameters:
   - Strong: ×3
   - Spectacular: ×4-5
 
-- **Casting Time Base:** Derived from complexity
-  - Simple: 2-3 counts base
-  - Complex: 4-6 counts base
-  - Each tier adds 1-2 counts
+- **Casting Time:** Fixed per spell, independent of tier. Tier measures power drawn, not time. Casting time is a per-spell balancing lever:
+  - C1 spells: 2ct (snap-cast cantrips)
+  - C2 spells: 3-5ct (reactive to deliberate, based on tactical role)
+  - C3 spells: 5-6ct (complex, high-investment)
+  - C4 spells: 8ct or Ritual (major commitment or non-combat)
+  - See SPELL_COMPENDIUM.md for full casting time assignments
 
 > **NOTE:** These formulas are preliminary. Actual values need playtesting and balancing. The goal is internal consistency — players should feel that costs are fair and proportional even without seeing the formula.
 
