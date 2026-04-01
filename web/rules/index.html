@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adventure RPG — Rules</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Josefin+Sans:wght@300;400;600&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Design Tokens ────────────────────────────────────── */
+  :root {
+    --void:         #0a0908;
+    --soot:         #110f0d;
+    --coal:         #1a1614;
+    --smoke:        #2a2420;
+    --page:         #0e0c0a;
+    --brass:        #b8860b;
+    --brass-dim:    #7a5a10;
+    --brass-bright: #d4a017;
+    --copper:       #b87333;
+    --parchment:    #e8dcc8;
+    --parchment-dim:#9a8e7a;
+    --parchment-faint:#5c5448;
+    --magic-blue:   #4a7a9b;
+    --tech-amber:   #c49a3c;
+  }
+
+  /* ── Reset ────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--page);
+    color: var(--parchment);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.78;
+    overflow-x: hidden;
+  }
+  a { color: var(--brass-bright); text-decoration: none; }
+  a:hover { color: var(--parchment); }
+
+  /* ── Cover ─────────────────────────────────────────────── */
+  .cover {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .cover-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, #1a140e 0%, #120e0a 30%, #0c0a08 55%, var(--void) 100%);
+    z-index: 0;
+  }
+  .cover-bg::after {
+    content: ''; position: absolute; inset: 0; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+  }
+  .cover-content { position: relative; z-index: 2; }
+  .cover-label {
+    font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; font-weight: 300;
+    letter-spacing: 0.55em; text-transform: uppercase; color: var(--brass); opacity: 0.8; margin-bottom: 1rem;
+  }
+  .cover-title {
+    font-family: 'Cinzel', serif; font-size: clamp(2.2rem, 5.5vw, 4rem); font-weight: 900;
+    color: var(--parchment); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem;
+  }
+  .cover-sub {
+    font-family: 'Cinzel', serif; font-size: clamp(0.85rem, 2vw, 1.1rem); font-weight: 400;
+    color: var(--brass); letter-spacing: 0.2em; margin-bottom: 1.5rem;
+  }
+  .cover-hairline {
+    width: clamp(160px, 30vw, 260px); height: 1px;
+    background: linear-gradient(90deg, transparent, var(--brass), transparent);
+    margin: 0 auto 1.5rem;
+  }
+  .cover-note {
+    font-size: 0.85rem; font-style: italic; color: var(--parchment-dim);
+    max-width: 380px; margin: 0 auto;
+  }
+  .cover-fade {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--page));
+    z-index: 3; pointer-events: none;
+  }
+
+  /* ── Layout ────────────────────────────────────────────── */
+  .rules-body { max-width: 740px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+  /* ── Navigation ────────────────────────────────────────── */
+  .toc {
+    margin: 3rem 0 4rem; padding: 2rem;
+    background: var(--soot); border: 1px solid rgba(184, 134, 11, 0.1);
+  }
+  .toc h2 {
+    font-family: 'Cinzel', serif; font-size: 1rem; color: var(--brass);
+    letter-spacing: 0.15em; margin-bottom: 1rem;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; columns: 2; column-gap: 2rem; }
+  .toc li { counter-increment: toc-counter; margin-bottom: 0.4rem; break-inside: avoid; }
+  .toc li::before {
+    content: counter(toc-counter, decimal-leading-zero) " ";
+    font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--brass-dim); margin-right: 0.3rem;
+  }
+  .toc a { font-size: 0.9rem; color: var(--parchment-dim); transition: color 0.2s ease; }
+  .toc a:hover { color: var(--brass-bright); }
+  @media (max-width: 600px) { .toc ol { columns: 1; } }
+
+  /* ── Sections ──────────────────────────────────────────── */
+  .rule-section { margin-bottom: 4rem; scroll-margin-top: 2rem; }
+  .rule-section h2 {
+    font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700;
+    color: var(--parchment); margin-bottom: 0.3rem;
+    padding-bottom: 0.8rem; border-bottom: 1px solid rgba(184, 134, 11, 0.15);
+  }
+  .rule-section h3 {
+    font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700;
+    color: var(--brass-bright); margin: 2.2rem 0 0.8rem;
+  }
+  .rule-section h4 {
+    font-family: 'Josefin Sans', sans-serif; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass);
+    margin: 1.5rem 0 0.6rem;
+  }
+  .rule-section p { margin-bottom: 1rem; color: var(--parchment); }
+  .rule-section em { color: var(--parchment-dim); }
+  .rule-section strong { color: var(--parchment); font-weight: 600; }
+  .rule-section ul, .rule-section ol {
+    margin: 0.5rem 0 1.2rem 1.5rem; color: var(--parchment-dim);
+  }
+  .rule-section li { margin-bottom: 0.3rem; }
+
+  /* ── Flavor text (italic intro paragraphs) ─────────────── */
+  .flavor {
+    font-style: italic; color: var(--parchment-dim);
+    border-left: 2px solid var(--brass-dim); padding-left: 1.2rem;
+    margin: 1.5rem 0;
+  }
+
+  /* ── Tables ────────────────────────────────────────────── */
+  table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.9rem;
+  }
+  th {
+    text-align: left; font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem;
+    font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--brass); padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--brass-dim);
+  }
+  td {
+    padding: 0.45rem 0.8rem; color: var(--parchment-dim);
+    border-bottom: 1px solid rgba(184, 134, 11, 0.06);
+  }
+  tr:hover td { color: var(--parchment); background: rgba(184, 134, 11, 0.02); }
+
+  /* ── Code / Formula Blocks ─────────────────────────────── */
+  .formula {
+    display: block; font-family: 'Fira Code', monospace; font-size: 0.85rem;
+    color: var(--parchment); background: var(--coal); padding: 1rem 1.4rem;
+    margin: 1rem 0; border-left: 3px solid var(--brass-dim);
+    line-height: 1.8; white-space: pre-wrap; overflow-x: auto;
+  }
+  code.inline {
+    font-family: 'Fira Code', monospace; font-size: 0.85rem;
+    color: var(--brass-bright); background: var(--coal); padding: 0.15rem 0.4rem;
+  }
+
+  /* ── Callout boxes ─────────────────────────────────────── */
+  .callout {
+    padding: 1.2rem 1.5rem; margin: 1.5rem 0; border-left: 3px solid;
+    background: var(--soot); font-size: 0.95rem;
+  }
+  .callout-example { border-color: var(--brass-dim); }
+  .callout-note { border-color: var(--magic-blue); }
+  .callout-warning { border-color: var(--copper); }
+  .callout-scene { border-color: var(--parchment-faint); }
+  .callout p { margin-bottom: 0.5rem; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-label {
+    font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.5rem; display: block;
+  }
+  .callout-example .callout-label { color: var(--brass); }
+  .callout-note .callout-label { color: var(--magic-blue); }
+  .callout-warning .callout-label { color: var(--copper); }
+  .callout-scene .callout-label { color: var(--parchment-faint); }
+
+  /* ── Character sheet mockup ────────────────────────────── */
+  .sheet-mock {
+    background: var(--coal); border: 1px solid var(--brass-dim);
+    padding: 1.5rem 2rem; margin: 1.5rem 0; font-size: 0.88rem;
+  }
+  .sheet-mock h4 {
+    font-family: 'Cinzel', serif; font-size: 0.95rem; color: var(--brass);
+    margin: 0 0 0.8rem; letter-spacing: 0.1em; text-transform: none;
+  }
+  .sheet-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.3rem 0; border-bottom: 1px solid rgba(184, 134, 11, 0.06);
+  }
+  .sheet-row:last-child { border-bottom: none; }
+  .sheet-stat-name { color: var(--parchment); font-weight: 600; min-width: 180px; }
+  .sheet-stat-pips { font-family: 'Fira Code', monospace; font-size: 0.82rem; color: var(--parchment-dim); letter-spacing: 0.15em; }
+  .sheet-stat-pips .filled { color: var(--brass-bright); }
+  .sheet-stat-desc { color: var(--parchment-dim); font-style: italic; font-size: 0.82rem; }
+
+  .sheet-skill-row {
+    display: grid; grid-template-columns: 1fr 40px 40px 50px;
+    gap: 0.5rem; padding: 0.25rem 0;
+    border-bottom: 1px solid rgba(184, 134, 11, 0.04);
+    font-size: 0.85rem;
+  }
+  .sheet-skill-row span:not(:first-child) { text-align: center; color: var(--parchment-dim); }
+
+  .hp-track {
+    display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.3rem 0;
+  }
+  .hp-box {
+    width: 18px; height: 18px; border: 1px solid var(--brass-dim);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; color: var(--copper);
+  }
+  .hp-box.filled { background: rgba(184, 134, 11, 0.15); }
+  .hp-label {
+    font-family: 'Josefin Sans', sans-serif; font-size: 0.65rem;
+    color: var(--parchment-dim); letter-spacing: 0.1em; margin-top: 0.1rem;
+  }
+
+  /* ── Cheat Sheet ───────────────────────────────────────── */
+  .cheat-sheet {
+    background: var(--coal); border: 1px solid var(--brass-dim);
+    padding: 2rem; margin: 2rem 0;
+  }
+  .cheat-sheet h3 {
+    font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--brass-bright);
+    text-align: center; margin-bottom: 1.5rem;
+  }
+  .cheat-sheet pre {
+    font-family: 'Fira Code', monospace; font-size: 0.78rem;
+    color: var(--parchment); line-height: 1.8; white-space: pre-wrap; overflow-x: auto;
+  }
+
+  /* ── Back link ─────────────────────────────────────────── */
+  .back-link {
+    display: inline-block; font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--brass); margin-bottom: 2rem;
+    transition: color 0.2s ease;
+  }
+  .back-link:hover { color: var(--brass-bright); }
+  .back-link::before { content: '\2190\00a0\00a0'; }
+
+  /* ── Footer ────────────────────────────────────────────── */
+  footer {
+    padding: 2rem; text-align: center; background: var(--void);
+    border-top: 1px solid rgba(184, 134, 11, 0.08);
+  }
+  footer p {
+    font-family: 'Josefin Sans', sans-serif; font-size: 0.7rem;
+    letter-spacing: 0.2em; color: var(--parchment-dim); opacity: 0.5;
+  }
+
+  /* ── Ornament ──────────────────────────────────────────── */
+  .ornament {
+    display: flex; align-items: center; gap: 0.8rem;
+    max-width: 200px; margin: 2.5rem auto;
+  }
+  .ornament-line { flex: 1; height: 1px; }
+  .ornament-line-l { background: linear-gradient(to right, transparent, var(--brass-dim)); }
+  .ornament-line-r { background: linear-gradient(to left, transparent, var(--brass-dim)); }
+  .ornament-gem {
+    width: 5px; height: 5px; background: var(--brass);
+    transform: rotate(45deg); flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<section class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-content">
+    <p class="cover-label">The Rules of</p>
+    <h1 class="cover-title">Adventure</h1>
+    <p class="cover-sub">Magic &amp; Machines in the Age of Wonder</p>
+    <div class="cover-hairline"></div>
+    <p class="cover-note">Playtest Draft</p>
+  </div>
+  <div class="cover-fade"></div>
+</section>
+
+<div class="rules-body">
+
+  <a href="../" class="back-link">Back to Adventure</a>
+
+  <!-- ═══ TABLE OF CONTENTS ═══ -->
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#welcome">Welcome to the Age of Wonder</a></li>
+      <li><a href="#creating">Creating Your Adventurer</a></li>
+      <li><a href="#rolling">Rolling the Dice</a></li>
+      <li><a href="#getting-hurt">Getting Hurt (and Getting Better)</a></li>
+      <li><a href="#magic">The Two Paths of Magic</a></li>
+      <li><a href="#interference">The World Between</a></li>
+      <li><a href="#combat">When Violence Finds You</a></li>
+      <li><a href="#cheat-sheet">Quick Reference</a></li>
+    </ol>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. WELCOME
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="welcome">
+    <h2>1. Welcome to the Age of Wonder</h2>
+
+    <p class="flavor">
+      It's the 1920s and things are roaring, alright. With the turn of the century, changes swept
+      over the globe. Magic came roaring in from the aether and transformed the world. What was
+      once merely fantasy and folk-lore is now reality.
+    </p>
+
+    <p>
+      You are an Adventurer &mdash; one of the Gifted (or Cursed, perhaps?) &mdash; living in a
+      world that has been turned inside out within living memory. Pockets of wild magic swirl in
+      the lost and unknown parts of the world, giving rise to legends. Governments, the wealthy,
+      and those hungry for power scramble to control mystical artifacts and grapple with
+      newfound abilities &mdash; some less <em>healthy</em> than others.
+    </p>
+
+    <p>
+      Magic butts up against rapidly advancing technology, and where the two meet, the world
+      becomes chaotic and unpredictable. Machines fail and falter in areas of high magic.
+      Spells wane and fizzle near cold, engineered industry. And in between? That's where
+      you live. That's where the work is.
+    </p>
+
+    <p>
+      Smart adventurers carry a sword <em>and</em> a gun, because a steel blade has never
+      betrayed anyone. You've joined up with an Adventuring Society &mdash; a cabal hunting for
+      relics, excitement, or answers &mdash; and now it's time to see what you're made of.
+    </p>
+
+    <h3>What You Need</h3>
+
+    <p>
+      A pair of ten-sided dice (percentile dice &mdash; one for the tens, one for the ones),
+      a character sheet, a pencil, and your imagination. No miniatures, no battle maps, no grids.
+      This game plays entirely in the theater of the mind. Everything you need to know fits on
+      a one-page cheat sheet, with spell and equipment lookups when needed.
+    </p>
+
+    <h3>How This Game Works</h3>
+
+    <p>
+      One player is the <strong>Game Master</strong> (GM), who describes the world and plays
+      everyone who isn't a player character. Everyone else plays an Adventurer. When your
+      character attempts something where the outcome is uncertain &mdash; picking a lock,
+      sweet-talking a guard, shooting a cultist &mdash; you roll percentile dice and try to
+      roll under your target number. That's it. One system for everything.
+    </p>
+
+    <p>
+      The GM has authority to interpret and adjudicate. These rules give you concrete numbers
+      and clear mechanical anchors, but the table makes the final call. If the GM says the
+      crumbling bridge requires a Physical Coordination check at -10%, that's what it is.
+      Good rulings come from good anchors, and that's what this book provides.
+    </p>
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. CREATING YOUR ADVENTURER
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="creating">
+    <h2>2. Creating Your Adventurer</h2>
+
+    <p class="flavor">
+      Before you can brave the wild zones and back-alley cults, you need to know who you are.
+      Character creation is a conversation between you and your GM &mdash; not a math exercise.
+      Start with a person, then let the numbers follow.
+    </p>
+
+    <h3>Step 1: Who Are You?</h3>
+
+    <p>
+      Before you touch a single number, think about your character as a person. What did they
+      do before the magic came? What drew them into adventuring? Are they a former soldier
+      who picked up a sword when their revolver started misfiring in the field? A university
+      professor who discovered they could shape fire with their bare hands? A street kid
+      from the industrial district who's never seen real magic but heard the stories?
+    </p>
+
+    <p>
+      Write a name. Write a one-sentence concept. The "Class" field on your character sheet is
+      just a <strong>label</strong> &mdash; it's not a mechanical gate. A "Smoke Surgeon" and a
+      "Gutter Knight" use the same rules; they've just invested in different things. Think of
+      setting-flavored titles: Relic Hunter, Wardbreaker, Channeler, Artificer.
+    </p>
+
+    <h3>Step 2: Your Attributes</h3>
+
+    <p>
+      Your character has six attributes, each rated from <strong>-3 to +3</strong>.
+      Zero is ordinary. Positive means you're better than most people; negative means
+      it's not your strength. These aren't hit points or big numbers &mdash; they're small
+      modifiers that ripple through everything else your character does.
+    </p>
+
+    <table>
+      <tr><th>Attribute</th><th>Abbr</th><th>What It Means</th></tr>
+      <tr><td>Physical Prowess</td><td>PP</td><td>Raw strength, endurance, how hard you hit and how much you can take</td></tr>
+      <tr><td>Physical Coordination</td><td>PC</td><td>Grace, reflexes, fine motor control &mdash; sword fighting, dodging, picking locks</td></tr>
+      <tr><td>Intellect</td><td>IN</td><td>Education, reasoning, technical knowledge &mdash; medicine, engineering, science</td></tr>
+      <tr><td>Social Prowess</td><td>SP</td><td>Charm, presence, social instinct &mdash; talking your way in (or out) of trouble</td></tr>
+      <tr><td>Awareness</td><td>AW</td><td>Perception, alertness, instinct &mdash; noticing the hidden, reading a room</td></tr>
+      <tr><td>Power</td><td>PW</td><td>Magical attunement &mdash; how strongly the aether flows through you</td></tr>
+    </table>
+
+    <p>
+      Your GM sets the <strong>net bonus</strong> for the campaign &mdash; the default is
+      <strong>+1</strong>. That means when you add up all six of your attributes, the total
+      must equal +1. Want to be exceptionally strong (PP +3)? Something else has to give.
+      Every choice is a trade-off.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">What the Numbers Feel Like</span>
+      <p><strong>-3:</strong> A serious limitation. PP -3 is frail &mdash; can barely carry their own pack. PW -3 is completely magically dead; the aether doesn't touch them.</p>
+      <p><strong>-1:</strong> Below average, but functional. PC -1 is a bit clumsy. Not disabling, but you'll feel it.</p>
+      <p><strong>0:</strong> An ordinary person. Unremarkable. This is the baseline for most people in the world.</p>
+      <p><strong>+1:</strong> Notably capable. IN +1 is well-read, quick-thinking. Most people would describe them as smart.</p>
+      <p><strong>+2:</strong> Exceptional. AW +2 is the person who notices <em>everything</em> &mdash; the wrong shadow, the nervous twitch, the faint smell of cordite.</p>
+      <p><strong>+3:</strong> At the peak of human ability. SP +3 is the person who walks into a room and everyone turns to listen before they've said a word.</p>
+    </div>
+
+    <p>
+      For each attribute, write a brief <strong>description</strong> on your character sheet
+      explaining <em>why</em> that number makes sense. This isn't just bookkeeping &mdash;
+      it's your character. "PP +2: Former dockworker, built like a brick wall." "IN -1:
+      Street-smart, but never had formal schooling." These descriptions anchor your
+      roleplaying and help the GM set appropriate challenges.
+    </p>
+
+    <h4>How Attributes Shape Your Character</h4>
+
+    <p>
+      Those small numbers cascade through the entire system. Here's what they determine:
+    </p>
+
+    <ul>
+      <li><strong>PP</strong> sets your <strong>Hit Points per wound tier</strong> (7 + PP). A tough character (PP +2) has 9 HP per tier. A frail one (PP -1) has only 6. That difference is life and death.</li>
+      <li><strong>PW</strong> sets your <strong>Magic Points per exhaustion tier</strong> (7 + PW) and how many spells and schools you can access. PW +0? You can dabble. PW +3? You're a force of nature &mdash; with 10 MP per tier and access to three schools of magic.</li>
+      <li><strong>PC</strong> determines who <strong>declares last in combat</strong>. The character with the highest PC sees what everyone else commits to before choosing their own action. In a firefight, that's enormous.</li>
+      <li>Every attribute feeds into your <strong>skill target numbers</strong>, making the difference between "decent chance" and "nearly certain."</li>
+    </ul>
+
+    <h4>A Character Takes Shape</h4>
+
+    <p>
+      Let's build someone. Meet <strong>Kael Ashford</strong> &mdash; a former army officer
+      who resigned his commission when magic erupted and the world stopped making sense.
+      He's a swordsman first, a pragmatist always, and deeply suspicious of magic he doesn't
+      understand.
+    </p>
+
+    <div class="sheet-mock">
+      <h4>Kael Ashford &mdash; "Gutter Knight"</h4>
+      <div class="sheet-row">
+        <span class="sheet-stat-name">Physical Prowess (PP)</span>
+        <span class="sheet-stat-pips">&minus;3 &minus;2 &minus;1 &nbsp;0 &nbsp;1 <span class="filled">&bull;2</span> &nbsp;3</span>
+        <span class="sheet-stat-desc">Former soldier, strong and fit</span>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-stat-name">Phys. Coordination (PC)</span>
+        <span class="sheet-stat-pips">&minus;3 &minus;2 &minus;1 &nbsp;0 &nbsp;1 <span class="filled">&bull;2</span> &nbsp;3</span>
+        <span class="sheet-stat-desc">Trained fencer, quick hands</span>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-stat-name">Intellect (IN)</span>
+        <span class="sheet-stat-pips">&minus;3 &minus;2 &minus;1 <span class="filled">&bull;0</span> &nbsp;1 &nbsp;2 &nbsp;3</span>
+        <span class="sheet-stat-desc">Practical, not academic</span>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-stat-name">Social Prowess (SP)</span>
+        <span class="sheet-stat-pips">&minus;3 &minus;2 <span class="filled">&bull;&minus;1</span> &nbsp;0 &nbsp;1 &nbsp;2 &nbsp;3</span>
+        <span class="sheet-stat-desc">Gruff, impatient with pleasantries</span>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-stat-name">Awareness (AW)</span>
+        <span class="sheet-stat-pips">&minus;3 &minus;2 &minus;1 &nbsp;0 <span class="filled">&bull;1</span> &nbsp;2 &nbsp;3</span>
+        <span class="sheet-stat-desc">Good instincts, trained to watch</span>
+      </div>
+      <div class="sheet-row">
+        <span class="sheet-stat-name">Power (PW)</span>
+        <span class="sheet-stat-pips">&minus;3 <span class="filled">&bull;&minus;2</span> &minus;1 &nbsp;0 &nbsp;1 &nbsp;2 &nbsp;3</span>
+        <span class="sheet-stat-desc">Near-dead to magic &mdash; and prefers it that way</span>
+      </div>
+      <p style="margin-top: 0.8rem; font-size: 0.82rem; color: var(--parchment-dim);">
+        Net total: 2 + 2 + 0 + (-1) + 1 + (-2) = <strong>+2</strong>
+        <em>(GM set this campaign at net +2 for slightly heroic characters)</em>
+      </p>
+    </div>
+
+    <p>
+      Notice how Kael's numbers tell a story before we've touched a single skill. He's
+      physically exceptional (PP and PC both +2), has solid instincts (AW +1), doesn't
+      care much for social niceties (SP -1), and is about as far from magical as a person
+      can be without being completely inert (PW -2). If Kael ever tried to cast a spell,
+      he'd have 5 Magic Points per tier and access to... nothing. He doesn't want to.
+      He trusts his sword.
+    </p>
+
+    <h3>Step 3: Your Skills</h3>
+
+    <p>
+      Skills are the specific things your character knows how to do. Every skill is connected
+      to an attribute, and your target number for a skill check flows directly from both.
+    </p>
+
+    <p>
+      You can have <strong>up to 15 skills.</strong> Skills are bought with <strong>skill
+      points</strong>, which come in pools based on your attribute groups:
+    </p>
+
+    <code class="formula">Skill points per group = 10 + (sum of stats in that group)</code>
+
+    <table>
+      <tr><th>Group</th><th>Attributes</th><th>Skills</th></tr>
+      <tr><td>Physical</td><td>PP, PC</td><td>Athletics, Brawl, Climbing, Conceal, Melee, Ranged, Running, Swimming</td></tr>
+      <tr><td>Mental</td><td>IN, AW</td><td>Acting, Boating, Disarm Trap, Disguise, Empathy, Engineering, Forgery, Hunting, Medicine, Metalworking, Music, Observation, Repair, Ride/Drive, Science, Security, Stealth, Survival, Tactics, Woodworking</td></tr>
+      <tr><td>Social</td><td>SP</td><td>Business, Etiquette, Gambling, Interrogation, Leadership, Persuasion</td></tr>
+    </table>
+
+    <p>
+      The cost is simple: one skill point per skill level. Want Melee at level 3?
+      That's 3 points from your Physical pool. The level you invest determines your
+      <strong>target number</strong> &mdash; the percentage you need to roll under.
+    </p>
+
+    <code class="formula">Skill target = ((10 + attribute) &times; skill level) + 30</code>
+
+    <p>
+      That formula looks like math, but it means something intuitive: a higher attribute
+      makes every level of skill more effective. Let's see how it works for Kael:
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Kael's Skill Targets</span>
+      <p>Kael has PC +2 and puts 3 points into <strong>Melee</strong>:</p>
+      <p>((10 + 2) &times; 3) + 30 = <strong>66%</strong> &mdash; he hits about two-thirds of the time.</p>
+      <p>He also puts 2 points into <strong>Ranged</strong> (PC +2):</p>
+      <p>((10 + 2) &times; 2) + 30 = <strong>54%</strong> &mdash; decent shot, but swords are his thing.</p>
+      <p>And 1 point into <strong>Stealth</strong> (AW +1):</p>
+      <p>((10 + 1) &times; 1) + 30 = <strong>41%</strong> &mdash; he can sneak, but it's not reliable. Better to go loud.</p>
+    </div>
+
+    <p>
+      See how that works? The same skill level of 3 gives different results depending on
+      your attribute. A natural athlete (PC +3) with Melee 3 hits on 69%. A clumsy
+      bookworm (PC -2) with the same training only manages 54%. The attributes
+      <em>matter</em>.
+    </p>
+
+    <h4>What If You Don't Have a Skill?</h4>
+
+    <p>
+      Sometimes you need to try something you're not trained in &mdash; picking a lock
+      without Security, patching a wound without Medicine. You can attempt it, but
+      your odds aren't great:
+    </p>
+
+    <code class="formula">Unskilled attempt = (5 + attribute) &times; 10</code>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Kael needs to do field medicine (IN +0, no Medicine skill): (5 + 0) &times; 10 = <strong>50%</strong>. A coin flip.</p>
+      <p>If his companion Sera tried the same (IN +2): (5 + 2) &times; 10 = <strong>70%</strong>. Her smarts carry her even without training.</p>
+    </div>
+
+    <h4>What Your Character Sheet Looks Like</h4>
+
+    <p>
+      Here's how Kael's skill section looks filled out. The character sheet has the formula
+      printed right on it &mdash; <code class="inline">10 + stat &times; level + 30</code> &mdash;
+      so you only do the math once during character creation.
+    </p>
+
+    <div class="sheet-mock">
+      <h4>Skills</h4>
+      <div class="sheet-skill-row" style="font-weight: 600; color: var(--brass);">
+        <span>Skill</span><span>Stat</span><span>Lvl</span><span>Target</span>
+      </div>
+      <div class="sheet-skill-row"><span>Melee</span><span>+2</span><span>3</span><span>66</span></div>
+      <div class="sheet-skill-row"><span>Ranged</span><span>+2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Athletics</span><span>+2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Running</span><span>+2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Observation</span><span>+1</span><span>2</span><span>52</span></div>
+      <div class="sheet-skill-row"><span>Stealth</span><span>+1</span><span>1</span><span>41</span></div>
+      <div class="sheet-skill-row"><span>Tactics</span><span>+0</span><span>2</span><span>50</span></div>
+      <div class="sheet-skill-row"><span>Survival</span><span>+1</span><span>1</span><span>41</span></div>
+      <div class="sheet-skill-row"><span>Ride/Drive</span><span>+1</span><span>1</span><span>41</span></div>
+      <div class="sheet-skill-row"><span>Interrogation</span><span>-1</span><span>1</span><span>39</span></div>
+    </div>
+
+    <p>
+      Kael spent his Physical points heavily (PP +2 and PC +2 give him 14 Physical points),
+      spread some Mental points around (IN +0 and AW +1 give him 11), and barely touched
+      Social (SP -1 gives him only 9 &mdash; and he spent just 1 on Interrogation, because
+      he's better at demanding answers than asking nicely).
+    </p>
+
+    <h3>Step 4: Hit Points &amp; Magic Points</h3>
+
+    <p>
+      Your character can take punishment across <strong>four wound tiers</strong>, each with
+      <strong>7 + PP</strong> hit points. As you fill tiers, the penalties stack &mdash;
+      this is the <strong>death spiral</strong>, and it makes getting hurt terrifying.
+    </p>
+
+    <div class="sheet-mock">
+      <h4>Kael's Hit Points (PP +2 = 9 per tier)</h4>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">OK &mdash; no penalty</span>
+      </div>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">Harmed &mdash; &minus;10% to everything</span>
+      </div>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">Maimed &mdash; &minus;25% to everything</span>
+      </div>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">Incapacitated &mdash; &minus;50% to everything (you're down)</span>
+      </div>
+    </div>
+
+    <p>
+      Kael has 36 total HP (9 &times; 4 tiers). That sounds like a lot, but a revolver
+      does 2d6 damage &mdash; one good hit can push him from OK to Harmed, and suddenly
+      every roll he makes is 10% harder. Two hits? He's at -25%. <strong>This is the game
+      telling you to think before you fight.</strong>
+    </p>
+
+    <p>
+      Magic Points work the same way (7 + PW per tier), but Kael has PW -2, giving him
+      5 per tier. Not that it matters &mdash; he can't cast spells. We'll meet a caster
+      soon.
+    </p>
+
+    <h3>Step 5: Equipment</h3>
+
+    <p>
+      Grab what makes sense for your character. Kael carries a longsword (Medium: speed 5,
+      damage 1d8+1), a Webley revolver (speed 3, damage 2d6, 6 rounds), and wears a leather
+      jacket (Soak 2). He's got a field kit, a hip flask, and a deep distrust of anything
+      that glows.
+    </p>
+
+    <p>
+      We'll cover weapons and armor in detail in the <a href="#combat">combat section</a>.
+      For now, just know that every weapon has a <strong>speed</strong> (how many counts it
+      takes on the timing track) and <strong>damage</strong> (what you roll when you hit).
+      Armor has <strong>Soak</strong> (how much damage it absorbs) and optionally
+      <strong>Hinder</strong> (a penalty to agility for heavy armor).
+    </p>
+
+    <h3>Step 6: Magic (If That's Your Path)</h3>
+
+    <p>
+      If your character has any connection to magic at all (PW of -1 or higher), they <em>could</em>
+      learn to cast. Whether they choose to is another matter. Magic is covered fully in
+      <a href="#magic">its own section</a>, but here's what you need for character creation:
+    </p>
+
+    <ul>
+      <li>You know <strong>7 + PW</strong> base spells.</li>
+      <li>You can draw from a number of <strong>schools of magic</strong> equal to your PW modifier (minimum 1).</li>
+      <li>Want more spells? Each additional spell costs <strong>3 skill points</strong>. Magic is expensive.</li>
+      <li>Choose your path: <strong>Scholarly</strong> (controlled, requires a spellbook) or <strong>Wild</strong> (instinctive, unpredictable, no book needed).</li>
+    </ul>
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       3. ROLLING THE DICE
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="rolling">
+    <h2>3. Rolling the Dice</h2>
+
+    <p class="flavor">
+      You've got your character. Now you need to know how the dice work. The good news is:
+      there's only one system for everything.
+    </p>
+
+    <h3>The Core Roll</h3>
+
+    <p>
+      When your character attempts something where failure is possible and interesting,
+      you roll <strong>percentile dice</strong> (two d10s &mdash; one for tens, one for ones).
+      You want to roll <strong>equal to or under</strong> your target number. That's it. One
+      mechanic for combat, magic, skills, everything.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p><em>"There's a padlock on the warehouse door. Kael, what do you do?"</em></p>
+      <p>"I don't have Security. Can I try anyway?"</p>
+      <p><em>"Sure &mdash; unskilled attempt. Your AW is +1, so that's (5 + 1) &times; 10 = 60. Roll under 60."</em></p>
+      <p>"I got a 73."</p>
+      <p><em>"The pick snaps. You hear footsteps inside."</em></p>
+    </div>
+
+    <h3>Critical Successes and Failures</h3>
+
+    <p>
+      A roll of <strong>01</strong> is always a critical success &mdash; spectacular,
+      extraordinary, the kind of thing people tell stories about. A roll of <strong>00</strong>
+      (double zeros) is always a critical failure &mdash; not just bad, but memorably,
+      entertainingly bad.
+    </p>
+
+    <p>
+      Beyond those extremes, your critical range depends on how good you are. For every 25%
+      of your target number, you get 1 additional point of critical range, counted <em>down</em>
+      from your target:
+    </p>
+
+    <table>
+      <tr><th>Target Number</th><th>Crit Range</th><th>Crit On</th></tr>
+      <tr><td>1&ndash;25</td><td>0</td><td>01 only</td></tr>
+      <tr><td>26&ndash;50</td><td>1</td><td>Target value only</td></tr>
+      <tr><td>51&ndash;75</td><td>2</td><td>Target and target&minus;1</td></tr>
+      <tr><td>76&ndash;99</td><td>3</td><td>Target, target&minus;1, target&minus;2</td></tr>
+    </table>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Kael's Melee target is 66. That falls in the 51&ndash;75 bracket, so his crit range is 2.
+      He crits on a roll of <strong>64, 65, or 66</strong>. When you're good at something, the
+      sweet spot at the top of your range becomes a critical &mdash; not just a success, but
+      a devastating one.</p>
+    </div>
+
+    <h3>Opposed Checks</h3>
+
+    <p>
+      Sometimes two characters act against each other directly &mdash; an arm-wrestling match,
+      a foot chase, a spell resisted by willpower. Both sides roll against their own target
+      number:
+    </p>
+
+    <ul>
+      <li><strong>Both succeed?</strong> Whoever rolled further under their target (larger margin) wins.</li>
+      <li><strong>One succeeds, one fails?</strong> Success wins.</li>
+      <li><strong>Both fail?</strong> Stalemate. The situation doesn't change. The GM adjudicates what that looks like.</li>
+    </ul>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p><em>"The cultist tries to wrench the artifact from your hands. That's PP vs PP."</em></p>
+      <p>Kael's PP target: (5 + 2) &times; 10 = 70 (no skill, just raw strength). He rolls 34 &mdash; success, margin 36.</p>
+      <p>The cultist's PP target: 60. Rolls 52 &mdash; success, margin 8.</p>
+      <p><em>"You both hold on, but Kael's grip is iron. The cultist's hands slip. The artifact is yours."</em></p>
+    </div>
+
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       4. GETTING HURT
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="getting-hurt">
+    <h2>4. Getting Hurt (and Getting Better)</h2>
+
+    <p class="flavor">
+      In this game, violence has consequences. There are no bags of hit points to whittle
+      down while your character fights at full power. Every wound makes you worse at
+      everything, and that changes how you think about every fight.
+    </p>
+
+    <h3>The Death Spiral</h3>
+
+    <p>
+      When you take damage, fill in boxes on your hit point track starting from the top
+      tier (OK). When a tier is full, you move to the next one and immediately take its
+      penalty &mdash; applied to <em>every roll you make</em>.
+    </p>
+
+    <table>
+      <tr><th>Tier</th><th>Status</th><th>Penalty</th></tr>
+      <tr><td>1</td><td>OK</td><td>None &mdash; you're fine</td></tr>
+      <tr><td>2</td><td>Harmed</td><td>&minus;10% to all rolls</td></tr>
+      <tr><td>3</td><td>Maimed</td><td>&minus;25% to all rolls</td></tr>
+      <tr><td>4</td><td>Incapacitated</td><td>&minus;50% to all rolls &mdash; you're down</td></tr>
+    </table>
+
+    <div class="callout callout-example">
+      <span class="callout-label">What This Feels Like</span>
+      <p>Kael has 9 HP per tier (PP +2). A thug shoots him with a revolver &mdash; 2d6 = 9 damage.
+      His leather jacket absorbs 2 (Soak). That leaves 7 damage, which fills 7 of his 9 OK boxes.
+      He's still standing, still fighting at full power &mdash; but one more solid hit will push
+      him to Harmed.</p>
+      <p>The second shot lands: 2d6 = 8, minus 2 Soak = 6. Two points finish his OK tier; 4 overflow
+      into Harmed. Now Kael's Melee target drops from 66 to <strong>56</strong>. His aim, his
+      footwork, everything &mdash; the pain is making him slower and sloppier.</p>
+      <p>This is why you think before you fight. This is why you use cover. This is why the
+      first round of a battle matters more than any other.</p>
+    </div>
+
+    <h3>Exhaustion (Magic Points)</h3>
+
+    <p>
+      Casters have a parallel track for magical exhaustion. It works identically &mdash;
+      four tiers, same penalties &mdash; but it fills when you cast spells instead of
+      when you take hits. And here's the cruel part: <strong>wound and exhaustion penalties
+      stack.</strong>
+    </p>
+
+    <p>
+      A caster who's Harmed (-10%) <em>and</em> Weakened (-10%) is rolling at -20% to
+      everything. The death spiral doesn't just punish you for one kind of damage &mdash;
+      it punishes you for existing in a dangerous world.
+    </p>
+
+    <h3>Going Down</h3>
+
+    <p>
+      When you fill your Incapacitated tier, you collapse. You're not dead yet &mdash;
+      but you're on the clock. Every <strong>3 counts</strong> on the timing track, you
+      make a <strong>death save: 50/50</strong>. Three failures and you're gone.
+    </p>
+
+    <p>
+      That means your allies have at minimum <strong>9 counts</strong> to reach you, cancel
+      whatever they're doing, and apply medicine. It's tight, it's tense, but it's
+      possible. That's the design: death is a real threat, not a formality, but there's
+      always a desperate window to save someone.
+    </p>
+
+    <h3>Recovery</h3>
+
+    <p>
+      Rest heals. Not quickly &mdash; this isn't a "long rest and you're fine" game &mdash;
+      but steadily:
+    </p>
+
+    <table>
+      <tr><th>Type</th><th>Rate</th><th>Notes</th></tr>
+      <tr><td>Physical damage</td><td>1d4 HP per hour of full rest</td><td>+1d4 with medical care</td></tr>
+      <tr><td>Magical exhaustion</td><td>1d8 MP per hour of full rest</td><td>Magic recovers faster than flesh</td></tr>
+      <tr><td>Armor repair</td><td>Metalworking or Repair check</td><td>Needs downtime and tools</td></tr>
+    </table>
+
+    <p>
+      That means after a bad fight, the party might need to hole up for several hours before
+      they're fit to continue. Time pressure matters in this game &mdash; every hour spent
+      resting is an hour the cult spends completing their ritual.
+    </p>
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       5. MAGIC
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="magic">
+    <h2>5. The Two Paths of Magic</h2>
+
+    <p class="flavor">
+      Magic came roaring into the world within living memory. Nobody fully understands it.
+      Some study it with academic rigor, cataloguing incantations in leather-bound books.
+      Others simply <em>feel</em> it &mdash; raw power flowing through them like a river
+      they can barely steer.
+    </p>
+
+    <h3>How Casting Works</h3>
+
+    <p>
+      Every spell has a <strong>fixed casting time</strong> &mdash; how many counts it takes
+      on the timing track. When your token resolves, you roll d100 against your casting target
+      number. If you succeed, the spell fires. How <em>well</em> it fires depends on your
+      margin of success:
+    </p>
+
+    <table>
+      <tr><th>Margin</th><th>Tier</th><th>What It Means</th></tr>
+      <tr><td>1&ndash;10</td><td>Weak</td><td>It works, barely. Minimal effect.</td></tr>
+      <tr><td>11&ndash;30</td><td>Standard</td><td>The spell does what you'd expect.</td></tr>
+      <tr><td>31&ndash;50</td><td>Strong</td><td>Impressive. People notice.</td></tr>
+      <tr><td>51+</td><td>Spectacular</td><td>The magic roars through you. Devastating.</td></tr>
+    </table>
+
+    <p>
+      After the spell fires, three things happen: you pay <strong>exhaustion</strong> (which
+      fills your Magic Points track), you check for <strong>backlash</strong> (the magic
+      fighting back), and the area gains <strong>Magic Accumulation</strong> (which starts
+      degrading nearby technology).
+    </p>
+
+    <h3>Scholarly vs. Wild</h3>
+
+    <p>
+      This is the fundamental choice for any caster, and it changes everything about how
+      magic feels at the table.
+    </p>
+
+    <p>
+      <strong>Scholarly casters</strong> study magic like a science. They carry spellbooks,
+      they prepare carefully, and when a spell fires at Strong tier, they can choose to
+      <strong>dial it down</strong> to Standard or Weak if they want to conserve energy
+      or avoid attention. Control is their advantage. The price? They can only cast spells
+      that are written in their book.
+    </p>
+
+    <p>
+      <strong>Wild casters</strong> don't study &mdash; they <em>channel</em>. Magic flows
+      through them like weather. When they roll Standard, they get Standard. When they roll
+      Spectacular, they get Spectacular &mdash; whether they wanted it or not. They don't
+      need a spellbook (they can cast any spell from their known schools), but they can't
+      hold back when the magic surges. Higher backlash rates are the price of that raw power.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Sera is a wild caster. She casts Force at a thug &mdash; rolls 38 against her target of 55.
+      That's a margin of 17, which means Standard tier. She doesn't get to choose; the magic
+      decided. Standard Force deals 2d6 damage. She pays 4 exhaustion from her MP track.</p>
+      <p>Then comes the backlash check: Standard has a 10% chance. She rolls 67 &mdash; safe. But
+      the area now has +2 Magic Accumulation. The thugs' revolvers just got a little less
+      reliable.</p>
+      <p>If she'd rolled a margin of 45, she'd have gotten <strong>Strong</strong> tier &mdash;
+      whether she wanted the extra power (and extra exhaustion, and extra accumulation) or not.
+      That's what it means to be Wild. You ride the wave.</p>
+    </div>
+
+    <h3>Backlash</h3>
+
+    <p>
+      Magic is not tame. Every time you cast, there's a chance it bites back:
+    </p>
+
+    <table>
+      <tr><th>Tier</th><th>Backlash Chance</th><th>Accumulation</th></tr>
+      <tr><td>Weak</td><td>5%</td><td>+1</td></tr>
+      <tr><td>Standard</td><td>10%</td><td>+2</td></tr>
+      <tr><td>Strong</td><td>15%</td><td>+3</td></tr>
+      <tr><td>Spectacular</td><td>25%</td><td>+4</td></tr>
+    </table>
+
+    <p>
+      When backlash triggers, you take 1d4 physical damage (from your hit points, not magic
+      points &mdash; the magic is hurting your body). There's also a 25% chance of a wild
+      magical effect &mdash; the GM determines what that looks like, and it's never boring.
+    </p>
+
+    <h3>Exhaustion Overflow</h3>
+
+    <p>
+      Here's where it gets dark. When a spell's exhaustion cost exceeds your remaining
+      Magic Points, the spell <strong>still fires</strong>. Your MP drops to zero &mdash;
+      you're magically Incapacitated &mdash; and the overflow converts to <strong>physical
+      HP damage at half rate</strong>. The magic is tearing your body apart to fuel itself.
+    </p>
+
+    <p>
+      This is a deliberate design choice: a desperate caster can always reach for one more
+      spell. It will cost them dearly, but the option exists. Heroes sometimes need to
+      burn themselves down to save someone else.
+    </p>
+
+    <h3>Ritual Spells</h3>
+
+    <p>
+      Some magic is too vast and complex for the timing track. These spells take minutes
+      or hours to cast, require preparation and focus, and can't be used in combat:
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>What It Does</th></tr>
+      <tr><td>Scry</td><td>10 minutes</td><td>See a distant place or person</td></tr>
+      <tr><td>Shape Flesh</td><td>30 minutes</td><td>Transform living tissue</td></tr>
+      <tr><td>Circle</td><td>30 minutes</td><td>Inscribe a bounded magical zone</td></tr>
+      <tr><td>Transmute</td><td>1 hour</td><td>Change the substance of matter</td></tr>
+    </table>
+
+    <p>
+      Ritual spells still require the casting roll, still cost exhaustion, and still risk
+      backlash. They just can't be hurried. Some magic demands patience.
+    </p>
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       6. INTERFERENCE
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="interference">
+    <h2>6. The World Between</h2>
+
+    <p class="flavor">
+      This is the central truth of the setting: magic and technology cannot coexist peacefully.
+      Where one thrives, the other falters. And the people caught in the middle carry a sword
+      because it's the only thing that works everywhere.
+    </p>
+
+    <h3>Magic Erodes Technology</h3>
+
+    <p>
+      Every spell cast leaves a residue &mdash; a thickening of the aether that makes
+      machines unreliable. This isn't targeted; it's environmental. Cast enough spells in
+      one place and <em>everything</em> technological starts to fail. Guns jam. Engines
+      stall. Electrical systems short out. Clockwork freezes.
+    </p>
+
+    <p>
+      Mechanically, each spell adds its tier value to the area's <strong>Magic
+      Accumulation</strong>. Each point of accumulation reduces the <strong>Reliability</strong>
+      of all technology in the area by 3%.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Sera casts two Standard spells (+2 accumulation each = 4 total). Every firearm in the area
+      now has its Reliability reduced by 12%. A revolver that was 95% reliable is now 83%. An
+      automobile engine that was running fine might sputter and die. A radio crackles into static.</p>
+      <p>And that's just two spells. A prolonged magical battle can push accumulation high enough to
+      make firearms completely non-functional &mdash; which is exactly why swords still matter
+      in a world with tommy guns.</p>
+    </div>
+
+    <h3>Exotic Tech Erodes Magic</h3>
+
+    <p>
+      Conventional technology &mdash; revolvers, automobiles, radios &mdash; is a <em>victim</em>
+      of magic, not a combatant. Your Webley revolver doesn't push back against the aether any
+      more than a windmill does. It simply fails when magic gets too thick.
+    </p>
+
+    <p>
+      But there's something newer. <strong>Steampunk exotics</strong> &mdash; arc guns,
+      aetheric resonators, devices built with materials and principles that flirt with forces
+      nobody fully understands &mdash; these push back. Each shot from an exotic weapon
+      generates <strong>Tech Accumulation</strong>, and each point of that applies -3 to
+      casting target numbers in the area.
+    </p>
+
+    <p>
+      Whether exotic tech is nature's immune response to the magical eruption, a weapon
+      designed by shadowy engineers, or something stranger &mdash; nobody knows. People
+      debate it. Cults form around the question.
+    </p>
+
+    <h3>The Spectrum</h3>
+
+    <p>
+      The world isn't uniform. Different places sit at different points on the magic/tech
+      spectrum, and smart adventurers plan their loadout accordingly:
+    </p>
+
+    <table>
+      <tr><th>Zone</th><th>Accumulation</th><th>What to Expect</th></tr>
+      <tr><td>Industrial Dead Zone</td><td>0 (tech zone)</td><td>Magic suppressed. Technology works perfectly. Factory districts, engine rooms.</td></tr>
+      <tr><td>Normal</td><td>0</td><td>Everything works &mdash; until someone starts casting.</td></tr>
+      <tr><td>Light Magic Zone</td><td>3&ndash;5</td><td>Conventional firearms still fine. Sensitive equipment gets twitchy.</td></tr>
+      <tr><td>Moderate Magic Zone</td><td>8&ndash;12</td><td>Only the most reliable firearms work. Machines need constant maintenance.</td></tr>
+      <tr><td>Wild Zone</td><td>15&ndash;20</td><td>Most firearms non-functional. Strange creatures. Reality gets soft.</td></tr>
+      <tr><td>Deep Wild Zone</td><td>25+</td><td>Swords and sorcery only. Bring a blade or don't come back.</td></tr>
+    </table>
+
+    <p>
+      <strong>Accumulation decays at 1 point per minute</strong> for both types. In a normal
+      area, a few spells will spike the accumulation, but it bleeds off quickly after the
+      casting stops. In a wild zone, the baseline is already high enough that technology
+      never really works.
+    </p>
+
+    <div class="callout callout-note">
+      <span class="callout-label">Why This Matters</span>
+      <p>This mechanic is the reason the game supports such a wide range of character types.
+      The swordsman isn't obsolete because guns exist &mdash; guns <em>fail</em> in the places
+      adventurers go. The gunfighter isn't useless because magic exists &mdash; there are
+      entire districts where spells don't work. And the caster who recklessly throws power
+      around is making life harder for every gun-wielding ally in the party.</p>
+      <p>Carry a sword <em>and</em> a gun. Know when to rely on which.</p>
+    </div>
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       7. COMBAT
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="combat">
+    <h2>7. When Violence Finds You</h2>
+
+    <p class="flavor">
+      There is no initiative roll. There are no turns. When a fight starts, everyone acts
+      at once &mdash; choosing, committing, and living with the consequences on a shared
+      timeline. Welcome to the timing track.
+    </p>
+
+    <h3>The Timing Track</h3>
+
+    <p>
+      When a situation turns violent &mdash; or when timing and sequencing matter &mdash;
+      the GM calls for the timing track. Think of it as a number line starting at zero.
+      Every action takes a certain number of <strong>counts</strong>, and you place a
+      token on the count when your action will <strong>complete</strong>.
+    </p>
+
+    <ol>
+      <li><strong>The GM sets the scene.</strong> Where are you? What's around you? How far apart is everyone? Weapons drawn or holstered?</li>
+      <li><strong>Everyone declares their first action at once.</strong> Nobody has seen anyone else act yet &mdash; you're reacting to the situation, not to each other.</li>
+      <li><strong>Place tokens.</strong> Drawing a sword takes 2 counts, so your token goes on count 2. Firing a revolver takes 3 counts &mdash; token on count 3. Casting a spell might take 3 or 4, depending on the spell.</li>
+      <li><strong>The GM advances the track.</strong> Count by count. When it reaches your token, your action resolves.</li>
+    </ol>
+
+    <h3>Who Goes When?</h3>
+
+    <p>
+      When multiple tokens land on the same count, whoever <strong>started their action
+      first</strong> resolves first. If two people started on the same count, they resolve
+      <strong>truly simultaneously</strong> &mdash; both shots land, both spells fire, neither
+      can react to the other.
+    </p>
+
+    <p>
+      After actions resolve, characters who need to declare new actions do so in order of
+      <strong>PC (Physical Coordination), lowest first</strong>. Ties broken by AW, lowest
+      first. This means the fastest, most coordinated characters <strong>declare last</strong> &mdash;
+      they see what the opposition is committing to before they choose their response.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Why This Matters</span>
+      <p>Kael has PC +2. A thug has PC +0. When both need to declare on the same count, the thug
+      commits first &mdash; he's pulling a knife. Kael <em>sees this</em> and then decides: draw
+      his sword and meet the charge, or step back and reach for his revolver? The thug is locked
+      in. Kael gets to react. That's a significant advantage, and it's a real reason to invest in
+      PC and AW at character creation.</p>
+    </div>
+
+    <h3>Changing Your Mind</h3>
+
+    <p>
+      You can abandon your current action at any time before it resolves. The counts you've
+      already spent are gone, and your new action takes its normal speed <strong>plus a
+      1-count penalty</strong>. Sometimes it's worth eating that penalty to respond to a
+      changing situation.
+    </p>
+
+    <h3>Making an Attack</h3>
+
+    <p>
+      When your attack token resolves:
+    </p>
+
+    <ol>
+      <li>Roll d100 against your Melee, Ranged, or Firearms target number.</li>
+      <li>On a hit, roll your weapon's damage dice.</li>
+      <li>The target subtracts their armor's <strong>Soak</strong> from the damage.</li>
+      <li>Whatever's left fills their hit point track.</li>
+      <li>If the hit exceeded the armor's Soak value, there's a <strong>25% chance</strong> the armor loses 1 point of Soak permanently (50% for Crushing weapons). Armor wears down.</li>
+    </ol>
+
+    <h3>Active Defense</h3>
+
+    <p>
+      Once per count, you can try to defend against an incoming attack &mdash; an
+      <strong>opposed check</strong> (your Melee vs. the attacker's roll). If you win,
+      you deflect the blow. But it costs you: <strong>+2 speed</strong> added to your
+      next action. Defending is reactive, not free. You're spending future time to survive
+      the present.
+    </p>
+
+    <h3>Range Bands</h3>
+
+    <p>
+      No rulers, no grids. Distance is described in four bands:
+    </p>
+
+    <table>
+      <tr><th>Band</th><th>Distance</th><th>What Works Here</th></tr>
+      <tr><td>Close</td><td>Arm's reach</td><td>Melee weapons, brawling</td></tr>
+      <tr><td>Near</td><td>Same room, across a street</td><td>Thrown weapons, pistols, most spells</td></tr>
+      <tr><td>Far</td><td>Across a field, end of a corridor</td><td>Rifles, longbows, some spells</td></tr>
+      <tr><td>Distant</td><td>Edge of visibility</td><td>Sniper rifles only</td></tr>
+    </table>
+
+    <h3>A Fight in the Alley</h3>
+
+    <p>
+      Let's put it all together. This is a full worked example &mdash; two player characters
+      against two armed thugs.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">The Setup</span>
+      <p><strong>Kael</strong> (swordsman, PC +2, Melee 66, leather jacket Soak 2, 9 HP/tier) and
+      <strong>Sera</strong> (wild caster, PC +0, casting target 55, 8 HP/tier) are caught in an
+      alley by two thugs with revolvers (Firearms 50, Reliability 95, 7 HP/tier, no armor).
+      Range: Near. No prior Magic Accumulation.</p>
+    </div>
+
+    <p>
+      <strong>Count 0 &mdash; First declarations (all simultaneous).</strong>
+      Nobody has seen anyone act yet. Everyone commits blind.
+    </p>
+
+    <ul>
+      <li><strong>Kael:</strong> draws his sword (speed 2, token at count 2)</li>
+      <li><strong>Sera:</strong> begins casting Force (casting time 3, token at count 3)</li>
+      <li><strong>Thug A:</strong> fires revolver at Kael (speed 3, token at count 3)</li>
+      <li><strong>Thug B:</strong> fires revolver at Sera (speed 3, token at count 3)</li>
+    </ul>
+
+    <p>
+      <strong>Count 2 &mdash; Kael's sword is drawn.</strong> He immediately declares a melee
+      attack on Thug A (Medium weapon, speed 5, token at count 7). He's at Near range &mdash;
+      closing the last step to Close is part of the attack.
+    </p>
+
+    <p>
+      <strong>Count 3 &mdash; Three tokens resolve simultaneously.</strong> All three started
+      at count 0, so they fire at the same time. Nobody reacts to anyone else here.
+    </p>
+
+    <ul>
+      <li>
+        <strong>Sera's Force spell:</strong> Rolls 38 against target 55. Success &mdash;
+        margin 17, that's Standard tier. She's Wild, so she takes what she gets. Targets
+        Thug B. Damage: 2d6 = 8. Sera pays 4 exhaustion from her MP. Backlash check: 10%
+        chance, rolls 67 &mdash; safe. But the area now has <strong>+2 Magic Accumulation</strong>.
+      </li>
+      <li>
+        <strong>Thug A shoots Kael:</strong> Rolls 44 against skill 50. Hit. Damage: 2d6 = 9.
+        Kael's leather absorbs 2. That's 7 damage into his OK tier (which holds 9). He's
+        standing, still at full power &mdash; but only 2 boxes left before Harmed. <em>Close call.</em>
+      </li>
+      <li>
+        <strong>Thug B shoots Sera:</strong> Rolls 71 against skill 50. Miss. The accumulation
+        from Sera's spell and this shot are simultaneous &mdash; the revolver was still fully
+        reliable when he pulled the trigger.
+      </li>
+    </ul>
+
+    <p>
+      <strong>After count 3:</strong> Area has 2 Magic Accumulation. Both revolvers drop from
+      Reliability 95 to effective <strong>89</strong>. Barely noticeable &mdash; but the clock
+      is ticking. Sera's magic is making the thugs' weapons less trustworthy.
+    </p>
+
+    <p>
+      <strong>Count 3 &mdash; New declarations.</strong> Now declaration order matters. Three
+      characters need to choose: Sera (PC +0), Thug A (PC +0, AW -1), Thug B (PC +0, AW -1).
+      The thugs declare first (tied PC, lower AW). Then Sera. <em>She gets to see what
+      they're committing to before she decides.</em>
+    </p>
+
+    <ul>
+      <li><strong>Thug A:</strong> fires again at Kael (speed 3, token at 6)</li>
+      <li><strong>Thug B:</strong> took 8 damage. 7 fills his OK tier, 1 overflows to Harmed.
+        He's at <strong>-10%</strong>. Fires at Sera anyway (skill now 40, token at 6).</li>
+      <li><strong>Sera:</strong> sees both thugs shooting again. Casts Force a second time (token at 6).</li>
+    </ul>
+
+    <p>
+      Note: Kael doesn't declare &mdash; his sword attack is already on the track at count 7.
+    </p>
+
+    <p>
+      <strong>Count 6 &mdash; Another triple resolution.</strong>
+    </p>
+
+    <ul>
+      <li>
+        <strong>Sera's Force:</strong> Rolls 29 against 55. Hit &mdash; margin 26, Standard again.
+        Targets Thug A this time. Damage: 2d6 = 7. Then the backlash check: rolls <strong>03</strong>.
+        Backlash. 1d4 = 2 physical damage to Sera. The magic bit her. Then 25% wild effect check:
+        rolls 41 &mdash; no wild effect this time. Accumulation climbs to <strong>+4 total</strong>.
+      </li>
+      <li><strong>Thug A shoots Kael:</strong> Rolls 61 against 50. Miss.</li>
+      <li><strong>Thug B shoots Sera:</strong> Rolls 55 against 40 (wound penalty). Miss.</li>
+    </ul>
+
+    <p>
+      <strong>Count 7 &mdash; Kael's sword connects.</strong> Rolls 22 against Melee 65. Hit &mdash;
+      margin 43. Crit range is 2 (skill 65 is in the 51-75 bracket, crits on 63-65). Rolled 22,
+      not a crit. Damage: 1d8+1 = 7. Thug A has no armor. 7 fills his OK tier exactly &mdash;
+      one more hit and he's Harmed.
+    </p>
+
+    <p>
+      <strong>After count 7:</strong> Both thugs are wounded. Sera took backlash damage but is
+      still casting. Accumulation at 4 means the revolvers are at effective Reliability <strong>83%</strong>.
+      Sera's third Force spell will push it higher &mdash; the guns are becoming unreliable.
+      <em>The magic is winning the environmental war.</em>
+    </p>
+
+    <div class="callout callout-note">
+      <span class="callout-label">What Just Happened</span>
+      <p>Seven counts of game time. Both sides took damage. The wound penalties are starting to
+      bite. The magic/tech interference is shifting the battlefield. Kael's sword &mdash; immune
+      to accumulation &mdash; is becoming the most reliable weapon in the fight. And Sera's
+      casting is simultaneously helping (Force damage) and hurting (degrading the party's own
+      firearms if they had any).</p>
+      <p>This is the game working as intended. Every choice has trade-offs. Every round changes
+      the equation.</p>
+    </div>
+  </section>
+
+  <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       8. QUICK REFERENCE
+  ═══════════════════════════════════════════════════════ -->
+  <section class="rule-section" id="cheat-sheet">
+    <h2>8. Quick Reference</h2>
+
+    <p>
+      Everything above, compressed onto one page. Print this, keep it at the table, and
+      you'll rarely need to look anything else up.
+    </p>
+
+    <div class="cheat-sheet">
+      <h3>Adventure RPG &mdash; Cheat Sheet</h3>
+      <pre>THE ROLL: d100 &le; target = success
+  01 = always crit | 00 = always fumble
+  Crit range: 1pt per 25% of target, counted down
+
+OPPOSED: both roll, larger margin wins | one success beats one fail
+
+STATS: PP PC IN SP AW PW | range -3 to +3
+
+SKILL TARGET: ((10 + stat) &times; level) + 30
+UNSKILLED:    (5 + stat) &times; 10
+
+WOUNDS (HP per tier = 7+PP)     EXHAUSTION (MP per tier = 7+PW)
+  OK         &mdash;                    OK          &mdash;
+  Harmed    -10%                  Weakened   -10%
+  Maimed    -25%                  Sev. Weak  -25%
+  Incap     -50%                  Incap      -50%
+  Penalties STACK across both tracks
+
+CASTING: fixed time per spell &rarr; roll d100 &rarr; tier by margin
+  1-10 Weak | 11-30 Standard | 31-50 Strong | 51+ Spectacular
+  Scholarly: choose tier | Wild: ride the wave
+  Backlash: W5% S10% St15% Sp25%
+
+ACCUMULATION: each spell adds tier value to area
+  -3% Reliability per point (all tech) | Decays 1/minute
+  Exotic tech: +1 Tech Accumulation per shot, -3 casting/point
+
+COMBAT: timing track &mdash; declare, place token, resolve on count
+  Declaration order: lowest PC first (best react last)
+  Active defense: opposed check, costs +2 speed
+  Armor: Soak absorbs damage, 25% degrade if exceeded
+  Death saves: every 3 counts, 50/50, 3 failures = dead
+
+RECOVERY: HP 1d4/hour | MP 1d8/hour | +1d4 HP with medical care</pre>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Adventure RPG &mdash; Playtest Draft</p>
+</footer>
+
+</body>
+</html>
