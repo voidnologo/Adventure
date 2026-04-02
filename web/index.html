@@ -37,7 +37,7 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-    img { max-width: 100%; display: block; }
+
     a { color: var(--brass-bright); text-decoration: none; }
     a:hover { color: var(--parchment); }
 
@@ -382,86 +382,6 @@
       .world-aside { border-left: none; padding-left: 0; border-top: 2px solid var(--brass-dim); padding-top: 2rem; }
     }
 
-    /* ════════════════════════════════════════════════════════
-       SECTION 3 — ART SHOWCASE
-    ════════════════════════════════════════════════════════ */
-    .art-section {
-      padding: 6rem 0;
-      background: var(--void);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .art-strip {
-      display: flex;
-      gap: 2px;
-      height: 440px;
-      margin-top: 3rem;
-    }
-
-    .art-panel {
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-      transition: flex 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-    }
-
-    .art-strip:hover .art-panel { flex: 0.6; }
-    .art-strip:hover .art-panel:hover { flex: 3.5; }
-
-    .art-panel img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      background: var(--soot);
-      padding: 1.5rem;
-      filter: sepia(0.15) contrast(1.1);
-      transition: filter 0.6s ease, transform 0.8s ease, padding 0.8s ease;
-    }
-    .art-panel:hover img {
-      filter: sepia(0.05) contrast(1.15);
-      transform: scale(1.02);
-      padding: 0.5rem;
-    }
-
-    /* Bottom caption */
-    .art-caption {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 2.5rem 1.2rem 1rem;
-      background: linear-gradient(to top, rgba(10,9,8,0.95) 0%, rgba(10,9,8,0.5) 60%, transparent 100%);
-      z-index: 2;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .art-panel:hover .art-caption {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .art-caption-title {
-      font-family: 'Cinzel', serif;
-      font-size: 0.9rem;
-      color: var(--parchment);
-    }
-    .art-caption-sub {
-      font-size: 0.78rem;
-      color: var(--parchment-dim);
-      font-style: italic;
-    }
-
-    @media (max-width: 768px) {
-      .art-strip { flex-direction: column; height: auto; }
-      .art-panel { height: 300px; }
-      .art-strip:hover .art-panel { flex: 1; }
-      .art-strip:hover .art-panel:hover { flex: 1; }
-      .art-caption { opacity: 1; transform: translateY(0); }
-    }
 
     /* ════════════════════════════════════════════════════════
        SECTION 4 — DESIGN PILLARS
@@ -718,10 +638,11 @@
     <div class="world-text reveal">
       <h3>The Age of Eruption</h3>
       <p>
-        Within living memory, magic erupted from the aether and transformed
-        everything. Ancient power flooded into a world of industry and
-        progress, warping landscapes, spawning creatures of legend, and
-        granting terrible gifts to those who dared to reach for them.
+        Within living memory, the Veil &mdash; the boundary between the mundane
+        world and something vast and inhuman beyond it &mdash; thinned, and
+        magic flooded in. Ancient power warped landscapes, spawned creatures
+        of legend, and granted terrible gifts to those who dared to reach
+        for them.
       </p>
       <p>
         The world is not Earth, but it is familiar. The cultures, technology,
@@ -739,20 +660,23 @@
 
     <div class="world-aside reveal reveal-delay-2">
       <div class="tension-item">
-        <p class="tension-label magic">The Old Power</p>
+        <p class="tension-label magic">The Veil</p>
         <p class="tension-desc">
-          Magic is primal, wild, and poorly understood. Every spell cast
+          Casters draw Aetheric power through the Veil. Where it's thin,
+          magic is strong and wild and poorly understood. Every spell cast
           leaves residue that makes machines less reliable. In the deep
           wild zones, technology simply ceases to function.
         </p>
       </div>
       <div class="tension-item">
-        <p class="tension-label tech">The New Counter-Force</p>
+        <p class="tension-label tech">The Engine</p>
         <p class="tension-desc">
-          Exotic steampunk technology pushes back against magic — arc guns
-          and aetheric devices generate counter-resonance that dampens
-          spellcasting. Whether this is nature's immune response or
-          something stranger, nobody knows.
+          Pushing back is the Galvanic force &mdash; drawn from the Engine,
+          the metaphysical wellspring of human industry and will. Arc guns,
+          voltaic pistols, and aetheric resonators channel this counter-resonance
+          to dampen spellcasting. Whether the Engine is a conscious force,
+          nature's immune response, or something humans manufactured &mdash;
+          nobody knows. People debate it. Cults form around the question.
         </p>
       </div>
       <div class="tension-item">
@@ -762,43 +686,6 @@
           Smart adventurers never go anywhere without a sword — because it's
           the only thing that's never betrayed anyone.
         </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ART SHOWCASE ═══ -->
-<section class="art-section" id="art">
-  <div class="section-header">
-    <p class="section-label reveal">From the Archives</p>
-    <h2 class="section-title reveal reveal-delay-1">Pen &amp; Ink</h2>
-    <div class="ornament reveal reveal-delay-2">
-      <span class="ornament-line ornament-line-l"></span>
-      <span class="ornament-gem"></span>
-      <span class="ornament-line ornament-line-r"></span>
-    </div>
-  </div>
-
-  <div class="art-strip reveal">
-    <div class="art-panel">
-      <img src="assets/art/cat.png" alt="Bat-winged cat — pen and ink illustration">
-      <div class="art-caption">
-        <p class="art-caption-title">Guardian Familiar</p>
-        <p class="art-caption-sub">Pen &amp; ink on paper</p>
-      </div>
-    </div>
-    <div class="art-panel">
-      <img src="assets/art/dragon.jpg" alt="Multi-eyed dragon — pen and ink illustration">
-      <div class="art-caption">
-        <p class="art-caption-title">Wyrm of the Deep Wild</p>
-        <p class="art-caption-sub">Pen &amp; ink on paper</p>
-      </div>
-    </div>
-    <div class="art-panel">
-      <img src="assets/art/fantasy.jpg" alt="Angelic figure with compass — pen and ink illustration">
-      <div class="art-caption">
-        <p class="art-caption-title">Herald of the Eruption</p>
-        <p class="art-caption-sub">Pen &amp; ink on paper</p>
       </div>
     </div>
   </div>
@@ -923,7 +810,7 @@ Example: Melee at level 3, PC +2
 
     <div class="mechanic-block reveal reveal-delay-1">
       <h3>The Interference</h3>
-      <p>The Aether erodes technology. Galvanic force erodes magic. The balance slides back and forth.</p>
+      <p>The Veil erodes technology. The Engine erodes magic. The balance slides back and forth.</p>
       <code>Each net point of Aetheric accumulation:
   -2% technology Reliability
   Guns jam. Engines stall. Radios die.
