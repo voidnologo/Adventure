@@ -1,7 +1,7 @@
 # Adventure RPG - Project Specification
 
 ## Document Status: DRAFT - In Development
-**Last Updated:** 2026-03-31
+**Last Updated:** 2026-04-02
 **Status:** Active design exploration phase. Many sections require further discussion.
 
 ---
@@ -34,7 +34,7 @@ A secondary world (not Earth, but Earth-like) in a period analogous to the 1920s
 This is the defining feature of the setting and the in-world justification for the full range of equipment and playstyles.
 
 - **Magic disrupts technology.** In areas of high magical concentration, human-refined technology becomes unreliable and unpredictable. Guns may misfire, overheat, or melt. Engines stall. Airships lose power. Electrical systems short out.
-- **Technology suppresses magic.** In heavily industrialized, engineered environments, magic wanes. Spells fizzle or misfire. Connections to mana flows are dampened or severed. Magical items lose potency.
+- **Technology suppresses magic — but only exotic tech actively fights back.** In heavily industrialized environments, magic wanes passively. Spells fizzle or misfire. Connections to mana flows are dampened or severed. However, only **exotic technology** (steampunk gadgets, magitech devices) actively generates counter-resonance that erodes magic. Conventional technology (firearms, engines, tools) is a *victim* of magic zones, not a combatant against them. The asymmetry: magic erodes all tech, but only exotic tech erodes magic back.
 - **This is why swords still matter.** A steel blade works everywhere. A tommy gun might betray you in a magical ruin. A spell might fail you in the heart of the factory district. Smart adventurers carry both — and know when to rely on which.
 
 ### 2.3 Magic Zones & Tech Zones
@@ -242,7 +242,7 @@ Tags differentiate weapons within the same category. A longsword and a mace are 
 | Throwable | Can throw as ranged attack at +2 speed, one die step lower damage | Hatchet, spear, throwing knife |
 | Reach | Can strike before an approaching enemy closes to melee range | Spear, halberd, glaive, polearm |
 | Piercing | Ignores 2 points of armor soak | Stiletto, war pick, rapier, spear |
-| Crushing | On armor degradation, overflow counts 1-for-1 instead of 2-for-1 | Mace, warhammer, morning star, war maul |
+| Crushing | Armor degradation chance is 50% instead of 25% | Mace, warhammer, morning star, war maul |
 | Parrying | +10% to active defense rolls when wielded | Rapier, sword-and-buckler, quarterstaff |
 | Entangling | On hit, target's next action costs +2 speed | Whip, flail, chain |
 | Two-Handed | Requires both hands (already factored into category damage) | Greatsword, halberd, great axe |
@@ -258,9 +258,9 @@ Tags differentiate weapons within the same category. A longsword and a mace are 
 
 Armor absorbs (soaks) damage but can be **degraded** when hit hard.
 
-**Degradation rule:** If damage exceeds armor's soak value, for every 2 points over, there is a 25% chance of degradation. If the roll fails, armor's soak is permanently reduced by the overflow amount.
+**Degradation rule:** If damage exceeds armor's soak value, there is a **flat 25% chance** of losing **1 soak point**. One check per hit that exceeds Soak. Crushing weapons increase this chance to 50%.
 
-*Example: Chainmail (soak 5) takes 8 damage. 3 over = 25% chance of degradation. On failure, chainmail drops to soak 2.*
+*Example: Chainmail (soak 5) takes 8 damage. Damage exceeds soak → 25% chance of degradation. On failure, chainmail drops to soak 4.*
 
 | Armor Type | Soak | Hinder |
 |------------|------|--------|
@@ -281,7 +281,7 @@ Armor absorbs (soaks) damage but can be **degraded** when hit hard.
 | Kite | 9 | 1 |
 | Knight | 10 | 2 |
 
-> **NOTE:** "Hinder" mechanic is referenced but not fully defined. Presumably applies as a penalty to certain actions (stealth, agility, spellcasting?). Needs clarification. Also: how does armor interact with magic zones? Can armor be enchanted?
+> **Hinder** applies -5% per point to PC, Athletics, Stealth, and Swimming rolls, and +1 casting speed per point. See COMBAT_PROCEDURE.md §5.4 for full definition. Open question remains: how does armor interact with magic zones? Can armor be enchanted?
 
 ---
 
@@ -302,13 +302,28 @@ Four wound tiers with escalating penalties (death spiral):
 
 **Typical HP range:** 20-32 total (5-8 per level). A single heavy hit (e.g., shotgun blast, heavy crossbow) can push a character into Harmed or Maimed territory immediately.
 
-### 5.2 Death & Dying
+### 5.2 Exhaustion Points
 
-When a character is reduced past Incapacitated: **death saves** (mechanics TBD). Teammates have a window to intervene and save you.
+**Formula:** 7 + PW per exhaustion tier.
 
-> **NOTE:** Death save mechanics need design. Options to discuss: flat percentage roll each round? Escalating difficulty? Bleed-out timer? Permanent injury tables for near-death experiences?
+The exhaustion track covers **all non-physical strain**: stress, fatigue, sleep deprivation, stun effects, disorientation, and magical drain. Every character has this track, caster or not. It mirrors the HP death spiral with four tiers and the same escalating penalties:
 
-### 5.3 Recovery
+| Level | Status | Penalty |
+|-------|--------|---------|
+| 1 | OK | None |
+| 2 | Weakened | -10% to all rolls |
+| 3 | Severely Weak | -25% to all rolls |
+| 4 | Incapacitated | -50% to all rolls |
+
+Exhaustion penalties **stack** with wound penalties. A Harmed (-10%) and Weakened (-10%) character is at -20% to all rolls.
+
+**Typical EP range:** 16-40 total (4-10 per tier). A PW +3 character has 10 EP per tier (40 total) — deep mental reserves. A PW -2 character has only 5 per tier (20 total) — they'll buckle fast under pressure.
+
+### 5.3 Death & Dying
+
+When a character is reduced past Incapacitated on the HP track: **death saves** begin. Every 3 counts on the timing track, roll d100. Over 50 = failure. Three failures = death. A roll of 01 = instant stabilization. A roll of 00 = instant death. Teammates have a window to intervene and save you. See COMBAT_PROCEDURE.md §5.3 for full rules.
+
+### 5.4 Recovery
 
 - **Exhaustion:** Recover 1d8 EP per hour of full rest.
 - **Physical damage:** Recover 1d4 per hour of full rest.
@@ -346,7 +361,7 @@ Magic is new, wild, dangerous, wondrous, and feared. Casting uses a **tiered res
 - **Costs per tier** built into each spell using hidden design parameters (complexity, scope, duration, unnaturalness)
 - **Backlash** is separate from misfire, scales with tier used (5%/10%/15%/25%)
 - **Push It** mechanic for trying to exceed your result at additional cost/risk
-- **Exhaustion track** mirrors HP death spiral (OK / Weakened / Severely Weak / Incapacitated)
+- **Exhaustion track** (see §5.2) — casting drains EP from the same track used for all non-physical strain
 
 ### 6.3 Magic & Technology Interference
 
@@ -422,14 +437,14 @@ The following topics need further discussion and design work:
 2. ~~**Firearms & Steampunk Equipment** — Tables for guns, gadgets, vehicles~~ **DONE** (Session 4 — see FIREARMS_EQUIPMENT.md, DESIGN_PHILOSOPHY.md)
 3. **Magic/Tech Interference Mechanics** — How zones work mechanically (framework established in FIREARMS_EQUIPMENT.md §5, full zone rules TBD)
 4. **Leveling System** — Detailed progression mechanics
-5. **Death Saves** — Mechanics for dying and near-death
+5. ~~**Death Saves**~~ **DONE** (Session 5 — see COMBAT_PROCEDURE.md §5.3)
 6. **Races** — Whether to include, and if so, what options
 7. **Archetype Names** — Setting-flavored class labels
 8. **Factions** — Define the major power groups
-9. **Individual Spell Tier Tables** — 37 spells each need full tier descriptions, costs, casting times, misfire effects
+9. ~~**Individual Spell Tier Tables**~~ **DONE** (Session 2 — see SPELL_COMPENDIUM.md)
 
 ### Medium Priority
-10. **Hinder Mechanic** — Full definition of armor hindrance effects
+10. ~~**Hinder Mechanic**~~ **DONE** (Session 5 — see COMBAT_PROCEDURE.md §5.4)
 11. ~~**Wild vs. Scholarly Magic** — Mechanical differentiation~~ **DONE** (Session 2 — see MAGIC_SYSTEM.md, details TBD for exact variance mechanic)
 12. **Skill List Revision** — Update for steampunk setting (add Firearms, Pilot, Occult Lore, etc.)
 13. **Equipment Prices & Economy** — Currency system, costs

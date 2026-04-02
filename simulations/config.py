@@ -13,10 +13,10 @@ POWER_LEVELS = {
     "master": 75,
 }
 
-# MP = 7 + PW.  PW here approximates the casting target.
+# EP = 7 + PW.  PW here approximates the casting target.
 # (In the actual game PW is a stat, target derives from it.
 #  For simulation purposes we treat them as roughly equal.)
-MP_BY_LEVEL = {
+EP_BY_LEVEL = {
     "low":    37,   # 7 + 30
     "mid":    52,   # 7 + 45
     "high":   67,   # 7 + 60

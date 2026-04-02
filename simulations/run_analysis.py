@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from config import (
-    POWER_LEVELS, MP_BY_LEVEL, SPELLS, SPELL_COSTS,
+    POWER_LEVELS, EP_BY_LEVEL, SPELLS, SPELL_COSTS,
     NUM_CHARACTERS_PER_CONFIG, RANDOM_SEED,
     TIER_ORDER, WILD_BONUS, BACKLASH_SCHOLARLY, WILD_BACKLASH_EXTRA,
 )
@@ -47,7 +47,7 @@ for name, info in SPELLS.items():
 @dataclass
 class SessionResult:
     """Result of one caster casting until they can't (or overflow)."""
-    casts_before_empty: int = 0        # casts before MP hits 0
+    casts_before_empty: int = 0        # casts before EP hits 0
     casts_until_overflow: int = 0      # casts before first overflow event
     had_overflow: bool = False
     total_casts: int = 0               # total casts in session (including overflow cast)
@@ -64,7 +64,7 @@ class SessionResult:
     exhaust_total: int = 0
     suppress_events: int = 0
     suppress_tiers_total: int = 0
-    mp_remaining: int = 0
+    ep_remaining: int = 0
     tier_by_complexity: dict = field(default_factory=lambda: defaultdict(lambda: defaultdict(int)))
     raw_tier_by_complexity: dict = field(default_factory=lambda: defaultdict(lambda: defaultdict(int)))
     misfire_by_complexity: dict = field(default_factory=lambda: defaultdict(int))
@@ -72,33 +72,33 @@ class SessionResult:
 
 def run_until_exhausted(level, path, rng, spell_filter=None):
     """
-    Cast spells until MP is exhausted. No resting.
+    Cast spells until EP is exhausted. No resting.
     Returns SessionResult capturing everything that happened.
     """
-    from config import POWER_LEVELS, MP_BY_LEVEL
+    from config import POWER_LEVELS, EP_BY_LEVEL
     target = POWER_LEVELS[level]
     is_wild = (path == "wild")
-    max_mp = MP_BY_LEVEL[level]
-    current_mp = max_mp
+    max_ep = EP_BY_LEVEL[level]
+    current_ep = max_ep
 
-    res = SessionResult(mp_remaining=max_mp)
+    res = SessionResult(ep_remaining=max_ep)
     wild_tracker = WildEffectTracker()
     found_overflow = False
     mix = spell_filter if spell_filter else SPELL_MIX
 
-    # Cast until MP is 0 (or would be 0 after next cast's minimum cost)
+    # Cast until EP is 0 (or would be 0 after next cast's minimum cost)
     while True:
         spell_name, complexity = rng.choice(mix)
 
         # Check if we can even cast the cheapest version (Weak tier cost)
         min_cost = SPELL_COSTS[complexity]["misfire"]  # misfire cost = weak tier cost
-        # If MP is 0, stop — we're fully exhausted
-        if current_mp <= 0:
+        # If EP is 0, stop — we're fully exhausted
+        if current_ep <= 0:
             break
 
         result = simulate_cast(
             spell_name, complexity, target, is_wild,
-            current_mp, wild_tracker, rng,
+            current_ep, wild_tracker, rng,
         )
 
         res.total_casts += 1
@@ -133,12 +133,12 @@ def run_until_exhausted(level, path, rng, spell_filter=None):
                 found_overflow = True
             res.had_overflow = True
             res.overflow_hp += result.overflow_hp
-            current_mp = 0
+            current_ep = 0
         else:
-            current_mp = result.mp_after
+            current_ep = result.ep_after
 
-        # If overflow happened, the caster is done (MP = 0, incapacitated on exhaust track)
-        if current_mp <= 0:
+        # If overflow happened, the caster is done (EP = 0, incapacitated on exhaust track)
+        if current_ep <= 0:
             res.casts_before_empty = res.total_casts
             break
 
@@ -148,7 +148,7 @@ def run_until_exhausted(level, path, rng, spell_filter=None):
     res.wild_permanent = wild_tracker.permanent_count
     res.wild_escalated = wild_tracker.escalated_count
     res.wild_base = wild_tracker.base_count
-    res.mp_remaining = current_mp
+    res.ep_remaining = current_ep
 
     return res
 
@@ -185,24 +185,24 @@ def format_report(all_results, complexity_results):
     lines.append("=" * W)
     lines.append("")
     lines.append("Strategy: Casters use the HIGHEST tier they can afford without overflow.")
-    lines.append("          Scholarly choose freely. Wild suppress only when forced by MP.")
-    lines.append("          Each session = one caster casting until MP fully exhausted.")
+    lines.append("          Scholarly choose freely. Wild suppress only when forced by EP.")
+    lines.append("          Each session = one caster casting until EP fully exhausted.")
     lines.append("")
 
     # ── 1. Casts Before Exhaustion ──────────────────────────────────
     lines.append("-" * W)
     lines.append("1. CASTS BEFORE EXHAUSTION (core sustainability metric)")
     lines.append("-" * W)
-    lines.append(f"{'Config':<25} {'MP Pool':>7} {'Avg Casts':>10} {'Median':>8} {'Min':>6} {'Max':>6} {'Overflow%':>10}")
+    lines.append(f"{'Config':<25} {'EP Pool':>7} {'Avg Casts':>10} {'Median':>8} {'Min':>6} {'Max':>6} {'Overflow%':>10}")
     lines.append("-" * 75)
     for key in sorted(all_results.keys()):
         sessions = all_results[key]
         level, path = key
-        mp = MP_BY_LEVEL[level]
+        ep = EP_BY_LEVEL[level]
         casts = [s.casts_before_empty for s in sessions]
         overflows = sum(1 for s in sessions if s.had_overflow)
         lines.append(
-            f"{level}/{path:<20} {mp:>7} {avg(casts):>10.1f} "
+            f"{level}/{path:<20} {ep:>7} {avg(casts):>10.1f} "
             f"{median(casts):>8.0f} {min(casts):>6} {max(casts):>6} "
             f"{pct(overflows, len(sessions)):>9.1f}%"
         )
@@ -287,7 +287,7 @@ def format_report(all_results, complexity_results):
 
     # ── 6. Backlash & Wild Effects ──────────────────────────────────
     lines.append("-" * W)
-    lines.append("6. BACKLASH & WILD EFFECTS (per session = one caster's full MP pool)")
+    lines.append("6. BACKLASH & WILD EFFECTS (per session = one caster's full EP pool)")
     lines.append("-" * W)
     lines.append(f"{'Config':<25} {'Backlash/Ses':>13} {'BL HP/Ses':>10} {'WildFx/Ses':>11} {'Esc':>5} {'PERM':>6}")
     lines.append("-" * 75)
@@ -304,7 +304,7 @@ def format_report(all_results, complexity_results):
             f"{wfx/n:>11.2f} {esc:>5} {perm:>6}"
         )
     lines.append("")
-    lines.append("  Backlash/Ses = avg backlash events per session (one full MP drain)")
+    lines.append("  Backlash/Ses = avg backlash events per session (one full EP drain)")
     lines.append("  PERM = total permanent wild effects across ALL sessions")
     lines.append("")
 
@@ -508,7 +508,7 @@ def main():
     n_sessions = 20 if quick else NUM_CHARACTERS_PER_CONFIG * 10  # 500 sessions per config
 
     print(f"{'Quick' if quick else 'Full'} mode: {n_sessions} sessions per config")
-    print(f"Each session = one caster casting until MP exhausted\n")
+    print(f"Each session = one caster casting until EP exhausted\n")
 
     rng = random.Random(RANDOM_SEED)
 

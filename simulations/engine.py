@@ -116,8 +116,8 @@ class CastResult:
     wild_effect_stage: str  # base/escalated/permanent or ""
     overflow: bool
     overflow_hp: int
-    mp_before: int
-    mp_after: int
+    ep_before: int
+    ep_after: int
 
 
 def simulate_cast(
@@ -125,7 +125,7 @@ def simulate_cast(
     complexity: int,
     target: int,
     is_wild: bool,
-    current_mp: int,
+    current_ep: int,
     wild_tracker: WildEffectTracker,
     rng: random.Random,
 ) -> CastResult:
@@ -153,7 +153,7 @@ def simulate_cast(
         raw_tier = determine_tier(margin, effective_target)
 
     # Step 3: Choose/suppress tier
-    # Strategy: use the HIGHEST tier you can afford without overflowing MP.
+    # Strategy: use the HIGHEST tier you can afford without overflowing EP.
     # If you can't afford even Weak, you still cast (overflow happens).
     tiers_suppressed = 0
     if raw_tier == "misfire":
@@ -170,7 +170,7 @@ def simulate_cast(
                 break
             candidate = TIER_ORDER[candidate_idx]
             cost = SPELL_COSTS[complexity][candidate]
-            if cost <= current_mp:
+            if cost <= current_ep:
                 best_tier = candidate
                 suppress_used = step
                 break
@@ -187,7 +187,7 @@ def simulate_cast(
         for idx in range(raw_idx, -1, -1):
             candidate = TIER_ORDER[idx]
             cost = SPELL_COSTS[complexity][candidate]
-            if cost <= current_mp:
+            if cost <= current_ep:
                 final_tier = candidate
                 break
             final_tier = candidate  # stuck at lowest if nothing affordable
@@ -197,16 +197,16 @@ def simulate_cast(
     exhaust_cost = costs[final_tier]
 
     # Exhaustion overflow
-    mp_before = current_mp
+    ep_before = current_ep
     overflow = False
     overflow_hp = 0
-    if exhaust_cost > current_mp:
+    if exhaust_cost > current_ep:
         overflow = True
-        overflow_amount = exhaust_cost - current_mp
+        overflow_amount = exhaust_cost - current_ep
         overflow_hp = math.floor(overflow_amount * OVERFLOW_HP_RATIO)
-        mp_after = 0
+        ep_after = 0
     else:
-        mp_after = current_mp - exhaust_cost
+        ep_after = current_ep - exhaust_cost
 
     # Step 5: Backlash check
     backlash = False
@@ -248,6 +248,6 @@ def simulate_cast(
         wild_effect_stage=wild_effect_stage,
         overflow=overflow,
         overflow_hp=overflow_hp,
-        mp_before=mp_before,
-        mp_after=mp_after,
+        ep_before=ep_before,
+        ep_after=ep_after,
     )

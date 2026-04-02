@@ -92,7 +92,7 @@ If a malfunction check is required, roll d100 **alongside your attack roll** (or
 
 **Skill:** Casting target number (see MAGIC_SYSTEM.md).
 
-**Speed:** Fixed per spell. Each spell has a single casting time regardless of tier. Tier measures how much power the caster draws, not how long it takes — a bigger effect doesn't take more time, just more energy. Casting time is a per-spell balancing lever: Force is fast (3 counts), Sever is slow (8 counts), Mend is in between (5 counts).
+**Speed:** Fixed per spell. Each spell has a single casting time regardless of tier. Tier measures how much power the caster draws, not how long it takes — a bigger effect doesn't take more time, just more energy. Casting time is a per-spell balancing lever: Force is fast (2 counts), Sever is slow (8 counts), Mend is in between (5 counts).
 
 **Procedure:**
 1. Declare the spell. Place token at current count + the spell's casting time.
@@ -111,7 +111,7 @@ If a malfunction check is required, roll d100 **alongside your attack roll** (or
 
 **Casting interruption:** If a caster takes damage while casting (between declaration and resolution), they must make a **concentration check**: roll d100 under their (PW + 4) × 10. Failure means the spell fizzles — treat as cancellation (half Weak tier cost, 10% backlash chance). The caster may choose to voluntarily abort instead of rolling.
 
-> **PLAYTEST NOTE:** Concentration check mechanics are provisional. (PW + 4) × 10 means a PW +2 caster needs to roll under 20 — concentration is hard under fire. This may need tuning. Should damage amount affect the check? For now, keep it simple: any damage = one check, flat target.
+> **PLAYTEST NOTE:** Concentration check mechanics are provisional. (PW + 4) × 10 means a PW +2 caster needs to roll under 60 — concentration is hard under fire. This may need tuning. Should damage amount affect the check? For now, keep it simple: any damage = one check, flat target.
 
 ### 2.5 Defend (Active Defense)
 

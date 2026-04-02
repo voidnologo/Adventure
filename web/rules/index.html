@@ -435,7 +435,7 @@
 
     <div class="callout callout-example">
       <span class="callout-label">What the Numbers Feel Like</span>
-      <p><strong>-3:</strong> A serious limitation. PP -3 is frail &mdash; can barely carry their own pack. PW -3 is completely magically dead; the aether doesn't touch them.</p>
+      <p><strong>-3:</strong> A serious limitation. PP -3 is frail &mdash; can barely carry their own pack. PW -3 is mentally fragile &mdash; almost no capacity for stress, fatigue, or magical strain.</p>
       <p><strong>-1:</strong> Below average, but functional. PC -1 is a bit clumsy. Not disabling, but you'll feel it.</p>
       <p><strong>0:</strong> An ordinary person. Unremarkable. This is the baseline for most people in the world.</p>
       <p><strong>+1:</strong> Notably capable. IN +1 is well-read, quick-thinking. Most people would describe them as smart.</p>
@@ -504,7 +504,7 @@
         <tr>
           <td class="stat-name">Power (PW)</td>
           <td class="pip">&minus;3</td><td class="pip filled">&bull;&minus;2</td><td class="pip">&minus;1</td><td class="pip">0</td><td class="pip">1</td><td class="pip">2</td><td class="pip">3</td>
-          <td class="stat-desc">Near-dead to magic &mdash; and prefers it that way</td>
+          <td class="stat-desc">Low mental reserves &mdash; burns out fast, and has no interest in magic</td>
         </tr>
       </table>
       <p style="margin-top: 0.8rem; font-size: 0.82rem; color: var(--parchment-dim);">
@@ -562,7 +562,7 @@
       <span class="callout-label">Kael's Skill Targets</span>
       <p>Kael has PC +2 and puts 3 points into <strong>Melee</strong>:</p>
       <p>((10 + 2) &times; 3) + 30 = <strong>66%</strong> &mdash; he hits about two-thirds of the time.</p>
-      <p>He also puts 2 points into <strong>Ranged</strong> (PC +2):</p>
+      <p>He also puts 2 points into <strong>Ranged</strong> (PP +2):</p>
       <p>((10 + 2) &times; 2) + 30 = <strong>54%</strong> &mdash; decent shot, but swords are his thing.</p>
       <p>And 1 point into <strong>Stealth</strong> (AW +1):</p>
       <p>((10 + 1) &times; 1) + 30 = <strong>41%</strong> &mdash; he can sneak, but it's not reliable. Better to go loud.</p>
@@ -687,9 +687,9 @@
 
     <p>
       Grab what makes sense for your character. Kael carries a longsword (Medium: speed 5,
-      damage 1d8+1), a Webley revolver (speed 3, damage 2d6, 6 rounds), and wears a leather
-      jacket (Soak 2). He's got a field kit, a hip flask, and a deep distrust of anything
-      that glows.
+      damage 1d8+1), a Webley revolver (speed 3, damage 2d6, 6 rounds), and wears a
+      reinforced leather coat (Soak 2). He's got a field kit, a hip flask, and a deep
+      distrust of anything that glows.
     </p>
 
     <p>
@@ -798,8 +798,8 @@
     <div class="callout callout-scene">
       <span class="callout-label">At the Table</span>
       <p><em>"The cultist tries to wrench the artifact from your hands. That's PP vs PP."</em></p>
-      <p>Kael's PP target: (5 + 2) &times; 10 = 70 (no skill, just raw strength). He rolls 34 &mdash; success, margin 36.</p>
-      <p>The cultist's PP target: 60. Rolls 52 &mdash; success, margin 8.</p>
+      <p>Kael's PP target: (5 + 2) &times; 5 = 35 (no skill, just raw strength). He rolls 22 &mdash; success, margin 13.</p>
+      <p>The cultist's PP target: 30. Rolls 28 &mdash; success, margin 2.</p>
       <p><em>"You both hold on, but Kael's grip is iron. The cultist's hands slip. The artifact is yours."</em></p>
     </div>
 
@@ -823,8 +823,9 @@
 
     <p>
       When you take damage, fill in boxes on your hit point track starting from the top
-      tier (OK). When a tier is full, you move to the next one and immediately take its
-      penalty &mdash; applied to <em>every roll you make</em>.
+      tier (OK). Each tier holds <code class="formula">7 + PP</code> boxes. When a tier
+      is full, you move to the next one and immediately take its penalty &mdash; applied
+      to <em>every roll you make</em>.
     </p>
 
     <table>
@@ -832,13 +833,13 @@
       <tr><td>1</td><td>OK</td><td>None &mdash; you're fine</td></tr>
       <tr><td>2</td><td>Harmed</td><td>&minus;10% to all rolls</td></tr>
       <tr><td>3</td><td>Maimed</td><td>&minus;25% to all rolls</td></tr>
-      <tr><td>4</td><td>Incapacitated</td><td>&minus;50% to all rolls &mdash; you're down</td></tr>
+      <tr><td>4</td><td>Incapacitated</td><td>&minus;50% to all rolls &mdash; you're barely conscious</td></tr>
     </table>
 
     <div class="callout callout-example">
       <span class="callout-label">What This Feels Like</span>
       <p>Kael has 9 HP per tier (PP +2). A thug shoots him with a revolver &mdash; 2d6 = 9 damage.
-      His leather jacket absorbs 2 (Soak). That leaves 7 damage, which fills 7 of his 9 OK boxes.
+      His leather coat absorbs 2 (Soak). That leaves 7 damage, which fills 7 of his 9 OK boxes.
       He's still standing, still fighting at full power &mdash; but one more solid hit will push
       him to Harmed.</p>
       <p>The second shot lands: 2d6 = 8, minus 2 Soak = 6. Two points finish his OK tier; 4 overflow
@@ -852,11 +853,20 @@
 
     <p>
       Everyone has an exhaustion track &mdash; it's not just for casters. It works
-      identically to wounds: four tiers, same escalating penalties. But instead of
-      physical injury, it tracks everything that wears down your mind and spirit:
-      magical drain, sleep deprivation, stun grenades, psychological stress, overexertion.
-      Anything that hurts without leaving a wound lands here.
+      identically to wounds: four tiers, <code class="formula">7 + PW</code> boxes each,
+      same escalating penalties. But instead of physical injury, it tracks everything that
+      wears down your mind and spirit: magical drain, sleep deprivation, stun grenades,
+      psychological stress, overexertion. Anything that hurts without leaving a wound
+      lands here.
     </p>
+
+    <table>
+      <tr><th>Tier</th><th>Status</th><th>Penalty</th></tr>
+      <tr><td>1</td><td>OK</td><td>None</td></tr>
+      <tr><td>2</td><td>Weakened</td><td>&minus;10% to all rolls</td></tr>
+      <tr><td>3</td><td>Severely Weak</td><td>&minus;25% to all rolls</td></tr>
+      <tr><td>4</td><td>Incapacitated</td><td>&minus;50% to all rolls</td></tr>
+    </table>
 
     <p>
       And here's the cruel part: <strong>wound and exhaustion penalties stack.</strong>
@@ -865,20 +875,86 @@
       kind of damage &mdash; it punishes you for existing in a dangerous world.
     </p>
 
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Kael takes a stun grenade to the face. No wound damage &mdash; but 8 points of
+      exhaustion flood his track. His 5 EP per tier (PW &minus;2) means that fills OK entirely
+      and pushes 3 into Weakened. He's already Harmed from a gunshot. That's &minus;10% from
+      wounds <em>and</em> &minus;10% from exhaustion. Every roll he makes is at &minus;20% now.
+      The room is spinning. His hands are shaking. And there are still two guys with knives.</p>
+    </div>
+
     <h3>Going Down</h3>
 
     <p>
-      When you fill your Incapacitated tier, you collapse. You're not dead yet &mdash;
-      but you're on the clock. Every <strong>3 counts</strong> on the timing track, you
-      make a <strong>death save: 50/50</strong>. Three failures and you're gone.
+      When you fill your Incapacitated tier, you collapse. Your weapon clatters to the
+      ground. You can't act, can't speak above a whisper. But you're not dead yet &mdash;
+      you're bleeding out, and the clock is ticking.
     </p>
 
     <p>
-      That means your allies have at minimum <strong>9 counts</strong> to reach you, cancel
-      whatever they're doing, and apply medicine. It's tight, it's tense, but it's
-      possible. That's the design: death is a real threat, not a formality, but there's
-      always a desperate window to save someone.
+      Every <strong>3 counts</strong> on the timing track, you roll a death save: a
+      straight d100, no modifiers, no skills. The dice decide.
     </p>
+
+    <table>
+      <tr><th>Roll</th><th>Result</th></tr>
+      <tr><td>01</td><td>Instant stabilization &mdash; you stop bleeding on your own. Unconscious but safe.</td></tr>
+      <tr><td>02&ndash;49</td><td>Holding on. You're still dying, but not worse. The clock keeps ticking.</td></tr>
+      <tr><td>50&ndash;99</td><td>Failure. Mark it down. Three failures and you're gone.</td></tr>
+      <tr><td>00</td><td>Dead. Immediately. No saving throw, no last words. Just gone.</td></tr>
+    </table>
+
+    <p>
+      Three failures kill you. The fastest possible death &mdash; three bad rolls in a
+      row &mdash; takes <strong>9 counts</strong>. But most of the time, you'll get a
+      mix of holds and failures. A typical bleed-out lasts <strong>12 to 18 counts</strong>.
+      That's your window. That's how long your friends have to save you.
+    </p>
+
+    <h4>Saving a Downed Ally</h4>
+
+    <p>
+      You have options, and none of them are free. Everything costs time on the timing
+      track, and the dying character's clock doesn't stop while you act.
+    </p>
+
+    <p>
+      <strong>Medicine check</strong> (speed 5) stabilizes the patient. They stop making
+      death saves and fall unconscious. This is the reliable option &mdash; no magic
+      needed, just skill and a few seconds you might not have.
+    </p>
+
+    <p>
+      <strong>A Mend spell</strong> actually heals hit points, pulling them back from
+      the edge. But casting takes time too, and if you're in the middle of a fight,
+      you're giving up your action to save someone else.
+    </p>
+
+    <p>
+      <strong>A healing potion</strong> (speed 3 to administer) is the fastest option.
+      Expensive, consumable, and worth every coin when your friend is bleeding out on
+      the floor.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Kael goes down at count 14. At count 17, he rolls his first death save: 63.
+      That's a failure. Sera abandons her spell and declares a Medicine check &mdash;
+      speed 5, so it resolves at count 22. At count 20, Kael rolls again: 31. Holding
+      on. One failure, one hold. At count 22, Sera's Medicine check lands. Kael is
+      stabilized with one failure on the sheet. He'll live &mdash; but he's not waking
+      up anytime soon, and Sera just gave up the most important spell of the fight to
+      save him.</p>
+    </div>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">Design Note</span>
+      <p>Death saves are deliberately simple &mdash; no stat bonuses, no modifiers. When
+      you're bleeding out on the floor, your combat prowess and willpower don't matter.
+      What matters is whether your allies can reach you in time. The tension belongs to
+      the people still standing, not the person on the ground.</p>
+    </div>
 
     <h3>Recovery</h3>
 
@@ -913,24 +989,41 @@
       Magic came roaring into the world within living memory. Nobody fully understands it.
       Some study it with academic rigor, cataloguing incantations in leather-bound books.
       Others simply <em>feel</em> it &mdash; raw power flowing through them like a river
-      they can barely steer.
+      they can barely steer. Both paths are dangerous. Both paths are necessary.
     </p>
+
+    <!-- ── How Casting Works ──────────────────────────────── -->
 
     <h3>How Casting Works</h3>
 
     <p>
-      Every spell has a <strong>fixed casting time</strong> &mdash; how many counts it takes
+      Every spell has a <strong>fixed casting time</strong> &mdash; how many counts it occupies
       on the timing track. When your token resolves, you roll d100 against your casting target
-      number. If you succeed, the spell fires. How <em>well</em> it fires depends on your
-      margin of success:
+      number. Roll equal to or under and the spell fires. Roll over and it <em>misfires</em>.
+      How <em>well</em> it fires depends on your margin of success:
     </p>
 
     <table>
-      <tr><th>Margin</th><th>Tier</th><th>What It Means</th></tr>
+      <tr><th>Margin (Under Target)</th><th>Tier</th><th>What It Means</th></tr>
+      <tr><td>Over target</td><td>Misfire</td><td>The spell goes wrong. See <a href="#misfires">Misfires</a>.</td></tr>
       <tr><td>1&ndash;10</td><td>Weak</td><td>It works, barely. Minimal effect.</td></tr>
       <tr><td>11&ndash;30</td><td>Standard</td><td>The spell does what you'd expect.</td></tr>
       <tr><td>31&ndash;50</td><td>Strong</td><td>Impressive. People notice.</td></tr>
       <tr><td>51+</td><td>Spectacular</td><td>The magic roars through you. Devastating.</td></tr>
+    </table>
+
+    <h4>Hard Caps</h4>
+
+    <p>
+      Your casting target number puts a ceiling on what's physically possible. No amount
+      of luck gets a novice to Spectacular &mdash; the math won't allow it:
+    </p>
+
+    <table>
+      <tr><th>Casting Target</th><th>Maximum Tier</th><th>Why</th></tr>
+      <tr><td>30 or below</td><td>Standard</td><td>Best possible margin is 29 (rolling 01)</td></tr>
+      <tr><td>31&ndash;50</td><td>Strong</td><td>Can't roll 51+ under</td></tr>
+      <tr><td>51+</td><td>Spectacular</td><td>The full range opens up</td></tr>
     </table>
 
     <p>
@@ -940,61 +1033,255 @@
       degrading nearby technology).
     </p>
 
-    <h3>Scholarly vs. Wild</h3>
+    <div class="callout callout-note">
+      <span class="callout-label">Design Note</span>
+      <p>Casting time is per-spell, not per-tier. Tier measures how much power you draw, not how
+      long it takes. A Spectacular Force and a Weak Force both take 2 counts &mdash; but the
+      Spectacular version costs far more exhaustion and is far more likely to burn you.</p>
+    </div>
+
+    <!-- ── The Scholarly Path ─────────────────────────────── -->
+
+    <h3>The Scholarly Path</h3>
 
     <p>
-      This is the fundamental choice for any caster, and it changes everything about how
-      magic feels at the table.
+      You study magic like a science. You carry a spellbook. You prepare carefully, catalogue
+      incantations, and impose structure on something fundamentally wild. When you cast, you
+      know exactly what you're doing &mdash; and you decide exactly how much power to channel.
     </p>
 
     <p>
-      <strong>Scholarly casters</strong> study magic like a science. They carry spellbooks,
-      they prepare carefully, and when a spell fires at Strong tier, they can choose to
-      <strong>dial it down</strong> to Standard or Weak if they want to conserve energy
-      or avoid attention. Control is their advantage. The price? They can only cast spells
-      that are written in their book.
+      <strong>Casting roll:</strong> <code class="formula">1d100</code> (straight roll, no tricks).
     </p>
 
     <p>
-      <strong>Wild casters</strong> don't study &mdash; they <em>channel</em>. Magic flows
-      through them like weather. When they roll Standard, they get Standard. When they roll
-      Spectacular, they get Spectacular &mdash; whether they wanted it or not. They don't
-      need a spellbook (they can cast any spell from their known schools), but they can't
-      hold back when the magic surges. Higher backlash rates are the price of that raw power.
+      <strong>Full tier control.</strong> When you qualify for a tier, you can freely choose
+      that tier <em>or any lower one</em>. Rolled Strong but don't want to burn the exhaustion?
+      Take Standard. Take Weak. Your call, every time, at any skill level.
+    </p>
+
+    <p>
+      <strong>Lower backlash.</strong> Training insulates you from the raw burn of magical
+      energy. You use the base backlash rates (see <a href="#backlash">Backlash</a>).
+    </p>
+
+    <p>
+      <strong>More spells, possibly more schools.</strong> Scholarly discipline expands your
+      capacity. You know more spells and may have access to additional schools of magic.
+    </p>
+
+    <p>
+      <strong>The limitation:</strong> you can only cast spells you've specifically learned
+      and recorded in your book. Lose the book, lose your options. Study gives you depth
+      but constrains your breadth.
     </p>
 
     <div class="callout callout-scene">
       <span class="callout-label">At the Table</span>
-      <p>Sera is a wild caster. She casts Force at a thug &mdash; rolls 38 against her target of 55.
-      That's a margin of 17, which means Standard tier. She doesn't get to choose; the magic
-      decided. Standard Force deals 2d6 damage. She pays 4 exhaustion from her EP track.</p>
-      <p>Then comes the backlash check: Standard has a 10% chance. She rolls 67 &mdash; safe. But
-      the area now has +2 Magic Accumulation. The thugs' revolvers just got a little less
-      reliable.</p>
-      <p>If she'd rolled a margin of 45, she'd have gotten <strong>Strong</strong> tier &mdash;
-      whether she wanted the extra power (and extra exhaustion, and extra accumulation) or not.
-      That's what it means to be Wild. You ride the wave.</p>
+      <p>Kael's ally, a scholarly caster named Aldric, casts Mend on a wounded comrade. His
+      casting target is 58. He rolls 19 &mdash; that's 39 under. Strong tier.</p>
+      <p>But Aldric only needs to close a knife wound, and Strong Mend costs 12 exhaustion.
+      He chooses Standard instead &mdash; 2d6 HP restored for just 8 exhaustion. Clean, controlled,
+      efficient. That's the scholarly advantage: you never waste power you don't need to spend.</p>
     </div>
 
-    <h3>Backlash</h3>
+    <!-- ── The Wild Path ──────────────────────────────────── -->
+
+    <h3>The Wild Path</h3>
 
     <p>
-      Magic is not tame. Every time you cast, there's a chance it bites back:
+      You don't study. You <em>channel</em>. Magic flows through you like weather &mdash;
+      you can aim it, sometimes steer it, but you never fully control it. You don't need a
+      spellbook. You can cast <strong>any spell</strong> within your known schools. The magic
+      is always there, waiting. The question is what happens when you let it in.
+    </p>
+
+    <p>
+      <strong>Casting roll:</strong> <code class="formula">2d100, take the result farther from your target</code>.
+      Both dice are rolled. Whichever result lands farther from your casting target &mdash;
+      whether above or below &mdash; is the one that counts. This pushes your outcomes toward
+      extremes. Bigger successes. Bigger failures. You almost never land in the middle.
+    </p>
+
+    <p>
+      <strong>+10 casting target bonus.</strong> Wild casters are naturally attuned. You receive
+      a flat +10 to your casting target number, separate from PW. This is your instinctive
+      gift &mdash; you're not weaker than scholarly casters, you're <em>differently</em> powerful.
+    </p>
+
+    <h4>Tier Suppression</h4>
+
+    <p>
+      You can't freely choose your tier like a scholarly caster, but you're not completely
+      at the mercy of the dice. As you grow in power, you learn to feel the magic and rein
+      it in. The number of tiers you can step down from your rolled result depends on your
+      casting target:
     </p>
 
     <table>
-      <tr><th>Tier</th><th>Backlash Chance</th><th>Accumulation</th></tr>
-      <tr><td>Weak</td><td>5%</td><td>+1</td></tr>
-      <tr><td>Standard</td><td>10%</td><td>+2</td></tr>
-      <tr><td>Strong</td><td>15%</td><td>+3</td></tr>
-      <tr><td>Spectacular</td><td>25%</td><td>+4</td></tr>
+      <tr><th>Casting Target</th><th>Tiers You Can Suppress</th><th>What It Feels Like</th></tr>
+      <tr><td>1&ndash;25</td><td>0</td><td>You're locked to what you roll. The magic controls you.</td></tr>
+      <tr><td>26&ndash;50</td><td>1</td><td>You can throttle back one step. Learning.</td></tr>
+      <tr><td>51&ndash;75</td><td>2</td><td>Real control. You can rein in most surges.</td></tr>
+      <tr><td>76+</td><td>2 (capped)</td><td>Even masters can't fully tame wild magic.</td></tr>
     </table>
 
     <p>
-      When backlash triggers, you take 1d4 physical damage (from your hit points, not magic
-      points &mdash; the magic is hurting your body). There's also a 25% chance of a wild
-      magical effect &mdash; the GM determines what that looks like, and it's never boring.
+      That cap at 2 tiers is deliberate. A master wild caster has significant control &mdash;
+      but the magic always has the last word. You can never squash Spectacular all the way
+      down to Weak. The wild path always retains an element of unpredictability.
     </p>
+
+    <p>
+      <strong>Higher backlash.</strong> Raw, uninsulated contact with the aether burns more
+      often. Wild casters add <strong>+5% flat</strong> to every backlash tier
+      (see <a href="#backlash">Backlash</a>).
+    </p>
+
+    <p>
+      <strong>Fewer spells, fewer schools.</strong> Less training means less capacity and
+      narrower domain access. You trade breadth of knowledge for breadth of flexibility.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Sera is a wild caster with a casting target of 55 (45 base + 10 wild bonus). She casts
+      Force at a thug. She rolls 2d100: a 38 and a 72.</p>
+      <p>Her target is 55. The 38 is 17 under. The 72 is 17 over. Equal distance &mdash; either counts,
+      so let's say she takes the 38. That's 17 under: Standard tier.</p>
+      <p>Sera's target is 55, which means she can suppress up to 2 tiers. She <em>could</em> step
+      Standard down to Weak &mdash; but Standard Force deals 2d6 damage and costs 4 exhaustion.
+      She keeps it. The thug takes a concussive blast to the chest.</p>
+      <p>Backlash check: wild casters have 15% at Standard tier. She rolls 67 &mdash; safe. But the
+      area gains +2 Magic Accumulation. The thugs' revolvers just got a little less reliable.</p>
+      <p>Now imagine she'd rolled a 3 and a 78. The 78 is farther from 55 (23 over vs 52 under for the 3).
+      She takes the 78 &mdash; a <strong>misfire</strong>. Force rebounds on her for 1d6 damage.
+      That's the wild path. You ride the wave, and sometimes the wave wins.</p>
+    </div>
+
+    <h4>The Trade-Off at a Glance</h4>
+
+    <table>
+      <tr><th>Aspect</th><th>Scholarly</th><th>Wild</th></tr>
+      <tr><td>Casting roll</td><td>1d100 (straight)</td><td>2d100, take farther from target</td></tr>
+      <tr><td>Casting target bonus</td><td>None</td><td>+10 (natural attunement)</td></tr>
+      <tr><td>Spells available</td><td>Learned spells only (spellbook)</td><td>Any spell in your schools</td></tr>
+      <tr><td>Tier selection</td><td>Choose freely at or below qualified</td><td>Suppress 0&ndash;2 tiers based on skill</td></tr>
+      <tr><td>Backlash risk</td><td>Base rates</td><td>+5% per tier</td></tr>
+      <tr><td>Spells known</td><td>More</td><td>Fewer</td></tr>
+      <tr><td>School access</td><td>Possibly more</td><td>Fewer</td></tr>
+      <tr><td>Power ceiling</td><td>Reliable but bounded</td><td>Unpredictable, swings to extremes</td></tr>
+    </table>
+
+    <!-- ── Backlash ───────────────────────────────────────── -->
+
+    <h3 id="backlash">Backlash</h3>
+
+    <p>
+      Magic is not tame. Every time you cast, there's a chance it bites back. This is
+      separate from misfire &mdash; you can have a perfectly successful cast that still
+      burns you. More power channeled means more risk.
+    </p>
+
+    <table>
+      <tr><th>Tier</th><th>Scholarly</th><th>Wild (+5%)</th><th>Accumulation</th></tr>
+      <tr><td>Weak</td><td>5%</td><td>10%</td><td>+1</td></tr>
+      <tr><td>Standard</td><td>10%</td><td>15%</td><td>+2</td></tr>
+      <tr><td>Strong</td><td>15%</td><td>20%</td><td>+3</td></tr>
+      <tr><td>Spectacular</td><td>25%</td><td>30%</td><td>+4</td></tr>
+    </table>
+
+    <p>
+      When backlash triggers, two things happen:
+    </p>
+
+    <p>
+      <strong>1. Physical burn (always):</strong> You take <strong>1d4 physical HP damage</strong>.
+      Not exhaustion &mdash; the magic is hurting your body. Armor doesn't help. It's internal,
+      raw, and painful.
+    </p>
+
+    <p>
+      <strong>2. Wild effect (25% chance):</strong> Roll d100. On 25 or under, something
+      <em>strange</em> happens. The GM rolls d10 on the Wild Effect table. Your eyes glow.
+      Objects levitate around you. Your voice shifts to something inhuman. These effects
+      escalate &mdash; if you roll the same effect while a previous one is still active, it
+      gets worse. A third escalation while active makes it <strong>permanent</strong>.
+    </p>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">The Fear</span>
+      <p>The probability of rolling the same wild effect on a d10 three times while previous
+      instances are still active is low. But the <em>fear</em> of it is a constant presence.
+      After one or two backlash effects, casters start hesitating. That permanent stat
+      reduction is always lurking. This is by design &mdash; a mixed party of casters and
+      non-casters is the smart approach.</p>
+    </div>
+
+    <!-- ── Spell Cancellation & Interruption ──────────────── -->
+
+    <h3>Spell Cancellation &amp; Interruption</h3>
+
+    <h4>Voluntary Cancellation</h4>
+
+    <p>
+      You can abandon a spell mid-cast at any time before it resolves. The power was already
+      flowing when you cut it off, so it's not free:
+    </p>
+
+    <ul>
+      <li>Pay exhaustion equal to <strong>half the Weak tier's cost</strong> for that spell (rounded up)</li>
+      <li><strong>10% chance of backlash</strong> (1d4 HP damage if triggered)</li>
+    </ul>
+
+    <p>
+      Fixed cost, predictable, easy to remember. Sometimes aborting is the smart play &mdash;
+      especially if the tactical situation shifted while you were casting.
+    </p>
+
+    <h4>Casting Interruption</h4>
+
+    <p>
+      Spells take time on the timing track. That means enemies can hit you while you're
+      casting. If you take <em>any</em> damage between declaring a spell and its resolution,
+      you must make a <strong>concentration check</strong> to hold it together:
+    </p>
+
+    <p>
+      <code class="formula">Roll d100 under (PW + 4) &times; 10</code>
+    </p>
+
+    <table>
+      <tr><th>PW</th><th>Concentration Target</th><th>Odds</th></tr>
+      <tr><td>&minus;3</td><td>10%</td><td>Nearly impossible</td></tr>
+      <tr><td>&minus;2</td><td>20%</td><td>Hard</td></tr>
+      <tr><td>&minus;1</td><td>30%</td><td>Difficult</td></tr>
+      <tr><td>0</td><td>40%</td><td>Coin-flip minus</td></tr>
+      <tr><td>+1</td><td>50%</td><td>Even odds</td></tr>
+      <tr><td>+2</td><td>60%</td><td>Favored</td></tr>
+      <tr><td>+3</td><td>70%</td><td>Reliable</td></tr>
+    </table>
+
+    <p>
+      <strong>Failure:</strong> the spell fizzles. Treat it as a cancellation &mdash; half
+      Weak tier exhaustion, 10% backlash chance. The power dissipates. Wasted effort.
+    </p>
+
+    <p>
+      <strong>Voluntary abort:</strong> instead of rolling concentration, you can choose to
+      just let the spell go. Same cancellation costs, but you don't risk a worse outcome.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Tactical Implication</span>
+      <p>If you can see an enemy caster begin casting at count 3 with resolution at count 7,
+      you have a 4-count window to hit them and force a concentration check. Fast weapons &mdash;
+      daggers, punches, pistols &mdash; become valuable for disrupting casters. Protecting your
+      own caster while they cast is a real battlefield role. The swordsman standing between
+      Sera and the thugs isn't just being brave &mdash; he's enabling her magic.</p>
+    </div>
+
+    <!-- ── Exhaustion Overflow ────────────────────────────── -->
 
     <h3>Exhaustion Overflow</h3>
 
@@ -1005,11 +1292,72 @@
       HP damage at half rate</strong>. The magic is tearing your body apart to fuel itself.
     </p>
 
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Sera has 7 EP remaining. She casts Spectacular Mend &mdash; 18 exhaustion. She spends all
+      7 EP. Incapacitated on the exhaustion track. The remaining 11 overflows: 11 &divide; 2 = 5
+      physical HP damage (rounded down). The spell works. Her ally's bones snap back into place.
+      Sera is on the floor.</p>
+    </div>
+
     <p>
       This is a deliberate design choice: a desperate caster can always reach for one more
       spell. It will cost them dearly, but the option exists. Heroes sometimes need to
       burn themselves down to save someone else.
     </p>
+
+    <!-- ── Misfires ───────────────────────────────────────── -->
+
+    <h3 id="misfires">Misfires</h3>
+
+    <p>
+      Roll over your target and the spell doesn't just fail &mdash; it goes <em>wrong</em>.
+      Every spell has a unique misfire effect. This isn't "nothing happens." The magic was
+      flowing. You lost control. It has to go somewhere.
+    </p>
+
+    <ul>
+      <li><strong>Force</strong> rebounds on the caster &mdash; 1d6 damage, hurled backward</li>
+      <li><strong>Mend</strong> inverts and <em>drains</em> the target instead of healing them</li>
+      <li><strong>Reveal</strong> shows false things &mdash; doors that aren't there, threats that don't exist</li>
+      <li><strong>Barrier</strong> forms a cage around the caster, trapping them for 1d4 rounds</li>
+      <li><strong>Kinesis</strong> &mdash; you lose control of your own body, stumble, and scatter your belongings</li>
+    </ul>
+
+    <p>
+      A misfire still costs exhaustion &mdash; equal to the <strong>Weak tier cost</strong>
+      of that spell. The power was spent. You just didn't get to aim it.
+    </p>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">Wild Casters Beware</span>
+      <p>The 2d100-take-farther mechanic pushes toward extremes in both directions. When you
+      succeed, you succeed big. When you misfire, you misfire <em>hard</em> &mdash; the farther
+      die is likely well over your target. The wild path giveth and the wild path taketh away.</p>
+    </div>
+
+    <!-- ── Push It ────────────────────────────────────────── -->
+
+    <h3>Push It</h3>
+
+    <p>
+      After seeing your result, you can try to squeeze more power out of a successful cast.
+      You rolled Standard but you <em>need</em> Strong. You grit your teeth, dig deeper,
+      and push.
+    </p>
+
+    <ul>
+      <li>Costs <strong>additional exhaustion</strong> on top of the higher tier's normal cost</li>
+      <li><strong>Increased backlash chance</strong> &mdash; you're forcing power through a channel that wasn't ready for it</li>
+      <li>You can <strong>never</strong> push past your hard cap &mdash; if your casting target doesn't allow Spectacular, pushing won't get you there</li>
+    </ul>
+
+    <p>
+      Pushing is a gamble. Sometimes it saves the day. Sometimes it puts you on the floor.
+      Know your limits before you reach past them.
+    </p>
+
+    <!-- ── Ritual Spells ──────────────────────────────────── -->
 
     <h3>Ritual Spells</h3>
 
@@ -1030,6 +1378,129 @@
       Ritual spells still require the casting roll, still cost exhaustion, and still risk
       backlash. They just can't be hurried. Some magic demands patience.
     </p>
+
+    <!-- ── The Six Schools ────────────────────────────────── -->
+
+    <h3>The Six Schools &amp; 37 Spells</h3>
+
+    <p>
+      Schools are humanity's attempt to impose taxonomy on something fundamentally wild &mdash;
+      categories that help organize understanding but don't perfectly contain the reality.
+      Nobody knows if magic actually <em>works</em> in six neat domains, but these are the
+      boxes people have built, and they're useful enough.
+    </p>
+
+    <h4>Aetheric Manipulation <span style="font-weight:normal; font-style:italic;">&mdash; raw force, energy, elemental power (7 spells)</span></h4>
+
+    <p>
+      The most direct and visceral school. You grab the raw stuff of magic and project it.
+      Least subtle, most immediately impressive. Aetheric Manipulators are the artillery
+      of the magical world.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Force</td><td>2ct</td><td>Push, pull, strike, crush with invisible blunt force</td></tr>
+      <tr><td>Elemental Manipulation</td><td>4ct</td><td>Shape or direct fire, ice, wind, lightning, water, earth</td></tr>
+      <tr><td>Barrier</td><td>4ct</td><td>Walls, shields, or domes of magical energy</td></tr>
+      <tr><td>Kinesis</td><td>4ct</td><td>Move objects at a distance &mdash; fine manipulation to brute force</td></tr>
+      <tr><td>Disruption</td><td>4ct</td><td>Shatter, destabilize, or unravel matter and magical constructs</td></tr>
+      <tr><td>Amplify</td><td>2ct</td><td>Enhance physical forces already in motion &mdash; make a blow heavier, a sound deafening</td></tr>
+      <tr><td>Arc</td><td>4ct</td><td>Channel energy between points, redirect incoming power, ground or discharge</td></tr>
+    </table>
+
+    <h4>Vivimancy <span style="font-weight:normal; font-style:italic;">&mdash; life, body, biology (7 spells)</span></h4>
+
+    <p>
+      The magic of living things. Healing and bolstering, but also withering and reshaping
+      flesh. Vivimancers walk an uncomfortable line &mdash; where does "mend this wound" end
+      and dark magic begin? People are grateful and suspicious in equal measure.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Mend</td><td>5ct</td><td>Heal wounds, knit bone, cure disease, purge poison</td></tr>
+      <tr><td>Fortify</td><td>4ct</td><td>Bolster stamina, resist pain, harden flesh temporarily</td></tr>
+      <tr><td>Wither</td><td>5ct</td><td>Drain vitality, accelerate decay, weaken biological systems</td></tr>
+      <tr><td>Sense Life</td><td>2ct</td><td>Feel the presence, health, and condition of living things nearby</td></tr>
+      <tr><td>Shape Flesh</td><td>Ritual (30m)</td><td>Alter biological features &mdash; cosmetic changes to dramatic transformation</td></tr>
+      <tr><td>Purge</td><td>6ct</td><td>Cleanse corruption, contamination, parasites, and foreign influence</td></tr>
+      <tr><td>Bloom</td><td>4ct</td><td>Accelerate growth, encourage life, cause plants to flourish</td></tr>
+    </table>
+
+    <h4>Warding <span style="font-weight:normal; font-style:italic;">&mdash; protection, sealing, banishment (6 spells)</span></h4>
+
+    <p>
+      The most "respectable" school. Everyone wants protection from the magical chaos
+      engulfing the world. Warders are the closest thing the magical world has to trusted
+      professionals.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Shield</td><td>3ct</td><td>Personal magical protection against physical or magical harm</td></tr>
+      <tr><td>Seal</td><td>5ct</td><td>Lock, close, bind shut &mdash; doors, containers, wounds, portals</td></tr>
+      <tr><td>Banish</td><td>6ct</td><td>Drive away entities, dispel active magic, force out foreign influence</td></tr>
+      <tr><td>Circle</td><td>Ritual (30m)</td><td>Create a bounded area with specific magical properties</td></tr>
+      <tr><td>Anchor</td><td>3ct</td><td>Stabilize, fix in place, resist forced movement or transformation</td></tr>
+      <tr><td>Unbind</td><td>3ct</td><td>Break seals, dispel wards, shatter bindings, unlock magical locks</td></tr>
+    </table>
+
+    <h4>Divination <span style="font-weight:normal; font-style:italic;">&mdash; perception, knowledge, detection (6 spells)</span></h4>
+
+    <p>
+      Seeing the unseen. Invaluable for investigators, relic hunters, and navigating magical
+      zones. The downside: Divination doesn't filter what you see. Sometimes you learn things
+      you wish you hadn't.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Reveal</td><td>4ct</td><td>See hidden things &mdash; invisible objects, concealed doors, disguised creatures</td></tr>
+      <tr><td>Scry</td><td>Ritual (10m)</td><td>See distant places, people, or events</td></tr>
+      <tr><td>Read</td><td>5ct</td><td>Psychometry &mdash; touch an object and sense its history and emotional imprint</td></tr>
+      <tr><td>Foresight</td><td>6ct</td><td>Brief, unreliable glimpses of what's about to happen</td></tr>
+      <tr><td>Detect</td><td>2ct</td><td>Sense the presence and nature of magic nearby</td></tr>
+      <tr><td>Commune</td><td>6ct</td><td>Reach out to distant minds &mdash; send messages, brief telepathic contact</td></tr>
+    </table>
+
+    <h4>Transmutation <span style="font-weight:normal; font-style:italic;">&mdash; altering matter and material properties (6 spells)</span></h4>
+
+    <p>
+      The engineer's school. Transmuters change what things <em>are</em>. This is where magic
+      and technology get dangerously close &mdash; a Transmuter who reshapes metal is doing with
+      magic what factories do with machines. The crown jewel, actual substance-to-substance
+      transmutation, attracts dangerous attention from powerful interests.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Reshape</td><td>5ct</td><td>Change an object's form without changing its material</td></tr>
+      <tr><td>Alter Property</td><td>5ct</td><td>Change a material property &mdash; make iron brittle, stone flexible, wood fireproof</td></tr>
+      <tr><td>Refine</td><td>5ct</td><td>Purify, separate, distill &mdash; extract metals from ore, isolate poisons</td></tr>
+      <tr><td>Enlarge/Reduce</td><td>6ct</td><td>Change the size of objects or creatures &mdash; temporary and stressful on living targets</td></tr>
+      <tr><td>Fuse</td><td>5ct</td><td>Join dissimilar materials into a seamless whole, or separate fused things cleanly</td></tr>
+      <tr><td>Transmute</td><td>Ritual (1hr)</td><td>Change one material into another &mdash; lead to gold, wood to stone</td></tr>
+    </table>
+
+    <h4>Ley Weaving <span style="font-weight:normal; font-style:italic;">&mdash; manipulating magic itself (5 spells)</span></h4>
+
+    <p>
+      The rarest and most feared school. Ley Weavers don't cast spells so much as reshape
+      the magical landscape itself. They amplify, dampen, redirect, and sever the mana flows
+      that all other casters depend on. Other casters are deeply uncomfortable around
+      Ley Weavers &mdash; because a skilled Weaver can shut your magic down.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Dampen</td><td>6ct</td><td>Suppress or weaken magic in an area &mdash; create zones of magical calm</td></tr>
+      <tr><td>Channel</td><td>6ct</td><td>Redirect mana flows, draw power from ley lines to reduce exhaustion costs</td></tr>
+      <tr><td>Attune</td><td>5ct</td><td>Harmonize with a magical source or artifact &mdash; understand its nature, tap its power</td></tr>
+      <tr><td>Surge</td><td>6ct</td><td>Flood an area with raw mana &mdash; amplifies all magic, friend and foe alike</td></tr>
+      <tr><td>Sever</td><td>8ct</td><td>Cut a caster's connection to mana flows &mdash; the most feared spell in the game</td></tr>
+    </table>
+
   </section>
 
   <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
@@ -1195,40 +1666,379 @@
     <h3>Making an Attack</h3>
 
     <p>
-      When your attack token resolves:
+      Steel meets flesh. A bullet finds its mark. Here's what happens when your action
+      token hits the count.
     </p>
 
     <ol>
-      <li>Roll d100 against your Melee, Ranged, or Firearms target number.</li>
-      <li>On a hit, roll your weapon's damage dice.</li>
-      <li>The target subtracts their armor's <strong>Soak</strong> from the damage.</li>
-      <li>Whatever's left fills their hit point track.</li>
-      <li>If the hit exceeded the armor's Soak value, there's a <strong>25% chance</strong> the armor loses 1 point of Soak permanently (50% for Crushing weapons). Armor wears down.</li>
+      <li><strong>Roll d100 against your skill target</strong> &mdash; Melee, Ranged, or Firearms. Under the number? You hit.</li>
+      <li><strong>Critical hit:</strong> if your roll falls within your crit range, double your damage dice. A roll of <strong>00</strong> is always a fumble &mdash; the weapon slips, the gun jams, something goes wrong. The GM decides what.</li>
+      <li><strong>Roll damage</strong> using your weapon's dice.</li>
+      <li><strong>Subtract armor Soak.</strong> The target's armor absorbs that many points. Whatever's left fills their hit point track.</li>
+      <li><strong>Check for armor degradation.</strong> If the raw damage <em>exceeded</em> the armor's Soak, there's a flat <strong>25% chance</strong> the armor loses 1 Soak permanently. Crushing weapons raise this to <strong>50%</strong>. Armor wears down. Every fight costs something.</li>
     </ol>
+
+    <div class="callout callout-example">
+      <span class="callout-label">At the Table</span>
+      <p>Kael swings his longsword at a thug wearing a trench coat (Soak 2). He rolls 31 against
+      Melee 66 &mdash; hit. Damage: 1d8+1 = 7. The coat absorbs 2, leaving 5 damage into the
+      thug's HP. Since 7 exceeded Soak 2, the GM rolls for degradation: 18 on d100. Under 25 &mdash;
+      the trench coat splits. It's now Soak 1. Next hit, it'll barely help.</p>
+    </div>
+
+    <h3>Attack Modifiers</h3>
+
+    <p>
+      Not every shot is clean. Not every swing is uncontested. These modifiers stack with
+      each other and with wound penalties.
+    </p>
+
+    <table>
+      <tr><th>Situation</th><th>Modifier</th><th>Notes</th></tr>
+      <tr><td>Target in partial cover</td><td>-10%</td><td>Behind a barrel, around a corner</td></tr>
+      <tr><td>Target in heavy cover</td><td>-20%</td><td>Arrow slit, overturned table fortress</td></tr>
+      <tr><td>Firing into melee</td><td>-10%</td><td>Near-miss may hit an ally</td></tr>
+      <tr><td>Far range</td><td>-10%</td><td>Unless weapon has Accurate tag</td></tr>
+      <tr><td>Distant range</td><td>-20%</td><td>Accurate weapons and rifles only</td></tr>
+      <tr><td>Aimed shot</td><td>+10%</td><td>Costs +2 speed (you take your time)</td></tr>
+      <tr><td>Wound penalties</td><td>Varies</td><td>Stack with everything</td></tr>
+      <tr><td>Exhaustion penalties</td><td>Varies</td><td>Stack with everything</td></tr>
+    </table>
+
+    <div class="callout callout-note">
+      <span class="callout-label">Firing into Melee</span>
+      <p>When you shoot into a Close-range scuffle and miss, there's a real chance you hit
+      your friend instead. The GM determines who catches the stray shot. If Sera fires a
+      bolt into the tangle where Kael is fighting, she'd better not miss.</p>
+    </div>
 
     <h3>Active Defense</h3>
 
     <p>
-      Once per count, you can try to defend against an incoming attack &mdash; an
-      <strong>opposed check</strong> (your Melee vs. the attacker's roll). If you win,
-      you deflect the blow. But it costs you: <strong>+2 speed</strong> added to your
-      next action. Defending is reactive, not free. You're spending future time to survive
-      the present.
+      You don't have to stand there and take it. When an attack comes in, you can try to
+      get out of the way &mdash; but it costs you.
     </p>
+
+    <p>
+      <strong>Requirements:</strong> you must not be mid-action (your token can't be on the
+      track). You get <strong>one</strong> active defense per count.
+    </p>
+
+    <p>
+      <strong>Choose your skill:</strong> Melee (parry the blow), Brawl (slip and redirect),
+      or Athletics (dodge entirely). This is an <strong>opposed check</strong> &mdash; compare
+      your margin of success against the attacker's margin. Defender wins ties. If you win,
+      no damage. If you lose, the hit lands as normal.
+    </p>
+
+    <p>
+      <strong>The cost:</strong> whether you succeed or fail, your next action takes
+      <strong>+2 speed</strong>. You spent precious time reacting instead of acting.
+      Defending keeps you alive. It also keeps you on the back foot.
+    </p>
+
+    <h4>Parrying Weapons</h4>
+
+    <p>
+      Weapons with the <strong>Parrying</strong> tag &mdash; rapiers, basket-hilted swords &mdash;
+      grant <strong>+10%</strong> when you use Melee for active defense. They're built for it.
+    </p>
+
+    <h4>Shields</h4>
+
+    <p>
+      Shields add their Soak value <strong>passively</strong> against attacks from the front and
+      flanks. You don't need to do anything &mdash; you're holding the shield, it's doing work.
+      You can <em>also</em> actively block with an Athletics check for a chance to negate the
+      hit entirely, same rules as active defense.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">At the Table</span>
+      <p>Kael finishes his swing at count 7. On count 8, Thug B lunges at him with a knife.
+      Kael's not mid-action &mdash; he just resolved &mdash; so he can defend. He uses Melee
+      (skill 66) to parry. Kael rolls 41 (margin 25). Thug B rolled 22 against Melee 45
+      (margin 23). Kael's margin wins &mdash; the knife glances off his longsword. But his
+      next action now costs +2 speed. That parry bought him time and cost him time.</p>
+    </div>
 
     <h3>Range Bands</h3>
 
     <p>
-      No rulers, no grids. Distance is described in four bands:
+      No rulers, no grids. Distance is described in four bands. If you can picture the
+      scene, you can run the fight.
     </p>
 
     <table>
-      <tr><th>Band</th><th>Distance</th><th>What Works Here</th></tr>
-      <tr><td>Close</td><td>Arm's reach</td><td>Melee weapons, brawling</td></tr>
-      <tr><td>Near</td><td>Same room, across a street</td><td>Thrown weapons, pistols, most spells</td></tr>
-      <tr><td>Far</td><td>Across a field, end of a corridor</td><td>Rifles, longbows, some spells</td></tr>
-      <tr><td>Distant</td><td>Edge of visibility</td><td>Sniper rifles only</td></tr>
+      <tr><th>Band</th><th>Description</th><th>What Works Here</th></tr>
+      <tr><td>Close</td><td>Arm's reach</td><td>Melee weapons, brawling. This is where swords live.</td></tr>
+      <tr><td>Near</td><td>Same room, across a street</td><td>Ranged weapons at no penalty. Free movement within this band.</td></tr>
+      <tr><td>Far</td><td>Across a field, end of a corridor</td><td>-10% ranged (unless Accurate). Sprint to close.</td></tr>
+      <tr><td>Distant</td><td>Edge of visibility</td><td>-20% ranged. Only Accurate weapons and rifles.</td></tr>
     </table>
+
+    <h4>Movement</h4>
+
+    <p>
+      Moving within your current band is free &mdash; you're already there. Moving
+      <strong>one band closer or farther</strong> requires a <strong>Sprint</strong>
+      action: speed 3. You can't attack and close distance in the same action unless
+      you're already at Close range making a melee attack.
+    </p>
+
+    <h4>Scatter Weapons</h4>
+
+    <p>
+      Shotguns and other weapons with the <strong>Scatter</strong> tag hit harder up close
+      and lose punch at range. At Close range, add <strong>+1d6</strong> damage. At Far
+      range, subtract <strong>-1d6</strong> damage. They're room-clearers, not sniper tools.
+    </p>
+
+    <h4>Taking Cover</h4>
+
+    <p>
+      Partial cover gives attackers <strong>-10%</strong>. Heavy cover gives <strong>-20%</strong>.
+      You can spend a <strong>speed 2 action</strong> to Take Cover &mdash; diving behind a wall,
+      flipping a table, ducking into a doorway. After that, you have cover until you leave it.
+    </p>
+
+    <h3>Weapons</h3>
+
+    <p class="flavor">
+      A blade never jams. A gun never parries. Choose what you carry, and carry what you trust.
+    </p>
+
+    <h4>Melee Weapons</h4>
+
+    <table>
+      <tr><th>Category</th><th>Speed</th><th>Damage</th><th>Examples</th></tr>
+      <tr><td>Unarmed</td><td>2</td><td>1d3+PP</td><td>Punch, kick</td></tr>
+      <tr><td>Small</td><td>2</td><td>1d4</td><td>Knife, dagger</td></tr>
+      <tr><td>Light</td><td>3</td><td>1d6</td><td>Short sword, hatchet, club</td></tr>
+      <tr><td>Medium</td><td>5</td><td>1d8+1</td><td>Longsword, battle axe, mace</td></tr>
+      <tr><td>Heavy</td><td>7</td><td>1d10+1</td><td>Bastard sword, morning star</td></tr>
+      <tr><td>Great</td><td>9</td><td>2d6</td><td>Greatsword, halberd</td></tr>
+    </table>
+
+    <h4>Ranged Weapons (Martial)</h4>
+
+    <table>
+      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Notes</th></tr>
+      <tr><td>Light Ranged</td><td>5</td><td>1d6</td><td>Short bow, sling</td></tr>
+      <tr><td>Medium Ranged</td><td>7</td><td>1d8+1</td><td>Longbow</td></tr>
+      <tr><td>Light Crossbow</td><td>7</td><td>2d6</td><td>Reload 6</td></tr>
+      <tr><td>Heavy Crossbow</td><td>10</td><td>3d6</td><td>Reload 10</td></tr>
+    </table>
+
+    <h4>Modern Firearms</h4>
+
+    <table>
+      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Capacity</th><th>Reload</th><th>Reliability</th></tr>
+      <tr><td>Holdout Pistol</td><td>2</td><td>1d6</td><td>2</td><td>4</td><td>95</td></tr>
+      <tr><td>Revolver</td><td>3</td><td>2d6</td><td>6</td><td>6</td><td>95</td></tr>
+      <tr><td>Semi-Auto Pistol</td><td>3</td><td>2d6</td><td>8</td><td>3</td><td>85</td></tr>
+      <tr><td>Heavy Pistol</td><td>4</td><td>2d8</td><td>6</td><td>6</td><td>90</td></tr>
+      <tr><td>Rifle</td><td>6</td><td>2d10</td><td>5</td><td>8</td><td>95</td></tr>
+      <tr><td>Carbine</td><td>5</td><td>2d8</td><td>8</td><td>10</td><td>90</td></tr>
+      <tr><td>Shotgun</td><td>4</td><td>3d6</td><td>2</td><td>4</td><td>95</td></tr>
+      <tr><td>Combat Shotgun</td><td>5</td><td>3d6</td><td>5</td><td>8</td><td>85</td></tr>
+      <tr><td>Submachine Gun</td><td>5</td><td>3d6/burst</td><td>50</td><td>5</td><td>70</td></tr>
+    </table>
+
+    <h4>Steampunk Exotics</h4>
+
+    <p>
+      Exotic weapons run on arcane engineering &mdash; crystal capacitors, voltaic cells,
+      pressurized aether. They hit different. They also break different.
+    </p>
+
+    <table>
+      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Notes</th></tr>
+      <tr><td>Exotic Pistol</td><td>3</td><td>1d10</td><td>Cap 12, Reload 4, Rel 70</td></tr>
+      <tr><td>Exotic Sidearm</td><td>4</td><td>2d8</td><td>Cap 6, Reload 6, Rel 65</td></tr>
+      <tr><td>Exotic Heavy</td><td>7</td><td>3d8</td><td>Cap 3, Reload 8, Rel 55</td></tr>
+      <tr><td>Exotic Melee</td><td>2</td><td>1d8+PP</td><td>10 charges, Rel 60</td></tr>
+    </table>
+
+    <h3>Weapon Tags</h3>
+
+    <p>
+      Tags describe what a weapon <em>does</em> beyond raw numbers. A longsword with Parrying
+      plays differently than one without. A sawn-off shotgun is a different animal than the
+      full-length version.
+    </p>
+
+    <h4>Melee Tags</h4>
+
+    <table>
+      <tr><th>Tag</th><th>Effect</th></tr>
+      <tr><td>Concealable</td><td>Can be hidden on your person without detection.</td></tr>
+      <tr><td>Throwable</td><td>Can be thrown at Near range using Ranged skill. +2 speed, one die step lower damage.</td></tr>
+      <tr><td>Reach</td><td>Can strike targets one step farther than normal melee &mdash; useful for holding doorways.</td></tr>
+      <tr><td>Piercing</td><td>Ignores 2 points of armor Soak.</td></tr>
+      <tr><td>Crushing</td><td>Armor degradation chance is 50% instead of 25%. Armor hates this.</td></tr>
+      <tr><td>Parrying</td><td>+10% to active defense when using Melee to defend.</td></tr>
+      <tr><td>Entangling</td><td>On hit, the target's next action costs +2 speed. Whips, chains, nets.</td></tr>
+      <tr><td>Two-Handed</td><td>Requires both hands. Cannot use a shield.</td></tr>
+      <tr><td>Versatile</td><td>Can be wielded one-handed (normal damage) or two-handed (one die step up).</td></tr>
+    </table>
+
+    <h4>Firearm Tags</h4>
+
+    <table>
+      <tr><th>Tag</th><th>Effect</th></tr>
+      <tr><td>Reliable</td><td>+5 effective Reliability in magic zones. Built tough.</td></tr>
+      <tr><td>Quick Reload</td><td>Reload time is halved (round down).</td></tr>
+      <tr><td>Loud</td><td>Audible for a great distance. Draws attention.</td></tr>
+      <tr><td>Quiet</td><td>Suppressed or inherently silent. Won't alert distant enemies.</td></tr>
+      <tr><td>Scatter</td><td>+1d6 damage at Close range, -1d6 at Far. Devastating up close, weak at distance.</td></tr>
+      <tr><td>Burst</td><td>Consumes 3 ammo per shot. Already factored into damage.</td></tr>
+      <tr><td>Accurate</td><td>No penalty at Far range. +5% on aimed shots.</td></tr>
+      <tr><td>Sawn-Off</td><td>-1 speed, -1 die step on damage, gains Concealable. A hacksaw's bargain.</td></tr>
+    </table>
+
+    <h4>Exotic Tags</h4>
+
+    <table>
+      <tr><th>Tag</th><th>Effect</th></tr>
+      <tr><td>Shocking</td><td>Ignores 2 points of Soak from metal armor. Lightning doesn't care about steel.</td></tr>
+      <tr><td>Suppressing</td><td>Generates +1 extra Tech Accumulation when fired.</td></tr>
+      <tr><td>Silent</td><td>No report whatsoever. The target drops and nobody hears why.</td></tr>
+      <tr><td>Unstable</td><td>On malfunction, severity roll gets +2 instead of +1. Handle with care.</td></tr>
+    </table>
+
+    <h3>Hinder</h3>
+
+    <p>
+      Heavy armor keeps you alive. It also slows you down. <strong>Hinder</strong> represents
+      the weight and bulk of what you're wearing. It affects your body, not your mind or your aim.
+    </p>
+
+    <p>
+      Each point of Hinder applies <strong>-5%</strong> to: PC, Athletics, Stealth, and Swimming
+      rolls. It also adds <strong>+1 casting speed</strong> per point &mdash; try weaving a spell
+      in full plate.
+    </p>
+
+    <p>
+      Hinder does <strong>not</strong> affect: Melee, Brawl, Ranged, PP-based rolls, or any
+      mental/social checks. You can still swing a sword in plate. You just can't dodge in it.
+    </p>
+
+    <p>
+      Hinder from armor and shields <strong>stacks</strong>.
+    </p>
+
+    <table>
+      <tr><th>Source</th><th>Hinder</th></tr>
+      <tr><td>Half Plate</td><td>1</td></tr>
+      <tr><td>Full Plate</td><td>2</td></tr>
+      <tr><td>Kite Shield</td><td>1</td></tr>
+      <tr><td>Knight Shield</td><td>2</td></tr>
+    </table>
+
+    <div class="callout callout-example">
+      <span class="callout-label">At the Table</span>
+      <p>Kael picks up a kite shield (Hinder 1). His Athletics drops by 5%. His casting speed
+      would increase by 1 &mdash; not that he casts. If he also strapped on half plate (Hinder 1),
+      he'd be at Hinder 2 total: -10% to PC, Athletics, Stealth, Swimming, and +2 casting speed.
+      He'd be a fortress. A slow one.</p>
+    </div>
+
+    <h3>Armor</h3>
+
+    <p class="flavor">
+      The best armor is the kind you never need. The second best is whatever stands between
+      you and the thing trying to kill you.
+    </p>
+
+    <h4>Medieval Armor</h4>
+
+    <table>
+      <tr><th>Armor</th><th>Soak</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Cloth</td><td>0</td><td>&mdash;</td><td>Better than nothing. Barely.</td></tr>
+      <tr><td>Heavy Cloth</td><td>1</td><td>&mdash;</td><td>Padded gambeson</td></tr>
+      <tr><td>Leather</td><td>2</td><td>&mdash;</td><td>Boiled and hardened</td></tr>
+      <tr><td>Scale</td><td>3</td><td>&mdash;</td><td>Overlapping plates</td></tr>
+      <tr><td>Chainmail</td><td>5</td><td>&mdash;</td><td>Good against slashing, less so against piercing</td></tr>
+      <tr><td>Half Plate</td><td>8</td><td>1</td><td>Serious protection, serious weight</td></tr>
+      <tr><td>Full Plate</td><td>12</td><td>2</td><td>Walking fortress</td></tr>
+    </table>
+
+    <h4>Modern Armor</h4>
+
+    <table>
+      <tr><th>Armor</th><th>Soak</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Leather Jacket</td><td>1</td><td>&mdash;</td><td>Fashionable. Marginally protective.</td></tr>
+      <tr><td>Trench Coat</td><td>2</td><td>&mdash;</td><td>The adventurer's uniform</td></tr>
+      <tr><td>Ballistic Vest</td><td>5</td><td>&mdash;</td><td>Reliability 80</td></tr>
+      <tr><td>Steel Breastplate</td><td>6</td><td>1</td><td>Old meets new</td></tr>
+    </table>
+
+    <h4>Shields</h4>
+
+    <table>
+      <tr><th>Shield</th><th>Soak</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Wood Buckler</td><td>2</td><td>&mdash;</td><td>Light, one-handed</td></tr>
+      <tr><td>Steel Buckler</td><td>3</td><td>&mdash;</td><td>Sturdier</td></tr>
+      <tr><td>Wood Shield</td><td>5</td><td>&mdash;</td><td>Standard infantry issue</td></tr>
+      <tr><td>Infantry Shield</td><td>7</td><td>&mdash;</td><td>Full arm coverage</td></tr>
+      <tr><td>Kite Shield</td><td>9</td><td>1</td><td>Leg-to-shoulder protection</td></tr>
+      <tr><td>Knight Shield</td><td>10</td><td>2</td><td>Tower of steel</td></tr>
+    </table>
+
+    <h3>The Malfunction System</h3>
+
+    <p class="flavor">
+      Magic and machinery don't mix. The more sorcery saturates the air, the more your
+      finely machined firearm becomes an expensive paperweight &mdash; or worse.
+    </p>
+
+    <p>
+      You check for malfunction when: Magic Accumulation is present in the area, the weapon
+      is exotic, or the GM calls for it (damaged weapon, bad conditions, etc.).
+    </p>
+
+    <p>
+      <strong>Roll d100 over your weapon's effective Reliability.</strong> If you exceed it,
+      the weapon malfunctions. The shot doesn't fire. Your action is wasted.
+    </p>
+
+    <p>
+      Effective Reliability = <code class="formula">Base Reliability - (Magic Accumulation &times; 3)</code>
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">At the Table</span>
+      <p>Thug A fires his revolver (Reliability 95) in an area with Magic Accumulation 4.
+      Effective Reliability: 95 - (4 &times; 3) = <strong>83</strong>. He rolls 87 on the
+      malfunction check. That's over 83. Click. Nothing happens. His action is gone and
+      Kael is still coming.</p>
+    </div>
+
+    <h4>Malfunction Severity</h4>
+
+    <p>
+      When a weapon malfunctions, roll d10 to see how bad it is. Exotic weapons add
+      <strong>+1</strong> to the severity roll.
+    </p>
+
+    <table>
+      <tr><th>d10</th><th>Result</th><th>Effect</th></tr>
+      <tr><td>1&ndash;5</td><td>Click</td><td>Misfire. Clear it and try again next action.</td></tr>
+      <tr><td>6&ndash;7</td><td>Jam</td><td>Weapon is jammed. Clearing takes the weapon's reload time.</td></tr>
+      <tr><td>8</td><td>Misfire</td><td>A stray shot fires in a random direction. Someone nearby might have a bad day.</td></tr>
+      <tr><td>9</td><td>Mechanical Failure</td><td>Something broke internally. Weapon needs proper repair &mdash; it's done for this fight.</td></tr>
+      <tr><td>10+</td><td>Catastrophic</td><td>The weapon is destroyed. Shrapnel deals 1d6 damage to the wielder.</td></tr>
+    </table>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">Exotics Are Fragile</span>
+      <p>Exotic weapons add +1 to the severity roll. That means a roll of 9 becomes 10 &mdash;
+      catastrophic. And exotic weapons with the Unstable tag add +2 instead. That crystal-powered
+      hand cannon is magnificent until it detonates in your grip. This is the trade-off for
+      superior firepower.</p>
+    </div>
 
     <h3>A Fight in the Alley</h3>
 
@@ -1239,7 +2049,7 @@
 
     <div class="callout callout-scene">
       <span class="callout-label">The Setup</span>
-      <p><strong>Kael</strong> (swordsman, PC +2, Melee 66, leather jacket Soak 2, 9 HP/tier) and
+      <p><strong>Kael</strong> (swordsman, PC +2, Melee 66, leather coat Soak 2, 9 HP/tier) and
       <strong>Sera</strong> (wild caster, PC +0, casting target 55, 8 HP/tier) are caught in an
       alley by two thugs with revolvers (Firearms 50, Reliability 95, 7 HP/tier, no armor).
       Range: Near. No prior Magic Accumulation.</p>
@@ -1252,38 +2062,41 @@
 
     <ul>
       <li><strong>Kael:</strong> draws his sword (speed 2, token at count 2)</li>
-      <li><strong>Sera:</strong> begins casting Force (casting time 3, token at count 3)</li>
+      <li><strong>Sera:</strong> begins casting Force (casting time 2, token at count 2)</li>
       <li><strong>Thug A:</strong> fires revolver at Kael (speed 3, token at count 3)</li>
       <li><strong>Thug B:</strong> fires revolver at Sera (speed 3, token at count 3)</li>
     </ul>
 
     <p>
-      <strong>Count 2 &mdash; Kael's sword is drawn.</strong> He immediately declares a melee
+      <strong>Count 2 &mdash; Kael and Sera resolve simultaneously.</strong> Both started at
+      count 0, so they go together. Kael's sword is drawn. He immediately declares a melee
       attack on Thug A (Medium weapon, speed 5, token at count 7). He's at Near range &mdash;
       closing the last step to Close is part of the attack.
     </p>
 
     <p>
-      <strong>Count 3 &mdash; Three tokens resolve simultaneously.</strong> All three started
-      at count 0, so they fire at the same time. Nobody reacts to anyone else here.
+      Sera's Force spell fires. She rolls 2d100 (wild caster): a <strong>38</strong> and a
+      <strong>72</strong>. Her target is 55. The 38 is 17 under; the 72 is 17 over. Equal
+      distance &mdash; she takes the 38. Margin 17, that's Standard tier. She could suppress
+      it to Weak (her target of 55 allows 2 tiers of suppression), but Standard Force does
+      2d6 damage. She keeps it. Targets Thug B. Damage: 2d6 = 8. Sera pays 4 exhaustion.
+      Backlash check: 15% for a wild caster at Standard. She rolls 67 &mdash; safe. The area
+      gains <strong>+2 Magic Accumulation</strong>.
+    </p>
+
+    <p>
+      <strong>Count 3 &mdash; Both thugs fire.</strong> Both started at count 0, so they
+      resolve simultaneously.
     </p>
 
     <ul>
       <li>
-        <strong>Sera's Force spell:</strong> Rolls 38 against target 55. Success &mdash;
-        margin 17, that's Standard tier. She's Wild, so she takes what she gets. Targets
-        Thug B. Damage: 2d6 = 8. Sera pays 4 exhaustion from her EP. Backlash check: 10%
-        chance, rolls 67 &mdash; safe. But the area now has <strong>+2 Magic Accumulation</strong>.
-      </li>
-      <li>
         <strong>Thug A shoots Kael:</strong> Rolls 44 against skill 50. Hit. Damage: 2d6 = 9.
-        Kael's leather absorbs 2. That's 7 damage into his OK tier (which holds 9). He's
+        Kael's leather coat absorbs 2. That's 7 damage into his OK tier (which holds 9). He's
         standing, still at full power &mdash; but only 2 boxes left before Harmed. <em>Close call.</em>
       </li>
       <li>
-        <strong>Thug B shoots Sera:</strong> Rolls 71 against skill 50. Miss. The accumulation
-        from Sera's spell and this shot are simultaneous &mdash; the revolver was still fully
-        reliable when he pulled the trigger.
+        <strong>Thug B shoots Sera:</strong> Rolls 71 against skill 50. Miss.
       </li>
     </ul>
 
@@ -1304,7 +2117,8 @@
       <li><strong>Thug A:</strong> fires again at Kael (speed 3, token at 6)</li>
       <li><strong>Thug B:</strong> took 8 damage. 7 fills his OK tier, 1 overflows to Harmed.
         He's at <strong>-10%</strong>. Fires at Sera anyway (skill now 40, token at 6).</li>
-      <li><strong>Sera:</strong> sees both thugs shooting again. Casts Force a second time (token at 6).</li>
+      <li><strong>Sera:</strong> sees both thugs shooting again. Casts Force a second time
+        (casting time 2, token at count 5).</li>
     </ul>
 
     <p>
@@ -1312,25 +2126,29 @@
     </p>
 
     <p>
-      <strong>Count 6 &mdash; Another triple resolution.</strong>
+      <strong>Count 5 &mdash; Sera's second Force.</strong> She rolls 2d100: a <strong>29</strong>
+      and a <strong>84</strong>. The 84 is farther from 55 (29 over vs 26 under). She takes the
+      29 &mdash; margin 26, Standard again. Targets Thug A this time. Damage: 2d6 = 7. Backlash
+      check: 15% for wild at Standard. Rolls <strong>03</strong>. Backlash. 1d4 = 2 physical
+      damage to Sera. The magic bit her. Wild effect check (25%): rolls 41 &mdash; no wild effect.
+      Accumulation climbs to <strong>+4 total</strong>.
+    </p>
+
+    <p>
+      <strong>Count 6 &mdash; Both thugs fire.</strong>
     </p>
 
     <ul>
-      <li>
-        <strong>Sera's Force:</strong> Rolls 29 against 55. Hit &mdash; margin 26, Standard again.
-        Targets Thug A this time. Damage: 2d6 = 7. Then the backlash check: rolls <strong>03</strong>.
-        Backlash. 1d4 = 2 physical damage to Sera. The magic bit her. Then 25% wild effect check:
-        rolls 41 &mdash; no wild effect this time. Accumulation climbs to <strong>+4 total</strong>.
-      </li>
       <li><strong>Thug A shoots Kael:</strong> Rolls 61 against 50. Miss.</li>
       <li><strong>Thug B shoots Sera:</strong> Rolls 55 against 40 (wound penalty). Miss.</li>
     </ul>
 
     <p>
-      <strong>Count 7 &mdash; Kael's sword connects.</strong> Rolls 22 against Melee 65. Hit &mdash;
-      margin 43. Crit range is 2 (skill 65 is in the 51-75 bracket, crits on 63-65). Rolled 22,
-      not a crit. Damage: 1d8+1 = 7. Thug A has no armor. 7 fills his OK tier exactly &mdash;
-      one more hit and he's Harmed.
+      <strong>Count 7 &mdash; Kael's sword connects.</strong> Rolls 22 against Melee 66. Hit &mdash;
+      margin 44. Crit range is 2 (skill 66 is in the 51-75 bracket, crits on 64-66). Rolled 22,
+      not a crit. Damage: 1d8+1 = 7. Thug A has no armor and already took 7 from Sera's Force
+      at count 5 &mdash; his OK tier was full. Kael's 7 damage pushes him straight through
+      Harmed. He's at <strong>-10%</strong> and bleeding.
     </p>
 
     <p>
@@ -1385,10 +2203,18 @@ WOUNDS (HP per tier = 7+PP)     EXHAUSTION (EP per tier = 7+PW)
   Incap     -50%                  Incap      -50%
   Penalties STACK across both tracks
 
+DEATH SAVES: every 3 counts, d100
+  Under 50 = hold | Over 50 = fail | 3 fails = dead
+  01 = stabilize | 00 = instant death
+  Medicine (spd 5) stabilizes | Mend heals
+
 CASTING: fixed time per spell &rarr; roll d100 &rarr; tier by margin
   1-10 Weak | 11-30 Standard | 31-50 Strong | 51+ Spectacular
-  Scholarly: choose tier | Wild: ride the wave
-  Backlash: W5% S10% St15% Sp25%
+  Scholarly: 1d100, choose tier freely
+  Wild: 2d100 (farther from target), +10 bonus, suppress 0-2 tiers
+  Backlash (scholarly): W5% S10% St15% Sp25%
+  Backlash (wild):      W10% S15% St20% Sp30%
+  Concentration check: (PW+4) &times; 10 | Cancel: &frac12; Weak EP, 10% backlash
 
 ACCUMULATION: each spell adds tier value to area
   -3% Reliability per point (all tech) | Decays 1/minute
@@ -1396,9 +2222,19 @@ ACCUMULATION: each spell adds tier value to area
 
 COMBAT: timing track &mdash; declare, place token, resolve on count
   Declaration order: lowest PC first (best react last)
-  Active defense: opposed check, costs +2 speed
-  Armor: Soak absorbs damage, 25% degrade if exceeded
-  Death saves: every 3 counts, 50/50, 3 failures = dead
+  Active defense: Melee/Brawl/Athletics opposed, costs +2 speed
+  Parrying tag: +10% defense | Shields: passive Soak
+  Armor: Soak absorbs damage, 25% degrade if exceeded (Crushing: 50%)
+  Hinder: -5%/pt to PC/Athletics/Stealth/Swimming, +1 cast speed/pt
+
+RANGE: Close (melee) | Near (no mod) | Far (-10%) | Distant (-20%)
+  Sprint: speed 3 to move one band
+  Cover: partial -10%, heavy -20% | Into melee: -10%
+
+MALFUNCTION: d100 &gt; Reliability = malfunction
+  Eff. Reliability = Base - (Accumulation &times; 3)
+  Severity d10: 1-5 Click | 6-7 Jam | 8 Misfire | 9 Mech Fail | 10 Catastrophic
+  Exotics: +1 severity
 
 RECOVERY: HP 1d4/hour | EP 1d8/hour | +1d4 HP with medical care</pre>
     </div>

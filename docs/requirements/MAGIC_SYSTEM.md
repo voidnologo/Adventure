@@ -1,7 +1,7 @@
 # Magic System Design
 
 ## Document Status: DRAFT - In Development
-**Last Updated:** 2026-03-29
+**Last Updated:** 2026-04-02
 
 ---
 
@@ -27,6 +27,8 @@ Dark magic exists in the world but is **NOT player-accessible**. It is one of th
 
 ## 2. Two Paths of Magic
 
+> **Note on PW:** PW (Power) represents **mental fortitude and resilience** first — resistance to stress, fatigue, stun, and the ability to push through when things are hard. For casters, it *also* drives magical attunement. But magic access is a **skill choice**, not gated by PW. Anyone can invest in Scholarly or Wild casting skills. A PW +3 non-caster is simply incredibly mentally tough with a deep EP pool. A PW -3 caster can exist — they'd have 1 school, a handful of spells, and burn out in 2-3 casts. Bad investment, but technically possible.
+
 Every caster follows one of two paths. This is a meaningful character-defining choice with real mechanical consequences.
 
 ### 2.1 Scholarly Path (Control)
@@ -34,7 +36,7 @@ Every caster follows one of two paths. This is a meaningful character-defining c
 The scholarly caster has trained, studied, and disciplined themselves to harness inherently wild forces. They impose structure on chaos through ritual, formula, and practice.
 
 **Mechanical Benefits:**
-- **More spell points** — Training expands your magical capacity. More spells known.
+- **More spells known** — Training expands your magical capacity.
 - **Possibly more schools accessible** — Study opens doors to additional domains of magic.
 - **Choose your tier** — When you cast and qualify for a tier, you can freely choose that tier or any lower one. You decide exactly how much power to channel.
 - **Lower backlash chance** — Training insulates you from the raw burn of magical energy.
@@ -56,7 +58,7 @@ The wild caster has a raw, untrained connection to the mana flows. They are natu
 **Mechanical Limitations:**
 - **Limited tier control** — Wild casters cannot freely choose their tier. They can suppress their result by a number of tiers based on their skill level (see §2.5 Wild Caster Tier Suppression). Novices are at the mercy of the magic; masters learn to rein it in.
 - **Higher backlash chance** — Raw, uninsulated contact with magical forces burns more often.
-- **Fewer spell points / fewer schools** — Less training means less capacity and narrower domain access.
+- **Fewer spells known / fewer schools** — Less training means less capacity and narrower domain access.
 
 ### 2.3 The Trade-Off
 
@@ -65,9 +67,9 @@ The wild caster has a raw, untrained connection to the mana flows. They are natu
 | Casting roll | 1d100 (straight) | 2d100, take roll farther from target |
 | Casting target bonus | None | +10 (natural attunement) |
 | Spells available | Learned spells only (spellbook) | Any spell in your schools |
-| Tier selection | Choose freely (at or below qualified tier) | Can suppress by 0-3 tiers based on skill (see §2.5) |
-| Backlash risk | Base rates (5%/10%/15%/25%) | Higher (exact modifier TBD) |
-| Spell points | More | Fewer |
+| Tier selection | Choose freely (at or below qualified tier) | Can suppress by 0-2 tiers based on skill (see §2.5) |
+| Backlash risk | Base rates (5%/10%/15%/25%) | Higher (working value: +5% flat per tier) |
+| Spells known | More | Fewer |
 | School access | Possibly more schools | Fewer schools |
 | Power ceiling | Reliable but bounded | Unpredictable, swings to extremes |
 
@@ -99,14 +101,14 @@ Wild casters are not purely at the mercy of their roll. As they grow in power, t
 | 1-25 | 0 (locked to rolled tier — true novice, the magic controls you) |
 | 26-50 | 1 |
 | 51-75 | 2 |
-| 76+ | 3 |
+| 76+ | 2 (capped — even masters can't fully tame wild magic) |
 
 **Examples:**
 - Wild caster, target 40: Rolls Spectacular → can step down to Strong (1 tier). Can't go lower.
 - Wild caster, target 65: Rolls Spectacular → can step down to Standard (2 tiers). Can't reach Weak.
-- Wild caster, target 85: Rolls Spectacular → can step down to Weak (3 tiers). Near-full control — but still earned through mastery, not training.
+- Wild caster, target 85: Rolls Spectacular → can step down to Standard (2 tiers). Significant control — but the magic still pushes.
 
-**Design intent:** This creates a progression arc. A novice wild caster is genuinely chaotic — the magic uses them. As they grow, they develop an instinctive feel for controlling the flow. A master wild caster has *almost* as much control as a scholarly caster, but got there through a fundamentally different path (experience and instinct vs. study and discipline). The key remaining difference: scholarly casters always choose freely regardless of skill level. Wild casters earn control.
+**Design intent:** This creates a progression arc. A novice wild caster is genuinely chaotic — the magic uses them. As they grow, they develop an instinctive feel for controlling the flow. A master wild caster has significant control but never *full* control — the wild path always retains an element of unpredictability. The cap at 2 tiers means even a master can't squash Spectacular all the way down to Weak. The key remaining differences: scholarly casters always choose freely regardless of skill level, and wild casters can never fully suppress their results. Wild casters earn control, but the magic always has the last word.
 
 ---
 
@@ -120,7 +122,7 @@ Wild casters are not purely at the mercy of their roll. As they grow in power, t
 
 **Step 3 — Choose tier (Scholarly) / Suppress tier (Wild):**
 - *Scholarly casters* choose any tier at or below what they qualified for. Want to save exhaustion? Take the Weak result even though you rolled Strong. Full control at any skill level.
-- *Wild casters* can suppress their result by a number of tiers based on their casting target (see §2.5). A novice (target 1-25) is locked to what they rolled. A master (target 76+) can step down up to 3 tiers.
+- *Wild casters* can suppress their result by a number of tiers based on their casting target (see §2.5). A novice (target 1-25) is locked to what they rolled. A master (target 76+) can step down up to 2 tiers.
 
 **Step 4 — Apply costs:** Each tier of each spell has its own exhaustion cost. Higher tiers cost more. Casting time is fixed per spell (not per tier) — tier measures power drawn, not time spent. See SPELL_COMPENDIUM.md for casting times and exhaustion costs.
 
@@ -176,14 +178,14 @@ Each spell's description includes per-tier costs. These are designed using hidde
 
 The player sees the final numbers per tier in the spell description. For example, a spell entry might read:
 
-> **Mend** (Vivimancy)
-> | Tier | Exhaustion | Casting Time | Effect |
-> |------|-----------|--------------|--------|
-> | Weak | 3 | 4 counts | Close a minor wound, stop bleeding |
-> | Standard | 6 | 6 counts | Heal moderate injury, knit cracked bone |
-> | Strong | 10 | 8 counts | Mend broken bones, cure disease, heal serious wounds |
-> | Spectacular | 15 | 12 counts | Regrow lost tissue, purge deep corruption, pull someone back from the edge of death |
-> | *Misfire* | 3 | — | *The spell inverts — drains vitality from the target instead of restoring it* |
+> **Mend** (Vivimancy) — Casting Time: 5ct
+> | Tier | Exhaustion | Effect |
+> |------|-----------|--------|
+> | Weak | 4 | Close a minor wound, stop bleeding |
+> | Standard | 8 | Heal moderate injury, knit cracked bone |
+> | Strong | 12 | Mend broken bones, cure disease, heal serious wounds |
+> | Spectacular | 18 | Regrow lost tissue, purge deep corruption, pull someone back from the edge of death |
+> | *Misfire* | 4 | *The spell inverts — drains vitality from the target instead of restoring it* |
 
 *(Note: These specific numbers are placeholders — actual values will be determined by the hidden design formula during spell creation.)*
 
@@ -193,14 +195,14 @@ Backlash is **separate from misfire**. Misfire = the spell goes wrong (spell-spe
 
 **Backlash chance scales with tier used** — higher tier = more power channeled = more chance of getting burned:
 
-| Tier Used | Scholarly Backlash Chance | Wild Backlash Chance (TBD) |
-|-----------|--------------------------|---------------------------|
-| Weak | 5% | Higher |
-| Standard | 10% | Higher |
-| Strong | 15% | Higher |
-| Spectacular | 25% | Higher |
+| Tier Used | Scholarly Backlash Chance | Wild Backlash Chance (+5% flat) |
+|-----------|--------------------------|--------------------------------|
+| Weak | 5% | 10% |
+| Standard | 10% | 15% |
+| Strong | 15% | 20% |
+| Spectacular | 25% | 30% |
 
-> **OPEN:** Exact wild caster backlash modifier TBD. Options: flat +5% per tier, or multiply by 1.5×, etc.
+> **NOTE:** Wild caster backlash modifier is +5% flat per tier (working value from simulation — see session 3). Final tuning pending playtesting.
 
 #### 3.4.1 Backlash Effects
 
@@ -264,13 +266,21 @@ This creates genuine heroic sacrifice moments — a caster *can* push past their
 
 Because spells take time on the timing track, they can be interrupted. If a caster takes damage while casting (between declaring the spell and its resolution on the timing track), they must make a **concentration check** to maintain the spell.
 
-> **OPEN:** Concentration check mechanics need design. Key questions:
-> - What do you roll? PW check? Flat percentage? Opposed roll?
-> - Does the amount of damage taken affect difficulty?
-> - On failure, does the spell simply fizzle, or does it misfire?
-> - Does the caster still pay exhaustion on an interrupted spell? (Probably yes — partial cost, similar to cancellation)
->
-> This interacts with the timing track in a tactically interesting way: if you can see an enemy caster begin casting at count 3 with resolution at count 7, you have a 4-count window to hit them and force a concentration check. Fast weapons (daggers, punches) become valuable for disrupting casters. This is an emergent tactical layer that arises naturally from the timing track + casting time system.
+**Concentration check:** Roll d100 under **(PW + 4) × 10**. Any damage triggers one check, regardless of amount. On failure, the spell fizzles — treat as cancellation (half Weak tier exhaustion cost, 10% backlash chance). The caster may choose to voluntarily abort instead of rolling.
+
+| PW | Target | Chance |
+|----|--------|--------|
+| -3 | 10% | Very hard |
+| -2 | 20% | Hard |
+| -1 | 30% | Difficult |
+| 0 | 40% | Coin-flip minus |
+| +1 | 50% | Even odds |
+| +2 | 60% | Favored |
+| +3 | 70% | Reliable |
+
+This interacts with the timing track in a tactically interesting way: if you can see an enemy caster begin casting at count 3 with resolution at count 7, you have a 4-count window to hit them and force a concentration check. Fast weapons (daggers, punches) become valuable for disrupting casters. This is an emergent tactical layer that arises naturally from the timing track + casting time system.
+
+> **PLAYTEST NOTE:** (PW + 4) × 10 is provisional. May need tuning — should damage amount affect the check? For now, keep it simple: any damage = one check, flat target.
 
 ---
 
@@ -461,10 +471,10 @@ Each spell needs a unique misfire description that:
 5. **Push It mechanic details** — Exact costs and risks of pushing for a higher tier
 6. **Mid-campaign spell learning** — Can scholarly casters find/learn new spells? Can wild casters develop control?
 7. **Spell interaction with magic/tech zones** — How do zone levels modify casting? Penalty to target number? Forced tier reduction? Automatic backlash increase?
-8. **Individual spell tier tables** — The 37 spells each need full tier descriptions, costs, casting times, and misfire effects. This is the single largest remaining design task. Force and Mend drafted as templates (see §9).
-9. ~~**Wild caster tier suppression**~~ **RESOLVED** — Can step down tiers based on 25% skill brackets (0/1/2/3 tiers at 1-25/26-50/51-75/76+). Mirrors crit range mechanic.
+8. ~~**Individual spell tier tables**~~ **RESOLVED** — All 37 spells designed with full tier tables, costs, casting times, and misfire effects. See SPELL_COMPENDIUM.md (Session 2).
+9. ~~**Wild caster tier suppression**~~ **RESOLVED** — Can step down tiers based on 25% skill brackets (0/1/2/2 tiers at 1-25/26-50/51-75/76+). Capped at 2 — even masters can't fully tame wild magic. Mirrors crit range mechanic.
 10. ~~**Exhaustion overflow**~~ **RESOLVED** — Spell fires, remaining EP spent to zero, overflow converts to physical HP damage at half rate (rounded down).
-11. **Casting interruption** — Concentration check when damaged mid-cast. Mechanics TBD (what to roll, does damage affect difficulty, misfire vs fizzle on failure).
+11. ~~**Casting interruption**~~ **RESOLVED** — Concentration check: (PW + 4) × 10, roll d100 under. Any damage = one check. Failure = fizzle (treated as cancellation). See §3.7 and COMBAT_PROCEDURE.md. (Session 5)
 
 ---
 
@@ -473,17 +483,17 @@ Each spell needs a unique misfire description that:
 These two spells serve as the design templates for all 37 spells. Force (Complexity 1) establishes the baseline for simple, direct magic. Mend (Complexity 3) establishes the baseline for complex, intricate magic. All other spells should be designed using the same hidden formula framework, with individual adjustments where the fiction demands.
 
 ### 9.1 Force (Aetheric Manipulation)
-*Complexity: 1 (simple, raw force)*
+*Complexity: 1 (simple, raw force) — Casting Time: 2ct*
 
 Push, pull, strike, crush with raw magical force. Invisible, blunt, undeniable. The most basic expression of Aetheric power — you grab the raw stuff of magic and hurl it at the problem.
 
-| Tier | Exhaustion | Casting Time | Damage | Effect |
-|------|-----------|--------------|--------|--------|
-| **Weak** | 2 | 2 counts | 1d4 | A blunt shove of force. Enough to knock someone back a step, slam a door, shove an object off a table. Can wind or stagger a target. Like getting hit with an invisible fist. |
-| **Standard** | 4 | 3 counts | 2d6 | A solid, focused blast. Cracks wood, dents metal, sends a person stumbling or flying back several feet. Can knock a target prone. Comparable to being hit by a charging horse. |
-| **Strong** | 6 | 4 counts | 3d8 | A crushing wave of force. Splinters doors, buckles armor, hurls a person across a room. Can affect a small group if tightly clustered. Shatters glass and loose objects in the area. Comparable to being hit by a car. |
-| **Spectacular** | 10 | 6 counts | 4d10 | Devastating, concussive impact. Collapses walls, caves in structures, sends multiple targets flying. Can level a small building or clear a street. The air visibly distorts. Everyone nearby feels the shockwave. |
-| *Misfire* | 2 | — | 1d6 to caster | *The force rebounds — the caster is hurled backward and takes the impact themselves. Nearby allies may be caught in the blast.* |
+| Tier | Exhaustion | Damage | Effect |
+|------|-----------|--------|--------|
+| **Weak** | 2 | 1d4 | A blunt shove of force. Enough to knock someone back a step, slam a door, shove an object off a table. Can wind or stagger a target. Like getting hit with an invisible fist. |
+| **Standard** | 4 | 2d6 | A solid, focused blast. Cracks wood, dents metal, sends a person stumbling or flying back several feet. Can knock a target prone. Comparable to being hit by a charging horse. |
+| **Strong** | 6 | 3d8 | A crushing wave of force. Splinters doors, buckles armor, hurls a person across a room. Can affect a small group if tightly clustered. Shatters glass and loose objects in the area. Comparable to being hit by a car. |
+| **Spectacular** | 10 | 4d10 | Devastating, concussive impact. Collapses walls, caves in structures, sends multiple targets flying. Can level a small building or clear a street. The air visibly distorts. Everyone nearby feels the shockwave. |
+| *Misfire* | 2 | 1d6 to caster | *The force rebounds — the caster is hurled backward and takes the impact themselves. Nearby allies may be caught in the blast.* |
 
 **Design notes:**
 - Damage at Weak (1d4, avg 2.5) is deliberately below a longsword (1d8) — Force is fast (2 counts vs 5 for a longsword) and requires no weapon, so lower damage balances the convenience.
@@ -491,48 +501,48 @@ Push, pull, strike, crush with raw magical force. Invisible, blunt, undeniable. 
 - At Spectacular (4d10, avg 22), can nearly drop a full-health character in one hit. But at 10 exhaustion, you can do this maybe twice before serious consequences.
 
 ### 9.2 Mend (Vivimancy)
-*Complexity: 3 (complex, biological systems)*
+*Complexity: 3 (complex, biological systems) — Casting Time: 5ct*
 
 Heal wounds, knit bone, cure disease, purge poison. The most valued spell in the world — and the one that makes people most uncomfortable about what else Vivimancers might be capable of. Healing is expensive because you're manipulating the full complexity of living biological systems.
 
-| Tier | Exhaustion | Casting Time | Healing | Effect |
-|------|-----------|--------------|---------|--------|
-| **Weak** | 4 | 4 counts | 1d4 HP | Stop bleeding, close a shallow wound, dull pain. Enough to stabilize someone who's hurt but not keep them in a fight. |
-| **Standard** | 8 | 6 counts | 2d6 HP | Heal a moderate wound, knit a cracked bone, neutralize a common poison. Can pull someone back from the edge of Maimed to functional. |
-| **Strong** | 12 | 8 counts | 3d8 HP | Mend broken bones, cure disease, close deep wounds, purge serious poison. Can bring someone back from Incapacitated to Harmed. |
-| **Spectacular** | 18 | 12 counts | 4d10 HP | Regrow lost tissue, purge deep corruption, mend catastrophic injury, pull someone back from the edge of death. The target is visibly, dramatically healed — flesh knits, color returns, bones snap into place. Witnesses never forget it. |
-| *Misfire* | 4 | — | -1d6 HP (drains) | *The spell inverts — drains vitality from the target instead of healing. The caster's hands blacken briefly. If used on someone in Incapacitated, this could trigger death saves.* |
+| Tier | Exhaustion | Healing | Effect |
+|------|-----------|---------|--------|
+| **Weak** | 4 | 1d4 HP | Stop bleeding, close a shallow wound, dull pain. Enough to stabilize someone who's hurt but not keep them in a fight. |
+| **Standard** | 8 | 2d6 HP | Heal a moderate wound, knit a cracked bone, neutralize a common poison. Can pull someone back from the edge of Maimed to functional. |
+| **Strong** | 12 | 3d8 HP | Mend broken bones, cure disease, close deep wounds, purge serious poison. Can bring someone back from Incapacitated to Harmed. |
+| **Spectacular** | 18 | 4d10 HP | Regrow lost tissue, purge deep corruption, mend catastrophic injury, pull someone back from the edge of death. The target is visibly, dramatically healed — flesh knits, color returns, bones snap into place. Witnesses never forget it. |
+| *Misfire* | 4 | -1d6 HP (drains) | *The spell inverts — drains vitality from the target instead of healing. The caster's hands blacken briefly. If used on someone in Incapacitated, this could trigger death saves.* |
 
 **Design notes:**
 - Mend costs roughly 2× Force at every tier — Complexity 3 vs Complexity 1. This makes healing precious and limited; a dedicated healer can't just spam it.
-- Casting times are significantly longer than Force. Healing takes time; you're knitting biological systems back together.
+- Casting time (5ct) is longer than Force (2ct). Healing takes time; you're knitting biological systems back together.
 - A caster with 28 EP can cast Mend at Standard (8 exhaustion) 3 times before hitting Weakened. Healing is a limited resource — use it wisely.
 - Spectacular Mend at 18 exhaustion is deliberately punishing. Miraculous healing should cost you almost everything. This is the kind of cast where exhaustion overflow (§3.6.1) is a real possibility.
 - The misfire is intentionally horrifying — inverting a healing spell into a drain creates high drama and reinforces that magic is dangerous.
 
 ### 9.3 Cost Comparison — The Hidden Formula at Work
 
-| Tier | Complexity 1 (Force) | Complexity 3 (Mend) | Ratio |
-|------|---------------------|---------------------|-------|
-| Weak | 2 exhaust / 2 counts | 4 exhaust / 4 counts | ~2× |
-| Standard | 4 exhaust / 3 counts | 8 exhaust / 6 counts | 2× |
-| Strong | 6 exhaust / 4 counts | 12 exhaust / 8 counts | 2× |
-| Spectacular | 10 exhaust / 6 counts | 18 exhaust / 12 counts | ~1.8× |
+| Tier | Complexity 1 (Force, 2ct) | Complexity 3 (Mend, 5ct) | Exhaust Ratio |
+|------|--------------------------|--------------------------|---------------|
+| Weak | 2 exhaust | 4 exhaust | 2× |
+| Standard | 4 exhaust | 8 exhaust | 2× |
+| Strong | 6 exhaust | 12 exhaust | 2× |
+| Spectacular | 10 exhaust | 18 exhaust | ~1.8× |
 
-This ratio should hold roughly consistent across all spells of similar complexity. Complexity 2 spells (elemental manipulation, material reshaping) should fall between these two benchmarks.
+Casting time is fixed per spell (Force always 2ct, Mend always 5ct) — tier only scales exhaustion cost, not time. This ratio should hold roughly consistent across all spells of similar complexity. Complexity 2 spells (elemental manipulation, material reshaping) should fall between these two benchmarks.
 
 ### 9.4 Shield (Warding)
-*Complexity: 2 (moderate — creating and sustaining a magical barrier)*
+*Complexity: 2 (moderate — creating and sustaining a magical barrier) — Casting Time: 3ct*
 
 Personal magical protection against harm. A force that absorbs, deflects, or redirects incoming damage. The bread-and-butter of Warding — everyone wants a Warder nearby.
 
-| Tier | Exhaustion | Casting Time | Effect |
-|------|-----------|--------------|--------|
-| **Weak** | 3 | 3 counts | A flickering, fragile shell. Absorbs the next **4 points** of damage from a single source, then shatters. Lasts until hit or 1 minute. Visible as a faint shimmer. |
-| **Standard** | 6 | 4 counts | A solid barrier. Absorbs **8 points** of damage, can take multiple hits until depleted. Lasts up to 10 minutes. Visible as a faint glow around the caster. |
-| **Strong** | 9 | 6 counts | A resilient ward. Absorbs **15 points** of damage across any number of hits. Lasts up to 1 hour. Can be extended to one adjacent ally. Hums faintly when struck. |
-| **Spectacular** | 14 | 8 counts | A blazing aegis. Absorbs **25 points** of damage. Lasts up to several hours. Can cover a small group (3-4 people). Visibly radiant — everyone can see you're warded. |
-| *Misfire* | 3 | — | *The shield inverts — instead of protecting, it amplifies the next source of damage the caster takes by 1d4. The caster doesn't know until they're hit.* |
+| Tier | Exhaustion | Effect |
+|------|-----------|--------|
+| **Weak** | 3 | A flickering, fragile shell. Absorbs the next **4 points** of damage from a single source, then shatters. Lasts until hit or 1 minute. Visible as a faint shimmer. |
+| **Standard** | 6 | A solid barrier. Absorbs **8 points** of damage, can take multiple hits until depleted. Lasts up to 10 minutes. Visible as a faint glow around the caster. |
+| **Strong** | 9 | A resilient ward. Absorbs **15 points** of damage across any number of hits. Lasts up to 1 hour. Can be extended to one adjacent ally. Hums faintly when struck. |
+| **Spectacular** | 14 | A blazing aegis. Absorbs **25 points** of damage. Lasts up to several hours. Can cover a small group (3-4 people). Visibly radiant — everyone can see you're warded. |
+| *Misfire* | 3 | *The shield inverts — instead of protecting, it amplifies the next source of damage the caster takes by 1d4. The caster doesn't know until they're hit.* |
 
 **Design notes:**
 - Soak values are calibrated against weapon damage. Weak Shield (4 soak) absorbs one dagger hit. Standard (8) absorbs one longsword hit. Strong (15) can tank a Strong-tier Force blast. Proportional to the threat landscape.
@@ -541,17 +551,17 @@ Personal magical protection against harm. A force that absorbs, deflects, or red
 - The misfire is insidious — you think you're protected, but you're actually more vulnerable. Creates dramatic reveals in combat.
 
 ### 9.5 Reveal (Divination)
-*Complexity: 2 (moderate — extending perception beyond normal senses)*
+*Complexity: 2 (moderate — extending perception beyond normal senses) — Casting Time: 3ct*
 
 See hidden things: invisible objects, concealed doors, disguised creatures, buried items. The world becomes transparent to you. Essential for investigators, relic hunters, and anyone navigating areas altered by magic.
 
-| Tier | Exhaustion | Casting Time | Effect |
-|------|-----------|--------------|--------|
-| **Weak** | 3 | 3 counts | A brief flash of enhanced perception. You notice one hidden thing within arm's reach — a concealed pocket, a hidden latch, a disguised face. Instantaneous, like a camera flash of truth. |
-| **Standard** | 6 | 5 counts | Sustained enhanced perception for several minutes. Hidden objects, secret doors, and concealed creatures within a room become apparent to you. Magical concealments shimmer at the edges. |
-| **Strong** | 9 | 7 counts | Deep sight lasting up to an hour. See through thin walls, detect buried objects underground, pierce magical disguises and illusions. Range extends to a large building. Hidden things glow faintly in your vision. |
-| **Spectacular** | 14 | 10 counts | The veil is stripped away completely. For several hours, nothing within a city block can hide from you. See through solid matter, detect hidden rooms, buried vaults, concealed passages. Magical concealment of any strength is visible to you. Your eyes visibly change — pupils dilate to impossible size, irises glow. Overwhelming if not focused — the caster must concentrate to filter the flood of information or suffer -10% to all other actions. |
-| *Misfire* | 3 | — | *You see things that aren't there. The GM introduces 1d3 false hidden objects, doors, or creatures that appear completely real to you. You cannot tell them from genuine revelations until you interact with them.* |
+| Tier | Exhaustion | Effect |
+|------|-----------|--------|
+| **Weak** | 3 | A brief flash of enhanced perception. You notice one hidden thing within arm's reach — a concealed pocket, a hidden latch, a disguised face. Instantaneous, like a camera flash of truth. |
+| **Standard** | 6 | Sustained enhanced perception for several minutes. Hidden objects, secret doors, and concealed creatures within a room become apparent to you. Magical concealments shimmer at the edges. |
+| **Strong** | 9 | Deep sight lasting up to an hour. See through thin walls, detect buried objects underground, pierce magical disguises and illusions. Range extends to a large building. Hidden things glow faintly in your vision. |
+| **Spectacular** | 14 | The veil is stripped away completely. For several hours, nothing within a city block can hide from you. See through solid matter, detect hidden rooms, buried vaults, concealed passages. Magical concealment of any strength is visible to you. Your eyes visibly change — pupils dilate to impossible size, irises glow. Overwhelming if not focused — the caster must concentrate to filter the flood of information or suffer -10% to all other actions. |
+| *Misfire* | 3 | *You see things that aren't there. The GM introduces 1d3 false hidden objects, doors, or creatures that appear completely real to you. You cannot tell them from genuine revelations until you interact with them.* |
 
 **Design notes:**
 - Divination spells are about information, not damage. The "cost" is exhaustion, but the value is narrative — what you learn shapes decisions.
@@ -560,17 +570,17 @@ See hidden things: invisible objects, concealed doors, disguised creatures, buri
 - Spectacular has a built-in drawback beyond cost: sensory overload. Seeing everything is not always comfortable. The -10% penalty for not concentrating gives it mechanical teeth.
 
 ### 9.6 Reshape (Transmutation)
-*Complexity: 2 (moderate — altering physical form without changing substance)*
+*Complexity: 2 (moderate — altering physical form without changing substance) — Casting Time: 3ct*
 
 Change the form of an object without changing its material. Bend bars, shape stone, mold metal, sculpt wood. The material stays the same; the shape obeys you. The workhorse spell of Transmutation — practical, versatile, and the reason Transmuters are always in demand.
 
-| Tier | Exhaustion | Casting Time | Effect |
-|------|-----------|--------------|--------|
-| **Weak** | 3 | 3 counts | Reshape a small, simple object — bend a nail, flatten a coin, warp a key, seal a crack in a cup. Up to roughly a handful of material. Changes are crude, like working clay with your fingers. |
-| **Standard** | 6 | 5 counts | Reshape a moderate object with reasonable precision — bend iron bars apart, mold a stone block into a different shape, reshape a lock mechanism, sculpt a tool from raw material. Up to roughly a single object you could carry. |
-| **Strong** | 9 | 7 counts | Reshape a large object or multiple smaller ones with fine control — warp a door out of its frame, open a doorway through a thin wall, sculpt a detailed statue from a boulder, bend a vehicle chassis. Precise enough for functional mechanical parts. |
-| **Spectacular** | 14 | 10 counts | Reshape a small structure or create intricate, precise works — create a passageway through a thick wall, reshape a room's architecture, forge a perfectly functional mechanism from raw metal, collapse or restructure a small building. The material flows like liquid under your will. Witnesses describe it as deeply unsettling to watch. |
-| *Misfire* | 3 | — | *The reshaping hits the wrong target — an object on the caster's person warps and deforms. A weapon bends, armor crumples, a tool becomes useless. GM chooses the most inconvenient item.* |
+| Tier | Exhaustion | Effect |
+|------|-----------|--------|
+| **Weak** | 3 | Reshape a small, simple object — bend a nail, flatten a coin, warp a key, seal a crack in a cup. Up to roughly a handful of material. Changes are crude, like working clay with your fingers. |
+| **Standard** | 6 | Reshape a moderate object with reasonable precision — bend iron bars apart, mold a stone block into a different shape, reshape a lock mechanism, sculpt a tool from raw material. Up to roughly a single object you could carry. |
+| **Strong** | 9 | Reshape a large object or multiple smaller ones with fine control — warp a door out of its frame, open a doorway through a thin wall, sculpt a detailed statue from a boulder, bend a vehicle chassis. Precise enough for functional mechanical parts. |
+| **Spectacular** | 14 | Reshape a small structure or create intricate, precise works — create a passageway through a thick wall, reshape a room's architecture, forge a perfectly functional mechanism from raw metal, collapse or restructure a small building. The material flows like liquid under your will. Witnesses describe it as deeply unsettling to watch. |
+| *Misfire* | 3 | *The reshaping hits the wrong target — an object on the caster's person warps and deforms. A weapon bends, armor crumples, a tool becomes useless. GM chooses the most inconvenient item.* |
 
 **Design notes:**
 - Reshape is pure utility — no damage, no healing, but enormous problem-solving potential. Locked door? Reshape the hinges. Trapped in a cell? Bend the bars. Need a tool? Make one.
@@ -578,19 +588,19 @@ Change the form of an object without changing its material. Bend bars, shape sto
 - The misfire targets the caster's equipment — thematically perfect (the reshaping energy hit the wrong thing) and mechanically impactful without being deadly.
 
 ### 9.7 Sever (Ley Weaving)
-*Complexity: 4 (very complex — cutting a caster's connection to mana flows)*
+*Complexity: 4 (very complex — cutting a caster's connection to mana flows) — Casting Time: 8ct*
 
 Cut a caster's connection to mana flows. Temporarily strip magical ability. The most feared spell in the game — and the one that makes other casters avoid Ley Weavers. Using this on someone feels violent and invasive even though it deals no physical damage. The magical equivalent of blinding someone.
 
 **Sever is a targeted spell against another caster and is resolved as an opposed check** (see PROJECT_SPEC.md §3.1b). The Ley Weaver rolls their casting target; the defending caster rolls their own casting target (PW-based) to resist. If the defender's margin of success exceeds the attacker's, the Sever is fought off entirely. If the attacker wins, the Sever lands at the tier achieved.
 
-| Tier | Exhaustion | Casting Time | Effect |
-|------|-----------|--------------|--------|
-| **Weak** | 6 | 5 counts | A brief, jarring disruption. Target caster's connection flickers — their current casting is interrupted (forces concentration check at -20%), and they suffer -10% to casting for 1d4 rounds. They feel it like a sudden headache. |
-| **Standard** | 10 | 7 counts | The connection frays. Target cannot cast for 1d4 minutes. Active magical effects they're sustaining (shields, wards) begin to fade. They feel hollow, dizzy, like a sense has been cut off. Deeply unpleasant. |
-| **Strong** | 16 | 10 counts | The connection is severed. Target cannot cast for 1d4 hours. All active magical effects they're sustaining collapse immediately. They feel deaf and blind to the magical world. Psychologically distressing — many targets panic. |
-| **Spectacular** | 24 | 14 counts | Complete severance. Target cannot cast for 1d4 days. Their connection to mana is utterly silenced. Magical items on their person may temporarily lose attunement. The target often describes it as the worst experience of their life — a profound, existential emptiness. Other casters nearby can feel the severance happen, like a shockwave of absence. |
-| *Misfire* | 6 | — | *The severance rebounds — the caster severs their own connection. They cannot cast for 1d4 hours and all their active effects collapse. The psychic shock deals 1d4 damage.* |
+| Tier | Exhaustion | Effect |
+|------|-----------|--------|
+| **Weak** | 6 | A brief, jarring disruption. Target caster's connection flickers — their current casting is interrupted (forces concentration check at -20%), and they suffer -10% to casting for 1d4 rounds. They feel it like a sudden headache. |
+| **Standard** | 10 | The connection frays. Target cannot cast for 1d4 minutes. Active magical effects they're sustaining (shields, wards) begin to fade. They feel hollow, dizzy, like a sense has been cut off. Deeply unpleasant. |
+| **Strong** | 16 | The connection is severed. Target cannot cast for 1d4 hours. All active magical effects they're sustaining collapse immediately. They feel deaf and blind to the magical world. Psychologically distressing — many targets panic. |
+| **Spectacular** | 24 | Complete severance. Target cannot cast for 1d4 days. Their connection to mana is utterly silenced. Magical items on their person may temporarily lose attunement. The target often describes it as the worst experience of their life — a profound, existential emptiness. Other casters nearby can feel the severance happen, like a shockwave of absence. |
+| *Misfire* | 6 | *The severance rebounds — the caster severs their own connection. They cannot cast for 1d4 hours and all their active effects collapse. The psychic shock deals 1d4 damage.* |
 
 **Design notes:**
 - Sever is the most expensive spell designed so far — Complexity 4. Spectacular Sever at 24 exhaustion will overflow for almost any caster. Shutting down another caster's magic for days should cost you nearly everything.
@@ -601,13 +611,13 @@ Cut a caster's connection to mana flows. Temporarily strip magical ability. The 
 
 ### 9.8 Cost Comparison — All Six Templates
 
-| Spell | School | Complexity | Weak | Standard | Strong | Spectacular |
-|-------|--------|-----------|------|----------|--------|-------------|
-| Force | Aetheric | 1 | 2 / 2ct | 4 / 3ct | 6 / 4ct | 10 / 6ct |
-| Shield | Warding | 2 | 3 / 3ct | 6 / 4ct | 9 / 6ct | 14 / 8ct |
-| Reveal | Divination | 2 | 3 / 3ct | 6 / 5ct | 9 / 7ct | 14 / 10ct |
-| Reshape | Transmutation | 2 | 3 / 3ct | 6 / 5ct | 9 / 7ct | 14 / 10ct |
-| Mend | Vivimancy | 3 | 4 / 4ct | 8 / 6ct | 12 / 8ct | 18 / 12ct |
-| Sever | Ley Weaving | 4 | 6 / 5ct | 10 / 7ct | 16 / 10ct | 24 / 14ct |
+| Spell | School | Complexity | Casting Time | Weak | Standard | Strong | Spectacular |
+|-------|--------|-----------|-------------|------|----------|--------|-------------|
+| Force | Aetheric | 1 | 2ct | 2 EP | 4 EP | 6 EP | 10 EP |
+| Shield | Warding | 2 | 3ct | 3 EP | 6 EP | 9 EP | 14 EP |
+| Reveal | Divination | 2 | 3ct | 3 EP | 6 EP | 9 EP | 14 EP |
+| Reshape | Transmutation | 2 | 3ct | 3 EP | 6 EP | 9 EP | 14 EP |
+| Mend | Vivimancy | 3 | 4ct | 4 EP | 8 EP | 12 EP | 18 EP |
+| Sever | Ley Weaving | 4 | 8ct | 6 EP | 10 EP | 16 EP | 24 EP |
 
-The complexity-to-cost pattern is consistent and predictable. All remaining spells should be designable by assigning a complexity rating and applying this framework.
+Casting time is fixed per spell — tier only scales exhaustion cost. The complexity-to-cost pattern is consistent and predictable. All remaining spells should be designable by assigning a complexity rating and applying this framework.
