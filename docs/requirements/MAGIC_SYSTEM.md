@@ -37,7 +37,7 @@ The scholarly caster has trained, studied, and disciplined themselves to harness
 
 **Mechanical Benefits:**
 - **More spells known** — Training expands your magical capacity.
-- **Possibly more schools accessible** — Study opens doors to additional domains of magic.
+- **Access to all six schools** — Study opens every domain. A scholarly caster can learn spells from any school, giving them unmatched breadth.
 - **Choose your tier** — When you cast and qualify for a tier, you can freely choose that tier or any lower one. You decide exactly how much power to channel.
 - **Lower backlash chance** — Training insulates you from the raw burn of magical energy.
 
@@ -58,7 +58,7 @@ The wild caster has a raw, untrained connection to the mana flows. They are natu
 **Mechanical Limitations:**
 - **Limited tier control** — Wild casters cannot freely choose their tier. They can suppress their result by a number of tiers based on their skill level (see §2.5 Wild Caster Tier Suppression). Novices are at the mercy of the magic; masters learn to rein it in.
 - **Higher backlash chance** — Raw, uninsulated contact with magical forces burns more often.
-- **Fewer spells known / fewer schools** — Less training means less capacity and narrower domain access.
+- **Fewer schools** — Wild casters access a number of schools equal to their PW modifier (minimum 1). Their instinctive connection is deep but narrow.
 
 ### 2.3 The Trade-Off
 
@@ -69,8 +69,8 @@ The wild caster has a raw, untrained connection to the mana flows. They are natu
 | Spells available | Learned spells only (spellbook) | Any spell in your schools |
 | Tier selection | Choose freely (at or below qualified tier) | Can suppress by 0-2 tiers based on skill (see §2.5) |
 | Backlash risk | Base rates (5%/10%/15%/25%) | Higher (working value: +5% flat per tier) |
-| Spells known | More | Fewer |
-| School access | Possibly more schools | Fewer schools |
+| Spells known | 7 + PW learned spells (can buy more at 3 pts each) | All spells in your schools |
+| School access | All six schools | PW modifier schools (min 1) |
 | Power ceiling | Reliable but bounded | Unpredictable, swings to extremes |
 
 ### 2.4 Wild Caster Variance Mechanic
@@ -128,7 +128,9 @@ Wild casters are not purely at the mercy of their roll. As they grow in power, t
 
 **Step 5 — Backlash check:** Separate from spell success. Even a clean, successful cast can burn you. Backlash chance scales with the tier used — more power pulled, more risk of getting burned.
 
-**Step 6 — Push it (optional):** After seeing your result, you can try to squeeze out more power. This **always** costs extra (additional exhaustion, increased backlash chance). You can **never** push past your hard cap — if your stat doesn't allow Spectacular, pushing won't get you there.
+**Step 6 — Push It (optional):** After seeing your result, you can try to squeeze out more power — pushing your result up by **one tier**. Push It costs **half the qualified tier's exhaustion + the full pushed tier's exhaustion**, and backlash chance is **doubled** at the pushed tier's rate. You can **never** push past your hard cap — if your stat doesn't allow Spectacular, pushing won't get you there. One push per cast.
+
+*Example: You cast Force (C1) and qualify for Standard (cost 4). You push to Strong (cost 6). Push It cost = ½(4) + 6 = 8 exhaustion. Backlash at Strong is normally 15% — pushed, it's 30%.*
 
 **On failure (roll over target):** The spell **misfires**. Each spell has its own misfire description — the magic goes wrong in a spell-specific, narratively interesting way. A healing spell might drain instead of mend. A force blast might rebound. A divination might show you something horrifying and false.
 
@@ -396,13 +398,13 @@ The rarest and most feared school. Ley Weavers don't cast spells so much as resh
 
 ### 5.2 Schools Accessible
 
-- Number of schools a caster can access equals **PW modifier** (minimum 1)
-- Scholarly casters may have access to additional schools (exact bonus TBD)
+- **Scholarly casters** have access to **all six schools**. Their study and discipline lets them learn from any domain — but they must learn each spell individually.
+- **Wild casters** access a number of schools equal to their **PW modifier** (minimum 1). Their instinctive connection runs deep but narrow — they can't branch into schools they don't feel.
 
 ### 5.3 Scholarly vs Wild Acquisition
 
-- **Scholarly:** Choose specific spells from your accessible schools. These go in your spellbook. You can only cast spells in your book.
-- **Wild:** You don't choose individual spells. You have access to your schools as a whole. You can attempt any spell in any of your accessible schools — but you get what the magic gives you.
+- **Scholarly:** Choose specific spells from **any school**. These go in your spellbook. You can only cast spells in your book. Breadth of access, limited selection.
+- **Wild:** You don't choose individual spells. You have access to your schools **as a whole** — every spell in every school you can reach. You can attempt any spell in any of your accessible schools. Narrow access, complete depth.
 
 > **OPEN:** Can scholarly casters learn new spells mid-campaign through research, mentorship, or discovery? Can wild casters develop more control over time (hybrid progression)?
 
@@ -465,10 +467,10 @@ Each spell needs a unique misfire description that:
 ## 8. Open Questions
 
 1. ~~**Wild caster variance mechanic**~~ **RESOLVED** — 2d100 take roll farther from target, +10 casting target bonus
-2. **Scholarly bonus to schools** — How many extra schools does scholarly training grant? +1? Based on IN?
+2. ~~**Scholarly bonus to schools**~~ **RESOLVED** — Scholarly casters have access to all six schools. Wild casters access PW modifier schools (min 1). Scholarly = breadth, Wild = depth. (Session 8)
 3. ~~**Backlash severity**~~ **RESOLVED** — 1d4 flat physical damage + 25% chance of Wild Effect (d10 table with 3-tier escalation, permanent on 3rd)
 4. **Wild vs Scholarly backlash rates** — Exact multiplier/modifier for wild casters' higher backlash chance
-5. **Push It mechanic details** — Exact costs and risks of pushing for a higher tier
+5. ~~**Push It mechanic details**~~ **RESOLVED** — Push one tier up. Cost: half qualified tier's EP + full pushed tier's EP. Backlash: doubled at pushed tier's rate. Hard cap applies. One push per cast. (Session 8)
 6. **Mid-campaign spell learning** — Can scholarly casters find/learn new spells? Can wild casters develop control?
 7. **Spell interaction with magic/tech zones** — How do zone levels modify casting? Penalty to target number? Forced tier reduction? Automatic backlash increase?
 8. ~~**Individual spell tier tables**~~ **RESOLVED** — All 37 spells designed with full tier tables, costs, casting times, and misfire effects. See SPELL_COMPENDIUM.md (Session 2).

@@ -1,17 +1,13 @@
 # Pending Tasks
 
 ## Next Up
+- [ ] Visual design pass on web rulebook (content complete, needs styling review)
 - [ ] Define major factions and their Adventuring Societies
 - [ ] Design leveling/progression mechanics (Mouse Guard / Symbaroum inspired)
-- [ ] Design magic/tech interference zone mechanics (framework in FIREARMS_EQUIPMENT.md §5, full rules needed)
+- [ ] Design "Push Timing" mechanic — rush any timed action by 1-5 counts with escalating failure consequences. Push 1: fail = +1 count. Push 2: fail = fumble. Push 3-5: fail = serious consequence. Creates "hurry hurry" tension. Applies to reloads, drawing weapons, sprinting, casting — anything on the timing track.
 
 ## Backlog
-- [ ] Update MAGIC_SYSTEM.md: wild suppress cap at 2 (not 3 at master)
-- [ ] Update MAGIC_SYSTEM.md: wild backlash modifier — finalize exact value (sim uses +5% flat)
-- [ ] Design death save mechanics (provisional 50/50 in COMBAT_PROCEDURE.md, needs dedicated pass)
-- [ ] Push It mechanic — exact costs and risks
-- [ ] Scholarly bonus to school count — how many extra?
-- [ ] Casting interruption/concentration check — playtest (PW+4)×10 and tune
+- [ ] Design zone formation/shift mechanics — how zones form, change, and interact over time. Framework in PROJECT_SPEC.md §2.3 (gradients, bleed, environmental staining). Needs mechanical rules.
 - [ ] Brainstorm setting-flavored archetype (class) names
 - [ ] Revise skill list for steampunk setting (add Firearms, Pilot, Occult Lore, etc.)
 - [ ] Design currency system and equipment prices

@@ -37,14 +37,34 @@ This is the defining feature of the setting and the in-world justification for t
 - **Technology suppresses magic — but only exotic tech actively fights back.** In heavily industrialized environments, magic wanes passively. Spells fizzle or misfire. Connections to mana flows are dampened or severed. However, only **exotic technology** (steampunk gadgets, magitech devices) actively generates counter-resonance that erodes magic. Conventional technology (firearms, engines, tools) is a *victim* of magic zones, not a combatant against them. The asymmetry: magic erodes all tech, but only exotic tech erodes magic back.
 - **This is why swords still matter.** A steel blade works everywhere. A tommy gun might betray you in a magical ruin. A spell might fail you in the heart of the factory district. Smart adventurers carry both — and know when to rely on which.
 
-### 2.3 Magic Zones & Tech Zones
+### 2.3 The Aetheric Balance & Zones
 
-The world has varying concentrations of magic and technology:
+The world sits on a sliding scale between two forces. **The Aether** — raw magical power drawn from the Veil, the boundary between the mundane and something beyond. **The Galvanic force** — channeled from the Engine, the metaphysical wellspring of human industry and will. Where one dominates, the other falters. (See DESIGN_PHILOSOPHY.md §1 for full cosmology.)
 
-- **Wild Zones** — Pockets of intense magical concentration in remote, lost, and unknown parts of the world. Legends arise from these places. They give rise to monsters, mutate the landscape, and contain powerful artifacts. Technology is extremely unreliable here.
-- **Urban Bleed Zones** — Magic sometimes bubbles up in the middle of cities, warping and mutating neighborhoods into abandoned mystical zones. These are sudden, unpredictable, and terrifying to the populace.
-- **Industrial Dead Zones** — Heavily industrialized cities that kill and drain the magic around them. High-tech gadgets flourish. Spells don't function. Magical creatures avoid these places.
-- **The In-Between** — Most of the world exists in a spectrum between these extremes, where both magic and technology function but neither perfectly.
+**Zone types (Aetheric side — the Veil is thin):**
+
+- **Deep Wild Zones** (+25 or more) — The Veil is barely there. Magic saturates everything. Technology is non-functional. Legendary beasts, mutated landscapes, powerful artifacts. Swords and sorcery only.
+- **Wild Zones** (+15 to +20) — The Veil is thin. Most firearms non-functional. Strange creatures. Reality gets soft. Legends arise from these places.
+- **Moderate Aetheric Zones** (+8 to +12) — Only the most reliable firearms work. Machines need constant maintenance. Casters thrive.
+- **Light Aetheric Zones** (+3 to +5) — Firearms slightly less reliable. Sensitive equipment twitchy. Most people wouldn't notice without instruments.
+- **Urban Bleed Zones** (variable, sudden) — The Veil sometimes tears open in the middle of cities, warping neighborhoods into abandoned Aetheric zones. Unpredictable and terrifying.
+
+**The middle:**
+
+- **Normal / In-Between** (0) — Most of the world. Both forces function. Neither dominates — until someone tips the balance.
+
+**Zone types (Galvanic side — the Engine is loud):**
+
+- **Light Galvanic Zones** (−3 to −5) — Casting noticeably harder. Tech runs clean. Factory neighborhoods, rail yards.
+- **Moderate Galvanic Zones** (−8 to −12) — Only powerful casters can push through. Galvanic devices work perfectly.
+- **Galvanic Zones** (−15 to −20) — Most spells fail outright. Galvanic technology thrives. Heavy industrial districts, power plants.
+- **Deep Galvanic Zones** (−25 or more) — Magic non-functional. The Engine roars. Massive foundries, aetheric research facilities, military-industrial complexes.
+
+**Zones are environmental stains.** They don't appear from nowhere — they're the result of sustained, heavy activity soaking into the environment over time. A cultist coven performing rituals for months saturates the area with Aetheric residue. A Galvanic weapons factory running resonance engines around the clock pushes deep into the other direction. The balance doesn't just affect what works — it *stains* everything around it.
+
+**Bleed and gradient.** Zones don't have clean edges. A factory at −25 inside its walls bleeds outward: −10 on the street outside, −5 a block away, barely noticeable three blocks out. A magical lair at +20 radiates in a gradient that investigators can follow inward, like tracking smoke to the fire. Wild Zones in remote areas have the widest gradients — you can feel them miles away as the Aether slowly thickens.
+
+**Heavy aetheric activity is impossible to hide.** This is a major setting implication. An illegal Galvanic weapons lab radiates force into the surrounding neighborhood — radios work too well, street lamps burn brighter, stray cats avoid the block. A cult performing dark rituals radiates Aetheric residue — nearby machinery fails, milk sours, compasses spin. Forensic investigators with Detect spells or aetheric measurement devices can map these gradients, trace them to their source, and estimate the scale of activity. This is the world's equivalent of following the smoke to find the fire. You cannot do serious work with either force without the environment noticing.
 
 ### 2.4 Tone & Theme
 
@@ -229,8 +249,8 @@ Martial ranged weapons are immune to magic zone interference. Crossbows require 
 |----------|-------|--------|--------|----------|
 | Light Ranged | 5 | 1d6 | — | Short bow, sling |
 | Medium Ranged | 7 | 1d8+1 | — | Composite bow, longbow |
-| Light Crossbow | 7 | 2d6 | 6 | Hand crossbow, light crossbow |
-| Heavy Crossbow | 10 | 3d6 | 10 | Heavy crossbow, arbalest |
+| Light Crossbow | 7 | 2d6 | 3 | Hand crossbow, light crossbow |
+| Heavy Crossbow | 10 | 3d6 | 5 | Heavy crossbow, arbalest |
 
 #### Weapon Tags
 
@@ -252,7 +272,7 @@ Tags differentiate weapons within the same category. A longsword and a mace are 
 
 > **Full firearms design document:** [FIREARMS_EQUIPMENT.md](FIREARMS_EQUIPMENT.md)
 >
-> Firearms are significantly more lethal than melee (roughly 2x damage efficiency at comparable speeds). The tradeoff is Magic Accumulation — spellcasting in the area degrades firearm Reliability, causing jams, misfires, and failures. Steampunk exotic weapons are rarer, less reliable, and generate Tech Accumulation that penalizes enemy spellcasting. See FIREARMS_EQUIPMENT.md for full tables, the malfunction system, and accumulation rules.
+> Firearms are significantly more lethal than melee (roughly 2x damage efficiency at comparable speeds). The tradeoff is Aetheric accumulation — spellcasting in the area degrades firearm Reliability, causing jams, misfires, and failures. Steampunk exotic weapons are rarer, less reliable, and generate Galvanic accumulation that penalizes enemy spellcasting. See FIREARMS_EQUIPMENT.md for full tables, the malfunction system, and accumulation rules.
 
 ### 4.3 Armor & Degradation
 

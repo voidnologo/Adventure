@@ -141,17 +141,19 @@ Full rules in MAGIC_SYSTEM.md. Spell details in SPELL_COMPENDIUM.md.
 5. **Wild casters** take what the magic gives them.
 6. Pay exhaustion for the tier used.
 7. Backlash check (Weak 5%, Standard 10%, Strong 15%, Spectacular 25%).
-8. Area gains Magic Accumulation (Weak +1, Standard +2, Strong +3, Spectacular +4).
+8. Area gains Aetheric accumulation (Weak +1, Standard +2, Strong +3, Spectacular +4).
 
 ### 6.2 Two Paths
 
 | | Scholarly | Wild |
 |--|----------|------|
-| Spellbook | Required — spells must be in your book | No — cast any spell in known schools |
-| Tier control | Full — choose any tier at or below your roll | None — locked to the tier rolled |
-| Backlash | Base rates | Higher (TBD modifier) |
-| Schools | PW modifier + bonus (TBD) | PW modifier (min 1) |
-| Base spells | 7 + PW | 7 + PW |
+| Casting roll | 1d100 (straight) | 2d100, take farther from target |
+| Target bonus | None | +10 (natural attunement) |
+| Spellbook | Required — learned spells only | No — all spells in known schools |
+| Tier control | Full — choose any tier at or below your roll | Suppress 0-2 tiers based on skill |
+| Backlash | Base rates (5%/10%/15%/25%) | +5% flat per tier |
+| Schools | All six schools | PW modifier (min 1) |
+| Spells | 7 + PW learned spells (buy more at 3 pts) | All spells in accessible schools |
 
 ### 6.3 Exhaustion Overflow
 
@@ -174,33 +176,46 @@ Ritual spells still require the casting roll, pay exhaustion, and risk backlash 
 
 ## 7. Magic & Technology Interference
 
-### 7.1 The Rules
+### 7.1 The Aetheric Balance
 
-- **Magic erodes technology.** Each spell cast generates Magic Accumulation. Each point reduces nearby firearm Reliability by 3%.
-- **Only exotic tech erodes magic.** Each exotic weapon shot generates 1 Tech Accumulation. Each point applies -3 to casting target numbers.
-- **Conventional tech and martial weapons are neutral.** A revolver doesn't push back against magic. A steel sword doesn't care about zones.
+A single sliding scale. Spells push toward Aetheric (magic). Galvanic devices push toward Galvanic (tech). Each net point shifts **both sides** — penalizing one while empowering the other:
 
-### 7.2 Accumulation
+- **Effective Reliability** = Base Reliability − (net balance × 2)
+- **Effective Casting Target** = Base Target + (net balance × 2)
 
-| Spell Tier | Magic Accumulation |
-|------------|-------------------|
-| Weak | +1 |
-| Standard | +2 |
-| Strong | +3 |
-| Spectacular | +4 |
+Net Aetheric hurts firearms AND helps magic. Net Galvanic hurts magic AND helps firearms. Reliability is **always checked** — every shot, every time. Conventional tech and martial weapons don't move the balance, but a steel sword doesn't care about it either.
 
-**Decay:** 1 point per minute for both Magic and Tech Accumulation.
+### 7.2 What Moves the Balance
 
-### 7.3 Magic Zones
+| Source | Shift |
+|--------|-------|
+| Spell (by tier) | +1/+2/+3/+4 Aetheric |
+| Galvanic weapon (by Aetheric rating) | −1/−2/−3 Galvanic (Pistol 1, Sidearm 2, Heavy 3) |
+| Suppressing tag | +1 to weapon's Aetheric rating |
 
-| Zone | Base Accumulation | Effect |
-|------|-------------------|--------|
-| Industrial Dead Zone | 0 (tech zone) | Magic suppressed, tech works perfectly |
-| Normal | 0 | Both work unless casting occurs |
-| Light Magic Zone | 3-5 | Revolvers fine, exotics sketchy |
-| Moderate Magic Zone | 8-12 | Only reliable firearms work |
-| Wild Zone | 15-20 | Most firearms non-functional |
-| Deep Wild Zone | 25+ | Swords and sorcery only |
+**Decay:** 1 point per minute toward zone baseline (normal areas = 0).
+
+### 7.3 Examples
+
+**Aetheric example:** Sera casts two Standard spells (+2 each = +4 Aetheric). Net balance: +4. Firearms lose 8 Reliability — a revolver (95) is at effective 87 (13% malfunction). Sera's casting target gains +8 — her base 55 is now 63. The Aether is feeding her magic while making the guns twitchy.
+
+**Galvanic example:** A factory enforcer fires an arc gun (Aetheric 2) three times (−2 each = −6 Galvanic). Net: −6. Casting targets drop by 12 — a caster with base 55 is at 43, barely managing Standard. Firearms gain +12 Reliability — the enforcer's semi-auto (85 + 12 = 97) has only a 3% malfunction chance. The Engine empowers its own.
+
+**Both sides in combat:** Sera casts Standard Force (+2 Aetheric). The enforcer fires his arc gun twice (−4 Galvanic). Net: −2 Galvanic. Sera's target drops by 4 (55 → 51). The enforcer's revolver gains +4 Reliability (95 → 99, 1% malfunction). Sera needs to cast more to tip the balance back, but every spell at a reduced target is more likely to misfire.
+
+### 7.4 Zones
+
+| Zone | Baseline | Effect |
+|------|----------|--------|
+| Deep Galvanic Zone | −25 or more | Magic non-functional. The Engine roars. |
+| Galvanic Zone | −15 to −20 | Most spells fail. Galvanic devices thrive. |
+| Moderate Galvanic Zone | −8 to −12 | Only powerful casters can push through. |
+| Light Galvanic Zone | −3 to −5 | Casting noticeably harder. Tech runs clean. |
+| Normal | 0 | Both work until someone tips the balance. |
+| Light Aetheric Zone | +3 to +5 | Firearms slightly less reliable. |
+| Moderate Aetheric Zone | +8 to +12 | Only reliable firearms work. |
+| Wild Zone | +15 to +20 | Most firearms non-functional. |
+| Deep Wild Zone | +25 or more | Swords and sorcery only. |
 
 > Full zone mechanics pending dedicated design session.
 
@@ -254,7 +269,7 @@ CASTING: fixed time per spell → roll d100 → tier by margin
   Backlash: W5% S10% St15% Sp25% → 1d4 damage + 25% wild effect
 
 ACCUMULATION: each spell adds tier value to area
-  3% Reliability penalty per point │ Decays 1/minute
+  2% Reliability penalty per point │ Decays 1/minute
 
 CONCENTRATION: (PW + 4) × 10
   PW-3=10% │ PW+0=40% │ PW+3=70%

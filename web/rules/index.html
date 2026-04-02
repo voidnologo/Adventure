@@ -352,8 +352,10 @@
     <h3>What You Need</h3>
 
     <p>
-      A pair of ten-sided dice (percentile dice &mdash; one for the tens, one for the ones),
-      a character sheet, a pencil, and your imagination. No miniatures, no battle maps, no grids.
+      A full set of RPG dice (d4, d6, d8, d10, d12, and a pair of d10s for percentile rolls),
+      a character sheet, a pencil, and your imagination. The percentile dice are the main ones
+      &mdash; nearly every check in the game is a d100 roll &mdash; but you'll reach for the
+      others when rolling damage, healing, and backlash. No miniatures, no battle maps, no grids.
       This game plays entirely in the theater of the mind. Everything you need to know fits on
       a one-page cheat sheet, with spell and equipment lookups when needed.
     </p>
@@ -712,10 +714,9 @@
     </p>
 
     <ul>
-      <li>You know <strong>7 + PW</strong> base spells (minimum 1).</li>
-      <li>You can draw from a number of <strong>schools of magic</strong> equal to your PW modifier (minimum 1).</li>
-      <li>Want more spells? Each additional spell costs <strong>3 skill points</strong>. Magic is expensive.</li>
       <li>Choose your path: <strong>Scholarly</strong> (controlled, requires a spellbook) or <strong>Wild</strong> (instinctive, unpredictable, no book needed).</li>
+      <li><strong>Scholarly:</strong> You can learn spells from <strong>any of the six schools</strong> &mdash; breadth is your advantage. You know <strong>7 + PW</strong> base spells (minimum 1), and can buy more at <strong>3 skill points</strong> each. You can only cast what's in your book.</li>
+      <li><strong>Wild:</strong> You access a number of <strong>schools</strong> equal to your PW modifier (minimum 1) &mdash; but you can cast <strong>every spell</strong> in those schools. No spellbook, no memorization. Depth is your advantage.</li>
     </ul>
   </section>
 
@@ -803,6 +804,26 @@
       <p><em>"You both hold on, but Kael's grip is iron. The cultist's hands slip. The artifact is yours."</em></p>
     </div>
 
+    <h3>The Timing Track</h3>
+
+    <p>
+      One more concept before we move on. When timing matters &mdash; combat, chases,
+      ticking clocks &mdash; the game uses a <strong>timing track</strong> instead of
+      initiative rounds. Think of it as a shared number line. Every action takes a certain
+      number of <strong>counts</strong>: drawing a sword is 2, firing a revolver is 3,
+      casting a spell might be 2 to 8 depending on the spell. You place a token on the
+      count when your action <em>completes</em>, and the GM advances the track count by
+      count.
+    </p>
+
+    <p>
+      There are no turns. Everyone acts on the same timeline, and faster actions resolve
+      first. You'll see references to "counts" throughout the rest of these rules &mdash;
+      that's the timing track at work. The full details are in the
+      <a href="#combat">combat section</a>, but the core idea is simple: everything takes
+      time, and time is a resource.
+    </p>
+
   </section>
 
   <div class="ornament"><span class="ornament-line ornament-line-l"></span><span class="ornament-gem"></span><span class="ornament-line ornament-line-r"></span></div>
@@ -887,14 +908,23 @@
     <h3>Going Down</h3>
 
     <p>
-      When you fill your Incapacitated tier, you collapse. Your weapon clatters to the
-      ground. You can't act, can't speak above a whisper. But you're not dead yet &mdash;
-      you're bleeding out, and the clock is ticking.
+      When you fill your Incapacitated tier on the <strong>hit point track</strong>, you
+      collapse. Your weapon clatters to the ground. You can't act, can't speak above a
+      whisper. But you're not dead yet &mdash; you're bleeding out, and the clock is ticking.
     </p>
 
     <p>
       Every <strong>3 counts</strong> on the timing track, you roll a death save: a
       straight d100, no modifiers, no skills. The dice decide.
+    </p>
+
+    <p>
+      <strong>Exhaustion works differently.</strong> When your exhaustion track fills
+      completely, you don't make death saves &mdash; you're mentally shattered but still
+      breathing. Any further exhaustion <strong>overflows into physical damage</strong>
+      at half rate (rounded down), and <em>that</em> damage fills your hit point track.
+      If it pushes you past Incapacitated on HP, <em>then</em> death saves begin. The
+      mind breaks first. The body follows.
     </p>
 
     <table>
@@ -1029,7 +1059,7 @@
     <p>
       After the spell fires, three things happen: you pay <strong>exhaustion</strong> (which
       fills your exhaustion track), you check for <strong>backlash</strong> (the magic
-      fighting back), and the area gains <strong>Magic Accumulation</strong> (which starts
+      fighting back), and the area gains <strong>Aetheric accumulation</strong> (which starts
       degrading nearby technology).
     </p>
 
@@ -1066,14 +1096,16 @@
     </p>
 
     <p>
-      <strong>More spells, possibly more schools.</strong> Scholarly discipline expands your
-      capacity. You know more spells and may have access to additional schools of magic.
+      <strong>Access to all six schools.</strong> Study opens every domain. You can learn spells
+      from any school &mdash; Aetheric, Vivimancy, Warding, Divination, Transmutation, Ley
+      Weaving. No door is closed to a disciplined mind.
     </p>
 
     <p>
       <strong>The limitation:</strong> you can only cast spells you've specifically learned
-      and recorded in your book. Lose the book, lose your options. Study gives you depth
-      but constrains your breadth.
+      and recorded in your book. You know 7 + PW spells (minimum 1) and can buy more at
+      3 skill points each. Lose the book, lose your options. Study gives you breadth
+      across schools but constrains you to your specific selection.
     </p>
 
     <div class="callout callout-scene">
@@ -1083,6 +1115,11 @@
       <p>But Aldric only needs to close a knife wound, and Strong Mend costs 12 exhaustion.
       He chooses Standard instead &mdash; 2d6 HP restored for just 8 exhaustion. Clean, controlled,
       efficient. That's the scholarly advantage: you never waste power you don't need to spend.</p>
+      <p>Later, under pressure, Aldric tries to cast Shield on Kael. He rolls 72 against his
+      target of 58. Over. <strong>Misfire.</strong> The shield inverts &mdash; instead of
+      protecting Kael, it amplifies the next hit he takes by 1d4. Aldric doesn't know it
+      failed until Kael gets hit and the damage is worse than it should be. He still pays
+      3 exhaustion for the attempt. Magic is never free, even when it goes wrong.</p>
     </div>
 
     <!-- ── The Wild Path ──────────────────────────────────── -->
@@ -1139,8 +1176,10 @@
     </p>
 
     <p>
-      <strong>Fewer spells, fewer schools.</strong> Less training means less capacity and
-      narrower domain access. You trade breadth of knowledge for breadth of flexibility.
+      <strong>Fewer schools, but complete access within them.</strong> You access a number
+      of schools equal to your PW modifier (minimum 1). But within those schools, you can
+      cast <em>every</em> spell &mdash; no spellbook, no memorization. Your connection is
+      narrow but deep.
     </p>
 
     <div class="callout callout-scene">
@@ -1152,11 +1191,15 @@
       <p>Sera's target is 55, which means she can suppress up to 2 tiers. She <em>could</em> step
       Standard down to Weak &mdash; but Standard Force deals 2d6 damage and costs 4 exhaustion.
       She keeps it. The thug takes a concussive blast to the chest.</p>
-      <p>Backlash check: wild casters have 15% at Standard tier. She rolls 67 &mdash; safe. But the
-      area gains +2 Magic Accumulation. The thugs' revolvers just got a little less reliable.</p>
-      <p>Now imagine she'd rolled a 3 and a 78. The 78 is farther from 55 (23 over vs 52 under for the 3).
-      She takes the 78 &mdash; a <strong>misfire</strong>. Force rebounds on her for 1d6 damage.
-      That's the wild path. You ride the wave, and sometimes the wave wins.</p>
+      <p>Backlash check: 15% chance for a wild caster at Standard. She rolls 67 &mdash; no
+      backlash. But the area gains +2 Aetheric accumulation. The thugs' revolvers just got a
+      little less reliable.</p>
+      <p>Now imagine she'd rolled a 3 and a 78. Her target is 55. The 3 is 52 under. The 78 is
+      23 over. The 3 is farther &mdash; she takes it. That's a margin of 52: <strong>Spectacular</strong>.
+      She can suppress 2 tiers (her target is 55), bringing it down to Strong at best. Strong
+      Force deals 3d8 damage and costs 6 exhaustion. She wanted a quick Standard blast. The
+      magic had other plans. That's the wild path &mdash; sometimes you get more than you
+      asked for, and you pay for every bit of it.</p>
     </div>
 
     <h4>The Trade-Off at a Glance</h4>
@@ -1165,11 +1208,11 @@
       <tr><th>Aspect</th><th>Scholarly</th><th>Wild</th></tr>
       <tr><td>Casting roll</td><td>1d100 (straight)</td><td>2d100, take farther from target</td></tr>
       <tr><td>Casting target bonus</td><td>None</td><td>+10 (natural attunement)</td></tr>
-      <tr><td>Spells available</td><td>Learned spells only (spellbook)</td><td>Any spell in your schools</td></tr>
+      <tr><td>Spells available</td><td>Learned spells only (7+PW base, spellbook)</td><td>Every spell in your schools</td></tr>
       <tr><td>Tier selection</td><td>Choose freely at or below qualified</td><td>Suppress 0&ndash;2 tiers based on skill</td></tr>
       <tr><td>Backlash risk</td><td>Base rates</td><td>+5% per tier</td></tr>
-      <tr><td>Spells known</td><td>More</td><td>Fewer</td></tr>
-      <tr><td>School access</td><td>Possibly more</td><td>Fewer</td></tr>
+      <tr><td>School access</td><td>All six schools</td><td>PW modifier schools (min 1)</td></tr>
+      <tr><td>Spell selection</td><td>Specific learned spells (breadth)</td><td>All spells in your schools (depth)</td></tr>
       <tr><td>Power ceiling</td><td>Reliable but bounded</td><td>Unpredictable, swings to extremes</td></tr>
     </table>
 
@@ -1183,8 +1226,13 @@
       burns you. More power channeled means more risk.
     </p>
 
+    <p>
+      After a successful cast, roll d100 for backlash. The higher the tier you channeled,
+      the greater the chance the magic bites back:
+    </p>
+
     <table>
-      <tr><th>Tier</th><th>Scholarly</th><th>Wild (+5%)</th><th>Accumulation</th></tr>
+      <tr><th>Tier</th><th>Scholarly</th><th>Wild</th><th>Accumulation</th></tr>
       <tr><td>Weak</td><td>5%</td><td>10%</td><td>+1</td></tr>
       <tr><td>Standard</td><td>10%</td><td>15%</td><td>+2</td></tr>
       <tr><td>Strong</td><td>15%</td><td>20%</td><td>+3</td></tr>
@@ -1202,7 +1250,7 @@
     </p>
 
     <p>
-      <strong>2. Wild effect (25% chance):</strong> Roll d100. On 25 or under, something
+      <strong>2. Wild effect (25% chance):</strong> Something
       <em>strange</em> happens. The GM rolls d10 on the Wild Effect table. Your eyes glow.
       Objects levitate around you. Your voice shifts to something inhuman. These effects
       escalate &mdash; if you roll the same effect while a previous one is still active, it
@@ -1346,11 +1394,25 @@
       and push.
     </p>
 
+    <p>
+      You can push your result up by <strong>one tier</strong>. It costs you:
+    </p>
+
     <ul>
-      <li>Costs <strong>additional exhaustion</strong> on top of the higher tier's normal cost</li>
-      <li><strong>Increased backlash chance</strong> &mdash; you're forcing power through a channel that wasn't ready for it</li>
+      <li><strong>Exhaustion:</strong> half the tier you qualified for, plus the full cost of the tier you're pushing to</li>
+      <li><strong>Backlash:</strong> double the pushed tier's normal rate</li>
       <li>You can <strong>never</strong> push past your hard cap &mdash; if your casting target doesn't allow Spectacular, pushing won't get you there</li>
+      <li>One push per cast. You can't push twice.</li>
     </ul>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Sera casts Mend and qualifies for Standard (8 EP). Her ally is dying &mdash;
+      she needs Strong. She pushes. Cost: half of Standard (4) + full Strong (12) =
+      <strong>16 exhaustion</strong>. Backlash at Strong is normally 20% for a wild caster
+      &mdash; pushed, it's <strong>40%</strong>. She's burning herself hollow to save
+      someone. That's what Push It is for.</p>
+    </div>
 
     <p>
       Pushing is a gamble. Sometimes it saves the day. Sometimes it puts you on the floor.
@@ -1517,85 +1579,201 @@
       because it's the only thing that works everywhere.
     </p>
 
-    <h3>Magic Erodes Technology</h3>
+    <h3>The Veil and the Engine</h3>
 
     <p>
-      Every spell cast leaves a residue &mdash; a thickening of the aether that makes
-      machines unreliable. This isn't targeted; it's environmental. Cast enough spells in
-      one place and <em>everything</em> technological starts to fail. Guns jam. Engines
-      stall. Electrical systems short out. Clockwork freezes.
+      Two forces pull the world in opposite directions. <strong>The Aether</strong> pours
+      through the Veil &mdash; the boundary between the mundane world and something vast
+      and inhuman beyond it. When the Veil thinned within living memory, magic flooded in.
+      Casters draw Aetheric power through the Veil. Where it's thin, magic is strong. Where
+      it's thick, magic can't reach.
     </p>
 
     <p>
-      Mechanically, each spell adds its tier value to the area's <strong>Magic
-      Accumulation</strong>. Each point of accumulation reduces the <strong>Reliability</strong>
-      of all technology in the area by 3%.
+      Pushing back is <strong>the Galvanic force</strong> &mdash; drawn from the Engine,
+      the metaphysical wellspring of human industry and will. Galvanic technology channels
+      this counter-resonance: arc guns, voltaic pistols, aetheric resonators. Whether the
+      Engine is a conscious force, nature's immune response, or something humans manufactured
+      &mdash; nobody knows. People debate it. Cults form around the question.
+    </p>
+
+    <h3>The Number Line</h3>
+
+    <p>
+      Think of every area as sitting somewhere on a sliding scale. The Aether on one end.
+      The Galvanic on the other. Neutral in the middle. Every spell pushes the scale toward
+      Aetheric. Every Galvanic device pushes it the other way. The <strong>net balance</strong>
+      determines who suffers.
+    </p>
+
+    <p>
+      Conventional technology &mdash; revolvers, automobiles, radios &mdash; doesn't move
+      the needle. A Webley revolver is just a machine. It doesn't push back against the
+      Aether any more than a windmill does. It's a <em>victim</em>, not a combatant.
+      Only <strong>Galvanic technology</strong> &mdash; the exotic prototypes that channel
+      forces from the Engine &mdash; push the other direction.
+    </p>
+
+    <h3>What Moves the Balance</h3>
+
+    <h4>Aetheric Side (Magic)</h4>
+
+    <table>
+      <tr><th>Source</th><th>Shift</th></tr>
+      <tr><td>Spell &mdash; Weak</td><td>+1 Aetheric</td></tr>
+      <tr><td>Spell &mdash; Standard</td><td>+2 Aetheric</td></tr>
+      <tr><td>Spell &mdash; Strong</td><td>+3 Aetheric</td></tr>
+      <tr><td>Spell &mdash; Spectacular</td><td>+4 Aetheric</td></tr>
+    </table>
+
+    <h4>Galvanic Side (Exotic Tech)</h4>
+
+    <p>
+      Every Galvanic device has an <strong>Aetheric rating</strong> &mdash; how hard it pushes
+      the balance toward tech each time it's used. Heavier hardware radiates more.
+    </p>
+
+    <table>
+      <tr><th>Source</th><th>Aetheric</th><th>Shift per Shot</th></tr>
+      <tr><td>Exotic Pistol</td><td>1</td><td>&minus;1 Galvanic</td></tr>
+      <tr><td>Exotic Sidearm</td><td>2</td><td>&minus;2 Galvanic</td></tr>
+      <tr><td>Exotic Heavy</td><td>3</td><td>&minus;3 Galvanic</td></tr>
+      <tr><td>Exotic Melee</td><td>1</td><td>&minus;1 per charge</td></tr>
+      <tr><td>Suppressing tag</td><td>+1</td><td>Added to weapon's rating</td></tr>
+    </table>
+
+    <p>
+      Non-weapon Galvanic devices &mdash; resonance generators, plasma shields, aetheric
+      dampeners &mdash; have their own ratings assigned by the GM based on scale. A portable
+      lamp might be 1. A factory resonance engine might be 10 or more. Misfire spells and
+      conventional weapons don't shift the balance at all.
+    </p>
+
+    <h3>The Net Effect</h3>
+
+    <p>
+      Only the <strong>net value</strong> matters, and it penalizes the losing side at
+      <strong>2% per net point</strong>:
+    </p>
+
+    <p>
+      Each net point shifts <strong>both sides at once</strong> &mdash; it doesn't just
+      suppress one force, it actively feeds the other:
+    </p>
+
+    <ul>
+      <li><strong>Effective Reliability</strong> = Base Reliability &minus; (net balance &times; 2)</li>
+      <li><strong>Effective Casting Target</strong> = Base Target + (net balance &times; 2)</li>
+    </ul>
+
+    <p>
+      Net Aetheric hurts firearms AND helps magic. Net Galvanic hurts magic AND helps
+      firearms. A Wild Zone isn't just "guns don't work here" &mdash; it's "magic is
+      <em>incredible</em> here." A Galvanic factory isn't just "spells fail" &mdash; it's
+      "firearms are <em>perfect</em>."
+    </p>
+
+    <p>
+      <strong>Reliability is always checked.</strong> Every shot, every time. A tommy gun
+      has a 30% malfunction chance in clean air. A revolver has 5%. That's the baseline.
+      The balance makes it better or worse from there.
     </p>
 
     <div class="callout callout-example">
       <span class="callout-label">Example</span>
-      <p>Sera casts two Standard spells (+2 accumulation each = 4 total). Every firearm in the area
-      now has its Reliability reduced by 12%. A revolver that was 95% reliable is now 83%. An
-      automobile engine that was running fine might sputter and die. A radio crackles into static.</p>
-      <p>And that's just two spells. A prolonged magical battle can push accumulation high enough to
-      make firearms completely non-functional &mdash; which is exactly why swords still matter
-      in a world with tommy guns.</p>
+      <p>Sera casts three Standard spells (+2 each = +6 Aetheric). Meanwhile, a thug fires
+      an arc gun twice (Aetheric 2, so &minus;2 each = &minus;4 Galvanic). Net balance:
+      <strong>+2 Aetheric</strong>. Every firearm loses 4 Reliability. Sera's casting
+      target gains +4 &mdash; her base 55 is now <strong>59</strong>. The Aether is feeding
+      her magic while degrading the guns.</p>
+      <p>If the thug had fired a third shot (&minus;2 more), the net would be
+      <strong>0</strong> &mdash; perfectly balanced. Neither side boosted or penalized.</p>
     </div>
 
-    <h3>Exotic Tech Erodes Magic</h3>
+    <div class="callout callout-example">
+      <span class="callout-label">The Other Direction</span>
+      <p>Now imagine the reverse. A factory enforcer fires an aether lance (Aetheric 3,
+      Suppressing +1 = 4 per shot) three times. That's &minus;12 Galvanic. Sera has
+      cast one Standard spell (+2 Aetheric). Net: <strong>&minus;10 Galvanic</strong>.
+      Sera's casting target drops by 20 &mdash; from 55 to <strong>35</strong>. She can
+      barely manage Standard, and she'll misfire more often than not. Meanwhile,
+      every firearm gains +20 Reliability. The enforcer's tommy gun (Rel 70 + 20 = 90)
+      has only a 10% malfunction chance. The Engine is drowning out the Veil.</p>
+    </div>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p><em>"Two spells and an arc gun shot. Where's the balance?"</em></p>
+      <p>"Plus four Aetheric, minus two Galvanic. Net two Aetheric."</p>
+      <p><em>"Revolvers are at minus four Reliability. A little twitchy. Your sword doesn't
+      care."</em></p>
+    </div>
+
+    <h3>Decay</h3>
 
     <p>
-      Conventional technology &mdash; revolvers, automobiles, radios &mdash; is a <em>victim</em>
-      of magic, not a combatant. Your Webley revolver doesn't push back against the aether any
-      more than a windmill does. It simply fails when magic gets too thick.
+      The balance drifts back toward the area's <strong>baseline</strong> at
+      <strong>1 point per minute</strong>. In a normal area, the baseline is zero &mdash;
+      after the casting and shooting stops, the world normalizes. A net balance of +8
+      takes 8 minutes to clear completely.
     </p>
 
     <p>
-      But there's something newer. <strong>Steampunk exotics</strong> &mdash; arc guns,
-      aetheric resonators, devices built with materials and principles that flirt with forces
-      nobody fully understands &mdash; these push back. Each shot from an exotic weapon
-      generates <strong>Tech Accumulation</strong>, and each point of that applies -3 to
-      casting target numbers in the area.
-    </p>
-
-    <p>
-      Whether exotic tech is nature's immune response to the magical eruption, a weapon
-      designed by shadowy engineers, or something stranger &mdash; nobody knows. People
-      debate it. Cults form around the question.
+      In environmental zones (see below), the baseline isn't zero. A Wild Zone's baseline
+      is +15 or more. You can fire exotic weapons to temporarily push it down, but it
+      drifts right back once you stop.
     </p>
 
     <h3>The Spectrum</h3>
 
     <p>
-      The world isn't uniform. Different places sit at different points on the magic/tech
-      spectrum, and smart adventurers plan their loadout accordingly:
+      The world isn't uniform. Different places sit at different points on the scale,
+      and smart adventurers plan their loadout accordingly:
     </p>
 
     <table>
-      <tr><th>Zone</th><th>Accumulation</th><th>What to Expect</th></tr>
-      <tr><td>Industrial Dead Zone</td><td>0 (tech zone)</td><td>Magic suppressed. Technology works perfectly. Factory districts, engine rooms.</td></tr>
-      <tr><td>Normal</td><td>0</td><td>Everything works &mdash; until someone starts casting.</td></tr>
-      <tr><td>Light Magic Zone</td><td>3&ndash;5</td><td>Conventional firearms still fine. Sensitive equipment gets twitchy.</td></tr>
-      <tr><td>Moderate Magic Zone</td><td>8&ndash;12</td><td>Only the most reliable firearms work. Machines need constant maintenance.</td></tr>
-      <tr><td>Wild Zone</td><td>15&ndash;20</td><td>Most firearms non-functional. Strange creatures. Reality gets soft.</td></tr>
-      <tr><td>Deep Wild Zone</td><td>25+</td><td>Swords and sorcery only. Bring a blade or don't come back.</td></tr>
+      <tr><th>Zone</th><th>Baseline</th><th>What to Expect</th></tr>
+      <tr><td>Deep Galvanic Zone</td><td>&minus;25 or more</td><td>Magic non-functional. The Engine roars. Massive factories, power plants, aetheric foundries.</td></tr>
+      <tr><td>Galvanic Zone</td><td>&minus;15 to &minus;20</td><td>Most spells fail outright. Galvanic devices thrive. Heavy industrial districts.</td></tr>
+      <tr><td>Moderate Galvanic Zone</td><td>&minus;8 to &minus;12</td><td>Only powerful casters can push through. Tech runs perfectly.</td></tr>
+      <tr><td>Light Galvanic Zone</td><td>&minus;3 to &minus;5</td><td>Casting noticeably harder. Tech works clean. Factory neighborhoods, rail yards.</td></tr>
+      <tr><td>Normal</td><td>0</td><td>Everything works &mdash; until someone tips the balance.</td></tr>
+      <tr><td>Light Aetheric Zone</td><td>+3 to +5</td><td>Firearms slightly less reliable. Sensitive equipment twitchy.</td></tr>
+      <tr><td>Moderate Aetheric Zone</td><td>+8 to +12</td><td>Only the most reliable firearms work. Machines need constant maintenance.</td></tr>
+      <tr><td>Wild Zone</td><td>+15 to +20</td><td>Most firearms non-functional. Strange creatures. Reality gets soft.</td></tr>
+      <tr><td>Deep Wild Zone</td><td>+25 or more</td><td>Swords and sorcery only. Bring a blade or don't come back.</td></tr>
     </table>
 
     <p>
-      <strong>Accumulation decays at 1 point per minute</strong> for both types. In a normal
-      area, a few spells will spike the accumulation, but it bleeds off quickly after the
-      casting stops. In a wild zone, the baseline is already high enough that technology
-      never really works.
+      These zones don't appear from nowhere. They're the result of sustained, heavy
+      activity that has soaked into the environment. A cultist coven performing rituals
+      for months saturates the area with Aetheric residue. A Galvanic weapons factory
+      running resonance engines around the clock pushes the other direction. The balance
+      doesn't just affect what works &mdash; it <em>stains</em> the environment.
+    </p>
+
+    <p>
+      And it bleeds outward. A factory at &minus;25 inside its walls might be &minus;10
+      on the street outside, &minus;5 a block away, barely noticeable three blocks out.
+      A cultist lair at +20 radiates Aetheric residue in a gradient an investigator can
+      follow inward, like tracking smoke to the fire. Heavy activity on either side of
+      the scale is <strong>impossible to hide</strong>. Milk sours near the cult's
+      basement. Radios work too well near the weapons lab. Compasses spin. Stray cats
+      avoid the block. A good forensic investigator with a Detect spell and a notebook
+      can map these gradients and find anything.
     </p>
 
     <div class="callout callout-note">
       <span class="callout-label">Why This Matters</span>
       <p>This mechanic is the reason the game supports such a wide range of character types.
-      The swordsman isn't obsolete because guns exist &mdash; guns <em>fail</em> in the places
-      adventurers go. The gunfighter isn't useless because magic exists &mdash; there are
-      entire districts where spells don't work. And the caster who recklessly throws power
-      around is making life harder for every gun-wielding ally in the party.</p>
-      <p>Carry a sword <em>and</em> a gun. Know when to rely on which.</p>
+      The swordsman isn't obsolete because guns exist &mdash; guns <em>fail</em> where the
+      Veil is thin. The gunfighter isn't useless because magic exists &mdash; there are
+      entire districts where the Engine hums so loud that spells can't reach through.
+      The Galvanic gunner serves a dual role &mdash; dealing damage <em>and</em> pushing the
+      balance back so the rest of the party's firearms keep working.</p>
+      <p>Your caster and your Galvanic gunner are pulling the environment in opposite
+      directions. Your swordsman doesn't care. Carry a sword <em>and</em> a gun. Know
+      when to rely on which.</p>
     </div>
   </section>
 
@@ -1675,15 +1853,16 @@
       <li><strong>Critical hit:</strong> if your roll falls within your crit range, double your damage dice. A roll of <strong>00</strong> is always a fumble &mdash; the weapon slips, the gun jams, something goes wrong. The GM decides what.</li>
       <li><strong>Roll damage</strong> using your weapon's dice.</li>
       <li><strong>Subtract armor Soak.</strong> The target's armor absorbs that many points. Whatever's left fills their hit point track.</li>
-      <li><strong>Check for armor degradation.</strong> If the raw damage <em>exceeded</em> the armor's Soak, there's a flat <strong>25% chance</strong> the armor loses 1 Soak permanently. Crushing weapons raise this to <strong>50%</strong>. Armor wears down. Every fight costs something.</li>
+      <li><strong>Check for armor degradation.</strong> If the raw damage <em>exceeded</em> the armor's Soak, there's a <strong>25% chance</strong> the armor loses 1 Soak permanently. Crushing weapons raise this to <strong>50%</strong>. Armor wears down. Every fight costs something.</li>
     </ol>
 
     <div class="callout callout-example">
       <span class="callout-label">At the Table</span>
       <p>Kael swings his longsword at a thug wearing a trench coat (Soak 2). He rolls 31 against
       Melee 66 &mdash; hit. Damage: 1d8+1 = 7. The coat absorbs 2, leaving 5 damage into the
-      thug's HP. Since 7 exceeded Soak 2, the GM rolls for degradation: 18 on d100. Under 25 &mdash;
-      the trench coat splits. It's now Soak 1. Next hit, it'll barely help.</p>
+      thug's HP. Since 7 exceeded Soak 2, the GM rolls for degradation &mdash; 25% chance.
+      Rolls 18. Bad luck &mdash; the trench coat splits. It's now Soak 1. Next hit, it'll
+      barely help.</p>
     </div>
 
     <h3>Attack Modifiers</h3>
@@ -1759,7 +1938,7 @@
       Kael's not mid-action &mdash; he just resolved &mdash; so he can defend. He uses Melee
       (skill 66) to parry. Kael rolls 41 (margin 25). Thug B rolled 22 against Melee 45
       (margin 23). Kael's margin wins &mdash; the knife glances off his longsword. But his
-      next action now costs +2 speed. That parry bought him time and cost him time.</p>
+      next action now costs +2 speed. That parry saved him damage but cost him time.</p>
     </div>
 
     <h3>Range Bands</h3>
@@ -1826,38 +2005,57 @@
       <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Notes</th></tr>
       <tr><td>Light Ranged</td><td>5</td><td>1d6</td><td>Short bow, sling</td></tr>
       <tr><td>Medium Ranged</td><td>7</td><td>1d8+1</td><td>Longbow</td></tr>
-      <tr><td>Light Crossbow</td><td>7</td><td>2d6</td><td>Reload 6</td></tr>
-      <tr><td>Heavy Crossbow</td><td>10</td><td>3d6</td><td>Reload 10</td></tr>
+      <tr><td>Light Crossbow</td><td>7</td><td>2d6</td><td>Reload 3</td></tr>
+      <tr><td>Heavy Crossbow</td><td>10</td><td>3d6</td><td>Reload 5</td></tr>
     </table>
 
     <h4>Modern Firearms</h4>
 
+    <p>
+      Firearms have three stats that melee weapons don't. <strong>Capacity</strong> is how
+      many shots before you need to reload. <strong>Reload</strong> is how many counts that
+      takes on the timing track. <strong>Reliability</strong> is how resistant the weapon is
+      to malfunction &mdash; higher is better. A revolver at 95 has only a 5% chance of
+      jamming on any given shot. A tommy gun at 70 has a 30% chance <em>even in clean air</em>.
+      When the Aetheric balance tips against technology, that chance climbs fast.
+    </p>
+
+    <p>
+      Firing a gun is a two-step process: <strong>first check Reliability</strong> (does the
+      weapon fire?), <strong>then roll Ranged</strong> (does the shot hit?). The weapon has
+      to work before your aim matters. In a clean environment, conventional firearms skip
+      the Reliability check entirely &mdash; just roll to hit. See
+      <a href="#malfunction">The Malfunction System</a> for the full rules.
+    </p>
+
     <table>
       <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Capacity</th><th>Reload</th><th>Reliability</th></tr>
-      <tr><td>Holdout Pistol</td><td>2</td><td>1d6</td><td>2</td><td>4</td><td>95</td></tr>
-      <tr><td>Revolver</td><td>3</td><td>2d6</td><td>6</td><td>6</td><td>95</td></tr>
-      <tr><td>Semi-Auto Pistol</td><td>3</td><td>2d6</td><td>8</td><td>3</td><td>85</td></tr>
-      <tr><td>Heavy Pistol</td><td>4</td><td>2d8</td><td>6</td><td>6</td><td>90</td></tr>
-      <tr><td>Rifle</td><td>6</td><td>2d10</td><td>5</td><td>8</td><td>95</td></tr>
-      <tr><td>Carbine</td><td>5</td><td>2d8</td><td>8</td><td>10</td><td>90</td></tr>
-      <tr><td>Shotgun</td><td>4</td><td>3d6</td><td>2</td><td>4</td><td>95</td></tr>
-      <tr><td>Combat Shotgun</td><td>5</td><td>3d6</td><td>5</td><td>8</td><td>85</td></tr>
-      <tr><td>Submachine Gun</td><td>5</td><td>3d6/burst</td><td>50</td><td>5</td><td>70</td></tr>
+      <tr><td>Holdout Pistol</td><td>2</td><td>1d6</td><td>2</td><td>2</td><td>95</td></tr>
+      <tr><td>Revolver</td><td>3</td><td>2d6</td><td>6</td><td>3</td><td>95</td></tr>
+      <tr><td>Semi-Auto Pistol</td><td>3</td><td>2d6</td><td>8</td><td>2</td><td>85</td></tr>
+      <tr><td>Heavy Pistol</td><td>4</td><td>2d8</td><td>6</td><td>3</td><td>90</td></tr>
+      <tr><td>Rifle</td><td>6</td><td>2d10</td><td>5</td><td>4</td><td>95</td></tr>
+      <tr><td>Carbine</td><td>5</td><td>2d8</td><td>8</td><td>5</td><td>90</td></tr>
+      <tr><td>Shotgun</td><td>4</td><td>3d6</td><td>2</td><td>2</td><td>95</td></tr>
+      <tr><td>Combat Shotgun</td><td>5</td><td>3d6</td><td>5</td><td>4</td><td>85</td></tr>
+      <tr><td>Submachine Gun</td><td>5</td><td>3d6/burst</td><td>50</td><td>3</td><td>70</td></tr>
     </table>
 
     <h4>Steampunk Exotics</h4>
 
     <p>
-      Exotic weapons run on arcane engineering &mdash; crystal capacitors, voltaic cells,
-      pressurized aether. They hit different. They also break different.
+      Galvanic weapons channel forces from the Engine &mdash; crystal capacitors, voltaic
+      cells, resonance chambers. They hit different. They also break different. Each one
+      has an <strong>Aetheric rating</strong> that determines how hard it pushes the balance
+      toward tech when fired.
     </p>
 
     <table>
-      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Notes</th></tr>
-      <tr><td>Exotic Pistol</td><td>3</td><td>1d10</td><td>Cap 12, Reload 4, Rel 70</td></tr>
-      <tr><td>Exotic Sidearm</td><td>4</td><td>2d8</td><td>Cap 6, Reload 6, Rel 65</td></tr>
-      <tr><td>Exotic Heavy</td><td>7</td><td>3d8</td><td>Cap 3, Reload 8, Rel 55</td></tr>
-      <tr><td>Exotic Melee</td><td>2</td><td>1d8+PP</td><td>10 charges, Rel 60</td></tr>
+      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Aetheric</th><th>Notes</th></tr>
+      <tr><td>Exotic Pistol</td><td>3</td><td>1d10</td><td>1</td><td>Cap 12, Reload 2, Rel 70</td></tr>
+      <tr><td>Exotic Sidearm</td><td>4</td><td>2d8</td><td>2</td><td>Cap 6, Reload 3, Rel 65</td></tr>
+      <tr><td>Exotic Heavy</td><td>7</td><td>3d8</td><td>3</td><td>Cap 3, Reload 5, Rel 55</td></tr>
+      <tr><td>Exotic Melee</td><td>2</td><td>1d8+PP</td><td>1</td><td>10 charges, Rel 60</td></tr>
     </table>
 
     <h3>Weapon Tags</h3>
@@ -1902,47 +2100,75 @@
     <table>
       <tr><th>Tag</th><th>Effect</th></tr>
       <tr><td>Shocking</td><td>Ignores 2 points of Soak from metal armor. Lightning doesn't care about steel.</td></tr>
-      <tr><td>Suppressing</td><td>Generates +1 extra Tech Accumulation when fired.</td></tr>
+      <tr><td>Suppressing</td><td>+1 to weapon's Aetheric rating per shot. Pushes the balance harder.</td></tr>
       <tr><td>Silent</td><td>No report whatsoever. The target drops and nobody hears why.</td></tr>
       <tr><td>Unstable</td><td>On malfunction, severity roll gets +2 instead of +1. Handle with care.</td></tr>
     </table>
 
-    <h3>Hinder</h3>
+    <h3 id="malfunction">The Malfunction System</h3>
 
-    <p>
-      Heavy armor keeps you alive. It also slows you down. <strong>Hinder</strong> represents
-      the weight and bulk of what you're wearing. It affects your body, not your mind or your aim.
+    <p class="flavor">
+      Magic and machinery don't mix. The more sorcery saturates the air, the more your
+      finely machined firearm becomes an expensive paperweight &mdash; or worse.
     </p>
 
     <p>
-      Each point of Hinder applies <strong>-5%</strong> to: PC, Athletics, Stealth, and Swimming
-      rolls. It also adds <strong>+1 casting speed</strong> per point &mdash; try weaving a spell
-      in full plate.
+      Every firearm shot is a two-step process. <strong>First, check Reliability</strong>
+      &mdash; does the weapon fire at all? <strong>Then roll Ranged</strong> &mdash; does
+      the shot hit? The weapon has to work before your aim matters.
+      <strong>Every shot, every time</strong> &mdash; even in clean air.
     </p>
 
     <p>
-      Hinder does <strong>not</strong> affect: Melee, Brawl, Ranged, PP-based rolls, or any
-      mental/social checks. You can still swing a sword in plate. You just can't dodge in it.
+      <strong>Malfunction chance</strong> = 100 &minus; effective Reliability. Roll d100 &mdash;
+      if you're within the malfunction percentage, the weapon fails. Shot doesn't fire.
+      Action wasted.
     </p>
 
     <p>
-      Hinder from armor and shields <strong>stacks</strong>.
+      <code class="formula">Effective Reliability = Base Reliability &minus; (net balance &times; 2)</code>
     </p>
 
-    <table>
-      <tr><th>Source</th><th>Hinder</th></tr>
-      <tr><td>Half Plate</td><td>1</td></tr>
-      <tr><td>Full Plate</td><td>2</td></tr>
-      <tr><td>Kite Shield</td><td>1</td></tr>
-      <tr><td>Knight Shield</td><td>2</td></tr>
-    </table>
+    <p>
+      Net Aetheric makes guns worse. Net Galvanic makes them better. At effective
+      Reliability 100+ (0% malfunction), the weapon <em>cannot</em> fail. At 0 or below,
+      it simply doesn't function.
+    </p>
 
     <div class="callout callout-example">
       <span class="callout-label">At the Table</span>
-      <p>Kael picks up a kite shield (Hinder 1). His Athletics drops by 5%. His casting speed
-      would increase by 1 &mdash; not that he casts. If he also strapped on half plate (Hinder 1),
-      he'd be at Hinder 2 total: -10% to PC, Athletics, Stealth, Swimming, and +2 casting speed.
-      He'd be a fortress. A slow one.</p>
+      <p>Thug A fires his revolver (Reliability 95) in an area with net +4 Aetheric.
+      Effective Reliability: 95 &minus; 8 = 87. Malfunction chance: 13%.
+      He rolls 11 &mdash; within 13%, malfunction. Click. Nothing happens. His action is
+      gone and Kael is still coming.</p>
+      <p>If he'd rolled 18, the weapon fires. Now he rolls Ranged to see if the shot hits.</p>
+      <p>Later, the party clears out a Galvanic lab (net &minus;8). That same revolver has
+      effective Reliability 95 + 16 = 111. It <em>cannot malfunction</em>. The Engine is
+      holding every mechanism in the building together.</p>
+    </div>
+
+    <h4>Malfunction Severity</h4>
+
+    <p>
+      When a weapon malfunctions, roll d10 to see how bad it is. Exotic weapons add
+      <strong>+1</strong> to the severity roll.
+    </p>
+
+    <table>
+      <tr><th>d10</th><th>Result</th><th>Effect</th></tr>
+      <tr><td>1&ndash;5</td><td>Click</td><td>Didn't fire. Clear it and try again next action.</td></tr>
+      <tr><td>6&ndash;7</td><td>Jam</td><td>Weapon is jammed. Clearing takes the weapon's reload time.</td></tr>
+      <tr><td>8</td><td>Misfire</td><td>A stray shot fires in a random direction. Someone nearby might have a bad day.</td></tr>
+      <tr><td>9</td><td>Mechanical Failure</td><td>Something broke internally. Weapon needs proper repair &mdash; it's done for this fight.</td></tr>
+      <tr><td>10+</td><td>Catastrophic</td><td>The weapon is destroyed. Shrapnel deals 1d6 damage to the wielder.</td></tr>
+    </table>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">Exotics Are Fragile</span>
+      <p>Exotic weapons add +1 to the severity roll. That means a roll of 9 becomes 10 &mdash;
+      catastrophic. And exotic weapons with the Unstable tag add +2 instead. That crystal-powered
+      hand cannon is magnificent until it detonates in your grip. This is the trade-off for
+      superior firepower.</p>
     </div>
 
     <h3>Armor</h3>
@@ -1987,57 +2213,42 @@
       <tr><td>Knight Shield</td><td>10</td><td>2</td><td>Tower of steel</td></tr>
     </table>
 
-    <h3>The Malfunction System</h3>
+    <h3>Hinder</h3>
 
-    <p class="flavor">
-      Magic and machinery don't mix. The more sorcery saturates the air, the more your
-      finely machined firearm becomes an expensive paperweight &mdash; or worse.
+    <p>
+      Heavy armor keeps you alive. It also slows you down. <strong>Hinder</strong> represents
+      the weight and bulk of what you're wearing. It affects your body, not your mind or your aim.
     </p>
 
     <p>
-      You check for malfunction when: Magic Accumulation is present in the area, the weapon
-      is exotic, or the GM calls for it (damaged weapon, bad conditions, etc.).
+      Each point of Hinder applies <strong>-5%</strong> to: PC, Athletics, Stealth, and Swimming
+      rolls. It also adds <strong>+1 casting speed</strong> per point &mdash; try weaving a spell
+      in full plate.
     </p>
 
     <p>
-      <strong>Roll d100 over your weapon's effective Reliability.</strong> If you exceed it,
-      the weapon malfunctions. The shot doesn't fire. Your action is wasted.
+      Hinder does <strong>not</strong> affect: Melee, Brawl, Ranged, PP-based rolls, or any
+      mental/social checks. You can still swing a sword in plate. You just can't dodge in it.
     </p>
 
     <p>
-      Effective Reliability = <code class="formula">Base Reliability - (Magic Accumulation &times; 3)</code>
-    </p>
-
-    <div class="callout callout-example">
-      <span class="callout-label">At the Table</span>
-      <p>Thug A fires his revolver (Reliability 95) in an area with Magic Accumulation 4.
-      Effective Reliability: 95 - (4 &times; 3) = <strong>83</strong>. He rolls 87 on the
-      malfunction check. That's over 83. Click. Nothing happens. His action is gone and
-      Kael is still coming.</p>
-    </div>
-
-    <h4>Malfunction Severity</h4>
-
-    <p>
-      When a weapon malfunctions, roll d10 to see how bad it is. Exotic weapons add
-      <strong>+1</strong> to the severity roll.
+      Hinder from armor and shields <strong>stacks</strong>.
     </p>
 
     <table>
-      <tr><th>d10</th><th>Result</th><th>Effect</th></tr>
-      <tr><td>1&ndash;5</td><td>Click</td><td>Misfire. Clear it and try again next action.</td></tr>
-      <tr><td>6&ndash;7</td><td>Jam</td><td>Weapon is jammed. Clearing takes the weapon's reload time.</td></tr>
-      <tr><td>8</td><td>Misfire</td><td>A stray shot fires in a random direction. Someone nearby might have a bad day.</td></tr>
-      <tr><td>9</td><td>Mechanical Failure</td><td>Something broke internally. Weapon needs proper repair &mdash; it's done for this fight.</td></tr>
-      <tr><td>10+</td><td>Catastrophic</td><td>The weapon is destroyed. Shrapnel deals 1d6 damage to the wielder.</td></tr>
+      <tr><th>Source</th><th>Hinder</th></tr>
+      <tr><td>Half Plate</td><td>1</td></tr>
+      <tr><td>Full Plate</td><td>2</td></tr>
+      <tr><td>Kite Shield</td><td>1</td></tr>
+      <tr><td>Knight Shield</td><td>2</td></tr>
     </table>
 
-    <div class="callout callout-warning">
-      <span class="callout-label">Exotics Are Fragile</span>
-      <p>Exotic weapons add +1 to the severity roll. That means a roll of 9 becomes 10 &mdash;
-      catastrophic. And exotic weapons with the Unstable tag add +2 instead. That crystal-powered
-      hand cannon is magnificent until it detonates in your grip. This is the trade-off for
-      superior firepower.</p>
+    <div class="callout callout-example">
+      <span class="callout-label">At the Table</span>
+      <p>Kael picks up a kite shield (Hinder 1). His Athletics drops by 5%. His casting speed
+      would increase by 1 &mdash; not that he casts. If he also strapped on half plate (Hinder 1),
+      he'd be at Hinder 2 total: -10% to PC, Athletics, Stealth, Swimming, and +2 casting speed.
+      He'd be a fortress. A slow one.</p>
     </div>
 
     <h3>A Fight in the Alley</h3>
@@ -2052,7 +2263,7 @@
       <p><strong>Kael</strong> (swordsman, PC +2, Melee 66, leather coat Soak 2, 9 HP/tier) and
       <strong>Sera</strong> (wild caster, PC +0, casting target 55, 8 HP/tier) are caught in an
       alley by two thugs with revolvers (Firearms 50, Reliability 95, 7 HP/tier, no armor).
-      Range: Near. No prior Magic Accumulation.</p>
+      Range: Near. No prior Aetheric accumulation.</p>
     </div>
 
     <p>
@@ -2080,8 +2291,8 @@
       distance &mdash; she takes the 38. Margin 17, that's Standard tier. She could suppress
       it to Weak (her target of 55 allows 2 tiers of suppression), but Standard Force does
       2d6 damage. She keeps it. Targets Thug B. Damage: 2d6 = 8. Sera pays 4 exhaustion.
-      Backlash check: 15% for a wild caster at Standard. She rolls 67 &mdash; safe. The area
-      gains <strong>+2 Magic Accumulation</strong>.
+      Backlash check: 15% chance at Standard for a wild caster. She rolls 67 &mdash; no backlash. The area
+      gains <strong>+2 Aetheric accumulation</strong>.
     </p>
 
     <p>
@@ -2101,8 +2312,8 @@
     </ul>
 
     <p>
-      <strong>After count 3:</strong> Area has 2 Magic Accumulation. Both revolvers drop from
-      Reliability 95 to effective <strong>89</strong>. Barely noticeable &mdash; but the clock
+      <strong>After count 3:</strong> Area has 2 Aetheric accumulation. Both revolvers drop from
+      Reliability 95 to effective <strong>91</strong>. Barely noticeable &mdash; but the clock
       is ticking. Sera's magic is making the thugs' weapons less trustworthy.
     </p>
 
@@ -2129,8 +2340,9 @@
       <strong>Count 5 &mdash; Sera's second Force.</strong> She rolls 2d100: a <strong>29</strong>
       and a <strong>84</strong>. The 84 is farther from 55 (29 over vs 26 under). She takes the
       29 &mdash; margin 26, Standard again. Targets Thug A this time. Damage: 2d6 = 7. Backlash
-      check: 15% for wild at Standard. Rolls <strong>03</strong>. Backlash. 1d4 = 2 physical
-      damage to Sera. The magic bit her. Wild effect check (25%): rolls 41 &mdash; no wild effect.
+      check: 15% backlash chance. Rolls <strong>03</strong> &mdash; backlash.
+      1d4 = 2 physical damage to Sera. The magic bit her. Wild effect (25% chance):
+      rolls 41 &mdash; no wild effect this time.
       Accumulation climbs to <strong>+4 total</strong>.
     </p>
 
@@ -2153,7 +2365,7 @@
 
     <p>
       <strong>After count 7:</strong> Both thugs are wounded. Sera took backlash damage but is
-      still casting. Accumulation at 4 means the revolvers are at effective Reliability <strong>83%</strong>.
+      still casting. Accumulation at 4 means the revolvers are at effective Reliability <strong>87</strong>.
       Sera's third Force spell will push it higher &mdash; the guns are becoming unreliable.
       <em>The magic is winning the environmental war.</em>
     </p>
@@ -2210,15 +2422,20 @@ DEATH SAVES: every 3 counts, d100
 
 CASTING: fixed time per spell &rarr; roll d100 &rarr; tier by margin
   1-10 Weak | 11-30 Standard | 31-50 Strong | 51+ Spectacular
-  Scholarly: 1d100, choose tier freely
-  Wild: 2d100 (farther from target), +10 bonus, suppress 0-2 tiers
-  Backlash (scholarly): W5% S10% St15% Sp25%
-  Backlash (wild):      W10% S15% St20% Sp30%
+  Scholarly: 1d100, choose tier, all 6 schools, learned spells only
+  Wild: 2d100 (farther from target), +10 bonus, suppress 0-2, PW schools, all spells in school
+  Backlash (% chance, roll d100):
+    Scholarly: W5% S10% St15% Sp25%
+    Wild:      W10% S15% St20% Sp30%
+  Push It: +1 tier, cost = &frac12; current EP + full pushed EP, 2&times; backlash
   Concentration check: (PW+4) &times; 10 | Cancel: &frac12; Weak EP, 10% backlash
 
-ACCUMULATION: each spell adds tier value to area
-  -3% Reliability per point (all tech) | Decays 1/minute
-  Exotic tech: +1 Tech Accumulation per shot, -3 casting/point
+AETHERIC BALANCE: sliding scale, Aetheric &harr; Galvanic
+  Spells: +1/+2/+3/+4 Aetheric by tier
+  Galvanic weapons: &minus;(Aetheric rating) per shot (Pistol 1, Sidearm 2, Heavy 3)
+  Eff. Reliability = Base &minus; (net &times; 2) | Eff. Casting = Base + (net &times; 2)
+  Each side HELPS its own AND HURTS the other
+  Decays 1/min toward zone baseline (normal = 0)
 
 COMBAT: timing track &mdash; declare, place token, resolve on count
   Declaration order: lowest PC first (best react last)
@@ -2231,7 +2448,7 @@ RANGE: Close (melee) | Near (no mod) | Far (-10%) | Distant (-20%)
   Sprint: speed 3 to move one band
   Cover: partial -10%, heavy -20% | Into melee: -10%
 
-MALFUNCTION: d100 &gt; Reliability = malfunction
+MALFUNCTION: ALWAYS check first, then Ranged. Chance = 100 &minus; Eff. Reliability
   Eff. Reliability = Base - (Accumulation &times; 3)
   Severity d10: 1-5 Click | 6-7 Jam | 8 Misfire | 9 Mech Fail | 10 Catastrophic
   Exotics: +1 severity

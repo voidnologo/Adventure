@@ -482,7 +482,7 @@ Suppress or weaken magic in an area. Reduce spell effectiveness, quiet active en
 | **Weak** | 4 | Quiet magic in a small area (arm's reach). Active spells within the area operate at -10% effectiveness. Magical items dim slightly. Lasts 1d4 minutes. Subtle — most people won't notice. |
 | **Standard** | 8 | Dampen magic across a room. All casting within the area suffers -15% to casting target numbers. Active magical effects weaken noticeably. Magical creatures in the area feel sluggish and uncomfortable. Lasts up to 10 minutes. |
 | **Strong** | 12 | Significantly suppress magic in a large area (a floor of a building). -25% to all casting target numbers. Weak-tier active spells simply collapse. Magical items cease functioning temporarily. Lasts up to 1 hour. The area feels cold and dead to anyone with magical sensitivity. |
-| **Spectacular** | 18 | Near-total magical suppression across a building or city block. -50% to all casting targets (effectively impossible for most casters). All active magic collapses. Magical creatures cannot enter. Mimics an Industrial Dead Zone. Lasts several hours. Other casters describe it as suffocating — like the air has been sucked out of the room. |
+| **Spectacular** | 18 | Near-total magical suppression across a building or city block. -50% to all casting targets (effectively impossible for most casters). All active magic collapses. Magical creatures cannot enter. Mimics an Deep Galvanic Zone. Lasts several hours. Other casters describe it as suffocating — like the air has been sucked out of the room. |
 | *Misfire* | 4 | The dampening inverts — the area becomes magically amplified instead. All magic in the area operates at +10% effectiveness and +10% backlash chance. Lasts 1d4 minutes. Chaotic and potentially dangerous if other casters are active. |
 
 ### 6.2 Channel
@@ -492,7 +492,7 @@ Redirect mana flows, create temporary conduits, draw power from ley lines or mag
 
 | Tier | Exhaust | Effect |
 |------|---------|--------|
-| **Weak** | 4 | Tap into ambient magic to recover 1d4 EP. Only works in areas with noticeable magical presence (not in Industrial Dead Zones). The caster must remain still and concentrate. Feels like drinking cold water on a hot day. |
+| **Weak** | 4 | Tap into ambient magic to recover 1d4 EP. Only works in areas with noticeable magical presence (not in Deep Galvanic Zones). The caster must remain still and concentrate. Feels like drinking cold water on a hot day. |
 | **Standard** | 8 | Create a conduit between two nearby magical sources, or draw significant power from a ley line — recover 2d6 EP. Can redirect a mana flow away from a sensitive area or toward a specific target. Takes several minutes of sustained focus. |
 | **Strong** | 12 | Major channeling — draw 3d8 EP from a ley line or wild zone, create a sustained conduit that allies can tap into (each ally recovers 1d4 EP). Can redirect mana flows to stabilize or destabilize a zone. The channeled energy is visible — streams of light flow toward the caster. |
 | **Spectacular** | 18 | Reshape the magical landscape — redirect a ley line (temporarily), create a node of magical power where none existed, draw 4d10 EP from a major magical source. Can feed power to an entire group (each ally recovers 2d6 EP). The caster becomes a visible beacon of magical energy. Risks drawing attention from magical entities. |

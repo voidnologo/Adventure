@@ -13,11 +13,23 @@ This document captures the *why* behind the world and its mechanics. It is not r
 
 The world has two competing metaphysical forces. Neither is fully understood by the people living in it. Neither is "good" or "evil" — they are paradigms with momentum and, perhaps, intentionality.
 
-**The Old Power (Magic):** Primal, wild, recently erupted into the world. It is ancient but *new to people* — the eruption happened within living memory. Magic is wondrous, feared, and poorly understood. It disrupts the established order. It is the intrusion of something vast and inhuman into a world that had been getting along fine without it.
+**The Aether — drawn from the Veil.** Primal, wild, recently erupted into the world. The Veil is the boundary between the mundane world and something vast and inhuman beyond it. When the Veil thinned within living memory, the Aether poured through. Casters draw Aetheric power through the Veil — where it's thin (Wild Zones), magic is strong. Where the Engine drowns it out (Galvanic Zones), magic can't reach. Aetheric force is wondrous, feared, and poorly understood. It disrupts the established order.
 
-**The New Counter-Force (Steampunk Exotica):** The world's technological response to magic — not conventional engineering, but something stranger. Exotic technology that pushes back against magic the way magic pushes against tech. It emerged *after* the magical eruption, as if the universe demanded balance. Whether this is a conscious force, an immune response, or just physics is unknown. People debate it. Cults form around both interpretations.
+**The Galvanic Force — drawn from the Engine.** The world's counter-response to the Aether — not conventional engineering, but something stranger. The Engine is the metaphysical wellspring of human industry and will, given force by the emergence of exotic technology. Galvanic devices push back against the Aether the way the Aether pushes against technology. The Engine emerged *after* the Aetheric eruption, as if the universe demanded balance. Whether this is a conscious force, an immune response, or just physics is unknown. People debate it. Cults form around both interpretations.
 
-**The Baseline (Physical Reality):** Steel, wood, muscle, simple machines. The bedrock of the world. Immune to both forces. A sword works everywhere. A horse doesn't care about aether. This is why martial weapons, hand tools, and pre-industrial technology remain relevant — they are the only truly reliable things in a world being pulled in two directions.
+**The Baseline (Physical Reality):** Steel, wood, muscle, simple machines. The bedrock of the world. Immune to both forces. A sword works everywhere. A horse doesn't care about the Aether or the Engine. This is why martial weapons, hand tools, and pre-industrial technology remain relevant — they are the only truly reliable things in a world being pulled in two directions.
+
+### 1.1b Setting Terminology
+
+| Term | What It Means |
+|------|---------------|
+| **The Veil** | The cosmological source of magic. The boundary between the mundane world and something beyond. Thinned within living memory, allowing magic to flood in. |
+| **The Engine** | The cosmological source of galvanic force. Human industry and will given metaphysical weight. The counter-response to the Veil's thinning. |
+| **Aetheric** | Adjective for magical force and its effects. Aetheric accumulation, Aetheric residue, Aetheric zones. Drawn from the Veil. |
+| **Galvanic** | Adjective for exotic tech force and its effects. Galvanic accumulation, Galvanic resonance, Galvanic technology. Drawn from the Engine. |
+| **The Balance** | The sliding scale between Aetheric and Galvanic saturation in an area. Neutral in most places. Tipped by casting or exotic tech use. |
+| **Conventional** | Ordinary technology — firearms, engines, radios. Affected by the Aether but does not generate Galvanic force. Victims, not combatants. |
+| **Martial** | Physical weapons and tools. Immune to both forces. Swords, crossbows, muscle. The only things that always work. |
 
 ### 1.2 The Asymmetry
 
@@ -27,26 +39,26 @@ The interference is deliberately asymmetric:
 |--------|:---:|:---:|
 | Martial weapons / simple machines | No | No |
 | Conventional firearms / modern tech | No | No |
-| Spellcasting / magical effects | No | **Yes** |
-| Steampunk exotics / aetheric tech | **Yes** | No |
+| Aetheric force (spellcasting) | No | **Yes** |
+| Galvanic force (exotic tech) | **Yes** | No |
 
-**Magic always erodes technology.** Every spell cast leaves residue that makes machines less reliable. This is one-directional — a revolver doesn't make spellcasting harder.
+**The Aether always erodes technology.** Every spell cast leaves Aetheric residue that makes machines less reliable. This is one-directional — a revolver doesn't make spellcasting harder.
 
-**Steampunk exotics erode magic.** The "new gods'" answer to the eruption. Firing an arc gun generates technological counter-resonance that makes spellcasting harder in the area. This mirrors magic's effect on technology — same mechanic, opposite direction.
+**Galvanic force erodes magic.** The Engine's answer to the Veil's thinning. Firing an arc gun generates Galvanic resonance that makes spellcasting harder in the area. This mirrors the Aether's effect on technology — same mechanic, opposite direction.
 
-**Conventional technology is a victim, not a combatant.** A tommy gun is just a machine. It doesn't push back against magic any more than a windmill does. It simply fails when magic is present. Only the bleeding-edge exotic tech — the weird stuff, the prototypes, the things that flirt with forces people don't understand — generates counter-resonance.
+**Conventional technology is a victim, not a combatant.** A tommy gun is just a machine. It doesn't push back against the Aether any more than a windmill does. It simply fails when magic is present. Only Galvanic technology — the exotic prototypes that channel forces from the Engine — generates counter-resonance.
 
-**The physical baseline is immune.** Swords, crossbows, horses, torches. These things are real in a way that neither force can touch. This is the foundation that both magic and exotic tech are built on top of, and it's why smart adventurers never go anywhere without a blade.
+**The physical baseline is immune.** Swords, crossbows, horses, torches. These things are real in a way that neither the Veil nor the Engine can touch. This is the foundation that both forces are built on top of, and it's why smart adventurers never go anywhere without a blade.
 
 ### 1.3 Why This Asymmetry Exists
 
 The answer is unknown in-world. But there are theories, and these theories drive faction politics:
 
-**The Immune Response Theory:** Magic erupted. The world's natural order is fighting back through technology. Exotic tech is the world's antibodies. This view is popular among industrialists and engineers. It frames magic as a disease.
+**The Immune Response Theory:** The Veil thinned. The Engine woke up to fight back. Galvanic technology is the world's antibodies — a natural counter-force emerging to restore balance. This view is popular among industrialists and engineers. It frames the Aether as a disease and the Engine as the cure.
 
-**The Rival Gods Theory:** Two forces — one ancient and wild, one emerging from human ingenuity — are competing for dominance. Each pushes back against the other. People are caught in the middle of a war between paradigms that are, perhaps, conscious. This view is popular among scholars and occultists. It frames both sides as something to be respected and feared.
+**The Rival Gods Theory:** The Veil and the Engine are conscious forces — one ancient and wild, one emerging from human will — competing for dominance over the character of reality. People are caught in the middle. This view is popular among scholars and occultists. It frames both sides as something to be respected and feared.
 
-**The Exploitation Theory:** Exotic tech isn't a natural response — it's people *weaponizing* one force against the other. Someone figured out how to channel anti-magical resonance, and they're selling it. This view is popular among cynics and conspiracy theorists. It frames the whole conflict as manufactured.
+**The Exploitation Theory:** The Engine isn't natural — it's people who figured out how to *weaponize* one force against the other. Someone cracked the code, built the first Galvanic device, and now they're selling it. The Veil is real; the Engine is manufactured. This view is popular among cynics and conspiracy theorists.
 
 > **Design Note:** The truth may be some combination of these, or none. The ambiguity is a feature. The setting is richer when the cosmology is debated, not settled.
 
@@ -151,8 +163,8 @@ Having a caster makes your guns worse. Having exotic tech makes enemy casting wo
 ### 3.5 The Mirror Mechanic
 
 Magic and exotic tech should mirror each other mechanically wherever possible:
-- Magic generates Magic Accumulation → penalizes firearms
-- Exotic tech generates Tech Accumulation → penalizes spellcasting
+- Magic generates Aetheric accumulation → penalizes firearms
+- Galvanic tech generates Galvanic accumulation → penalizes spellcasting
 - Spell backlash / weapon malfunction use the same structural shape (base cost + severity table)
 - Both decay over time; both have environmental zones of permanent influence
 
@@ -196,7 +208,7 @@ Slow accumulation decay means magic leaves traces. This gives rise to:
 
 ### 4.4 Faction Dynamics
 
-- **Pro-technology factions** want to expand Industrial Dead Zones, suppress magic, and develop exotic tech to push back the eruption. They see magic as a threat to civilization.
+- **Pro-technology factions** want to expand Galvanic Zones, suppress magic, and develop exotic tech to push back the eruption. They see magic as a threat to civilization.
 - **Pro-magic factions** see the eruption as a return to something primal and true. They distrust technology's response and may view exotic tech as an abomination — a perversion of the natural order.
 - **Pragmatist factions** use both and try to navigate the middle ground. Most Adventuring Societies probably fall here — they need everything they can get.
 - **Extremist factions** may be trying to tip the balance permanently in one direction. These are the setting's major antagonists (on both sides).

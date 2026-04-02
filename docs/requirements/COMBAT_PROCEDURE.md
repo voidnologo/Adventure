@@ -71,20 +71,16 @@ A character can abandon their current action at any time before it resolves. The
 
 **Skill:** Ranged (PP-based).
 
-**Speed:** Per firearm category. Same procedure as ranged attacks, plus:
+**Speed:** Per firearm category.
 
-**Malfunction check** — required when:
-- Magic Accumulation is present in the area, OR
-- The weapon is an exotic, OR
-- The GM calls for it (damaged weapon, adverse conditions).
+**Procedure (two-step: Reliability, then skill):**
 
-If a malfunction check is required, roll d100 **alongside your attack roll** (or use the same roll — see sidebar). If the result is **over** the weapon's current effective Reliability, the weapon malfunctions:
-- The shot does not fire. Timing counts are spent.
-- Roll d10 on the Malfunction Severity table (§6).
+1. **Reliability check — does it fire?** Roll d100 as a consequence check. **Every shot, every time.** Malfunction chance = 100 − effective Reliability. If the roll falls within the malfunction %, the weapon fails — shot doesn't fire, action spent. Roll d10 on the Malfunction Severity table (§6).
+2. **If it fires — roll Ranged to hit.** Same as any ranged attack: d100 under skill target.
 
-> **Sidebar — One Roll or Two?** For speed of play, you can use the attack roll itself as the malfunction check. If you roll over your skill target, you miss. If you *also* rolled over the weapon's effective Reliability, it's a malfunction instead of a clean miss. If you hit (rolled under skill) but rolled over Reliability, the shot fires *and* the weapon malfunctions after — it worked this time, but something's wrong. This keeps the rhythm fast: one roll, two thresholds.
+**Effective Reliability** = Base Reliability − (net balance × 2)
 
-**Effective Reliability** = Base Reliability − (Magic Accumulation × 3)
+The balance affects both sides: net Aetheric reduces Reliability, net Galvanic increases it. At effective Reliability 100+ (0% malfunction), the weapon cannot fail. At effective Reliability 0 or below (100% malfunction), the weapon simply does not function.
 
 **Ammo tracking:** Each shot (or burst for Burst-tagged weapons) consumes ammo from Capacity. When empty, reload.
 
@@ -103,7 +99,7 @@ If a malfunction check is required, roll d100 **alongside your attack roll** (or
 6. Apply the spell's effect at the final tier.
 7. Pay exhaustion cost for the tier used (deduct from EP).
 8. Roll backlash check — percentage chance based on tier (Weak 5%, Standard 10%, Strong 15%, Spectacular 25%). On failure: 1d4 physical damage + 25% chance of Wild Effect.
-9. Apply Magic Accumulation to the area (Weak +1, Standard +2, Strong +3, Spectacular +4).
+9. Apply Aetheric accumulation to the area (Weak +1, Standard +2, Strong +3, Spectacular +4).
 
 > **Design Note:** Fixed casting times mean wild and scholarly casters follow the same timing rules. The difference is purely what happens at resolution — control vs. chaos. A wild caster throwing Force might get a Weak puff or a Spectacular blast; the casting *time* is the same either way. This also makes spell design cleaner: a spell's casting time is an independent balance lever from its tier effects.
 
@@ -159,7 +155,7 @@ A character who is **not currently mid-action** (no token on the track, or their
 | Take cover | 2 | Move to nearby cover (see §8) |
 | Stand up from prone | 2 | |
 | Reload (firearm) | Per weapon | See firearm tables |
-| Reload (crossbow) | Per weapon | Light: 6, Heavy: 10 |
+| Reload (crossbow) | Per weapon | Light: 3, Heavy: 5 |
 | Sprint | 3 | Move one range band (see §8) |
 
 ---
@@ -269,7 +265,7 @@ The fastest possible death is **9 counts** (three checks, three failures). That'
 
 **Ally intervention:**
 - **Medicine check** (speed 5): Success stabilizes the dying character. They're unconscious at 0 HP Incapacitated.
-- **Mend spell:** Healing restores HP normally. If it pushes them above 0 in Incapacitated, they regain consciousness. Remember: casting Mend takes time on the timing track and generates Magic Accumulation.
+- **Mend spell:** Healing restores HP normally. If it pushes them above 0 in Incapacitated, they regain consciousness. Remember: casting Mend takes time on the timing track and generates Aetheric accumulation.
 - **Healing potion** (speed 3, must be in hand): Force-fed to the dying character. Restores HP per potion strength.
 
 > **Design intent:** Death should be possible but not instant. The 3-count interval gives allies a genuine rescue window — they might need to cancel an action (+1 penalty), sprint (3 counts), and apply Medicine (5 counts) = roughly 9-10 counts. That's a close race against the death clock, which is exactly the tension we want. The flat 50/50 is intentionally simple — it may evolve into something tied to PP after playtesting.
@@ -297,20 +293,17 @@ Hinder from armor and shield **stacks.** Full Plate + Knight Shield = Hinder 4 (
 
 ### 6.1 When to Check
 
-Roll a malfunction check on every shot/burst when:
-- **Any** Magic Accumulation is present in the area, OR
-- The weapon is an **exotic** (always), OR
-- The **GM calls for it** (weapon damaged, adverse conditions).
-
-In a clean environment with zero accumulation, conventional firearms do **not** require malfunction checks. They just work.
+The Reliability check happens **before** the Ranged skill roll. The weapon has to work before your aim matters. **Every shot, every time.**
 
 ### 6.2 The Check
 
-Roll d100. Over the weapon's effective Reliability = malfunction.
+**Malfunction chance** = 100 − effective Reliability. Roll d100 as a consequence check — if within the malfunction percentage, the weapon fails.
 
-**Effective Reliability** = Base Reliability − (Magic Accumulation × 3)
+**Effective Reliability** = Base Reliability − (net balance × 2)
 
-At effective Reliability 0 or below, the weapon does not function. No roll needed.
+The balance affects both directions: net Aetheric makes guns worse, net Galvanic makes them better. At effective Reliability 100+ (malfunction chance 0%), the weapon cannot fail. At effective Reliability 0 or below (malfunction chance 100%+), the weapon simply does not function.
+
+*Example: Revolver (Rel 95) in clean air = 5% malfunction chance. One in twenty. At +10 Aetheric: effective Rel 75, 25% malfunction. Getting dicey. At −5 Galvanic: effective Rel 105, 0% — can't malfunction.*
 
 ### 6.3 Malfunction Severity
 
@@ -328,7 +321,7 @@ On malfunction, the shot does not fire (action wasted). Then roll d10:
 
 ### 6.4 Accumulation in Combat
 
-Track Magic Accumulation as spells are cast during the fight. Each spell adds accumulation equal to its achieved tier (Weak +1, Standard +2, Strong +3, Spectacular +4). This accumulation persists — it stacks through the fight and decays at 1 per minute after casting stops.
+Track Aetheric accumulation as spells are cast during the fight. Each spell adds accumulation equal to its achieved tier (Weak +1, Standard +2, Strong +3, Spectacular +4). This accumulation persists — it stacks through the fight and decays at 1 per minute after casting stops.
 
 In a fight with active casters, firearms become progressively less reliable as the scene goes on. Smart fighters act early with firearms and switch to melee as accumulation climbs.
 
@@ -383,7 +376,7 @@ No grid, no measurements. Distances are described in **narrative range bands:**
 
 **Medicine skill check (speed 5):** Stabilize a Dying character (see §5.3). Can also be used to perform field treatment on a wounded ally — success restores 1d4 HP. One Medicine check per patient per scene.
 
-**Mend spell:** Heals per the spell's tier table. Casting time and exhaustion costs apply normally. Healing in combat means your healer is spending counts casting instead of fighting — and generating Magic Accumulation.
+**Mend spell:** Heals per the spell's tier table. Casting time and exhaustion costs apply normally. Healing in combat means your healer is spending counts casting instead of fighting — and generating Aetheric accumulation.
 
 **Potions/vials (speed 3):** If the setting includes healing potions, drinking one takes 3 counts and must be in-hand.
 
@@ -404,7 +397,7 @@ Degraded armor can be repaired with a **Metalworking check** (or Repair for mode
 
 ## 10. Combat Round Example
 
-> **Setup:** Two PCs (Kael, a swordsman with PC +2, and Sera, a wild caster with PC +0) face two thugs with revolvers (PC +0, AW -1) in an alley. No prior Magic Accumulation.
+> **Setup:** Two PCs (Kael, a swordsman with PC +2, and Sera, a wild caster with PC +0) face two thugs with revolvers (PC +0, AW -1) in an alley. No prior Aetheric accumulation.
 
 **Count 0 — Declarations (first round, all simultaneous):**
 - Kael: draws his Medium sword (speed 2, token at 2)
@@ -415,11 +408,11 @@ Degraded armor can be repaired with a **Metalworking check** (or Repair for mode
 **Count 2 — Kael's draw resolves.** Sword is ready. He declares a melee attack on Thug A (Medium speed 5, token at 7). He needs to close from Near — the final step is part of his attack (he's Near, closing to Close is free).
 
 **Count 3 — Three tokens resolve.** All three started at count 0, so they resolve simultaneously.
-- **Sera's Force spell:** Rolls d100 against casting target 55. Rolls 38 — success, margin 17 → Standard tier. She's a wild caster — she rides the surge, no choice. Targets Thug B. Deals 2d6 = 8 damage. Sera pays 4 exhaustion from her EP track. Backlash check: 10% chance, rolls 67 — no backlash. Magic Accumulation in the area: +2.
+- **Sera's Force spell:** Rolls d100 against casting target 55. Rolls 38 — success, margin 17 → Standard tier. She's a wild caster — she rides the surge, no choice. Targets Thug B. Deals 2d6 = 8 damage. Sera pays 4 exhaustion from her EP track. Backlash check: 10% chance, rolls 67 — no backlash. Aetheric accumulation in the area: +2.
 - **Thug A fires at Kael:** Rolls 44 against skill 50. Hit. Damage: 2d6 = 9. Kael is wearing leather (Soak 2). 9 − 2 = 7 damage. Armor degradation check: 9 exceeds Soak 2, so roll — 63, no degradation. Kael has 9 HP per tier (PP +2). He takes 7 into his OK tier, leaving 2 HP before Harmed. Close call.
 - **Thug B fires at Sera:** Rolls 71 against skill 50. Miss. No malfunction check needed — there was 0 accumulation when the shot was declared (accumulation from Sera's spell and the shot resolve simultaneously on this count).
 
-**Post-count 3:** Area now has 2 Magic Accumulation. Both revolvers (Reliability 95) drop to effective 89 — barely noticeable, but the clock is ticking.
+**Post-count 3:** Area now has 2 Aetheric accumulation. Both revolvers (Reliability 95) drop to effective 89 — barely noticeable, but the clock is ticking.
 
 **Count 3 — New declarations (declaration order matters now):**
 Three characters need to declare: Sera (PC +0), Thug A (PC +0, AW -1), Thug B (PC +0, AW -1). Thugs declare first (tied PC, lower AW). Then Sera. Sera gets to see what both thugs are committing to before she decides.
@@ -531,7 +524,7 @@ DAMAGE: roll dice → subtract armor Soak → apply to HP
   Degradation: damage > Soak? Flat 25% chance, lose 1 Soak (Crushing: 50%)
 
 MALFUNCTION: d100 > effective Reliability = malfunction
-  Eff. Reliability = Base − (Magic Accumulation × 3)
+  Eff. Reliability = Base − (net balance × 2)
   Severity: d10 → 1-5 click, 6-7 jam, 8 misfire, 9 broken, 10 boom
 
 WOUNDS          EXHAUSTION          RANGE BANDS
