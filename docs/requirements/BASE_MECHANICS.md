@@ -57,6 +57,8 @@ Six stats, rated **-3 to +3.**
 
 ## 4. Skills
 
+> Full skill list with descriptions: [SKILLS_PROGRESSION.md](../requirements/SKILLS_PROGRESSION.md)
+
 ### 4.1 Skill Target Number
 
 ```
@@ -71,7 +73,7 @@ Six stats, rated **-3 to +3.**
 (5 + associated stat) × 5
 ```
 
-*Example: Unskilled Athletics, PC +1 → (5 + 1) × 5 = 30. Unskilled Medicine, IN -1 → (5 + -1) × 5 = 20.*
+*Example: Unskilled Athletics, PP +1 → (5 + 1) × 5 = 30. Unskilled Medicine, IN -1 → (5 + -1) × 5 = 20.*
 
 ### 4.3 Skill Points
 
@@ -83,15 +85,27 @@ Skill points are allocated per stat group:
 
 | Group | Stats | Skills |
 |-------|-------|--------|
-| Physical | PP, PC | Athletics, Brawl, Climbing, Conceal, Melee, Ranged, Running, Swimming |
-| Mental | IN, AW | Acting, Boating, Disarm Trap, Disguise, Empathy, Engineering, Forgery, Hunting, Medicine, Metalworking, Music, Observation, Repair, Ride/Drive, Science, Security, Stealth, Survival, Tactics, Woodworking |
-| Social | SP | Business, Etiquette, Gambling, Interrogation, Leadership, Persuasion |
+| Physical | PP, PC | Athletics (PP), Brawl (PP), Melee (PP), Intimidation ★ (PP), Firearms (PC), Piloting (PC), Ranged (PC), Sleight of Hand (PC), Stealth (PC) |
+| Mental | IN, AW, PW | Craft (IN), Engineering (IN), Medicine (IN), Occult Lore (IN), Science (IN), Tactics (IN), Empathy (AW), Investigation (AW), Observation (AW), Survival (AW), Resolve (PW), Scholarly Casting (PW), Wild Casting (PW) |
+| Social | SP | Deception, Etiquette, Intimidation ★, Leadership, Persuasion, Streetwise |
 
 **Skill cap:** Maximum 15 skills per character.
+**Character creation cap:** 3 per skill. **Gameplay maximum:** 5 per skill.
 
 *Example: PP +2, PC +1 → Physical skill points = 10 + 2 + 1 = 13.*
 
-> **NOTE:** Skill list pending revision for steampunk setting (add Firearms, Pilot, Occult Lore, Streetwise, etc.).
+> ★ **Intimidation** is a flex-stat skill. Place it under PP (physical menace) or SP (social pressure) — your choice at character creation.
+
+### 4.4 Progression
+
+**1 XP per session** (automatic) + bonus XP from table vote for standout moments. Typical rate: 1–2 XP per session.
+
+| Action | Cost |
+|--------|------|
+| Advance skill to level N | N XP |
+| Raise an attribute by 1 | 10 XP |
+
+*Example: Skill 3→4 costs 4 XP. Skill 3→5 costs 4+5 = 9 XP. Attribute +1→+2 costs 10 XP.*
 
 ---
 
@@ -253,8 +267,10 @@ OPPOSED: both roll, larger margin wins │ one success beats one fail
 
 STATS: PP PC IN SP AW PW │ range -3 to +3
 
-SKILL TARGET: ((10 + stat) × level) + 30
+SKILL TARGET: ((10 + stat) × level) + 30   max level 5 (cap 3 at creation)
 UNSKILLED:    (5 + stat) × 5
+
+XP: 1/session + table vote bonus │ Skill to N costs N │ Attribute +1 costs 10
 
 WOUNDS (HP per tier = 7+PP)     EXHAUSTION (EP per tier = 7+PW)
   OK         —                    OK          —

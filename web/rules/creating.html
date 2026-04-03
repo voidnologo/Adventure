@@ -208,14 +208,21 @@
 
     <table>
       <tr><th>Group</th><th>Attributes</th><th>Skills</th></tr>
-      <tr><td>Physical</td><td>PP, PC</td><td>Athletics, Brawl, Climbing, Conceal, Melee, Ranged, Running, Swimming</td></tr>
-      <tr><td>Mental</td><td>IN, AW</td><td>Acting, Boating, Disarm Trap, Disguise, Empathy, Engineering, Forgery, Hunting, Medicine, Metalworking, Music, Observation, Repair, Ride/Drive, Science, Security, Stealth, Survival, Tactics, Woodworking</td></tr>
-      <tr><td>Social</td><td>SP</td><td>Business, Etiquette, Gambling, Interrogation, Leadership, Persuasion</td></tr>
+      <tr><td>Physical</td><td>PP, PC</td><td>Athletics (PP), Brawl (PP), Melee (PP), Intimidation&nbsp;★ (PP), Firearms (PC), Piloting (PC), Ranged (PC), Sleight&nbsp;of&nbsp;Hand (PC), Stealth (PC)</td></tr>
+      <tr><td>Mental</td><td>IN, AW, PW</td><td>Craft (IN), Engineering (IN), Medicine (IN), Occult&nbsp;Lore (IN), Science (IN), Tactics (IN), Empathy (AW), Investigation (AW), Observation (AW), Survival (AW), Resolve (PW), Scholarly&nbsp;Casting (PW), Wild&nbsp;Casting (PW)</td></tr>
+      <tr><td>Social</td><td>SP</td><td>Deception, Etiquette, Intimidation&nbsp;★, Leadership, Persuasion, Streetwise</td></tr>
     </table>
+
+    <div class="callout">
+      <span class="callout-label">★ Intimidation</span>
+      <p>Intimidation appears in both Physical and Social. When you take this skill, choose which attribute defines it for your character and buy it from that group's points. A bruiser who looms over people (PP) and a spymaster who whispers threats (SP) both intimidate &mdash; differently.</p>
+    </div>
 
     <p>
       The cost is simple: one skill point per skill level. Want Melee at level 3?
-      That's 3 points from your Physical pool. The level you invest determines your
+      That's 3 points from your Physical pool. At character creation, the
+      <strong>maximum is 3</strong> per skill &mdash; mastery beyond that comes
+      from experience during play. The level you invest determines your
       <strong>target number</strong> &mdash; the percentage you need to roll under.
     </p>
 
@@ -228,12 +235,12 @@
 
     <div class="callout callout-example">
       <span class="callout-label">Kael's Skill Targets</span>
-      <p>Kael has PC +2 and puts 3 points into <strong>Melee</strong>:</p>
+      <p>Kael has PP +2 and puts 3 points into <strong>Melee</strong>:</p>
       <p>((10 + 2) &times; 3) + 30 = <strong>66%</strong> &mdash; he hits about two-thirds of the time.</p>
-      <p>He also puts 2 points into <strong>Ranged</strong> (PP +2):</p>
+      <p>He also puts 2 points into <strong>Firearms</strong> (PC +2):</p>
       <p>((10 + 2) &times; 2) + 30 = <strong>54%</strong> &mdash; decent shot, but swords are his thing.</p>
-      <p>And 1 point into <strong>Stealth</strong> (AW +1):</p>
-      <p>((10 + 1) &times; 1) + 30 = <strong>41%</strong> &mdash; he can sneak, but it's not reliable. Better to go loud.</p>
+      <p>And 2 points into <strong>Stealth</strong> (PC +2):</p>
+      <p>((10 + 2) &times; 2) + 30 = <strong>54%</strong> &mdash; military training keeps him quiet when he needs to be.</p>
     </div>
 
     <p>
@@ -247,7 +254,7 @@
 
     <p>
       Sometimes you need to try something you're not trained in &mdash; picking a lock
-      without Security, patching a wound without Medicine. You can attempt it, but
+      without Sleight of Hand, patching a wound without Medicine. You can attempt it, but
       your odds aren't great:
     </p>
 
@@ -273,23 +280,25 @@
       <div class="sheet-skill-row" style="font-weight: 600; color: var(--theme-accent);">
         <span>Skill</span><span>Stat</span><span>Lvl</span><span>Target</span>
       </div>
-      <div class="sheet-skill-row"><span>Melee</span><span>+2</span><span>3</span><span>66</span></div>
-      <div class="sheet-skill-row"><span>Ranged</span><span>+2</span><span>2</span><span>54</span></div>
-      <div class="sheet-skill-row"><span>Athletics</span><span>+2</span><span>2</span><span>54</span></div>
-      <div class="sheet-skill-row"><span>Running</span><span>+2</span><span>2</span><span>54</span></div>
-      <div class="sheet-skill-row"><span>Observation</span><span>+1</span><span>2</span><span>52</span></div>
-      <div class="sheet-skill-row"><span>Stealth</span><span>+1</span><span>1</span><span>41</span></div>
-      <div class="sheet-skill-row"><span>Tactics</span><span>+0</span><span>2</span><span>50</span></div>
-      <div class="sheet-skill-row"><span>Survival</span><span>+1</span><span>1</span><span>41</span></div>
-      <div class="sheet-skill-row"><span>Ride/Drive</span><span>+1</span><span>1</span><span>41</span></div>
-      <div class="sheet-skill-row"><span>Interrogation</span><span>-1</span><span>1</span><span>39</span></div>
+      <div class="sheet-skill-row"><span>Melee</span><span>PP +2</span><span>3</span><span>66</span></div>
+      <div class="sheet-skill-row"><span>Athletics</span><span>PP +2</span><span>3</span><span>66</span></div>
+      <div class="sheet-skill-row"><span>Firearms</span><span>PC +2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Stealth</span><span>PC +2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Intimidation</span><span>PP +2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Tactics</span><span>IN +0</span><span>2</span><span>50</span></div>
+      <div class="sheet-skill-row"><span>Observation</span><span>AW +1</span><span>2</span><span>52</span></div>
+      <div class="sheet-skill-row"><span>Survival</span><span>AW +1</span><span>2</span><span>52</span></div>
+      <div class="sheet-skill-row"><span>Streetwise</span><span>SP -1</span><span>2</span><span>48</span></div>
+      <div class="sheet-skill-row"><span>Leadership</span><span>SP -1</span><span>1</span><span>39</span></div>
     </div>
 
     <p>
-      Kael spent his Physical points heavily (PP +2 and PC +2 give him 14 Physical points),
-      spread some Mental points around (IN +0 and AW +1 give him 11), and barely touched
-      Social (SP -1 gives him only 9 &mdash; and he spent just 1 on Interrogation, because
-      he's better at demanding answers than asking nicely).
+      Kael spent his Physical points heavily (PP +2 and PC +2 give him 14 Physical points &mdash;
+      he used 12). He spread some Mental points around (IN +0, AW +1, PW -2 give him 9 &mdash;
+      he used 6 on Tactics, Observation, and Survival). Social got the scraps (SP -1 gives him
+      9 points, he used 3). Notice he put Intimidation under PP, not SP &mdash; Kael doesn't
+      threaten with words, he threatens by standing up and letting you do the math. And Leadership
+      at 39% is a long shot, but a former officer can still bark an order when it counts.
     </p>
 
     <h3 id="hit-points">Step 4: Hit Points &amp; Exhaustion Points</h3>
@@ -351,7 +360,72 @@
       physical wounds, but the penalties stack with them.
     </p>
 
-    <h3 id="equipment">Step 5: Equipment</h3>
+    <h3 id="progression">Step 5: Growing Over Time</h3>
+
+    <p>
+      Your character grows through experience, not body count. After every session,
+      you earn <strong>XP</strong> that you spend to improve skills or &mdash; rarely &mdash;
+      raise an attribute.
+    </p>
+
+    <h4>Earning XP</h4>
+
+    <p>
+      <strong>1 XP per session</strong> &mdash; automatic. You showed up, you played,
+      you're growing.
+    </p>
+
+    <p>
+      <strong>+Bonus XP from table vote</strong> &mdash; At session's end, the table recounts
+      the session together. Memorable scenes, clever solutions, heroic moments, great roleplay,
+      advancing the story &mdash; the group recognizes standout moments and awards a bonus XP
+      to players who earned one. Multiple players can earn a bonus in the same session, everyone
+      can, or no one might. Not every session will have standout moments, and that's fine. The
+      automatic XP means everyone is always growing.
+    </p>
+
+    <h4>Improving Skills</h4>
+
+    <p>
+      The cost to raise a skill to level N is <strong>N XP</strong>. Going from
+      level 1 to 2 costs 2. Going from 4 to 5 costs 5. The maximum skill level
+      in play is <strong>5</strong> &mdash; even a master (target 95) can still
+      fail on a bad roll.
+    </p>
+
+    <table>
+      <tr><th>Advance</th><th>Cost</th><th>Sessions (at 1&ndash;2 XP)</th></tr>
+      <tr><td>New skill (0 &rarr; 1)</td><td>1 XP</td><td>1</td></tr>
+      <tr><td>1 &rarr; 2</td><td>2 XP</td><td>1&ndash;2</td></tr>
+      <tr><td>2 &rarr; 3</td><td>3 XP</td><td>2&ndash;3</td></tr>
+      <tr><td>3 &rarr; 4</td><td>4 XP</td><td>2&ndash;4</td></tr>
+      <tr><td>4 &rarr; 5</td><td>5 XP</td><td>3&ndash;5</td></tr>
+    </table>
+
+    <p>
+      Picking up something brand new costs almost nothing &mdash; your grizzled soldier
+      starts learning <strong>Occult Lore</strong> after a terrifying encounter? That's
+      1 XP and a great character moment. But taking it all the way to mastery is a
+      15-session commitment. <strong>Breadth is cheap; depth is earned.</strong>
+    </p>
+
+    <p>
+      After character creation, XP is universal &mdash; not limited by the original group
+      pools. You can invest in any skill regardless of which group it belongs to.
+    </p>
+
+    <h4>Improving Attributes</h4>
+
+    <p>
+      <strong>10 XP per +1 to an attribute.</strong> The cap is still +3. This is
+      expensive &mdash; 5 to 10 sessions of saving everything for a single point.
+      But the payoff cascades: every skill under that attribute improves when it does.
+      Getting stronger makes you better at Athletics, Brawl, <em>and</em> Melee.
+      Growing more resilient deepens your EP, your casting, <em>and</em> your Resolve.
+      Attribute growth is the rare, landmark moment of a campaign.
+    </p>
+
+    <h3 id="equipment">Step 6: Equipment</h3>
 
     <p>
       Grab what makes sense for your character. Kael carries a longsword (Medium: speed 5,
@@ -370,7 +444,7 @@
       heavy armor).
     </p>
 
-    <h3 id="magic-path">Step 6: Magic (If That's Your Path)</h3>
+    <h3 id="magic-path">Step 7: Magic (If That's Your Path)</h3>
 
     <p>
       Anyone <em>can</em> learn magic &mdash; it's a skill choice, not a birthright. If you

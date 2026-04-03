@@ -141,6 +141,8 @@ Six stats, rated from **-3 to +3**:
 
 ### 3.3 Skills
 
+> **Full skill list and progression rules:** [SKILLS_PROGRESSION.md](SKILLS_PROGRESSION.md)
+
 **Skill target number formula:**
 ```
 ((10 + associated stat modifier) × skill level) + 30
@@ -152,6 +154,9 @@ Six stats, rated from **-3 to +3**:
 ```
 
 **Skill cap:** Up to 15 skills per character.
+**Character creation cap:** 3 per skill.
+**Gameplay maximum:** 5 per skill.
+**Highest possible target:** (10 + 3) × 5 + 30 = 95 — there is always a chance of failure.
 
 **Skill points per group:**
 ```
@@ -160,27 +165,30 @@ Six stats, rated from **-3 to +3**:
 
 **Stat Groups:**
 - **Physical:** PP, PC
-- **Mental:** IN, AW
+- **Mental:** IN, AW, PW
 - **Social:** SP
 
-#### Skill List
+#### Skill List (27 Skills)
 
-**Physical (PC) — Coordination:**
-Athletics, Brawl (Combat), Conceal, Melee (Combat)
+**PP — Physical Prowess:**
+Athletics, Brawl, Melee, Intimidation ★
 
-**Physical (PP) — Prowess:**
-Climbing, Ranged (Combat), Running, Swimming
+**PC — Physical Coordination:**
+Firearms, Piloting, Ranged, Sleight of Hand, Stealth
 
-**Mental (AW) — Awareness:**
-Empathy, Forgery, Hunting, Observation, Ride/Drive, Security, Stealth
+**IN — Intellect:**
+Craft, Engineering, Medicine, Occult Lore, Science, Tactics
 
-**Mental (IN) — Intellect:**
-Acting, Boating, Disarm Trap, Disguise, Engineering, Medicine, Metalworking, Music, Repair, Science, Survival, Tactics, Woodworking
+**AW — Awareness:**
+Empathy, Investigation, Observation, Survival
 
-**Social (SP):**
-Business, Etiquette, Gambling, Interrogation, Leadership, Persuasion
+**PW — Power:**
+Resolve, Scholarly Casting, Wild Casting
 
-> **NOTE:** Skill list may need revision for steampunk setting. Consider additions like: Demolitions, Pilot (airship), Arcana/Occult Lore, Streetwise, Intimidation, Firearms-specific skills, Magitech. Further discussion needed.
+**SP — Social Prowess:**
+Deception, Etiquette, Intimidation ★, Leadership, Persuasion, Streetwise
+
+> ★ **Intimidation** is a flex-stat skill — it can be placed under PP (physical menace) or SP (social pressure). The player chooses at character creation which attribute and group it belongs to.
 
 ### 3.4 Classes (Archetype Labels)
 
@@ -395,22 +403,36 @@ Magic is new, wild, dangerous, wondrous, and feared. Casting uses a **tiered res
 
 ## 7. Progression & Leveling
 
+> **Full progression rules:** [SKILLS_PROGRESSION.md](SKILLS_PROGRESSION.md)
+
 ### 7.1 Design Intent
 
-Progression should be **skill-use driven**, not kill-count driven.
+Progression rewards engagement with the fiction — not body count. The advancement system cannot see whether you fought, ran, negotiated, or hid. Inspired by Symbaroum (session-based XP, no combat bonus) and Blades in the Dark (table-level social incentives).
 
-Inspirations:
-- **Mouse Guard:** Every failure teaches lessons. Every successful use teaches lessons. You mark skills as you use them, and advancement comes from play.
-- **Symbaroum:** XP for meaningful scenes, not combat victories.
+### 7.2 Earning XP
 
-### 7.2 Core Concept
+**1 XP per session** — automatic for attendance.
 
-> **NOTE:** Leveling system is deferred for detailed design. Key principles established:
-> - Learn by doing — skills improve through use (successes and failures both count)
-> - Session-based points that can be invested in skill advancement
-> - NO XP-for-killing-monsters
-> - Reward meaningful scenes, clever problem-solving, heroic moments
-> - Specific mechanics TBD
+**+Bonus XP from table vote** — At session's end, the table recounts the session together. Memorable scenes, clever solutions, heroic moments, great roleplay, advancing the story — the group recognizes standout moments and awards a bonus XP to players who earned one. Multiple players can earn a bonus in the same session, everyone can, or no one might. Not every session will have standout moments, and that's fine.
+
+**Typical rate: 1–2 XP per session.** No XP for kills. No XP for loot.
+
+### 7.3 Improving Skills
+
+Cost to advance a skill to level N = **N XP** (e.g., 1→2 costs 2 XP, 4→5 costs 5 XP).
+
+- **Character creation cap:** 3 per skill
+- **Gameplay maximum:** 5 per skill
+- **New skills (0→1):** 1 XP with narrative justification
+- **Creation cap to mastery (3→5):** 9 XP = 5–9 sessions
+
+After character creation, XP is a universal currency — not limited by the original group point pools.
+
+### 7.4 Improving Attributes
+
+**10 XP per +1 to an attribute.** Cap remains +3.
+
+Expensive (5–10 sessions of saving everything) but the payoff cascades: every skill under that attribute improves, plus derived values (HP, EP, etc.). Attribute growth is a campaign landmark.
 
 ---
 
@@ -456,7 +478,7 @@ The following topics need further discussion and design work:
 1. ~~**Schools of Magic** — Define schools, design spell lists~~ **DONE** (Session 2 — see MAGIC_SYSTEM.md)
 2. ~~**Firearms & Steampunk Equipment** — Tables for guns, gadgets, vehicles~~ **DONE** (Session 4 — see FIREARMS_EQUIPMENT.md, DESIGN_PHILOSOPHY.md)
 3. **Magic/Tech Interference Mechanics** — How zones work mechanically (framework established in FIREARMS_EQUIPMENT.md §5, full zone rules TBD)
-4. **Leveling System** — Detailed progression mechanics
+4. ~~**Leveling System** — Detailed progression mechanics~~ **DONE** (Session 10 — see SKILLS_PROGRESSION.md)
 5. ~~**Death Saves**~~ **DONE** (Session 5 — see COMBAT_PROCEDURE.md §5.3)
 6. **Races** — Whether to include, and if so, what options
 7. **Archetype Names** — Setting-flavored class labels
@@ -466,7 +488,7 @@ The following topics need further discussion and design work:
 ### Medium Priority
 10. ~~**Hinder Mechanic**~~ **DONE** (Session 5 — see COMBAT_PROCEDURE.md §5.4)
 11. ~~**Wild vs. Scholarly Magic** — Mechanical differentiation~~ **DONE** (Session 2 — see MAGIC_SYSTEM.md, details TBD for exact variance mechanic)
-12. **Skill List Revision** — Update for steampunk setting (add Firearms, Pilot, Occult Lore, etc.)
+12. ~~**Skill List Revision** — Update for steampunk setting (add Firearms, Pilot, Occult Lore, etc.)~~ **DONE** (Session 10 — see SKILLS_PROGRESSION.md)
 13. **Equipment Prices & Economy** — Currency system, costs
 14. **Bestiary** — Monsters, cultists, corrupted beings, magical creatures
 15. **NPC Creation** — Simplified stat blocks for GM use
