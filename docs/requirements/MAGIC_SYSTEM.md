@@ -75,7 +75,7 @@ The wild caster has a raw, untrained connection to the mana flows. They are natu
 
 ### 2.4 Wild Caster Variance Mechanic
 
-Wild casters roll **2d100 and take the result farther from their target number**. This pushes outcomes toward extremes — bigger failures AND bigger successes. Combined with their +10 casting target bonus, wild casters at low levels succeed at roughly the same rate as scholarly casters but spike to higher tiers when they do succeed. At high levels, they become more reliable than scholarly casters but still can't control what tier manifests.
+Wild casters roll **2d100 and take the result farther from their target number**. If both dice are equidistant from the target (e.g., target 55, rolls 38 and 72 — both 17 away), the **caster chooses** which die to take. This pushes outcomes toward extremes — bigger failures AND bigger successes. Combined with their +10 casting target bonus, wild casters at low levels succeed at roughly the same rate as scholarly casters but spike to higher tiers when they do succeed. At high levels, they become more reliable than scholarly casters but still can't control what tier manifests.
 
 **Probability comparison (with +10 wild bonus):**
 
@@ -116,7 +116,7 @@ Wild casters are not purely at the mercy of their roll. As they grow in power, t
 
 ### 3.1 The Casting Sequence
 
-**Step 1 — Cast:** Roll d100 against your casting target number. Scholarly casters roll 1d100. Wild casters roll 2d100 and take the result farther from their target.
+**Step 1 — Cast:** Roll d100 against your casting target number. Scholarly casters roll 1d100. Wild casters roll 2d100 and take the result farther from their target. If equidistant, the caster chooses.
 
 **Step 2 — Determine available tier:** Your roll result determines what tier of effect you qualify for. Your casting stat **hard caps** what tiers are possible — no amount of luck gets a novice to Spectacular.
 

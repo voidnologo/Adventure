@@ -202,7 +202,7 @@ Conventional firearms and martial weapons don't move the needle in either direct
 
 | Source | Accumulation |
 |--------|-------------|
-| Spell — Misfire | 0 |
+| Spell — Misfire (failed cast) | 0 |
 | Spell — Weak | +1 |
 | Spell — Standard | +2 |
 | Spell — Strong | +3 |

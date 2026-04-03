@@ -690,7 +690,7 @@
     <p>
       Grab what makes sense for your character. Kael carries a longsword (Medium: speed 5,
       damage 1d8+1), a Webley revolver (speed 3, damage 2d6, 6 rounds), and wears a
-      reinforced leather coat (Soak 2). He's got a field kit, a hip flask, and a deep
+      reinforced leather coat (Martial 2). He's got a field kit, a hip flask, and a deep
       distrust of anything that glows.
     </p>
 
@@ -698,8 +698,10 @@
       We'll cover weapons and armor in detail in the <a href="#combat">combat section</a>.
       For now, just know that every weapon has a <strong>speed</strong> (how many counts it
       takes on the timing track) and <strong>damage</strong> (what you roll when you hit).
-      Armor has <strong>Soak</strong> (how much damage it absorbs) and optionally
-      <strong>Hinder</strong> (a penalty to agility for heavy armor).
+      Armor has two soak ratings &mdash; <strong>Ballistic</strong> (against firearms and
+      high-velocity projectiles) and <strong>Martial</strong> (against blades, clubs, and
+      claws) &mdash; plus optionally <strong>Hinder</strong> (a penalty to agility for
+      heavy armor).
     </p>
 
     <h3>Step 6: Magic (If That's Your Path)</h3>
@@ -860,14 +862,14 @@
     <div class="callout callout-example">
       <span class="callout-label">What This Feels Like</span>
       <p>Kael has 9 HP per tier (PP +2). A thug shoots him with a revolver &mdash; 2d6 = 9 damage.
-      His leather coat absorbs 2 (Soak). That leaves 7 damage, which fills 7 of his 9 OK boxes.
-      He's still standing, still fighting at full power &mdash; but one more solid hit will push
-      him to Harmed.</p>
-      <p>The second shot lands: 2d6 = 8, minus 2 Soak = 6. Two points finish his OK tier; 4 overflow
+      That's a firearm, so Kael's leather coat uses its Ballistic rating: <strong>0</strong>.
+      No protection. All 9 damage fills his OK tier. He's standing, but barely.</p>
+      <p>The second shot lands: 2d6 = 8. Still Ballistic &mdash; still no soak. Eight points overflow
       into Harmed. Now Kael's Melee target drops from 66 to <strong>56</strong>. His aim, his
       footwork, everything &mdash; the pain is making him slower and sloppier.</p>
-      <p>This is why you think before you fight. This is why you use cover. This is why the
-      first round of a battle matters more than any other.</p>
+      <p>If that thug had a knife instead? The leather coat's Martial rating of 2 would absorb
+      some of the damage. Different armor for different threats. This is why you think about
+      what you're wearing &mdash; and what you're facing.</p>
     </div>
 
     <h3>Exhaustion</h3>
@@ -1626,7 +1628,7 @@
       <tr><td>Spell &mdash; Spectacular</td><td>+4 Aetheric</td></tr>
     </table>
 
-    <h4>Galvanic Side (Exotic Tech)</h4>
+    <h4>Galvanic Side</h4>
 
     <p>
       Every Galvanic device has an <strong>Aetheric rating</strong> &mdash; how hard it pushes
@@ -1635,11 +1637,11 @@
 
     <table>
       <tr><th>Source</th><th>Aetheric</th><th>Shift per Shot</th></tr>
-      <tr><td>Exotic Pistol</td><td>1</td><td>&minus;1 Galvanic</td></tr>
-      <tr><td>Exotic Sidearm</td><td>2</td><td>&minus;2 Galvanic</td></tr>
-      <tr><td>Exotic Heavy</td><td>3</td><td>&minus;3 Galvanic</td></tr>
-      <tr><td>Exotic Melee</td><td>1</td><td>&minus;1 per charge</td></tr>
-      <tr><td>Suppressing tag</td><td>+1</td><td>Added to weapon's rating</td></tr>
+      <tr><td>Pneumatic Flechette</td><td>1</td><td>&minus;1 Galvanic</td></tr>
+      <tr><td>Arc Gun / Spark Thrower</td><td>2</td><td>&minus;2 Galvanic</td></tr>
+      <tr><td>Galvanic Lance</td><td>3</td><td>&minus;3 Galvanic</td></tr>
+      <tr><td>Force Blade / Shock Gauntlet / Voltaic Whip</td><td>1</td><td>&minus;1 per charge</td></tr>
+      <tr><td>Suppressing keyword</td><td>+1</td><td>Added to weapon's rating</td></tr>
     </table>
 
     <p>
@@ -1852,17 +1854,17 @@
       <li><strong>Roll d100 against your skill target</strong> &mdash; Melee, Ranged, or Firearms. Under the number? You hit.</li>
       <li><strong>Critical hit:</strong> if your roll falls within your crit range, double your damage dice. A roll of <strong>00</strong> is always a fumble &mdash; the weapon slips, the gun jams, something goes wrong. The GM decides what.</li>
       <li><strong>Roll damage</strong> using your weapon's dice.</li>
-      <li><strong>Subtract armor Soak.</strong> The target's armor absorbs that many points. Whatever's left fills their hit point track.</li>
-      <li><strong>Check for armor degradation.</strong> If the raw damage <em>exceeded</em> the armor's Soak, there's a <strong>25% chance</strong> the armor loses 1 Soak permanently. Crushing weapons raise this to <strong>50%</strong>. Armor wears down. Every fight costs something.</li>
+      <li><strong>Subtract armor soak.</strong> Use the <strong>Ballistic</strong> rating against firearms and high-velocity projectiles, or the <strong>Martial</strong> rating against melee weapons, brawling, and low-velocity attacks. Whatever's left fills their hit point track.</li>
+      <li><strong>Check for armor degradation.</strong> If the raw damage <em>exceeded</em> the relevant soak rating, there's a <strong>25% chance</strong> the armor loses 1 point from that rating permanently. Crushing weapons raise this to <strong>50%</strong>. Armor wears down. Every fight costs something.</li>
     </ol>
 
     <div class="callout callout-example">
       <span class="callout-label">At the Table</span>
-      <p>Kael swings his longsword at a thug wearing a trench coat (Soak 2). He rolls 31 against
-      Melee 66 &mdash; hit. Damage: 1d8+1 = 7. The coat absorbs 2, leaving 5 damage into the
-      thug's HP. Since 7 exceeded Soak 2, the GM rolls for degradation &mdash; 25% chance.
-      Rolls 18. Bad luck &mdash; the trench coat splits. It's now Soak 1. Next hit, it'll
-      barely help.</p>
+      <p>Kael swings his longsword at a thug wearing a trench coat (Ballistic 1, Martial 2). He rolls 31 against
+      Melee 66 &mdash; hit. Damage: 1d8+1 = 7. It's a melee attack, so the coat's Martial rating applies &mdash;
+      absorbs 2, leaving 5 damage into the thug's HP. Since 7 exceeded Martial 2, the GM rolls
+      for degradation &mdash; 25% chance. Rolls 18. Bad luck &mdash; the coat splits. Its Martial
+      rating drops to 1. Next hit, it'll barely help.</p>
     </div>
 
     <h3>Attack Modifiers</h3>
@@ -1926,10 +1928,10 @@
     <h4>Shields</h4>
 
     <p>
-      Shields add their Soak value <strong>passively</strong> against attacks from the front and
-      flanks. You don't need to do anything &mdash; you're holding the shield, it's doing work.
-      You can <em>also</em> actively block with an Athletics check for a chance to negate the
-      hit entirely, same rules as active defense.
+      Shields add their soak value <strong>passively</strong> against attacks from the front and
+      flanks &mdash; Ballistic or Martial, whichever applies. You don't need to do anything
+      &mdash; you're holding the shield, it's doing work. You can <em>also</em> actively block
+      with an Athletics check for a chance to negate the hit entirely, same rules as active defense.
     </p>
 
     <div class="callout callout-example">
@@ -2023,8 +2025,8 @@
     <p>
       Firing a gun is a two-step process: <strong>first check Reliability</strong> (does the
       weapon fire?), <strong>then roll Ranged</strong> (does the shot hit?). The weapon has
-      to work before your aim matters. In a clean environment, conventional firearms skip
-      the Reliability check entirely &mdash; just roll to hit. See
+      to work before your aim matters. <strong>Reliability is always checked</strong> &mdash;
+      even in a clean environment. A tommy gun jams whether or not there's magic in the air. See
       <a href="#malfunction">The Malfunction System</a> for the full rules.
     </p>
 
@@ -2041,7 +2043,7 @@
       <tr><td>Submachine Gun</td><td>5</td><td>3d6/burst</td><td>50</td><td>3</td><td>70</td></tr>
     </table>
 
-    <h4>Steampunk Exotics</h4>
+    <h4>Galvanic Weapons</h4>
 
     <p>
       Galvanic weapons channel forces from the Engine &mdash; crystal capacitors, voltaic
@@ -2050,13 +2052,84 @@
       toward tech when fired.
     </p>
 
-    <table>
-      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Aetheric</th><th>Notes</th></tr>
-      <tr><td>Exotic Pistol</td><td>3</td><td>1d10</td><td>1</td><td>Cap 12, Reload 2, Rel 70</td></tr>
-      <tr><td>Exotic Sidearm</td><td>4</td><td>2d8</td><td>2</td><td>Cap 6, Reload 3, Rel 65</td></tr>
-      <tr><td>Exotic Heavy</td><td>7</td><td>3d8</td><td>3</td><td>Cap 3, Reload 5, Rel 55</td></tr>
-      <tr><td>Exotic Melee</td><td>2</td><td>1d8+PP</td><td>1</td><td>10 charges, Rel 60</td></tr>
-    </table>
+    <p>
+      Unlike conventional firearms, every Galvanic weapon is unique. They are prototype-level
+      technology &mdash; acquired through faction connections, black markets, salvage, or theft.
+      Think of them as the tech side's answer to spells: each one has its own personality,
+      strengths, and risks.
+    </p>
+
+    <h5>Galvanic Ranged</h5>
+
+    <dl class="galvanic-weapons">
+      <dt>Pneumatic Flechette</dt>
+      <dd>
+        <em>Speed 3 &middot; 1d10 &middot; Cap 12 &middot; Reload 2 &middot; Rel 70 &middot; Aetheric 1</em><br>
+        Compressed-air needle gun. Fires a burst of razor-thin darts that shred soft tissue.
+        <strong>Silent</strong> &mdash; no audible report. <strong>Piercing:</strong> ignores 2
+        points of Martial soak. Useless against plate, devastating against flesh.
+      </dd>
+
+      <dt>Arc Gun</dt>
+      <dd>
+        <em>Speed 4 &middot; 2d8 &middot; Cap 6 &middot; Reload 3 &middot; Rel 65 &middot; Aetheric 2</em><br>
+        Voltaic sidearm that hurls a crackling bolt of electricity between two prongs.
+        <strong>Arcing:</strong> on a critical hit, the bolt jumps to one adjacent target for
+        half damage (no additional hit roll). <strong>Shocking:</strong> ignores 2 points
+        of Ballistic soak from metal armor. Lightning finds the gaps.
+      </dd>
+
+      <dt>Galvanic Lance</dt>
+      <dd>
+        <em>Speed 7 &middot; 3d8 &middot; Cap 3 &middot; Reload 5 &middot; Rel 55 &middot; Aetheric 3</em><br>
+        A shoulder-braced cannon that projects a searing beam of concentrated Galvanic energy.
+        <strong>Lancing:</strong> the beam passes through the primary target and strikes one
+        target directly behind for half damage. <strong>Suppressing:</strong> +1 to Aetheric
+        rating per shot. <strong>Unstable:</strong> malfunction severity +2 instead of +1.
+        Magnificent until it detonates.
+      </dd>
+
+      <dt>Spark Thrower</dt>
+      <dd>
+        <em>Speed 4 &middot; 2d6 &middot; Cap 8 &middot; Reload 3 &middot; Rel 65 &middot; Aetheric 2</em><br>
+        Short-range weapon that belches a cone of electrical discharge.
+        <strong>Scatter:</strong> +1d6 damage at Close range, &minus;1d6 at Far.
+        <strong>Arcing:</strong> on a critical hit, the discharge jumps to one adjacent
+        target for half damage. Crowds hate this thing.
+      </dd>
+    </dl>
+
+    <h5>Galvanic Melee</h5>
+
+    <dl class="galvanic-weapons">
+      <dt>Force Blade</dt>
+      <dd>
+        <em>Speed 3 &middot; 1d8+PP &middot; 10 charges &middot; Rel 60 &middot; Aetheric 1 per charge</em><br>
+        A short sword with a voltaic edge that hums when activated. Each swing expends a charge.
+        <strong>Armor Breaker:</strong> reduce the target's Martial soak by 3. The resonant
+        edge finds seams in plate and shears through chain. Recharges overnight or at a power source.
+        Uses Melee skill.
+      </dd>
+
+      <dt>Shock Gauntlet</dt>
+      <dd>
+        <em>Speed 2 &middot; 1d6+PP &middot; 10 charges &middot; Rel 60 &middot; Aetheric 1 per charge</em><br>
+        A brass-knuckle frame laced with capacitor wire. Each punch delivers a jolt.
+        <strong>Stun:</strong> on a hit, the target's next action costs +2 speed as their muscles
+        seize. <strong>Shocking:</strong> ignores 2 points of Ballistic soak from metal armor.
+        Getting punched by lightning is as bad as it sounds. Uses Brawl skill.
+      </dd>
+
+      <dt>Voltaic Whip</dt>
+      <dd>
+        <em>Speed 4 &middot; 1d6+PP &middot; 10 charges &middot; Rel 55 &middot; Aetheric 1 per charge</em><br>
+        A segmented metal cord that crackles with stored energy. Long reach, hard to control.
+        <strong>Reach:</strong> strikes at Near range, not just Close.
+        <strong>Entangling:</strong> on hit, the target's next action costs +2 speed.
+        <strong>Arcing:</strong> on a critical hit, the discharge jumps to one adjacent
+        target for half damage. Uses Melee skill.
+      </dd>
+    </dl>
 
     <h3>Weapon Tags</h3>
 
@@ -2073,7 +2146,7 @@
       <tr><td>Concealable</td><td>Can be hidden on your person without detection.</td></tr>
       <tr><td>Throwable</td><td>Can be thrown at Near range using Ranged skill. +2 speed, one die step lower damage.</td></tr>
       <tr><td>Reach</td><td>Can strike targets one step farther than normal melee &mdash; useful for holding doorways.</td></tr>
-      <tr><td>Piercing</td><td>Ignores 2 points of armor Soak.</td></tr>
+      <tr><td>Piercing</td><td>Ignores 2 points of Martial soak.</td></tr>
       <tr><td>Crushing</td><td>Armor degradation chance is 50% instead of 25%. Armor hates this.</td></tr>
       <tr><td>Parrying</td><td>+10% to active defense when using Melee to defend.</td></tr>
       <tr><td>Entangling</td><td>On hit, the target's next action costs +2 speed. Whips, chains, nets.</td></tr>
@@ -2095,13 +2168,21 @@
       <tr><td>Sawn-Off</td><td>-1 speed, -1 die step on damage, gains Concealable. A hacksaw's bargain.</td></tr>
     </table>
 
-    <h4>Exotic Tags</h4>
+    <h4>Galvanic Keyword Reference</h4>
+
+    <p>
+      Galvanic weapons use the following keywords. Each weapon's description lists which ones apply.
+    </p>
 
     <table>
-      <tr><th>Tag</th><th>Effect</th></tr>
-      <tr><td>Shocking</td><td>Ignores 2 points of Soak from metal armor. Lightning doesn't care about steel.</td></tr>
+      <tr><th>Keyword</th><th>Effect</th></tr>
+      <tr><td>Arcing</td><td>On critical hit, discharge jumps to one adjacent target for half damage.</td></tr>
+      <tr><td>Armor Breaker</td><td>Reduce target's Martial soak by 3 for this attack.</td></tr>
+      <tr><td>Lancing</td><td>Beam passes through primary target to one target directly behind for half damage.</td></tr>
+      <tr><td>Shocking</td><td>Ignores 2 points of Ballistic soak from metal armor. Lightning finds the gaps.</td></tr>
+      <tr><td>Silent</td><td>No audible report whatsoever. The target drops and nobody hears why.</td></tr>
+      <tr><td>Stun</td><td>On hit, target's next action costs +2 speed as muscles seize.</td></tr>
       <tr><td>Suppressing</td><td>+1 to weapon's Aetheric rating per shot. Pushes the balance harder.</td></tr>
-      <tr><td>Silent</td><td>No report whatsoever. The target drops and nobody hears why.</td></tr>
       <tr><td>Unstable</td><td>On malfunction, severity roll gets +2 instead of +1. Handle with care.</td></tr>
     </table>
 
@@ -2113,44 +2194,43 @@
     </p>
 
     <p>
-      Every firearm shot is a two-step process. <strong>First, check Reliability</strong>
+      Every firearm shot is a two-step process. <strong>First, roll Reliability</strong>
       &mdash; does the weapon fire at all? <strong>Then roll Ranged</strong> &mdash; does
       the shot hit? The weapon has to work before your aim matters.
       <strong>Every shot, every time</strong> &mdash; even in clean air.
     </p>
 
     <p>
-      <strong>Malfunction chance</strong> = 100 &minus; effective Reliability. Roll d100 &mdash;
-      if you're within the malfunction percentage, the weapon fails. Shot doesn't fire.
-      Action wasted.
+      Reliability works like any other d100 roll-under check. Roll at or under your
+      weapon's effective Reliability and it fires. Roll over and it malfunctions &mdash;
+      shot doesn't fire, action wasted.
     </p>
 
     <p>
-      <code class="formula">Effective Reliability = Base Reliability &minus; (net balance &times; 2)</code>
-    </p>
-
-    <p>
-      Net Aetheric makes guns worse. Net Galvanic makes them better. At effective
-      Reliability 100+ (0% malfunction), the weapon <em>cannot</em> fail. At 0 or below,
-      it simply doesn't function.
+      The Aetheric/Galvanic balance shifts effective Reliability by <strong>2 per net
+      point</strong>. Net Aetheric makes guns less reliable. Net Galvanic makes them
+      more reliable. At effective Reliability 100+, the weapon <em>cannot</em> fail.
+      At 0 or below, it simply doesn't function.
     </p>
 
     <div class="callout callout-example">
       <span class="callout-label">At the Table</span>
       <p>Thug A fires his revolver (Reliability 95) in an area with net +4 Aetheric.
-      Effective Reliability: 95 &minus; 8 = 87. Malfunction chance: 13%.
-      He rolls 11 &mdash; within 13%, malfunction. Click. Nothing happens. His action is
-      gone and Kael is still coming.</p>
-      <p>If he'd rolled 18, the weapon fires. Now he rolls Ranged to see if the shot hits.</p>
+      Effective Reliability: 95 &minus; 8 = <strong>87</strong>.
+      He rolls 91 &mdash; over 87, malfunction. He rolls d10 on the severity table
+      and gets a 3 &mdash; <em>Click</em>. The hammer falls on nothing. He can clear it
+      and try again next action, but Kael is still coming.</p>
+      <p>If he'd rolled 72, that's under 87 &mdash; the weapon fires. Now he rolls Ranged
+      to see if the shot hits.</p>
       <p>Later, the party clears out a Galvanic lab (net &minus;8). That same revolver has
-      effective Reliability 95 + 16 = 111. It <em>cannot malfunction</em>. The Engine is
-      holding every mechanism in the building together.</p>
+      effective Reliability 95 + 16 = <strong>111</strong>. It <em>cannot malfunction</em>.
+      The Engine is holding every mechanism in the building together.</p>
     </div>
 
     <h4>Malfunction Severity</h4>
 
     <p>
-      When a weapon malfunctions, roll d10 to see how bad it is. Exotic weapons add
+      When a weapon malfunctions, roll d10 to see how bad it is. Galvanic weapons add
       <strong>+1</strong> to the severity roll.
     </p>
 
@@ -2164,11 +2244,11 @@
     </table>
 
     <div class="callout callout-warning">
-      <span class="callout-label">Exotics Are Fragile</span>
-      <p>Exotic weapons add +1 to the severity roll. That means a roll of 9 becomes 10 &mdash;
-      catastrophic. And exotic weapons with the Unstable tag add +2 instead. That crystal-powered
-      hand cannon is magnificent until it detonates in your grip. This is the trade-off for
-      superior firepower.</p>
+      <span class="callout-label">Galvanic Weapons Are Fragile</span>
+      <p>Galvanic weapons add +1 to the malfunction severity roll. That means a roll of 9 becomes
+      10 &mdash; catastrophic. Weapons with the Unstable keyword add +2 instead. That Galvanic Lance
+      is magnificent until it detonates on your shoulder. This is the trade-off for superior
+      firepower.</p>
     </div>
 
     <h3>Armor</h3>
@@ -2178,39 +2258,47 @@
       you and the thing trying to kill you.
     </p>
 
+    <p>
+      Armor has two soak ratings. <strong>Ballistic</strong> absorbs damage from firearms and
+      high-velocity projectiles. <strong>Martial</strong> absorbs damage from blades, clubs,
+      claws, and other melee attacks. A ballistic vest stops bullets but a knife slides right
+      through. A suit of plate turns a sword but a rifle round punches clean through.
+      Use whichever rating matches the attack.
+    </p>
+
     <h4>Medieval Armor</h4>
 
     <table>
-      <tr><th>Armor</th><th>Soak</th><th>Hinder</th><th>Notes</th></tr>
-      <tr><td>Cloth</td><td>0</td><td>&mdash;</td><td>Better than nothing. Barely.</td></tr>
-      <tr><td>Heavy Cloth</td><td>1</td><td>&mdash;</td><td>Padded gambeson</td></tr>
-      <tr><td>Leather</td><td>2</td><td>&mdash;</td><td>Boiled and hardened</td></tr>
-      <tr><td>Scale</td><td>3</td><td>&mdash;</td><td>Overlapping plates</td></tr>
-      <tr><td>Chainmail</td><td>5</td><td>&mdash;</td><td>Good against slashing, less so against piercing</td></tr>
-      <tr><td>Half Plate</td><td>8</td><td>1</td><td>Serious protection, serious weight</td></tr>
-      <tr><td>Full Plate</td><td>12</td><td>2</td><td>Walking fortress</td></tr>
+      <tr><th>Armor</th><th>Ballistic</th><th>Martial</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Cloth</td><td>0</td><td>0</td><td>&mdash;</td><td>Better than nothing. Barely.</td></tr>
+      <tr><td>Heavy Cloth</td><td>0</td><td>1</td><td>&mdash;</td><td>Padded gambeson</td></tr>
+      <tr><td>Leather</td><td>0</td><td>2</td><td>&mdash;</td><td>Boiled and hardened</td></tr>
+      <tr><td>Scale</td><td>1</td><td>3</td><td>&mdash;</td><td>Overlapping plates</td></tr>
+      <tr><td>Chainmail</td><td>2</td><td>5</td><td>&mdash;</td><td>Rings stop blades, not bullets</td></tr>
+      <tr><td>Half Plate</td><td>3</td><td>8</td><td>1</td><td>Serious protection, serious weight</td></tr>
+      <tr><td>Full Plate</td><td>4</td><td>12</td><td>2</td><td>Walking fortress &mdash; against swords</td></tr>
     </table>
 
     <h4>Modern Armor</h4>
 
     <table>
-      <tr><th>Armor</th><th>Soak</th><th>Hinder</th><th>Notes</th></tr>
-      <tr><td>Leather Jacket</td><td>1</td><td>&mdash;</td><td>Fashionable. Marginally protective.</td></tr>
-      <tr><td>Trench Coat</td><td>2</td><td>&mdash;</td><td>The adventurer's uniform</td></tr>
-      <tr><td>Ballistic Vest</td><td>5</td><td>&mdash;</td><td>Reliability 80</td></tr>
-      <tr><td>Steel Breastplate</td><td>6</td><td>1</td><td>Old meets new</td></tr>
+      <tr><th>Armor</th><th>Ballistic</th><th>Martial</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Leather Jacket</td><td>0</td><td>1</td><td>&mdash;</td><td>Fashionable. Marginally protective.</td></tr>
+      <tr><td>Trench Coat</td><td>1</td><td>2</td><td>&mdash;</td><td>The adventurer's uniform</td></tr>
+      <tr><td>Ballistic Vest</td><td>8</td><td>2</td><td>&mdash;</td><td>Stops bullets, not blades</td></tr>
+      <tr><td>Steel Breastplate</td><td>5</td><td>6</td><td>1</td><td>Old meets new</td></tr>
     </table>
 
     <h4>Shields</h4>
 
     <table>
-      <tr><th>Shield</th><th>Soak</th><th>Hinder</th><th>Notes</th></tr>
-      <tr><td>Wood Buckler</td><td>2</td><td>&mdash;</td><td>Light, one-handed</td></tr>
-      <tr><td>Steel Buckler</td><td>3</td><td>&mdash;</td><td>Sturdier</td></tr>
-      <tr><td>Wood Shield</td><td>5</td><td>&mdash;</td><td>Standard infantry issue</td></tr>
-      <tr><td>Infantry Shield</td><td>7</td><td>&mdash;</td><td>Full arm coverage</td></tr>
-      <tr><td>Kite Shield</td><td>9</td><td>1</td><td>Leg-to-shoulder protection</td></tr>
-      <tr><td>Knight Shield</td><td>10</td><td>2</td><td>Tower of steel</td></tr>
+      <tr><th>Shield</th><th>Ballistic</th><th>Martial</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Wood Buckler</td><td>0</td><td>2</td><td>&mdash;</td><td>Light, one-handed</td></tr>
+      <tr><td>Steel Buckler</td><td>1</td><td>3</td><td>&mdash;</td><td>Sturdier</td></tr>
+      <tr><td>Wood Shield</td><td>0</td><td>5</td><td>&mdash;</td><td>A bullet goes right through</td></tr>
+      <tr><td>Infantry Shield</td><td>2</td><td>7</td><td>&mdash;</td><td>Full arm coverage</td></tr>
+      <tr><td>Kite Shield</td><td>3</td><td>9</td><td>1</td><td>Leg-to-shoulder protection</td></tr>
+      <tr><td>Knight Shield</td><td>4</td><td>10</td><td>2</td><td>Tower of steel</td></tr>
     </table>
 
     <h3>Hinder</h3>
@@ -2260,7 +2348,7 @@
 
     <div class="callout callout-scene">
       <span class="callout-label">The Setup</span>
-      <p><strong>Kael</strong> (swordsman, PC +2, Melee 66, leather coat Soak 2, 9 HP/tier) and
+      <p><strong>Kael</strong> (swordsman, PC +2, Melee 66, leather coat B0/M2, 9 HP/tier) and
       <strong>Sera</strong> (wild caster, PC +0, casting target 55, 8 HP/tier) are caught in an
       alley by two thugs with revolvers (Firearms 50, Reliability 95, 7 HP/tier, no armor).
       Range: Near. No prior Aetheric accumulation.</p>
@@ -2297,25 +2385,24 @@
 
     <p>
       <strong>Count 3 &mdash; Both thugs fire.</strong> Both started at count 0, so they
-      resolve simultaneously.
+      resolve simultaneously. Sera's spell already went off at count 2 &mdash; the area is at
+      <strong>+2 Aetheric</strong>. Both revolvers are at effective Reliability
+      95 &minus; 4 = <strong>91</strong>. Barely degraded, but the clock is ticking.
     </p>
 
     <ul>
       <li>
-        <strong>Thug A shoots Kael:</strong> Rolls 44 against skill 50. Hit. Damage: 2d6 = 9.
-        Kael's leather coat absorbs 2. That's 7 damage into his OK tier (which holds 9). He's
-        standing, still at full power &mdash; but only 2 boxes left before Harmed. <em>Close call.</em>
+        <strong>Thug A shoots Kael:</strong> Reliability check first &mdash; rolls 44 against 91.
+        The revolver fires. Ranged roll: 44 against skill 50. Hit. Damage: 2d6 = 9.
+        That's a firearm &mdash; Kael's leather coat has Ballistic 0. No protection. All 9 damage
+        fills his OK tier (which holds 9). He's standing, but one more scratch drops him to
+        Harmed. <em>He really needs a ballistic vest.</em>
       </li>
       <li>
-        <strong>Thug B shoots Sera:</strong> Rolls 71 against skill 50. Miss.
+        <strong>Thug B shoots Sera:</strong> Reliability check &mdash; rolls 38 against 91. Fires.
+        Ranged roll: 71 against skill 50. Miss. The bullet sparks off the alley wall.
       </li>
     </ul>
-
-    <p>
-      <strong>After count 3:</strong> Area has 2 Aetheric accumulation. Both revolvers drop from
-      Reliability 95 to effective <strong>91</strong>. Barely noticeable &mdash; but the clock
-      is ticking. Sera's magic is making the thugs' weapons less trustworthy.
-    </p>
 
     <p>
       <strong>Count 3 &mdash; New declarations.</strong> Now declaration order matters. Three
@@ -2338,47 +2425,93 @@
 
     <p>
       <strong>Count 5 &mdash; Sera's second Force.</strong> She rolls 2d100: a <strong>29</strong>
-      and a <strong>84</strong>. The 84 is farther from 55 (29 over vs 26 under). She takes the
-      29 &mdash; margin 26, Standard again. Targets Thug A this time. Damage: 2d6 = 7. Backlash
-      check: 15% backlash chance. Rolls <strong>03</strong> &mdash; backlash.
-      1d4 = 2 physical damage to Sera. The magic bit her. Wild effect (25% chance):
-      rolls 41 &mdash; no wild effect this time.
-      Accumulation climbs to <strong>+4 total</strong>.
+      and a <strong>84</strong>. The 84 is farther from 55 (29 away vs 26 away). Wild casters
+      take the farther die &mdash; she's stuck with the <strong>84</strong>. That's over her
+      target. <strong>Misfire.</strong> The Force spell rebounds &mdash; Sera pays 2 exhaustion
+      and takes 1d6 = 3 damage as invisible force slams her backward into the alley wall.
+      Backlash check at misfire rate: rolls 72 &mdash; no backlash this time, but the magic
+      already bit her. No accumulation &mdash; the spell didn't manifest, just went wrong.
+      Area stays at <strong>+2 Aetheric</strong>.
+      <em>This is the wild caster's bargain &mdash; access to every spell in your schools,
+      but the dice can betray you. And when they do, it hurts.</em>
     </p>
 
     <p>
-      <strong>Count 6 &mdash; Both thugs fire.</strong>
+      <strong>Count 6 &mdash; Both thugs fire.</strong> Accumulation is still +2. Revolvers
+      are at effective Reliability <strong>91</strong>.
     </p>
 
     <ul>
-      <li><strong>Thug A shoots Kael:</strong> Rolls 61 against 50. Miss.</li>
-      <li><strong>Thug B shoots Sera:</strong> Rolls 55 against 40 (wound penalty). Miss.</li>
+      <li><strong>Thug A shoots Kael:</strong> Reliability check &mdash; rolls 61 against 91. Fires.
+        Ranged roll: 61 against 50. Miss.</li>
+      <li><strong>Thug B shoots Sera:</strong> Reliability check &mdash; rolls 55 against 91. Fires.
+        Ranged roll: 55 against 40 (wound penalty). Miss.</li>
     </ul>
 
     <p>
       <strong>Count 7 &mdash; Kael's sword connects.</strong> Rolls 22 against Melee 66. Hit &mdash;
       margin 44. Crit range is 2 (skill 66 is in the 51-75 bracket, crits on 64-66). Rolled 22,
-      not a crit. Damage: 1d8+1 = 7. Thug A has no armor and already took 7 from Sera's Force
-      at count 5 &mdash; his OK tier was full. Kael's 7 damage pushes him straight through
-      Harmed. He's at <strong>-10%</strong> and bleeding.
+      not a crit. Damage: 1d8+1 = 7. Thug A has no armor and has taken no damage yet &mdash;
+      Kael's 7 fills 7 of his 9 OK boxes. He's standing but hurting.
     </p>
 
     <p>
-      <strong>After count 7:</strong> Both thugs are wounded. Sera took backlash damage but is
-      still casting. Accumulation at 4 means the revolvers are at effective Reliability <strong>87</strong>.
-      Sera's third Force spell will push it higher &mdash; the guns are becoming unreliable.
-      <em>The magic is winning the environmental war.</em>
+      <strong>After count 7:</strong> Thug A is wounded but still in OK. Thug B is in Harmed
+      from Sera's first spell. Sera took 3 damage from her own misfire and paid 2 exhaustion
+      for nothing &mdash; the accumulation hasn't climbed because the spell never manifested.
+      The revolvers are still at effective Reliability <strong>91</strong>, not the 87 they'd
+      be at if both spells had landed.
+      <em>Sera needs her next cast to connect &mdash; and she's already hurt.</em>
+    </p>
+
+    <p>
+      <strong>Count 7 &mdash; Thug B gets desperate.</strong> He's Harmed, his revolver is
+      getting twitchy, and there's a wild caster throwing bolts of force down the alley. He
+      reaches into his coat and pulls out a small brass device covered in coiled wire &mdash;
+      a <strong>Galvanic force generator</strong>. He flips the switch. The air hums. The
+      streetlights flicker.
+    </p>
+
+    <p>
+      The generator is a sustained Galvanic device. Every <strong>3 counts</strong>, it produces
+      <strong>&minus;2 Galvanic shift</strong>, pulling the balance back toward neutral. It
+      activated at count 7 &mdash; its first pulse hits at count 10.
+    </p>
+
+    <p>
+      <strong>Count 10 &mdash; The generator pulses.</strong> The balance was +2 Aetheric.
+      The generator pulls it to <strong>0</strong>. Neutral. The revolvers are back to full
+      Reliability <strong>95</strong>. Sera's casting target is back to her base
+      <strong>55</strong>. One pulse and the advantage from her first spell is gone.
+    </p>
+
+    <p>
+      <strong>Count 13 &mdash; Another pulse.</strong> Balance drops to <strong>&minus;2
+      Galvanic</strong>. Now the Engine is winning. The revolvers are at effective Reliability
+      95 + 4 = <strong>99</strong> &mdash; nearly impossible to jam. Sera's casting target
+      drops to 55 &minus; 4 = <strong>51</strong>. Her spells are harder to land and her
+      wild dice just got crueler. If the generator keeps running, count 16 pushes to &minus;4:
+      Reliability <strong>103</strong> (cannot malfunction), casting target <strong>47</strong>.
+      The Veil is being smothered.
+    </p>
+
+    <p>
+      Kael eyes the humming device on Thug B's belt. <em>If he can close the distance and
+      smash it, the balance swings back to neutral. If he can't, the thugs' guns are about to
+      become perfect &mdash; and Sera's magic is about to become useless.</em>
     </p>
 
     <div class="callout callout-note">
       <span class="callout-label">What Just Happened</span>
-      <p>Seven counts of game time. Both sides took damage. The wound penalties are starting to
-      bite. The magic/tech interference is shifting the battlefield. Kael's sword &mdash; immune
-      to accumulation &mdash; is becoming the most reliable weapon in the fight. And Sera's
-      casting is simultaneously helping (Force damage) and hurting (degrading the party's own
-      firearms if they had any).</p>
-      <p>This is the game working as intended. Every choice has trade-offs. Every round changes
-      the equation.</p>
+      <p>Seven counts of combat, then the battlefield flipped. The thugs went from losing
+      the environmental war to winning it &mdash; not with better aim, but with a piece of
+      Galvanic hardware. The generator didn't fire a shot. It just changed the rules of the
+      fight.</p>
+      <p>This is the tug-of-war in action. Sera's spells push the balance Aetheric, making guns
+      worse and magic better. The generator pushes it Galvanic, making guns better and magic
+      worse. Kael's sword doesn't care either way. Every participant is pulling the environment
+      in a different direction &mdash; and the smart play isn't always "hit harder." Sometimes
+      it's "destroy the thing that's changing the air."</p>
     </div>
   </section>
 
@@ -2432,7 +2565,7 @@ CASTING: fixed time per spell &rarr; roll d100 &rarr; tier by margin
 
 AETHERIC BALANCE: sliding scale, Aetheric &harr; Galvanic
   Spells: +1/+2/+3/+4 Aetheric by tier
-  Galvanic weapons: &minus;(Aetheric rating) per shot (Pistol 1, Sidearm 2, Heavy 3)
+  Galvanic weapons: &minus;(Aetheric rating) per shot (1-3 per weapon)
   Eff. Reliability = Base &minus; (net &times; 2) | Eff. Casting = Base + (net &times; 2)
   Each side HELPS its own AND HURTS the other
   Decays 1/min toward zone baseline (normal = 0)
@@ -2440,18 +2573,18 @@ AETHERIC BALANCE: sliding scale, Aetheric &harr; Galvanic
 COMBAT: timing track &mdash; declare, place token, resolve on count
   Declaration order: lowest PC first (best react last)
   Active defense: Melee/Brawl/Athletics opposed, costs +2 speed
-  Parrying tag: +10% defense | Shields: passive Soak
-  Armor: Soak absorbs damage, 25% degrade if exceeded (Crushing: 50%)
+  Parrying tag: +10% defense | Shields: passive soak (B or M)
+  Armor: Ballistic (firearms) / Martial (melee), 25% degrade if exceeded (Crushing: 50%)
   Hinder: -5%/pt to PC/Athletics/Stealth/Swimming, +1 cast speed/pt
 
 RANGE: Close (melee) | Near (no mod) | Far (-10%) | Distant (-20%)
   Sprint: speed 3 to move one band
   Cover: partial -10%, heavy -20% | Into melee: -10%
 
-MALFUNCTION: ALWAYS check first, then Ranged. Chance = 100 &minus; Eff. Reliability
-  Eff. Reliability = Base - (Accumulation &times; 3)
+MALFUNCTION: ALWAYS roll Reliability first (d100 roll-under), then Ranged
+  Eff. Reliability = Base &minus; (net balance &times; 2)
   Severity d10: 1-5 Click | 6-7 Jam | 8 Misfire | 9 Mech Fail | 10 Catastrophic
-  Exotics: +1 severity
+  Galvanic: +1 severity
 
 RECOVERY: HP 1d4/hour | EP 1d8/hour | +1d4 HP with medical care</pre>
     </div>

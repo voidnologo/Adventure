@@ -321,7 +321,7 @@ On malfunction, the shot does not fire (action wasted). Then roll d10:
 
 ### 6.4 Accumulation in Combat
 
-Track Aetheric accumulation as spells are cast during the fight. Each spell adds accumulation equal to its achieved tier (Weak +1, Standard +2, Strong +3, Spectacular +4). This accumulation persists — it stacks through the fight and decays at 1 per minute after casting stops.
+Track Aetheric accumulation as spells are cast during the fight. Each **successful** spell adds accumulation equal to its achieved tier (Weak +1, Standard +2, Strong +3, Spectacular +4). **Failed casts (fizzles) generate no accumulation** — the magic didn't manifest, so it doesn't leave a mark. Misfires also generate 0. This accumulation persists — it stacks through the fight and decays at 1 per minute after casting stops.
 
 In a fight with active casters, firearms become progressively less reliable as the scene goes on. Smart fighters act early with firearms and switch to melee as accumulation climbs.
 
