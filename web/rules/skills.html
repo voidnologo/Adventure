@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="neutral">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere"><canvas id="particle-canvas"></canvas><div class="mist mist-1"></div><div class="mist mist-2"></div><div class="mist mist-3"></div></div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="sidebar-title">Adventure</div><div class="sidebar-subtitle">Rules Reference</div></div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer"><a href="../">← Back to Adventure</a></div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 5 &mdash; Skills</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="getting-hurt.html">&larr; Getting Hurt</a>
+      <a href="magic.html">The Two Paths of Magic &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 05</span>
+      <h1 class="page-title">Skills</h1>
+      <p class="page-subtitle">What your character knows how to do &mdash; and how well</p>
+    </div>
+
+    <p class="flavor">
+      Skills are the specific things your character has trained to do. Every skill is tied to
+      an attribute, and your target number flows from both. There are 27 skills across six
+      attributes &mdash; you can have up to 15. What you choose defines who you are at the table.
+    </p>
+
+    <code class="formula">Skill target = ((10 + attribute) &times; skill level) + 30</code>
+    <code class="formula">Unskilled attempt = (5 + attribute) &times; 5</code>
+
+    <!-- ── Physical Skills ───────────────────────────────── -->
+
+    <h3 id="physical">Physical Skills</h3>
+
+    <p>Physical skills are bought from the Physical pool (10 + PP + PC points).</p>
+
+    <h4>PP &mdash; Physical Prowess</h4>
+
+    <table>
+      <tr><th>Skill</th><th>What It Covers</th></tr>
+      <tr><td><strong>Athletics</strong></td><td>Climbing, swimming, jumping, running, lifting &mdash; all feats of raw physicality. Covers any physical challenge that isn't fighting.</td></tr>
+      <tr><td><strong>Brawl</strong></td><td>Unarmed combat. Punches, grapples, headbutts, tackles. Fast and always available &mdash; fists don't jam in a Wild Zone.</td></tr>
+      <tr><td><strong>Melee</strong></td><td>Armed close combat. Swords, axes, clubs, knives, improvised weapons. Covers attack and parry with any handheld weapon.</td></tr>
+      <tr><td><strong>Intimidation</strong>&nbsp;&#9733;</td><td>Physical menace &mdash; looming presence, cracking knuckles, breaking things to make a point. <em>Flex stat: may be placed under SP instead.</em></td></tr>
+    </table>
+
+    <h4>PC &mdash; Physical Coordination</h4>
+
+    <table>
+      <tr><th>Skill</th><th>What It Covers</th></tr>
+      <tr><td><strong>Firearms</strong></td><td>Pistols, rifles, shotguns, automatic weapons. Loading, clearing jams, and shooting under pressure. Separate from Ranged because guns live and die by the Aetheric balance.</td></tr>
+      <tr><td><strong>Piloting</strong></td><td>Operating vehicles &mdash; airships, automobiles, motorboats, motorcycles. Covers routine driving and white-knuckle chases alike.</td></tr>
+      <tr><td><strong>Ranged</strong></td><td>Bows, crossbows, thrown weapons. Martial ranged combat immune to magic zone interference. The reliable option when the Aether is thick.</td></tr>
+      <tr><td><strong>Sleight&nbsp;of&nbsp;Hand</strong></td><td>Pickpocketing, palming objects, lockpicking, hiding things on your person. The art of making your hands do things people don't notice.</td></tr>
+      <tr><td><strong>Stealth</strong></td><td>Moving silently, hiding, shadowing someone, blending into crowds. Getting somewhere without being seen or heard.</td></tr>
+    </table>
+
+    <!-- ── Mental Skills ─────────────────────────────────── -->
+
+    <h3 id="mental">Mental Skills</h3>
+
+    <p>Mental skills are bought from the Mental pool (10 + IN + AW + PW points).</p>
+
+    <h4>IN &mdash; Intellect</h4>
+
+    <table>
+      <tr><th>Skill</th><th>What It Covers</th></tr>
+      <tr><td><strong>Craft</strong></td><td>Working with your hands &mdash; metalsmithing, woodworking, leatherwork, repair, fabrication. If you're building or fixing a physical object, this is the skill.</td></tr>
+      <tr><td><strong>Engineering</strong></td><td>Machines, structures, electrical systems, demolitions. Understanding how complex things work &mdash; and how to make them stop working.</td></tr>
+      <tr><td><strong>Medicine</strong></td><td>First aid, diagnosis, surgery, pharmacology, poisons. Treating wounds, identifying diseases, and knowing which end of the syringe to use.</td></tr>
+      <tr><td><strong>Occult&nbsp;Lore</strong></td><td>Magical theory, supernatural history, ritual knowledge, identifying enchantments. Knowing what you're dealing with before you deal with it. Not casting &mdash; understanding.</td></tr>
+      <tr><td><strong>Science</strong></td><td>Chemistry, physics, forensics, biology, geology. Analytical thinking applied to the material world. The lab coat skills.</td></tr>
+      <tr><td><strong>Tactics</strong></td><td>Reading a battlefield, planning ambushes, coordinating teams, anticipating enemy moves. The difference between a fight and a strategy.</td></tr>
+    </table>
+
+    <h4>AW &mdash; Awareness</h4>
+
+    <table>
+      <tr><th>Skill</th><th>What It Covers</th></tr>
+      <tr><td><strong>Empathy</strong></td><td>Reading people &mdash; body language, tone of voice, sensing motives, detecting lies. Knowing what someone feels, even when they're hiding it.</td></tr>
+      <tr><td><strong>Investigation</strong></td><td>Crime scenes, research, connecting clues, deductive reasoning. Active analysis &mdash; finding what's there and figuring out what it means.</td></tr>
+      <tr><td><strong>Observation</strong></td><td>Noticing details &mdash; spotting the glint of a wire, hearing footsteps above, catching the odd detail in a room. Passive alertness and active searching.</td></tr>
+      <tr><td><strong>Survival</strong></td><td>Tracking, hunting, navigation, foraging, shelter-building, reading weather. Everything between the city limits and the horizon.</td></tr>
+    </table>
+
+    <h4>PW &mdash; Power</h4>
+
+    <table>
+      <tr><th>Skill</th><th>What It Covers</th></tr>
+      <tr><td><strong>Resolve</strong></td><td>Resisting mental effects, maintaining composure under pressure, enduring pain and fear, shaking off stun. Your refusal to break. Every character benefits &mdash; not just casters.</td></tr>
+      <tr><td><strong>Scholarly&nbsp;Casting</strong></td><td>Learned magic. Requires a spellbook and study. You choose your tier, control your power, and accept lower backlash risk. See <a href="magic.html">The Two Paths of Magic</a>.</td></tr>
+      <tr><td><strong>Wild&nbsp;Casting</strong></td><td>Intuitive magic. No spellbook &mdash; you reach into the Aether and take what comes. Higher ceiling, higher risk, less control. See <a href="magic.html">The Two Paths of Magic</a>.</td></tr>
+    </table>
+
+    <!-- ── Social Skills ─────────────────────────────────── -->
+
+    <h3 id="social">Social Skills</h3>
+
+    <p>Social skills are bought from the Social pool (10 + SP points).</p>
+
+    <h4>SP &mdash; Social Prowess</h4>
+
+    <table>
+      <tr><th>Skill</th><th>What It Covers</th></tr>
+      <tr><td><strong>Deception</strong></td><td>Lying, disguise, forgery, acting, misdirection. Making people believe things that aren't true &mdash; with words, appearance, or documents.</td></tr>
+      <tr><td><strong>Etiquette</strong></td><td>High society, formal situations, cultural knowledge, diplomacy. Knowing which fork to use, how to address a baroness, and when to shut up.</td></tr>
+      <tr><td><strong>Intimidation</strong>&nbsp;&#9733;</td><td>Social pressure &mdash; veiled threats, cold authority, weaponized silence. <em>Flex stat: may be placed under PP instead.</em></td></tr>
+      <tr><td><strong>Leadership</strong></td><td>Inspiring, commanding, rallying, organizing. Getting people to follow you &mdash; in a firefight, a boardroom, or a revolution.</td></tr>
+      <tr><td><strong>Persuasion</strong></td><td>Convincing, negotiating, charming, haggling. Changing minds through argument, appeal, or sheer likability.</td></tr>
+      <tr><td><strong>Streetwise</strong></td><td>Underworld contacts, black market access, reading a neighborhood, knowing who runs what. The opposite of Etiquette &mdash; knowing which alley to take and who to ask.</td></tr>
+    </table>
+
+    <div class="callout">
+      <span class="callout-label">&#9733; Intimidation</span>
+      <p>Intimidation appears in both Physical and Social. When you take this skill, choose which
+      attribute defines it for your character and buy it from that group's points. A bruiser who
+      looms over people (PP) and a spymaster who whispers threats (SP) both intimidate &mdash;
+      differently.</p>
+    </div>
+
+    <nav class="page-nav">
+      <a href="getting-hurt.html" class="page-nav-link">
+        <span class="page-nav-direction">&larr; Previous</span>
+        <span class="page-nav-title">Getting Hurt</span>
+      </a>
+      <a href="magic.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next &rarr;</span>
+        <span class="page-nav-title">The Two Paths of Magic</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer"><p>Adventure RPG &mdash; Playtest Draft</p></footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

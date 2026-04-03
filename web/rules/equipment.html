@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="galvanic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arms &amp; Equipment — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere"><canvas id="particle-canvas"></canvas><div class="mist mist-1"></div><div class="mist mist-2"></div><div class="mist mist-3"></div></div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="sidebar-title">Adventure</div><div class="sidebar-subtitle">Rules Reference</div></div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer"><a href="../">← Back to Adventure</a></div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 10 &mdash; Arms &amp; Equipment</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="combat.html">&larr; When Violence Finds You</a>
+      <a href="reference.html">Quick Reference &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 10</span>
+      <h1 class="page-title">Arms &amp; Equipment</h1>
+      <p class="page-subtitle">Steel, gunpowder, Galvanic oddities, and what stands between you and the grave</p>
+    </div>
+
+    <p class="flavor">
+      A blade never jams. A gun never parries. Choose what you carry, and carry what you trust.
+    </p>
+
+    <h3 id="melee-weapons">Melee Weapons</h3>
+
+    <table>
+      <tr><th>Category</th><th>Speed</th><th>Damage</th><th>Examples</th></tr>
+      <tr><td>Unarmed</td><td>2</td><td>1d3+PP</td><td>Punch, kick</td></tr>
+      <tr><td>Small</td><td>2</td><td>1d4</td><td>Knife, dagger</td></tr>
+      <tr><td>Light</td><td>3</td><td>1d6</td><td>Short sword, hatchet, club</td></tr>
+      <tr><td>Medium</td><td>5</td><td>1d8+1</td><td>Longsword, battle axe, mace</td></tr>
+      <tr><td>Heavy</td><td>7</td><td>1d10+1</td><td>Bastard sword, morning star</td></tr>
+      <tr><td>Great</td><td>9</td><td>2d6</td><td>Greatsword, halberd</td></tr>
+    </table>
+
+    <h3 id="ranged-weapons">Ranged Weapons (Martial)</h3>
+
+    <p>
+      Martial ranged weapons are immune to magic zone interference. Crossbows require
+      reloading; bows do not. The reliable option when the Aether is thick.
+    </p>
+
+    <table>
+      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Notes</th></tr>
+      <tr><td>Light Ranged</td><td>5</td><td>1d6</td><td>Short bow, sling</td></tr>
+      <tr><td>Medium Ranged</td><td>7</td><td>1d8+1</td><td>Longbow</td></tr>
+      <tr><td>Light Crossbow</td><td>7</td><td>2d6</td><td>Reload 3</td></tr>
+      <tr><td>Heavy Crossbow</td><td>10</td><td>3d6</td><td>Reload 5</td></tr>
+    </table>
+
+    <h3 id="firearms">Modern Firearms</h3>
+
+    <p>
+      Firearms have three stats that melee weapons don't. <strong>Capacity</strong> is how
+      many shots before you need to reload. <strong>Reload</strong> is how many counts that
+      takes on the timing track. <strong>Reliability</strong> is how resistant the weapon is
+      to malfunction &mdash; higher is better. A revolver at 95 has only a 5% chance of
+      jamming on any given shot. A tommy gun at 70 has a 30% chance <em>even in clean air</em>.
+      When the Aetheric balance tips against technology, that chance climbs fast.
+    </p>
+
+    <p>
+      Firing a gun is a two-step process: <strong>first check Reliability</strong> (does the
+      weapon fire?), <strong>then roll Ranged</strong> (does the shot hit?). The weapon has
+      to work before your aim matters. <strong>Reliability is always checked</strong> &mdash;
+      even in a clean environment. A tommy gun jams whether or not there's magic in the air. See
+      <a href="combat.html#malfunction">The Malfunction System</a> for the full rules.
+    </p>
+
+    <table>
+      <tr><th>Weapon</th><th>Speed</th><th>Damage</th><th>Capacity</th><th>Reload</th><th>Reliability</th></tr>
+      <tr><td>Holdout Pistol</td><td>2</td><td>1d6</td><td>2</td><td>2</td><td>95</td></tr>
+      <tr><td>Revolver</td><td>3</td><td>2d6</td><td>6</td><td>3</td><td>95</td></tr>
+      <tr><td>Semi-Auto Pistol</td><td>3</td><td>2d6</td><td>8</td><td>2</td><td>85</td></tr>
+      <tr><td>Heavy Pistol</td><td>4</td><td>2d8</td><td>6</td><td>3</td><td>90</td></tr>
+      <tr><td>Rifle</td><td>6</td><td>2d10</td><td>5</td><td>4</td><td>95</td></tr>
+      <tr><td>Carbine</td><td>5</td><td>2d8</td><td>8</td><td>5</td><td>90</td></tr>
+      <tr><td>Shotgun</td><td>4</td><td>3d6</td><td>2</td><td>2</td><td>95</td></tr>
+      <tr><td>Combat Shotgun</td><td>5</td><td>3d6</td><td>5</td><td>4</td><td>85</td></tr>
+      <tr><td>Submachine Gun</td><td>5</td><td>3d6/burst</td><td>50</td><td>3</td><td>70</td></tr>
+    </table>
+
+    <h3 id="galvanic">Galvanic Weapons</h3>
+
+    <p>
+      Galvanic weapons channel forces from the Engine &mdash; crystal capacitors, voltaic
+      cells, resonance chambers. They hit different. They also break different. Each one
+      has an <strong>Aetheric rating</strong> that determines how hard it pushes the balance
+      toward tech when fired.
+    </p>
+
+    <p>
+      Unlike conventional firearms, every Galvanic weapon is unique. They are prototype-level
+      technology &mdash; acquired through faction connections, black markets, salvage, or theft.
+      Think of them as the tech side's answer to spells: each one has its own personality,
+      strengths, and risks.
+    </p>
+
+    <h4>Galvanic Ranged</h4>
+
+    <dl class="galvanic-weapons">
+      <dt>Pneumatic Flechette</dt>
+      <dd>
+        <em>Speed 3 &middot; 1d10 &middot; Cap 12 &middot; Reload 2 &middot; Rel 70 &middot; Aetheric 1</em><br>
+        Compressed-air needle gun. Fires a burst of razor-thin darts that shred soft tissue.
+        <strong>Silent</strong> &mdash; no audible report. <strong>Piercing:</strong> ignores 2
+        points of Martial soak. Useless against plate, devastating against flesh.
+      </dd>
+
+      <dt>Arc Gun</dt>
+      <dd>
+        <em>Speed 4 &middot; 2d8 &middot; Cap 6 &middot; Reload 3 &middot; Rel 65 &middot; Aetheric 2</em><br>
+        Voltaic sidearm that hurls a crackling bolt of electricity between two prongs.
+        <strong>Arcing:</strong> on a critical hit, the bolt jumps to one adjacent target for
+        half damage (no additional hit roll). <strong>Shocking:</strong> ignores 2 points
+        of Ballistic soak from metal armor. Lightning finds the gaps.
+      </dd>
+
+      <dt>Galvanic Lance</dt>
+      <dd>
+        <em>Speed 7 &middot; 3d8 &middot; Cap 3 &middot; Reload 5 &middot; Rel 55 &middot; Aetheric 3</em><br>
+        A shoulder-braced cannon that projects a searing beam of concentrated Galvanic energy.
+        <strong>Lancing:</strong> the beam passes through the primary target and strikes one
+        target directly behind for half damage. <strong>Suppressing:</strong> +1 to Aetheric
+        rating per shot. <strong>Unstable:</strong> malfunction severity +2 instead of +1.
+        Magnificent until it detonates.
+      </dd>
+
+      <dt>Spark Thrower</dt>
+      <dd>
+        <em>Speed 4 &middot; 2d6 &middot; Cap 8 &middot; Reload 3 &middot; Rel 65 &middot; Aetheric 2</em><br>
+        Short-range weapon that belches a cone of electrical discharge.
+        <strong>Scatter:</strong> +1d6 damage at Close range, &minus;1d6 at Far.
+        <strong>Arcing:</strong> on a critical hit, the discharge jumps to one adjacent
+        target for half damage. Crowds hate this thing.
+      </dd>
+    </dl>
+
+    <h4>Galvanic Melee</h4>
+
+    <dl class="galvanic-weapons">
+      <dt>Force Blade</dt>
+      <dd>
+        <em>Speed 3 &middot; 1d8+PP &middot; 10 charges &middot; Rel 60 &middot; Aetheric 1 per charge</em><br>
+        A short sword with a voltaic edge that hums when activated. Each swing expends a charge.
+        <strong>Armor Breaker:</strong> reduce the target's Martial soak by 3. The resonant
+        edge finds seams in plate and shears through chain. Recharges overnight or at a power source.
+        Uses Melee skill.
+      </dd>
+
+      <dt>Shock Gauntlet</dt>
+      <dd>
+        <em>Speed 2 &middot; 1d6+PP &middot; 10 charges &middot; Rel 60 &middot; Aetheric 1 per charge</em><br>
+        A brass-knuckle frame laced with capacitor wire. Each punch delivers a jolt.
+        <strong>Stun:</strong> on a hit, the target's next action costs +2 speed as their muscles
+        seize. <strong>Shocking:</strong> ignores 2 points of Ballistic soak from metal armor.
+        Getting punched by lightning is as bad as it sounds. Uses Brawl skill.
+      </dd>
+
+      <dt>Voltaic Whip</dt>
+      <dd>
+        <em>Speed 4 &middot; 1d6+PP &middot; 10 charges &middot; Rel 55 &middot; Aetheric 1 per charge</em><br>
+        A segmented metal cord that crackles with stored energy. Long reach, hard to control.
+        <strong>Reach:</strong> strikes at Near range, not just Close.
+        <strong>Entangling:</strong> on hit, the target's next action costs +2 speed.
+        <strong>Arcing:</strong> on a critical hit, the discharge jumps to one adjacent
+        target for half damage. Uses Melee skill.
+      </dd>
+    </dl>
+
+    <h3 id="weapon-tags">Weapon Tags</h3>
+
+    <p>
+      Tags describe what a weapon <em>does</em> beyond raw numbers. A longsword with Parrying
+      plays differently than one without. A sawn-off shotgun is a different animal than the
+      full-length version.
+    </p>
+
+    <h4>Melee Tags</h4>
+
+    <table>
+      <tr><th>Tag</th><th>Effect</th></tr>
+      <tr><td>Concealable</td><td>Can be hidden on your person without detection.</td></tr>
+      <tr><td>Throwable</td><td>Can be thrown at Near range using Ranged skill. +2 speed, one die step lower damage.</td></tr>
+      <tr><td>Reach</td><td>Can strike targets one step farther than normal melee &mdash; useful for holding doorways.</td></tr>
+      <tr><td>Piercing</td><td>Ignores 2 points of Martial soak.</td></tr>
+      <tr><td>Crushing</td><td>Armor degradation chance is 50% instead of 25%. Armor hates this.</td></tr>
+      <tr><td>Parrying</td><td>+10% to active defense when using Melee to defend.</td></tr>
+      <tr><td>Entangling</td><td>On hit, the target's next action costs +2 speed. Whips, chains, nets.</td></tr>
+      <tr><td>Two-Handed</td><td>Requires both hands. Cannot use a shield.</td></tr>
+      <tr><td>Versatile</td><td>Can be wielded one-handed (normal damage) or two-handed (one die step up).</td></tr>
+    </table>
+
+    <h4>Firearm Tags</h4>
+
+    <table>
+      <tr><th>Tag</th><th>Effect</th></tr>
+      <tr><td>Reliable</td><td>+5 effective Reliability in magic zones. Built tough.</td></tr>
+      <tr><td>Quick Reload</td><td>Reload time is halved (round down).</td></tr>
+      <tr><td>Loud</td><td>Audible for a great distance. Draws attention.</td></tr>
+      <tr><td>Quiet</td><td>Suppressed or inherently silent. Won't alert distant enemies.</td></tr>
+      <tr><td>Scatter</td><td>+1d6 damage at Close range, -1d6 at Far. Devastating up close, weak at distance.</td></tr>
+      <tr><td>Burst</td><td>Consumes 3 ammo per shot. Already factored into damage.</td></tr>
+      <tr><td>Accurate</td><td>No penalty at Far range. +5% on aimed shots.</td></tr>
+      <tr><td>Sawn-Off</td><td>-1 speed, -1 die step on damage, gains Concealable. A hacksaw's bargain.</td></tr>
+    </table>
+
+    <h4>Galvanic Keyword Reference</h4>
+
+    <p>
+      Galvanic weapons use the following keywords. Each weapon's description lists which ones apply.
+    </p>
+
+    <table>
+      <tr><th>Keyword</th><th>Effect</th></tr>
+      <tr><td>Arcing</td><td>On critical hit, discharge jumps to one adjacent target for half damage.</td></tr>
+      <tr><td>Armor Breaker</td><td>Reduce target's Martial soak by 3 for this attack.</td></tr>
+      <tr><td>Lancing</td><td>Beam passes through primary target to one target directly behind for half damage.</td></tr>
+      <tr><td>Shocking</td><td>Ignores 2 points of Ballistic soak from metal armor. Lightning finds the gaps.</td></tr>
+      <tr><td>Silent</td><td>No audible report whatsoever. The target drops and nobody hears why.</td></tr>
+      <tr><td>Stun</td><td>On hit, target's next action costs +2 speed as muscles seize.</td></tr>
+      <tr><td>Suppressing</td><td>+1 to weapon's Aetheric rating per shot. Pushes the balance harder.</td></tr>
+      <tr><td>Unstable</td><td>On malfunction, severity roll gets +2 instead of +1. Handle with care.</td></tr>
+    </table>
+
+    <h3 id="armor">Armor</h3>
+
+    <p class="flavor">
+      The best armor is the kind you never need. The second best is whatever stands between
+      you and the thing trying to kill you.
+    </p>
+
+    <p>
+      Armor has two soak ratings. <strong>Ballistic</strong> absorbs damage from firearms and
+      high-velocity projectiles. <strong>Martial</strong> absorbs damage from blades, clubs,
+      claws, and other melee attacks. A ballistic vest stops bullets but a knife slides right
+      through. A suit of plate turns a sword but a rifle round punches clean through.
+      Use whichever rating matches the attack.
+    </p>
+
+    <p>
+      <strong>Degradation rule:</strong> if raw damage exceeds the relevant soak rating, there's
+      a <strong>25% chance</strong> the armor loses 1 point from that rating permanently.
+      <strong>Crushing</strong> weapons raise this to <strong>50%</strong>. Armor wears down.
+      Every fight costs something.
+    </p>
+
+    <h4>Medieval Armor</h4>
+
+    <table>
+      <tr><th>Armor</th><th>Ballistic</th><th>Martial</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Cloth</td><td>0</td><td>0</td><td>&mdash;</td><td>Better than nothing. Barely.</td></tr>
+      <tr><td>Heavy Cloth</td><td>0</td><td>1</td><td>&mdash;</td><td>Padded gambeson</td></tr>
+      <tr><td>Leather</td><td>0</td><td>2</td><td>&mdash;</td><td>Boiled and hardened</td></tr>
+      <tr><td>Scale</td><td>1</td><td>3</td><td>&mdash;</td><td>Overlapping plates</td></tr>
+      <tr><td>Chainmail</td><td>2</td><td>5</td><td>&mdash;</td><td>Rings stop blades, not bullets</td></tr>
+      <tr><td>Half Plate</td><td>3</td><td>8</td><td>1</td><td>Serious protection, serious weight</td></tr>
+      <tr><td>Full Plate</td><td>4</td><td>12</td><td>2</td><td>Walking fortress &mdash; against swords</td></tr>
+    </table>
+
+    <h4>Modern Armor</h4>
+
+    <table>
+      <tr><th>Armor</th><th>Ballistic</th><th>Martial</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Leather Jacket</td><td>0</td><td>1</td><td>&mdash;</td><td>Fashionable. Marginally protective.</td></tr>
+      <tr><td>Trench Coat</td><td>1</td><td>2</td><td>&mdash;</td><td>The adventurer's uniform</td></tr>
+      <tr><td>Ballistic Vest</td><td>8</td><td>2</td><td>&mdash;</td><td>Stops bullets, not blades</td></tr>
+      <tr><td>Steel Breastplate</td><td>5</td><td>6</td><td>1</td><td>Old meets new</td></tr>
+    </table>
+
+    <h4>Shields</h4>
+
+    <table>
+      <tr><th>Shield</th><th>Ballistic</th><th>Martial</th><th>Hinder</th><th>Notes</th></tr>
+      <tr><td>Wood Buckler</td><td>0</td><td>2</td><td>&mdash;</td><td>Light, one-handed</td></tr>
+      <tr><td>Steel Buckler</td><td>1</td><td>3</td><td>&mdash;</td><td>Sturdier</td></tr>
+      <tr><td>Wood Shield</td><td>0</td><td>5</td><td>&mdash;</td><td>A bullet goes right through</td></tr>
+      <tr><td>Infantry Shield</td><td>2</td><td>7</td><td>&mdash;</td><td>Full arm coverage</td></tr>
+      <tr><td>Kite Shield</td><td>3</td><td>9</td><td>1</td><td>Leg-to-shoulder protection</td></tr>
+      <tr><td>Knight Shield</td><td>4</td><td>10</td><td>2</td><td>Tower of steel</td></tr>
+    </table>
+
+    <h3 id="hinder">Hinder</h3>
+
+    <p>
+      Heavy armor keeps you alive. It also slows you down. <strong>Hinder</strong> represents
+      the weight and bulk of what you're wearing. It affects your body, not your mind or your aim.
+    </p>
+
+    <p>
+      Each point of Hinder applies <strong>-5%</strong> to: PC, Athletics, Stealth, and Swimming
+      rolls. It also adds <strong>+1 casting speed</strong> per point &mdash; try weaving a spell
+      in full plate.
+    </p>
+
+    <p>
+      Hinder does <strong>not</strong> affect: Melee, Brawl, Ranged, PP-based rolls, or any
+      mental/social checks. You can still swing a sword in plate. You just can't dodge in it.
+    </p>
+
+    <p>
+      Hinder from armor and shields <strong>stacks</strong>.
+    </p>
+
+    <table>
+      <tr><th>Source</th><th>Hinder</th></tr>
+      <tr><td>Half Plate</td><td>1</td></tr>
+      <tr><td>Full Plate</td><td>2</td></tr>
+      <tr><td>Kite Shield</td><td>1</td></tr>
+      <tr><td>Knight Shield</td><td>2</td></tr>
+    </table>
+
+    <div class="callout callout-example">
+      <span class="callout-label">At the Table</span>
+      <p>Kael picks up a kite shield (Hinder 1). His Athletics drops by 5%. His casting speed
+      would increase by 1 &mdash; not that he casts. If he also strapped on half plate (Hinder 1),
+      he'd be at Hinder 2 total: -10% to PC, Athletics, Stealth, Swimming, and +2 casting speed.
+      He'd be a fortress. A slow one.</p>
+    </div>
+
+    <nav class="page-nav">
+      <a href="combat.html" class="page-nav-link">
+        <span class="page-nav-direction">&larr; Previous</span>
+        <span class="page-nav-title">When Violence Finds You</span>
+      </a>
+      <a href="reference.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next &rarr;</span>
+        <span class="page-nav-title">Quick Reference</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer"><p>Adventure RPG &mdash; Playtest Draft</p></footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

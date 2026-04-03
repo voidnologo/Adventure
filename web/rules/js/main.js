@@ -12,10 +12,14 @@
     { id: 'creating',      file: 'creating.html',       title: 'Creating Your Adventurer',     num: '02', theme: 'neutral' },
     { id: 'rolling',       file: 'rolling.html',        title: 'Rolling the Dice',             num: '03', theme: 'neutral' },
     { id: 'getting-hurt',  file: 'getting-hurt.html',   title: 'Getting Hurt',                 num: '04', theme: 'galvanic' },
-    { id: 'magic',         file: 'magic.html',          title: 'The Two Paths of Magic',       num: '05', theme: 'aether' },
-    { id: 'world-between', file: 'world-between.html',  title: 'The World Between',            num: '06', theme: 'split' },
-    { id: 'combat',        file: 'combat.html',         title: 'When Violence Finds You',      num: '07', theme: 'galvanic' },
-    { id: 'reference',     file: 'reference.html',      title: 'Quick Reference',              num: '08', theme: 'neutral' },
+    { id: 'skills',        file: 'skills.html',         title: 'Skills',                       num: '05', theme: 'neutral' },
+    { id: 'magic',         file: 'magic.html',          title: 'The Two Paths of Magic',       num: '06', theme: 'aether' },
+    { id: 'grimoire',      file: 'grimoire.html',       title: 'The Grimoire',                 num: '07', theme: 'aether' },
+    { id: 'world-between', file: 'world-between.html',  title: 'The World Between',            num: '08', theme: 'split' },
+    { id: 'combat',        file: 'combat.html',         title: 'When Violence Finds You',      num: '09', theme: 'galvanic' },
+    { id: 'equipment',     file: 'equipment.html',      title: 'Arms & Equipment',             num: '10', theme: 'galvanic' },
+    { id: 'reference',     file: 'reference.html',      title: 'Quick Reference',              num: '11', theme: 'neutral' },
+    { id: 'tables',        file: 'tables.html',         title: 'Table Index',                  num: '12', theme: 'neutral' },
   ];
 
   // ── Detect Current Page ────────────────────────────────────

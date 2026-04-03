@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="aether">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grimoire — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere"><canvas id="particle-canvas"></canvas><div class="mist mist-1"></div><div class="mist mist-2"></div><div class="mist mist-3"></div></div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="sidebar-title">Adventure</div><div class="sidebar-subtitle">Rules Reference</div></div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer"><a href="../">← Back to Adventure</a></div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 7 &mdash; The Grimoire</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="magic.html">&larr; The Two Paths of Magic</a>
+      <a href="world-between.html">The World Between &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 07</span>
+      <h1 class="page-title">The Grimoire</h1>
+      <p class="page-subtitle">Thirty-seven spells across six schools &mdash; every tool a caster can wield</p>
+    </div>
+
+    <p class="flavor">
+      Schools are humanity's attempt to impose taxonomy on something fundamentally wild &mdash;
+      categories that help organize understanding but don't perfectly contain the reality.
+      Nobody knows if magic actually <em>works</em> in six neat domains, but these are the
+      boxes people have built, and they're useful enough.
+    </p>
+
+    <h3 id="aetheric-manipulation">Aetheric Manipulation <span style="font-weight:normal; font-style:italic;">&mdash; raw force, energy, elemental power (7 spells)</span></h3>
+
+    <p>
+      The most direct and visceral school. You grab the raw stuff of magic and project it.
+      Least subtle, most immediately impressive. Aetheric Manipulators are the artillery
+      of the magical world.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Force</td><td>2ct</td><td>Push, pull, strike, crush with invisible blunt force</td></tr>
+      <tr><td>Elemental Manipulation</td><td>4ct</td><td>Shape or direct fire, ice, wind, lightning, water, earth</td></tr>
+      <tr><td>Barrier</td><td>4ct</td><td>Walls, shields, or domes of magical energy</td></tr>
+      <tr><td>Kinesis</td><td>4ct</td><td>Move objects at a distance &mdash; fine manipulation to brute force</td></tr>
+      <tr><td>Disruption</td><td>4ct</td><td>Shatter, destabilize, or unravel matter and magical constructs</td></tr>
+      <tr><td>Amplify</td><td>2ct</td><td>Enhance physical forces already in motion &mdash; make a blow heavier, a sound deafening</td></tr>
+      <tr><td>Arc</td><td>4ct</td><td>Channel energy between points, redirect incoming power, ground or discharge</td></tr>
+    </table>
+
+    <h3 id="vivimancy">Vivimancy <span style="font-weight:normal; font-style:italic;">&mdash; life, body, biology (7 spells)</span></h3>
+
+    <p>
+      The magic of living things. Healing and bolstering, but also withering and reshaping
+      flesh. Vivimancers walk an uncomfortable line &mdash; where does &ldquo;mend this wound&rdquo; end
+      and dark magic begin? People are grateful and suspicious in equal measure.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Mend</td><td>5ct</td><td>Heal wounds, knit bone, cure disease, purge poison</td></tr>
+      <tr><td>Fortify</td><td>4ct</td><td>Bolster stamina, resist pain, harden flesh temporarily</td></tr>
+      <tr><td>Wither</td><td>5ct</td><td>Drain vitality, accelerate decay, weaken biological systems</td></tr>
+      <tr><td>Sense Life</td><td>2ct</td><td>Feel the presence, health, and condition of living things nearby</td></tr>
+      <tr><td>Shape Flesh</td><td>Ritual (30m)</td><td>Alter biological features &mdash; cosmetic changes to dramatic transformation</td></tr>
+      <tr><td>Purge</td><td>6ct</td><td>Cleanse corruption, contamination, parasites, and foreign influence</td></tr>
+      <tr><td>Bloom</td><td>4ct</td><td>Accelerate growth, encourage life, cause plants to flourish</td></tr>
+    </table>
+
+    <h3 id="warding">Warding <span style="font-weight:normal; font-style:italic;">&mdash; protection, sealing, banishment (6 spells)</span></h3>
+
+    <p>
+      The most &ldquo;respectable&rdquo; school. Everyone wants protection from the magical chaos
+      engulfing the world. Warders are the closest thing the magical world has to trusted
+      professionals.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Shield</td><td>3ct</td><td>Personal magical protection against physical or magical harm</td></tr>
+      <tr><td>Seal</td><td>5ct</td><td>Lock, close, bind shut &mdash; doors, containers, wounds, portals</td></tr>
+      <tr><td>Banish</td><td>6ct</td><td>Drive away entities, dispel active magic, force out foreign influence</td></tr>
+      <tr><td>Circle</td><td>Ritual (30m)</td><td>Create a bounded area with specific magical properties</td></tr>
+      <tr><td>Anchor</td><td>3ct</td><td>Stabilize, fix in place, resist forced movement or transformation</td></tr>
+      <tr><td>Unbind</td><td>3ct</td><td>Break seals, dispel wards, shatter bindings, unlock magical locks</td></tr>
+    </table>
+
+    <h3 id="divination">Divination <span style="font-weight:normal; font-style:italic;">&mdash; perception, knowledge, detection (6 spells)</span></h3>
+
+    <p>
+      Seeing the unseen. Invaluable for investigators, relic hunters, and navigating magical
+      zones. The downside: Divination doesn't filter what you see. Sometimes you learn things
+      you wish you hadn't.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Reveal</td><td>4ct</td><td>See hidden things &mdash; invisible objects, concealed doors, disguised creatures</td></tr>
+      <tr><td>Scry</td><td>Ritual (10m)</td><td>See distant places, people, or events</td></tr>
+      <tr><td>Read</td><td>5ct</td><td>Psychometry &mdash; touch an object and sense its history and emotional imprint</td></tr>
+      <tr><td>Foresight</td><td>6ct</td><td>Brief, unreliable glimpses of what's about to happen</td></tr>
+      <tr><td>Detect</td><td>2ct</td><td>Sense the presence and nature of magic nearby</td></tr>
+      <tr><td>Commune</td><td>6ct</td><td>Reach out to distant minds &mdash; send messages, brief telepathic contact</td></tr>
+    </table>
+
+    <h3 id="transmutation">Transmutation <span style="font-weight:normal; font-style:italic;">&mdash; altering matter and material properties (6 spells)</span></h3>
+
+    <p>
+      The engineer's school. Transmuters change what things <em>are</em>. This is where magic
+      and technology get dangerously close &mdash; a Transmuter who reshapes metal is doing with
+      magic what factories do with machines. The crown jewel, actual substance-to-substance
+      transmutation, attracts dangerous attention from powerful interests.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Reshape</td><td>5ct</td><td>Change an object's form without changing its material</td></tr>
+      <tr><td>Alter Property</td><td>5ct</td><td>Change a material property &mdash; make iron brittle, stone flexible, wood fireproof</td></tr>
+      <tr><td>Refine</td><td>5ct</td><td>Purify, separate, distill &mdash; extract metals from ore, isolate poisons</td></tr>
+      <tr><td>Enlarge/Reduce</td><td>6ct</td><td>Change the size of objects or creatures &mdash; temporary and stressful on living targets</td></tr>
+      <tr><td>Fuse</td><td>5ct</td><td>Join dissimilar materials into a seamless whole, or separate fused things cleanly</td></tr>
+      <tr><td>Transmute</td><td>Ritual (1hr)</td><td>Change one material into another &mdash; lead to gold, wood to stone</td></tr>
+    </table>
+
+    <h3 id="ley-weaving">Ley Weaving <span style="font-weight:normal; font-style:italic;">&mdash; manipulating magic itself (5 spells)</span></h3>
+
+    <p>
+      The rarest and most feared school. Ley Weavers don't cast spells so much as reshape
+      the magical landscape itself. They amplify, dampen, redirect, and sever the mana flows
+      that all other casters depend on. Other casters are deeply uncomfortable around
+      Ley Weavers &mdash; because a skilled Weaver can shut your magic down.
+    </p>
+
+    <table>
+      <tr><th>Spell</th><th>Time</th><th>Concept</th></tr>
+      <tr><td>Dampen</td><td>6ct</td><td>Suppress or weaken magic in an area &mdash; create zones of magical calm</td></tr>
+      <tr><td>Channel</td><td>6ct</td><td>Redirect mana flows, draw power from ley lines to reduce exhaustion costs</td></tr>
+      <tr><td>Attune</td><td>5ct</td><td>Harmonize with a magical source or artifact &mdash; understand its nature, tap its power</td></tr>
+      <tr><td>Surge</td><td>6ct</td><td>Flood an area with raw mana &mdash; amplifies all magic, friend and foe alike</td></tr>
+      <tr><td>Sever</td><td>8ct</td><td>Cut a caster's connection to mana flows &mdash; the most feared spell in the game</td></tr>
+    </table>
+
+    <nav class="page-nav">
+      <a href="magic.html" class="page-nav-link">
+        <span class="page-nav-direction">&larr; Previous</span>
+        <span class="page-nav-title">The Two Paths of Magic</span>
+      </a>
+      <a href="world-between.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next &rarr;</span>
+        <span class="page-nav-title">The World Between</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer"><p>Adventure RPG &mdash; Playtest Draft</p></footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
