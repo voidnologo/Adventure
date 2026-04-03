@@ -1,32 +1,35 @@
 # Continuation Prompt
 
-## Last Session (8) — Design Audit, Web Rulebook Overhaul, Major Mechanical Revisions
-- Audited all docs against session 1-7 decisions, fixed 22 discrepancies
-- Web rulebook expanded from ~1400 to ~2400 lines — all designed content now included
-- Established setting terminology: **The Veil** (magic source) / **The Engine** (tech source), **Aetheric** (magic adjective) / **Galvanic** (tech adjective)
-- Unified accumulation as single sliding scale (Aetheric ↔ Galvanic), symmetric ×2 multiplier (each net point helps one side AND hurts the other)
-- Resolved: Push It (half+full EP, doubled backlash), school access (scholarly=all 6, wild=PW modifier), Reliability always checked, reload values halved, per-item Aetheric ratings on exotics
-- Writing style guide updated with dice roll conventions and setting terminology guide
+## Last Session (9) — Rules Review, Ballistic/Martial Armor, Galvanic Weapons, Full UI Redesign
+- Caught and fixed inconsistencies from session 8 (Reliability always checked, accumulation timing, wild caster farther-die mechanic, malfunction as roll-under not reverse formula)
+- Armor split into **Ballistic** (firearms) and **Martial** (melee) ratings — different armor for different threats
+- Galvanic weapons redesigned from generic stat table to 7 named weapons with unique abilities and keywords (Force Blade, Arc Gun, Galvanic Lance, etc.)
+- Complete UI redesign: 8-page documentation site with sidebar TOC, per-page themes (Aetheric/Galvanic/split), new design system (deep blue-black, Playfair Display, glassmorphic panels, particles)
+- Landing page rewritten narrative-first: world/story before mechanics, scenario cards, inline SVG icons
+- Expanded World Between with approved cosmology (Veil/Engine/Baseline, terminology table, Three Theories)
 
 ## Current State
-- Project is in **design exploration phase** — collaborative interview-driven design
-- **Website live:** Landing page + rules reference at `web/` (static HTML) — content complete, needs visual design pass
+- **Website live:** Landing page + 8-page rules reference with new design system
+- **CRITICAL RULE:** Rulebook content must NEVER be changed without explicit user approval. Layout/design only.
 - **Playtest-ready documents:** COMBAT_PROCEDURE.md, BASE_MECHANICS.md (with cheat sheets)
-- **Complete (first pass):** Magic system, spell compendium (37 spells), weapons (melee + firearms + exotics), armor/soak, malfunction/accumulation, design philosophy, art style guide, writing style guide
-- **Accumulation model:** Single sliding scale. Spells push Aetheric (+), exotic tech pushes Galvanic (−). Eff. Reliability = Base − (net × 2). Eff. Casting Target = Base + (net × 2). Reliability always checked. Symmetric zones from Deep Galvanic (−25) to Deep Wild (+25).
+- **Complete (first pass):** Magic system, spell compendium (37 spells), weapons (melee + firearms + Galvanic), armor/soak (Ballistic/Martial), malfunction/accumulation, design philosophy, art style guide, writing style guide
+- **Accumulation model:** Single sliding scale. Spells push Aetheric (+), Galvanic tech pushes negative (-). Eff. Reliability = Base - (net x 2). Eff. Casting Target = Base + (net x 2). Reliability always checked. Symmetric zones.
 - **Not yet designed:** Leveling, factions, zone formation mechanics, Push Timing mechanic, races, archetype names, skill list revision, currency, bestiary
 
 ## Immediate Next Task
-**Visual design pass on web rulebook**, then **define major factions and Adventuring Societies.**
+**Verify rulebook page content**, then **define major factions and Adventuring Societies.**
 
 ## Key References
+- `web/rules/` — 8-page rules site (index, creating, rolling, getting-hurt, magic, world-between, combat, reference)
+- `web/rules/css/styles.css` — Design system
+- `web/rules/js/main.js` — Navigation, particles, scroll spy
+- `web/index.html` — Landing page
 - `docs/requirements/COMBAT_PROCEDURE.md` — Full combat rules with cheat sheet
 - `docs/requirements/BASE_MECHANICS.md` — Core mechanics with cheat sheet
 - `docs/requirements/PROJECT_SPEC.md` — Setting, stats, weapons, armor, zone descriptions
-- `docs/requirements/MAGIC_SYSTEM.md` — Full casting rules, Push It, school access
+- `docs/requirements/MAGIC_SYSTEM.md` — Full casting rules, Push It, school access, tie rule
 - `docs/requirements/SPELL_COMPENDIUM.md` — All 37 spells with fixed casting times
-- `docs/requirements/FIREARMS_EQUIPMENT.md` — Firearms, Aetheric ratings, accumulation number line, malfunction system
+- `docs/requirements/FIREARMS_EQUIPMENT.md` — Firearms, Galvanic weapons, Aetheric ratings, accumulation, malfunction
 - `docs/requirements/DESIGN_PHILOSOPHY.md` — Cosmology (Veil/Engine), literary influences, terminology table
-- `docs/requirements/WRITING_STYLE.md` — Player-facing vs internal style, dice roll conventions, Aetheric/Galvanic terminology guide
-- `web/rules/index.html` — Rules website (content complete)
-- `docs/sessions/session-8-notes.md` — Full record of all decisions, trade-offs, and rationale
+- `docs/requirements/WRITING_STYLE.md` — Player-facing vs internal style, dice roll conventions, terminology guide
+- `docs/sessions/session-9-notes.md` — Full record of all decisions and changes
