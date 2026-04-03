@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="neutral">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rolling the Dice — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere"><canvas id="particle-canvas"></canvas><div class="mist mist-1"></div><div class="mist mist-2"></div><div class="mist mist-3"></div></div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="sidebar-title">Adventure</div><div class="sidebar-subtitle">Rules Reference</div></div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer"><a href="../">← Back to Adventure</a></div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 3 — Rolling the Dice</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="creating.html">&larr; Creating Your Adventurer</a>
+      <a href="getting-hurt.html">Getting Hurt &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 03</span>
+      <h1 class="page-title">Rolling the Dice</h1>
+      <p class="page-subtitle">One system for everything &mdash; d100, roll under, that's it</p>
+    </div>
+
+    <p class="flavor">
+      You've got your character. Now you need to know how the dice work. The good news is:
+      there's only one system for everything.
+    </p>
+
+    <h3 id="core-roll">The Core Roll</h3>
+
+    <p>
+      When your character attempts something where failure is possible and interesting,
+      you roll <strong>percentile dice</strong> (two d10s &mdash; one for tens, one for ones).
+      You want to roll <strong>equal to or under</strong> your target number. That's it. One
+      mechanic for combat, magic, skills, everything.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p><em>"There's a padlock on the warehouse door. Kael, what do you do?"</em></p>
+      <p>"I don't have Security. Can I try anyway?"</p>
+      <p><em>"Sure &mdash; unskilled attempt. Your AW is +1, so that's (5 + 1) &times; 5 = 30. Roll under 30."</em></p>
+      <p>"I got a 73."</p>
+      <p><em>"The pick snaps. You hear footsteps inside."</em></p>
+    </div>
+
+    <h3 id="crits">Critical Successes and Failures</h3>
+
+    <p>
+      A roll of <strong>01</strong> is always a critical success &mdash; spectacular,
+      extraordinary, the kind of thing people tell stories about. A roll of <strong>00</strong>
+      (double zeros) is always a critical failure &mdash; not just bad, but memorably,
+      entertainingly bad.
+    </p>
+
+    <p>
+      Beyond those extremes, your critical range depends on how good you are. For every 25%
+      of your target number, you get 1 additional point of critical range, counted <em>down</em>
+      from your target:
+    </p>
+
+    <table>
+      <tr><th>Target Number</th><th>Crit Range</th><th>Crit On</th></tr>
+      <tr><td>1&ndash;25</td><td>0</td><td>01 only</td></tr>
+      <tr><td>26&ndash;50</td><td>1</td><td>Target value only</td></tr>
+      <tr><td>51&ndash;75</td><td>2</td><td>Target and target&minus;1</td></tr>
+      <tr><td>76&ndash;99</td><td>3</td><td>Target, target&minus;1, target&minus;2</td></tr>
+    </table>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Kael's Melee target is 66. That falls in the 51&ndash;75 bracket, so his crit range is 2.
+      He crits on a roll of <strong>64, 65, or 66</strong>. When you're good at something, the
+      sweet spot at the top of your range becomes a critical &mdash; not just a success, but
+      a devastating one.</p>
+    </div>
+
+    <h3 id="opposed">Opposed Checks</h3>
+
+    <p>
+      Sometimes two characters act against each other directly &mdash; an arm-wrestling match,
+      a foot chase, a spell resisted by willpower. Both sides roll against their own target
+      number:
+    </p>
+
+    <ul>
+      <li><strong>Both succeed?</strong> Whoever rolled further under their target (larger margin) wins.</li>
+      <li><strong>One succeeds, one fails?</strong> Success wins.</li>
+      <li><strong>Both fail?</strong> Stalemate. The situation doesn't change. The GM adjudicates what that looks like.</li>
+    </ul>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p><em>"The cultist tries to wrench the artifact from your hands. That's PP vs PP."</em></p>
+      <p>Kael's PP target: (5 + 2) &times; 5 = 35 (no skill, just raw strength). He rolls 22 &mdash; success, margin 13.</p>
+      <p>The cultist's PP target: 30. Rolls 28 &mdash; success, margin 2.</p>
+      <p><em>"You both hold on, but Kael's grip is iron. The cultist's hands slip. The artifact is yours."</em></p>
+    </div>
+
+    <h3 id="timing-track">The Timing Track</h3>
+
+    <p>
+      One more concept before we move on. When timing matters &mdash; combat, chases,
+      ticking clocks &mdash; the game uses a <strong>timing track</strong> instead of
+      initiative rounds. Think of it as a shared number line. Every action takes a certain
+      number of <strong>counts</strong>: drawing a sword is 2, firing a revolver is 3,
+      casting a spell might be 2 to 8 depending on the spell. You place a token on the
+      count when your action <em>completes</em>, and the GM advances the track count by
+      count.
+    </p>
+
+    <p>
+      There are no turns. Everyone acts on the same timeline, and faster actions resolve
+      first. You'll see references to "counts" throughout the rest of these rules &mdash;
+      that's the timing track at work. The full details are in the
+      <a href="combat.html">combat section</a>, but the core idea is simple: everything takes
+      time, and time is a resource.
+    </p>
+
+    <nav class="page-nav">
+      <a href="creating.html" class="page-nav-link">
+        <span class="page-nav-direction">← Previous</span>
+        <span class="page-nav-title">Creating Your Adventurer</span>
+      </a>
+      <a href="getting-hurt.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next →</span>
+        <span class="page-nav-title">Getting Hurt</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer"><p>Adventure RPG — Playtest Draft</p></footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

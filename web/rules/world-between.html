@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="split">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The World Between — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere"><canvas id="particle-canvas"></canvas><div class="mist mist-1"></div><div class="mist mist-2"></div><div class="mist mist-3"></div></div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="sidebar-title">Adventure</div><div class="sidebar-subtitle">Rules Reference</div></div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer"><a href="../">← Back to Adventure</a></div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 6 — The World Between</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="magic.html">&larr; The Two Paths of Magic</a>
+      <a href="combat.html">When Violence Finds You &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 06</span>
+      <h1 class="page-title">The World Between</h1>
+      <p class="page-subtitle">Where the Veil meets the Engine &mdash; and reality bends</p>
+    </div>
+
+    <p class="flavor">
+      The Veil thinned within living memory, and the Aether poured through. The Engine woke
+      in response &mdash; as if the universe demanded balance. Now the two forces pull every
+      room, street corner, and wilderness clearing in opposite directions. You live in the
+      space between them. That's where the work is.
+    </p>
+
+    <h3 id="veil-engine">The Veil and the Engine</h3>
+
+    <p>
+      Two competing metaphysical forces share the world. Neither is fully understood. Neither
+      is good or evil. They are paradigms with momentum &mdash; and perhaps intentionality.
+    </p>
+
+    <p>
+      <strong>The Aether</strong> &mdash; drawn from the Veil. Primal, wild, recently erupted
+      into the world. The Veil is the boundary between the mundane world and something vast
+      and inhuman beyond it. Casters draw Aetheric power through the Veil. Where the Veil is
+      thin (Wild Zones), magic is strong. Where the Engine drowns it out (Galvanic Zones),
+      magic can't reach. Aetheric force is wondrous, feared, and poorly understood. It
+      disrupts the established order.
+    </p>
+
+    <p>
+      <strong>The Galvanic Force</strong> &mdash; drawn from the Engine. The world's
+      counter-response to the Aether. The Engine is the metaphysical wellspring of human
+      industry and will, given force by the emergence of exotic technology. Galvanic devices
+      push back against the Aether the way the Aether pushes against technology. The Engine
+      emerged after the Aetheric eruption, as if the universe demanded balance. Whether this
+      is a conscious force, an immune response, or just physics is unknown. People debate it.
+      Cults form around both interpretations.
+    </p>
+
+    <p>
+      <strong>The Baseline</strong> &mdash; physical reality. Steel, wood, muscle, simple
+      machines. The bedrock of the world. Immune to both forces. A sword works everywhere. A
+      horse doesn't care about the Aether or the Engine. This is why martial weapons, hand
+      tools, and pre-industrial technology remain relevant &mdash; they are the only truly
+      reliable things in a world being pulled in two directions.
+    </p>
+
+    <table>
+      <tr><th>Term</th><th>What It Means</th></tr>
+      <tr><td>The Veil</td><td>The cosmological source of magic. The boundary between the mundane world and something beyond. Thinned within living memory, allowing magic to flood in.</td></tr>
+      <tr><td>The Engine</td><td>The cosmological source of galvanic force. Human industry and will given metaphysical weight. The counter-response to the Veil's thinning.</td></tr>
+      <tr><td>Aetheric</td><td>Adjective for magical force and its effects. Drawn from the Veil.</td></tr>
+      <tr><td>Galvanic</td><td>Adjective for exotic tech force and its effects. Drawn from the Engine.</td></tr>
+      <tr><td>The Balance</td><td>The sliding scale between Aetheric and Galvanic saturation in an area.</td></tr>
+      <tr><td>Conventional</td><td>Ordinary technology &mdash; firearms, engines, radios. Affected by the Aether but does not generate Galvanic force.</td></tr>
+      <tr><td>Martial</td><td>Physical weapons and tools. Immune to both forces. Swords, crossbows, muscle. Always work.</td></tr>
+    </table>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">The Three Theories</span>
+      <p><strong>The Immune Response Theory:</strong> The Veil thinned. The Engine woke up to
+      fight back. Galvanic technology is the world's antibodies. This view is popular among
+      industrialists. It frames the Aether as a disease and the Engine as the cure.</p>
+      <p><strong>The Rival Gods Theory:</strong> The Veil and the Engine are conscious forces
+      &mdash; one ancient and wild, one emerging from human will &mdash; competing for
+      dominance over the character of reality. This view is popular among scholars and
+      occultists.</p>
+      <p><strong>The Engineer's Shrug:</strong> It's just interference. Two strong signals in
+      the same medium. Tune one up and the other degrades. No gods required. This view is
+      popular among people who don't have time for philosophy.</p>
+    </div>
+
+    <h3 id="number-line">The Number Line</h3>
+
+    <p>
+      Think of every area as sitting somewhere on a sliding scale. The Aether on one end.
+      The Galvanic on the other. Neutral in the middle. Every spell pushes the scale toward
+      Aetheric. Every Galvanic device pushes it the other way. The <strong>net balance</strong>
+      determines who suffers.
+    </p>
+
+    <p>
+      Conventional technology &mdash; revolvers, automobiles, radios &mdash; doesn't move
+      the needle. A Webley revolver is just a machine. It doesn't push back against the
+      Aether any more than a windmill does. It's a <em>victim</em>, not a combatant.
+      Only <strong>Galvanic technology</strong> &mdash; the exotic prototypes that channel
+      forces from the Engine &mdash; push the other direction.
+    </p>
+
+    <h3 id="balance">What Moves the Balance</h3>
+
+    <h4>Aetheric Side (Magic)</h4>
+
+    <table>
+      <tr><th>Source</th><th>Shift</th></tr>
+      <tr><td>Spell &mdash; Weak</td><td>+1 Aetheric</td></tr>
+      <tr><td>Spell &mdash; Standard</td><td>+2 Aetheric</td></tr>
+      <tr><td>Spell &mdash; Strong</td><td>+3 Aetheric</td></tr>
+      <tr><td>Spell &mdash; Spectacular</td><td>+4 Aetheric</td></tr>
+    </table>
+
+    <h4>Galvanic Side</h4>
+
+    <p>
+      Every Galvanic device has an <strong>Aetheric rating</strong> &mdash; how hard it pushes
+      the balance toward tech each time it's used. Heavier hardware radiates more.
+    </p>
+
+    <table>
+      <tr><th>Source</th><th>Aetheric</th><th>Shift per Shot</th></tr>
+      <tr><td>Pneumatic Flechette</td><td>1</td><td>&minus;1 Galvanic</td></tr>
+      <tr><td>Arc Gun / Spark Thrower</td><td>2</td><td>&minus;2 Galvanic</td></tr>
+      <tr><td>Galvanic Lance</td><td>3</td><td>&minus;3 Galvanic</td></tr>
+      <tr><td>Force Blade / Shock Gauntlet / Voltaic Whip</td><td>1</td><td>&minus;1 per charge</td></tr>
+      <tr><td>Suppressing keyword</td><td>+1</td><td>Added to weapon's rating</td></tr>
+    </table>
+
+    <p>
+      Non-weapon Galvanic devices &mdash; resonance generators, plasma shields, aetheric
+      dampeners &mdash; have their own ratings assigned by the GM based on scale. A portable
+      lamp might be 1. A factory resonance engine might be 10 or more. Misfire spells and
+      conventional weapons don't shift the balance at all.
+    </p>
+
+    <h3 id="net-effect">The Net Effect</h3>
+
+    <p>
+      Only the <strong>net value</strong> matters, and it penalizes the losing side at
+      <strong>2% per net point</strong>:
+    </p>
+
+    <p>
+      Each net point shifts <strong>both sides at once</strong> &mdash; it doesn't just
+      suppress one force, it actively feeds the other:
+    </p>
+
+    <ul>
+      <li><strong>Effective Reliability</strong> = Base Reliability &minus; (net balance &times; 2)</li>
+      <li><strong>Effective Casting Target</strong> = Base Target + (net balance &times; 2)</li>
+    </ul>
+
+    <p>
+      Net Aetheric hurts firearms AND helps magic. Net Galvanic hurts magic AND helps
+      firearms. A Wild Zone isn't just "guns don't work here" &mdash; it's "magic is
+      <em>incredible</em> here." A Galvanic factory isn't just "spells fail" &mdash; it's
+      "firearms are <em>perfect</em>."
+    </p>
+
+    <p>
+      <strong>Reliability is always checked.</strong> Every shot, every time. A tommy gun
+      has a 30% malfunction chance in clean air. A revolver has 5%. That's the baseline.
+      The balance makes it better or worse from there.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Sera casts three Standard spells (+2 each = +6 Aetheric). Meanwhile, a thug fires
+      an arc gun twice (Aetheric 2, so &minus;2 each = &minus;4 Galvanic). Net balance:
+      <strong>+2 Aetheric</strong>. Every firearm loses 4 Reliability. Sera's casting
+      target gains +4 &mdash; her base 55 is now <strong>59</strong>. The Aether is feeding
+      her magic while degrading the guns.</p>
+      <p>If the thug had fired a third shot (&minus;2 more), the net would be
+      <strong>0</strong> &mdash; perfectly balanced. Neither side boosted or penalized.</p>
+    </div>
+
+    <div class="callout callout-example">
+      <span class="callout-label">The Other Direction</span>
+      <p>Now imagine the reverse. A factory enforcer fires an aether lance (Aetheric 3,
+      Suppressing +1 = 4 per shot) three times. That's &minus;12 Galvanic. Sera has
+      cast one Standard spell (+2 Aetheric). Net: <strong>&minus;10 Galvanic</strong>.
+      Sera's casting target drops by 20 &mdash; from 55 to <strong>35</strong>. She can
+      barely manage Standard, and she'll misfire more often than not. Meanwhile,
+      every firearm gains +20 Reliability. The enforcer's tommy gun (Rel 70 + 20 = 90)
+      has only a 10% malfunction chance. The Engine is drowning out the Veil.</p>
+    </div>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p><em>"Two spells and an arc gun shot. Where's the balance?"</em></p>
+      <p>"Plus four Aetheric, minus two Galvanic. Net two Aetheric."</p>
+      <p><em>"Revolvers are at minus four Reliability. A little twitchy. Your sword doesn't
+      care."</em></p>
+    </div>
+
+    <h3 id="decay">Decay</h3>
+
+    <p>
+      The balance drifts back toward the area's <strong>baseline</strong> at
+      <strong>1 point per minute</strong>. In a normal area, the baseline is zero &mdash;
+      after the casting and shooting stops, the world normalizes. A net balance of +8
+      takes 8 minutes to clear completely.
+    </p>
+
+    <p>
+      In environmental zones (see below), the baseline isn't zero. A Wild Zone's baseline
+      is +15 or more. You can fire exotic weapons to temporarily push it down, but it
+      drifts right back once you stop.
+    </p>
+
+    <h3 id="spectrum">The Spectrum</h3>
+
+    <p>
+      The world isn't uniform. Different places sit at different points on the scale,
+      and smart adventurers plan their loadout accordingly:
+    </p>
+
+    <table>
+      <tr><th>Zone</th><th>Baseline</th><th>What to Expect</th></tr>
+      <tr><td>Deep Galvanic Zone</td><td>&minus;25 or more</td><td>Magic non-functional. The Engine roars. Massive factories, power plants, aetheric foundries.</td></tr>
+      <tr><td>Galvanic Zone</td><td>&minus;15 to &minus;20</td><td>Most spells fail outright. Galvanic devices thrive. Heavy industrial districts.</td></tr>
+      <tr><td>Moderate Galvanic Zone</td><td>&minus;8 to &minus;12</td><td>Only powerful casters can push through. Tech runs perfectly.</td></tr>
+      <tr><td>Light Galvanic Zone</td><td>&minus;3 to &minus;5</td><td>Casting noticeably harder. Tech works clean. Factory neighborhoods, rail yards.</td></tr>
+      <tr><td>Normal</td><td>0</td><td>Everything works &mdash; until someone tips the balance.</td></tr>
+      <tr><td>Light Aetheric Zone</td><td>+3 to +5</td><td>Firearms slightly less reliable. Sensitive equipment twitchy.</td></tr>
+      <tr><td>Moderate Aetheric Zone</td><td>+8 to +12</td><td>Only the most reliable firearms work. Machines need constant maintenance.</td></tr>
+      <tr><td>Wild Zone</td><td>+15 to +20</td><td>Most firearms non-functional. Strange creatures. Reality gets soft.</td></tr>
+      <tr><td>Deep Wild Zone</td><td>+25 or more</td><td>Swords and sorcery only. Bring a blade or don't come back.</td></tr>
+    </table>
+
+    <p>
+      These zones don't appear from nowhere. They're the result of sustained, heavy
+      activity that has soaked into the environment. A cultist coven performing rituals
+      for months saturates the area with Aetheric residue. A Galvanic weapons factory
+      running resonance engines around the clock pushes the other direction. The balance
+      doesn't just affect what works &mdash; it <em>stains</em> the environment.
+    </p>
+
+    <p>
+      And it bleeds outward. A factory at &minus;25 inside its walls might be &minus;10
+      on the street outside, &minus;5 a block away, barely noticeable three blocks out.
+      A cultist lair at +20 radiates Aetheric residue in a gradient an investigator can
+      follow inward, like tracking smoke to the fire. Heavy activity on either side of
+      the scale is <strong>impossible to hide</strong>. Milk sours near the cult's
+      basement. Radios work too well near the weapons lab. Compasses spin. Stray cats
+      avoid the block. A good forensic investigator with a Detect spell and a notebook
+      can map these gradients and find anything.
+    </p>
+
+    <div class="callout callout-note">
+      <span class="callout-label">Why This Matters</span>
+      <p>This mechanic is the reason the game supports such a wide range of character types.
+      The swordsman isn't obsolete because guns exist &mdash; guns <em>fail</em> where the
+      Veil is thin. The gunfighter isn't useless because magic exists &mdash; there are
+      entire districts where the Engine hums so loud that spells can't reach through.
+      The Galvanic gunner serves a dual role &mdash; dealing damage <em>and</em> pushing the
+      balance back so the rest of the party's firearms keep working.</p>
+      <p>Your caster and your Galvanic gunner are pulling the environment in opposite
+      directions. Your swordsman doesn't care. Carry a sword <em>and</em> a gun. Know
+      when to rely on which.</p>
+    </div>
+
+    <nav class="page-nav">
+      <a href="magic.html" class="page-nav-link">
+        <span class="page-nav-direction">← Previous</span>
+        <span class="page-nav-title">The Two Paths of Magic</span>
+      </a>
+      <a href="combat.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next →</span>
+        <span class="page-nav-title">When Violence Finds You</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer"><p>Adventure RPG — Playtest Draft</p></footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

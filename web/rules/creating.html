@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="neutral">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creating Your Adventurer — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere">
+  <canvas id="particle-canvas"></canvas>
+  <div class="mist mist-1"></div>
+  <div class="mist mist-2"></div>
+  <div class="mist mist-3"></div>
+</div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-title">Adventure</div>
+    <div class="sidebar-subtitle">Rules Reference</div>
+  </div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer">
+    <a href="../">← Back to Adventure</a>
+  </div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 2 — Creating Your Adventurer</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="index.html">&larr; Welcome</a>
+      <a href="rolling.html">Rolling the Dice &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 02</span>
+      <h1 class="page-title">Creating Your Adventurer</h1>
+      <p class="page-subtitle">Before you can brave the wild zones, you need to know who you are</p>
+    </div>
+
+    <p class="flavor">
+      Before you can brave the wild zones and back-alley cults, you need to know who you are.
+      Character creation is a conversation between you and your GM &mdash; not a math exercise.
+      Start with a person, then let the numbers follow.
+    </p>
+
+    <h3 id="who-are-you">Step 1: Who Are You?</h3>
+
+    <p>
+      Before you touch a single number, think about your character as a person. What did they
+      do before the magic came? What drew them into adventuring? Are they a former soldier
+      who picked up a sword when their revolver started misfiring in the field? A university
+      professor who discovered they could shape fire with their bare hands? A street kid
+      from the industrial district who's never seen real magic but heard the stories?
+    </p>
+
+    <p>
+      Write a name. Write a one-sentence concept. The "Class" field on your character sheet is
+      just a <strong>label</strong> &mdash; it's not a mechanical gate. A "Smoke Surgeon" and a
+      "Gutter Knight" use the same rules; they've just invested in different things. Think of
+      setting-flavored titles: Relic Hunter, Wardbreaker, Channeler, Artificer.
+    </p>
+
+    <h3 id="attributes">Step 2: Your Attributes</h3>
+
+    <p>
+      Your character has six attributes, each rated from <strong>-3 to +3</strong>.
+      Zero is ordinary. Positive means you're better than most people; negative means
+      it's not your strength. These aren't hit points or big numbers &mdash; they're small
+      modifiers that ripple through everything else your character does.
+    </p>
+
+    <table>
+      <tr><th>Attribute</th><th>Abbr</th><th>What It Means</th></tr>
+      <tr><td>Physical Prowess</td><td>PP</td><td>Raw strength, endurance, how hard you hit and how much you can take</td></tr>
+      <tr><td>Physical Coordination</td><td>PC</td><td>Grace, reflexes, fine motor control &mdash; sword fighting, dodging, picking locks</td></tr>
+      <tr><td>Intellect</td><td>IN</td><td>Education, reasoning, technical knowledge &mdash; medicine, engineering, science</td></tr>
+      <tr><td>Social Prowess</td><td>SP</td><td>Charm, presence, social instinct &mdash; talking your way in (or out) of trouble</td></tr>
+      <tr><td>Awareness</td><td>AW</td><td>Perception, alertness, instinct &mdash; noticing the hidden, reading a room</td></tr>
+      <tr><td>Power</td><td>PW</td><td>Mental fortitude &mdash; resilience against stress, exhaustion, and the forces of magic</td></tr>
+    </table>
+
+    <p>
+      Your GM sets the <strong>net bonus</strong> for the campaign &mdash; the default is
+      <strong>+1</strong>. That means when you add up all six of your attributes, the total
+      must equal +1. Want to be exceptionally strong (PP +3)? Something else has to give.
+      Every choice is a trade-off.
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">What the Numbers Feel Like</span>
+      <p><strong>-3:</strong> A serious limitation. PP -3 is frail &mdash; can barely carry their own pack. PW -3 is mentally fragile &mdash; almost no capacity for stress, fatigue, or magical strain.</p>
+      <p><strong>-1:</strong> Below average, but functional. PC -1 is a bit clumsy. Not disabling, but you'll feel it.</p>
+      <p><strong>0:</strong> An ordinary person. Unremarkable. This is the baseline for most people in the world.</p>
+      <p><strong>+1:</strong> Notably capable. IN +1 is well-read, quick-thinking. Most people would describe them as smart.</p>
+      <p><strong>+2:</strong> Exceptional. AW +2 is the person who notices <em>everything</em> &mdash; the wrong shadow, the nervous twitch, the faint smell of cordite.</p>
+      <p><strong>+3:</strong> At the peak of human ability. SP +3 is the person who walks into a room and everyone turns to listen before they've said a word.</p>
+    </div>
+
+    <p>
+      For each attribute, write a brief <strong>description</strong> on your character sheet
+      explaining <em>why</em> that number makes sense. This isn't just bookkeeping &mdash;
+      it's your character. "PP +2: Former dockworker, built like a brick wall." "IN -1:
+      Street-smart, but never had formal schooling." These descriptions anchor your
+      roleplaying and help the GM set appropriate challenges.
+    </p>
+
+    <h4>How Attributes Shape Your Character</h4>
+
+    <p>
+      Those small numbers cascade through the entire system. Here's what they determine:
+    </p>
+
+    <ul>
+      <li><strong>PP</strong> sets your <strong>Hit Points per wound tier</strong> (7 + PP). A tough character (PP +2) has 9 HP per tier. A frail one (PP -1) has only 6. That difference is life and death.</li>
+      <li><strong>PW</strong> sets your <strong>Exhaustion Points per tier</strong> (7 + PW) &mdash; your mental and spiritual fortitude against stress, fatigue, disorientation, and magical drain. Everyone has this track, caster or not. For those who <em>do</em> pursue magic, PW also determines how many spells and schools you can access &mdash; a high-PW caster commands vast power, while a low-PW caster burns out fast with a thin selection.</li>
+      <li><strong>PC</strong> determines who <strong>declares last in combat</strong>. The character with the highest PC sees what everyone else commits to before choosing their own action. In a firefight, that's enormous.</li>
+      <li>Every attribute feeds into your <strong>skill target numbers</strong>, making the difference between "decent chance" and "nearly certain."</li>
+    </ul>
+
+    <h4>A Character Takes Shape</h4>
+
+    <p>
+      Let's build someone. Meet <strong>Kael Ashford</strong> &mdash; a former army officer
+      who resigned his commission when magic erupted and the world stopped making sense.
+      He's a swordsman first, a pragmatist always, and deeply suspicious of magic he doesn't
+      understand.
+    </p>
+
+    <div class="sheet-mock">
+      <h4>Kael Ashford &mdash; "Gutter Knight"</h4>
+      <table class="sheet-table">
+        <tr>
+          <td class="stat-name">Physical Prowess (PP)</td>
+          <td class="pip">&minus;3</td><td class="pip">&minus;2</td><td class="pip">&minus;1</td><td class="pip">0</td><td class="pip">1</td><td class="pip filled">&bull;2</td><td class="pip">3</td>
+          <td class="stat-desc">Former soldier, strong and fit</td>
+        </tr>
+        <tr>
+          <td class="stat-name">Phys. Coordination (PC)</td>
+          <td class="pip">&minus;3</td><td class="pip">&minus;2</td><td class="pip">&minus;1</td><td class="pip">0</td><td class="pip">1</td><td class="pip filled">&bull;2</td><td class="pip">3</td>
+          <td class="stat-desc">Trained fencer, quick hands</td>
+        </tr>
+        <tr>
+          <td class="stat-name">Intellect (IN)</td>
+          <td class="pip">&minus;3</td><td class="pip">&minus;2</td><td class="pip">&minus;1</td><td class="pip filled">&bull;0</td><td class="pip">1</td><td class="pip">2</td><td class="pip">3</td>
+          <td class="stat-desc">Practical, not academic</td>
+        </tr>
+        <tr>
+          <td class="stat-name">Social Prowess (SP)</td>
+          <td class="pip">&minus;3</td><td class="pip">&minus;2</td><td class="pip filled">&bull;&minus;1</td><td class="pip">0</td><td class="pip">1</td><td class="pip">2</td><td class="pip">3</td>
+          <td class="stat-desc">Gruff, impatient with pleasantries</td>
+        </tr>
+        <tr>
+          <td class="stat-name">Awareness (AW)</td>
+          <td class="pip">&minus;3</td><td class="pip">&minus;2</td><td class="pip">&minus;1</td><td class="pip">0</td><td class="pip filled">&bull;1</td><td class="pip">2</td><td class="pip">3</td>
+          <td class="stat-desc">Good instincts, trained to watch</td>
+        </tr>
+        <tr>
+          <td class="stat-name">Power (PW)</td>
+          <td class="pip">&minus;3</td><td class="pip filled">&bull;&minus;2</td><td class="pip">&minus;1</td><td class="pip">0</td><td class="pip">1</td><td class="pip">2</td><td class="pip">3</td>
+          <td class="stat-desc">Low mental reserves &mdash; burns out fast, and has no interest in magic</td>
+        </tr>
+      </table>
+      <p style="margin-top: 0.8rem; font-size: 0.82rem; color: var(--text-dim);">
+        Net total: 2 + 2 + 0 + (-1) + 1 + (-2) = <strong>+2</strong>
+        <em>(GM set this campaign at net +2 for slightly heroic characters)</em>
+      </p>
+    </div>
+
+    <p>
+      Notice how Kael's numbers tell a story before we've touched a single skill. He's
+      physically exceptional (PP and PC both +2), has solid instincts (AW +1), doesn't
+      care much for social niceties (SP -1), and is about as far from magical as a person
+      can be without being completely inert (PW -2). His low PW means only 5 Exhaustion
+      Points per tier &mdash; he can push through stress and fatigue, but he'll hit his
+      limits faster than someone with deeper reserves. Could he learn magic? Technically,
+      yes &mdash; anyone can. But with a pool that shallow and only a handful of spells
+      to choose from, it would be a bad investment. Kael knows this. He trusts his sword.
+    </p>
+
+    <h3 id="skills">Step 3: Your Skills</h3>
+
+    <p>
+      Skills are the specific things your character knows how to do. Every skill is connected
+      to an attribute, and your target number for a skill check flows directly from both.
+    </p>
+
+    <p>
+      You can have <strong>up to 15 skills.</strong> Skills are bought with <strong>skill
+      points</strong>, which come in pools based on your attribute groups:
+    </p>
+
+    <code class="formula">Skill points per group = 10 + (sum of stats in that group)</code>
+
+    <table>
+      <tr><th>Group</th><th>Attributes</th><th>Skills</th></tr>
+      <tr><td>Physical</td><td>PP, PC</td><td>Athletics, Brawl, Climbing, Conceal, Melee, Ranged, Running, Swimming</td></tr>
+      <tr><td>Mental</td><td>IN, AW</td><td>Acting, Boating, Disarm Trap, Disguise, Empathy, Engineering, Forgery, Hunting, Medicine, Metalworking, Music, Observation, Repair, Ride/Drive, Science, Security, Stealth, Survival, Tactics, Woodworking</td></tr>
+      <tr><td>Social</td><td>SP</td><td>Business, Etiquette, Gambling, Interrogation, Leadership, Persuasion</td></tr>
+    </table>
+
+    <p>
+      The cost is simple: one skill point per skill level. Want Melee at level 3?
+      That's 3 points from your Physical pool. The level you invest determines your
+      <strong>target number</strong> &mdash; the percentage you need to roll under.
+    </p>
+
+    <code class="formula">Skill target = ((10 + attribute) &times; skill level) + 30</code>
+
+    <p>
+      That formula looks like math, but it means something intuitive: a higher attribute
+      makes every level of skill more effective. Let's see how it works for Kael:
+    </p>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Kael's Skill Targets</span>
+      <p>Kael has PC +2 and puts 3 points into <strong>Melee</strong>:</p>
+      <p>((10 + 2) &times; 3) + 30 = <strong>66%</strong> &mdash; he hits about two-thirds of the time.</p>
+      <p>He also puts 2 points into <strong>Ranged</strong> (PP +2):</p>
+      <p>((10 + 2) &times; 2) + 30 = <strong>54%</strong> &mdash; decent shot, but swords are his thing.</p>
+      <p>And 1 point into <strong>Stealth</strong> (AW +1):</p>
+      <p>((10 + 1) &times; 1) + 30 = <strong>41%</strong> &mdash; he can sneak, but it's not reliable. Better to go loud.</p>
+    </div>
+
+    <p>
+      See how that works? The same skill level of 3 gives different results depending on
+      your attribute. A natural athlete (PC +3) with Melee 3 hits on 69%. A clumsy
+      bookworm (PC -2) with the same training only manages 54%. The attributes
+      <em>matter</em>.
+    </p>
+
+    <h4>What If You Don't Have a Skill?</h4>
+
+    <p>
+      Sometimes you need to try something you're not trained in &mdash; picking a lock
+      without Security, patching a wound without Medicine. You can attempt it, but
+      your odds aren't great:
+    </p>
+
+    <code class="formula">Unskilled attempt = (5 + attribute) &times; 5</code>
+
+    <div class="callout callout-example">
+      <span class="callout-label">Example</span>
+      <p>Kael needs to do field medicine (IN +0, no Medicine skill): (5 + 0) &times; 5 = <strong>25%</strong>. A long shot &mdash; he's guessing.</p>
+      <p>If his companion Sera tried the same (IN +2): (5 + 2) &times; 5 = <strong>35%</strong>. Her smarts help, but she still doesn't really know what she's doing.</p>
+      <p>If Sera had Medicine at level 1? That's ((10 + 2) &times; 1) + 30 = <strong>42%</strong>. Even basic training makes a real difference, and every level after that pulls further ahead.</p>
+    </div>
+
+    <h4>What Your Character Sheet Looks Like</h4>
+
+    <p>
+      Here's how Kael's skill section looks filled out. The character sheet has the formula
+      printed right on it &mdash; <code class="inline">10 + stat &times; level + 30</code> &mdash;
+      so you only do the math once during character creation.
+    </p>
+
+    <div class="sheet-mock">
+      <h4>Skills</h4>
+      <div class="sheet-skill-row" style="font-weight: 600; color: var(--theme-accent);">
+        <span>Skill</span><span>Stat</span><span>Lvl</span><span>Target</span>
+      </div>
+      <div class="sheet-skill-row"><span>Melee</span><span>+2</span><span>3</span><span>66</span></div>
+      <div class="sheet-skill-row"><span>Ranged</span><span>+2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Athletics</span><span>+2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Running</span><span>+2</span><span>2</span><span>54</span></div>
+      <div class="sheet-skill-row"><span>Observation</span><span>+1</span><span>2</span><span>52</span></div>
+      <div class="sheet-skill-row"><span>Stealth</span><span>+1</span><span>1</span><span>41</span></div>
+      <div class="sheet-skill-row"><span>Tactics</span><span>+0</span><span>2</span><span>50</span></div>
+      <div class="sheet-skill-row"><span>Survival</span><span>+1</span><span>1</span><span>41</span></div>
+      <div class="sheet-skill-row"><span>Ride/Drive</span><span>+1</span><span>1</span><span>41</span></div>
+      <div class="sheet-skill-row"><span>Interrogation</span><span>-1</span><span>1</span><span>39</span></div>
+    </div>
+
+    <p>
+      Kael spent his Physical points heavily (PP +2 and PC +2 give him 14 Physical points),
+      spread some Mental points around (IN +0 and AW +1 give him 11), and barely touched
+      Social (SP -1 gives him only 9 &mdash; and he spent just 1 on Interrogation, because
+      he's better at demanding answers than asking nicely).
+    </p>
+
+    <h3 id="hit-points">Step 4: Hit Points &amp; Exhaustion Points</h3>
+
+    <p>
+      Your character can take punishment across <strong>four wound tiers</strong>, each with
+      <strong>7 + PP</strong> hit points. As you fill tiers, the penalties stack &mdash;
+      this is the <strong>death spiral</strong>, and it makes getting hurt terrifying.
+    </p>
+
+    <div class="sheet-mock">
+      <h4>Kael's Hit Points (PP +2 = 9 per tier)</h4>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">OK &mdash; no penalty</span>
+      </div>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">Harmed &mdash; &minus;10% to everything</span>
+      </div>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">Maimed &mdash; &minus;25% to everything</span>
+      </div>
+      <div style="margin-bottom: 0.6rem;">
+        <div class="hp-track">
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+          <span class="hp-box"></span><span class="hp-box"></span><span class="hp-box"></span>
+        </div>
+        <span class="hp-label">Incapacitated &mdash; &minus;50% to everything (you're down)</span>
+      </div>
+    </div>
+
+    <p>
+      Kael has 36 total HP (9 &times; 4 tiers). That sounds like a lot, but a revolver
+      does 2d6 damage &mdash; one good hit can push him from OK to Harmed, and suddenly
+      every roll he makes is 10% harder. Two hits? He's at -25%. <strong>This is the game
+      telling you to think before you fight.</strong>
+    </p>
+
+    <p>
+      Exhaustion Points work the same way (7 + PW per tier), but track mental and
+      spiritual strain &mdash; stress, fatigue, disorientation, magical drain. Kael has
+      PW -2, giving him only 5 EP per tier. A stun grenade, a sleepless forced march,
+      or sheer psychological pressure all tick this track. It recovers faster than
+      physical wounds, but the penalties stack with them.
+    </p>
+
+    <h3 id="equipment">Step 5: Equipment</h3>
+
+    <p>
+      Grab what makes sense for your character. Kael carries a longsword (Medium: speed 5,
+      damage 1d8+1), a Webley revolver (speed 3, damage 2d6, 6 rounds), and wears a
+      reinforced leather coat (Martial 2). He's got a field kit, a hip flask, and a deep
+      distrust of anything that glows.
+    </p>
+
+    <p>
+      We'll cover weapons and armor in detail in the <a href="combat.html">combat section</a>.
+      For now, just know that every weapon has a <strong>speed</strong> (how many counts it
+      takes on the timing track) and <strong>damage</strong> (what you roll when you hit).
+      Armor has two soak ratings &mdash; <strong>Ballistic</strong> (against firearms and
+      high-velocity projectiles) and <strong>Martial</strong> (against blades, clubs, and
+      claws) &mdash; plus optionally <strong>Hinder</strong> (a penalty to agility for
+      heavy armor).
+    </p>
+
+    <h3 id="magic-path">Step 6: Magic (If That's Your Path)</h3>
+
+    <p>
+      Anyone <em>can</em> learn magic &mdash; it's a skill choice, not a birthright. If you
+      invest skill points in casting (either Scholarly or Wild), you're a caster. PW doesn't
+      gate access; it determines how deep your reserves run and how much you can learn.
+      A PW -2 character who takes casting skills will burn out fast and know almost nothing.
+      A PW +3 caster is a force of nature. Magic is covered fully in
+      <a href="magic.html">its own section</a>, but here's what you need for character creation:
+    </p>
+
+    <ul>
+      <li>Choose your path: <strong>Scholarly</strong> (controlled, requires a spellbook) or <strong>Wild</strong> (instinctive, unpredictable, no book needed).</li>
+      <li><strong>Scholarly:</strong> You can learn spells from <strong>any of the six schools</strong> &mdash; breadth is your advantage. You know <strong>7 + PW</strong> base spells (minimum 1), and can buy more at <strong>3 skill points</strong> each. You can only cast what's in your book.</li>
+      <li><strong>Wild:</strong> You access a number of <strong>schools</strong> equal to your PW modifier (minimum 1) &mdash; but you can cast <strong>every spell</strong> in those schools. No spellbook, no memorization. Depth is your advantage.</li>
+    </ul>
+
+    <nav class="page-nav">
+      <a href="index.html" class="page-nav-link">
+        <span class="page-nav-direction">← Previous</span>
+        <span class="page-nav-title">Welcome to the Age of Wonder</span>
+      </a>
+      <a href="rolling.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next →</span>
+        <span class="page-nav-title">Rolling the Dice</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer">
+    <p>Adventure RPG — Playtest Draft</p>
+  </footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>

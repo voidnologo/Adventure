@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="galvanic">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting Hurt — Adventure RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="atmosphere"><canvas id="particle-canvas"></canvas><div class="mist mist-1"></div><div class="mist mist-2"></div><div class="mist mist-3"></div></div>
+<div id="page-transition" class="page-transition"></div>
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+  <div class="sidebar-brand"><div class="sidebar-title">Adventure</div><div class="sidebar-subtitle">Rules Reference</div></div>
+  <nav class="sidebar-nav"></nav>
+  <div class="sidebar-footer"><a href="../">← Back to Adventure</a></div>
+</aside>
+<header class="site-header">
+  <button class="header-toggle" aria-label="Toggle navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <span class="header-logo">Adventure <span>RPG</span></span>
+  <span class="header-separator"></span>
+  <span class="header-chapter">Chapter 4 — Getting Hurt</span>
+</header>
+<main class="main-content">
+  <div class="page-content">
+
+    <nav class="page-nav-compact">
+      <a href="rolling.html">&larr; Rolling the Dice</a>
+      <a href="magic.html">The Two Paths of Magic &rarr;</a>
+    </nav>
+
+    <div class="page-hero">
+      <span class="page-number">Chapter 04</span>
+      <h1 class="page-title">Getting Hurt</h1>
+      <p class="page-subtitle">And getting better &mdash; if you're lucky</p>
+    </div>
+
+    <p class="flavor">
+      In this game, violence has consequences. There are no bags of hit points to whittle
+      down while your character fights at full power. Every wound makes you worse at
+      everything, and that changes how you think about every fight.
+    </p>
+
+    <h3 id="death-spiral">The Death Spiral</h3>
+
+    <p>
+      When you take damage, fill in boxes on your hit point track starting from the top
+      tier (OK). Each tier holds <code class="formula">7 + PP</code> boxes. When a tier
+      is full, you move to the next one and immediately take its penalty &mdash; applied
+      to <em>every roll you make</em>.
+    </p>
+
+    <table>
+      <tr><th>Tier</th><th>Status</th><th>Penalty</th></tr>
+      <tr><td>1</td><td>OK</td><td>None &mdash; you're fine</td></tr>
+      <tr><td>2</td><td>Harmed</td><td>&minus;10% to all rolls</td></tr>
+      <tr><td>3</td><td>Maimed</td><td>&minus;25% to all rolls</td></tr>
+      <tr><td>4</td><td>Incapacitated</td><td>&minus;50% to all rolls &mdash; you're barely conscious</td></tr>
+    </table>
+
+    <div class="callout callout-example">
+      <span class="callout-label">What This Feels Like</span>
+      <p>Kael has 9 HP per tier (PP +2). A thug shoots him with a revolver &mdash; 2d6 = 9 damage.
+      That's a firearm, so Kael's leather coat uses its Ballistic rating: <strong>0</strong>.
+      No protection. All 9 damage fills his OK tier. He's standing, but barely.</p>
+      <p>The second shot lands: 2d6 = 8. Still Ballistic &mdash; still no soak. Eight points overflow
+      into Harmed. Now Kael's Melee target drops from 66 to <strong>56</strong>. His aim, his
+      footwork, everything &mdash; the pain is making him slower and sloppier.</p>
+      <p>If that thug had a knife instead? The leather coat's Martial rating of 2 would absorb
+      some of the damage. Different armor for different threats. This is why you think about
+      what you're wearing &mdash; and what you're facing.</p>
+    </div>
+
+    <h3 id="exhaustion">Exhaustion</h3>
+
+    <p>
+      Everyone has an exhaustion track &mdash; it's not just for casters. It works
+      identically to wounds: four tiers, <code class="formula">7 + PW</code> boxes each,
+      same escalating penalties. But instead of physical injury, it tracks everything that
+      wears down your mind and spirit: magical drain, sleep deprivation, stun grenades,
+      psychological stress, overexertion. Anything that hurts without leaving a wound
+      lands here.
+    </p>
+
+    <table>
+      <tr><th>Tier</th><th>Status</th><th>Penalty</th></tr>
+      <tr><td>1</td><td>OK</td><td>None</td></tr>
+      <tr><td>2</td><td>Weakened</td><td>&minus;10% to all rolls</td></tr>
+      <tr><td>3</td><td>Severely Weak</td><td>&minus;25% to all rolls</td></tr>
+      <tr><td>4</td><td>Incapacitated</td><td>&minus;50% to all rolls</td></tr>
+    </table>
+
+    <p>
+      And here's the cruel part: <strong>wound and exhaustion penalties stack.</strong>
+      A fighter who's Harmed (-10%) <em>and</em> Weakened from a flashbang (-10%) is
+      rolling at -20% to everything. The death spiral doesn't just punish you for one
+      kind of damage &mdash; it punishes you for existing in a dangerous world.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Kael takes a stun grenade to the face. No wound damage &mdash; but 8 points of
+      exhaustion flood his track. His 5 EP per tier (PW &minus;2) means that fills OK entirely
+      and pushes 3 into Weakened. He's already Harmed from a gunshot. That's &minus;10% from
+      wounds <em>and</em> &minus;10% from exhaustion. Every roll he makes is at &minus;20% now.
+      The room is spinning. His hands are shaking. And there are still two guys with knives.</p>
+    </div>
+
+    <h3 id="going-down">Going Down</h3>
+
+    <p>
+      When you fill your Incapacitated tier on the <strong>hit point track</strong>, you
+      collapse. Your weapon clatters to the ground. You can't act, can't speak above a
+      whisper. But you're not dead yet &mdash; you're bleeding out, and the clock is ticking.
+    </p>
+
+    <p>
+      Every <strong>3 counts</strong> on the timing track, you roll a death save: a
+      straight d100, no modifiers, no skills. The dice decide.
+    </p>
+
+    <p>
+      <strong>Exhaustion works differently.</strong> When your exhaustion track fills
+      completely, you don't make death saves &mdash; you're mentally shattered but still
+      breathing. Any further exhaustion <strong>overflows into physical damage</strong>
+      at half rate (rounded down), and <em>that</em> damage fills your hit point track.
+      If it pushes you past Incapacitated on HP, <em>then</em> death saves begin. The
+      mind breaks first. The body follows.
+    </p>
+
+    <table>
+      <tr><th>Roll</th><th>Result</th></tr>
+      <tr><td>01</td><td>Instant stabilization &mdash; you stop bleeding on your own. Unconscious but safe.</td></tr>
+      <tr><td>02&ndash;49</td><td>Holding on. You're still dying, but not worse. The clock keeps ticking.</td></tr>
+      <tr><td>50&ndash;99</td><td>Failure. Mark it down. Three failures and you're gone.</td></tr>
+      <tr><td>00</td><td>Dead. Immediately. No saving throw, no last words. Just gone.</td></tr>
+    </table>
+
+    <p>
+      Three failures kill you. The fastest possible death &mdash; three bad rolls in a
+      row &mdash; takes <strong>9 counts</strong>. But most of the time, you'll get a
+      mix of holds and failures. A typical bleed-out lasts <strong>12 to 18 counts</strong>.
+      That's your window. That's how long your friends have to save you.
+    </p>
+
+    <h4>Saving a Downed Ally</h4>
+
+    <p>
+      You have options, and none of them are free. Everything costs time on the timing
+      track, and the dying character's clock doesn't stop while you act.
+    </p>
+
+    <p>
+      <strong>Medicine check</strong> (speed 5) stabilizes the patient. They stop making
+      death saves and fall unconscious. This is the reliable option &mdash; no magic
+      needed, just skill and a few seconds you might not have.
+    </p>
+
+    <p>
+      <strong>A Mend spell</strong> actually heals hit points, pulling them back from
+      the edge. But casting takes time too, and if you're in the middle of a fight,
+      you're giving up your action to save someone else.
+    </p>
+
+    <p>
+      <strong>A healing potion</strong> (speed 3 to administer) is the fastest option.
+      Expensive, consumable, and worth every coin when your friend is bleeding out on
+      the floor.
+    </p>
+
+    <div class="callout callout-scene">
+      <span class="callout-label">At the Table</span>
+      <p>Kael goes down at count 14. At count 17, he rolls his first death save: 63.
+      That's a failure. Sera abandons her spell and declares a Medicine check &mdash;
+      speed 5, so it resolves at count 22. At count 20, Kael rolls again: 31. Holding
+      on. One failure, one hold. At count 22, Sera's Medicine check lands. Kael is
+      stabilized with one failure on the sheet. He'll live &mdash; but he's not waking
+      up anytime soon, and Sera just gave up the most important spell of the fight to
+      save him.</p>
+    </div>
+
+    <div class="callout callout-warning">
+      <span class="callout-label">Design Note</span>
+      <p>Death saves are deliberately simple &mdash; no stat bonuses, no modifiers. When
+      you're bleeding out on the floor, your combat prowess and willpower don't matter.
+      What matters is whether your allies can reach you in time. The tension belongs to
+      the people still standing, not the person on the ground.</p>
+    </div>
+
+    <h3 id="recovery">Recovery</h3>
+
+    <p>
+      Rest heals. Not quickly &mdash; this isn't a "long rest and you're fine" game &mdash;
+      but steadily:
+    </p>
+
+    <table>
+      <tr><th>Type</th><th>Rate</th><th>Notes</th></tr>
+      <tr><td>Physical damage</td><td>1d4 HP per hour of full rest</td><td>+1d4 with medical care</td></tr>
+      <tr><td>Exhaustion</td><td>1d8 EP per hour of full rest</td><td>Mental strain recovers faster than flesh</td></tr>
+      <tr><td>Armor repair</td><td>Metalworking or Repair check</td><td>Needs downtime and tools</td></tr>
+    </table>
+
+    <p>
+      That means after a bad fight, the party might need to hole up for several hours before
+      they're fit to continue. Time pressure matters in this game &mdash; every hour spent
+      resting is an hour the cult spends completing their ritual.
+    </p>
+
+    <nav class="page-nav">
+      <a href="rolling.html" class="page-nav-link">
+        <span class="page-nav-direction">← Previous</span>
+        <span class="page-nav-title">Rolling the Dice</span>
+      </a>
+      <a href="magic.html" class="page-nav-link page-nav-link--next">
+        <span class="page-nav-direction">Next →</span>
+        <span class="page-nav-title">The Two Paths of Magic</span>
+      </a>
+    </nav>
+  </div>
+  <footer class="site-footer"><p>Adventure RPG — Playtest Draft</p></footer>
+</main>
+<script src="js/main.js"></script>
+</body>
+</html>
