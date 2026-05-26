@@ -17,5 +17,8 @@ art/*/archived/*.webp
 # S3 sync config (machine-specific bucket name)
 .art-sync.conf
 
+# Print PDF build output
+print/
+
 # Claude Code local/per-machine settings (tracked shared settings.json is kept)
 .claude/settings.local.json

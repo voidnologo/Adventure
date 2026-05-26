@@ -1,0 +1,850 @@
+/* ═══════════════════════════════════════════════════════════════
+   AETHERFALL RPG — Print Stylesheet
+   For WeasyPrint PDF generation (CSS Paged Media)
+   US Letter, double-sided, perfect/spiral binding
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Page Setup ───────────────────────────────────────────────── */
+@page {
+  size: letter;
+  margin: 0.625in 0.5in 0.75in 0.75in;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+
+  @top-left {
+    content: string(chapter-title);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  @top-right {
+    content: "Aetherfall RPG";
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 8pt;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+  }
+}
+
+@page :left {
+  margin-left: 0.5in;
+  margin-right: 0.75in;
+
+  @top-left {
+    content: "Aetherfall RPG";
+  }
+  @top-right {
+    content: string(chapter-title);
+  }
+  @bottom-left {
+    content: counter(page);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+  @bottom-center {
+    content: none;
+  }
+}
+
+@page :right {
+  margin-left: 0.75in;
+  margin-right: 0.5in;
+
+  @top-left {
+    content: string(chapter-title);
+  }
+  @top-right {
+    content: "Aetherfall RPG";
+  }
+  @bottom-right {
+    content: counter(page);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: #666;
+  }
+  @bottom-center {
+    content: none;
+  }
+}
+
+/* Title page and TOC: no running headers */
+@page title-page {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+@page toc-page {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+/* First page of each chapter: no running header (title is already visible) */
+@page chapter-start {
+  @top-left { content: none; }
+  @top-right { content: none; }
+}
+
+/* ── CSS Variable Fallbacks (from web theme) ──────────────────── */
+:root {
+  --text: #1a1a1a;
+  --text-dim: #555;
+  --text-faint: #777;
+  --text-bright: #111;
+  --theme-accent: #2a5a8a;
+  --theme-dim: #4a7aaa;
+  --aether: #2a7a8a;
+  --aether-dim: #1a5a6a;
+  --galvanic: #b8860b;
+  --galvanic-dim: #8a6508;
+  --warning: #c45c3e;
+  --glass-border: #ddd;
+  --glass: transparent;
+}
+
+/* ── Base Typography ──────────────────────────────────────────── */
+html {
+  font-size: 10pt;
+}
+
+body {
+  font-family: 'Source Serif 4', serif;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #1a1a1a;
+  orphans: 3;
+  widows: 3;
+}
+
+/* ── Title Page ───────────────────────────────────────────────── */
+.title-page {
+  page: title-page;
+  break-after: recto;
+  padding-top: 35%;
+  text-align: center;
+}
+
+.title-page-content {
+  margin: 0 auto;
+}
+
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42pt;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 0.3em;
+  letter-spacing: -0.02em;
+}
+
+.book-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14pt;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2em;
+}
+
+.book-type {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 0.5em;
+}
+
+.book-edition {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  color: #999;
+}
+
+/* ── Table of Contents ────────────────────────────────────────── */
+.toc-chapter {
+  page: toc-page;
+  break-after: recto;
+}
+
+.toc-title {
+  margin-bottom: 1.5em;
+}
+
+.toc {
+  list-style: none;
+  padding: 0;
+}
+
+.toc-entry {
+  display: flex;
+  align-items: baseline;
+  padding: 0.4em 0;
+  border-bottom: 1px dotted #ddd;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.toc-entry .toc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  color: #666;
+  min-width: 2.5em;
+  flex-shrink: 0;
+}
+
+.toc-entry a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 11pt;
+}
+
+.toc-entry a::after {
+  content: target-counter(attr(href), page);
+  float: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  color: #666;
+}
+
+/* ── Chapters ─────────────────────────────────────────────────── */
+.chapter {
+  break-before: recto;
+}
+
+.chapter:first-of-type {
+  page: chapter-start;
+}
+
+/* Set running header from chapter title */
+.chapter-title,
+.page-title {
+  string-set: chapter-title content();
+}
+
+/* ── Chapter Header (page-hero from web) ──────────────────────── */
+.page-hero {
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: 2pt solid #1a1a1a;
+}
+
+.page-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4em;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22pt;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin: 0 0 0.3em;
+}
+
+.page-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11pt;
+  font-style: italic;
+  color: #555;
+  margin: 0;
+}
+
+/* ── Headings ─────────────────────────────────────────────────── */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16pt;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 1.8em 0 0.6em;
+  padding-bottom: 0.3em;
+  border-bottom: 0.5pt solid #ccc;
+  break-after: avoid;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 13pt;
+  font-weight: 700;
+  color: #2a5a8a;
+  margin: 1.5em 0 0.5em;
+  break-after: avoid;
+}
+
+h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555;
+  margin: 1.3em 0 0.4em;
+  break-after: avoid;
+}
+
+h4.school-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 12pt;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #2a5a8a;
+  border-bottom: 0.5pt solid #2a5a8a;
+  padding-bottom: 0.2em;
+  margin: 1.8em 0 0.4em;
+}
+
+h4.spell-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 11pt;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #2a5a8a;
+  border-left: 2pt solid #2a5a8a;
+  padding-left: 0.6em;
+  margin: 1.5em 0 0.3em;
+}
+
+h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  margin: 1.2em 0 0.4em;
+  break-after: avoid;
+}
+
+/* ── Body Text ────────────────────────────────────────────────── */
+p {
+  margin: 0 0 0.7em;
+}
+
+strong {
+  font-weight: 600;
+  color: #111;
+}
+
+/* ── Lists ────────────────────────────────────────────────────── */
+ul {
+  margin: 0.4em 0 1em;
+  padding-left: 1.5em;
+  list-style: disc;
+}
+
+ul > li {
+  margin-bottom: 0.3em;
+  padding-left: 0;
+}
+
+ol {
+  margin: 0.4em 0 1em 1.5em;
+}
+
+ol > li {
+  margin-bottom: 0.3em;
+  padding-left: 0.3em;
+}
+
+ol > li::marker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  color: #555;
+}
+
+/* ── Tables ───────────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0 1.2em;
+  font-size: 9pt;
+  break-inside: avoid;
+}
+
+thead {
+  break-inside: avoid;
+}
+
+/* Repeat table headers on new pages when tables DO span pages */
+thead {
+  display: table-header-group;
+}
+
+th {
+  text-align: left;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2a5a8a;
+  padding: 0.5em 0.6em;
+  border-bottom: 1pt solid #2a5a8a;
+}
+
+td {
+  padding: 0.35em 0.6em;
+  color: #333;
+  border-bottom: 0.25pt solid #e0e0e0;
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Callout Boxes ────────────────────────────────────────────── */
+.callout {
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  border-radius: 0;
+  border: 0.5pt solid #ddd;
+  border-left: 3pt solid #999;
+  background: #fafafa;
+  break-inside: avoid;
+  font-size: 9.5pt;
+}
+
+.callout p {
+  margin-bottom: 0.4em;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.4em;
+  display: block;
+}
+
+/* Callout color variants */
+.callout-example {
+  border-left-color: #b8860b;
+}
+.callout-example .callout-label { color: #b8860b; }
+
+.callout-note {
+  border-left-color: #2a7a8a;
+}
+.callout-note .callout-label { color: #2a7a8a; }
+
+.callout-warning {
+  border-left-color: #c45c3e;
+}
+.callout-warning .callout-label { color: #c45c3e; }
+
+.callout-scene {
+  border-left-color: #6a5fa8;
+}
+.callout-scene .callout-label { color: #6a5fa8; }
+
+.callout-handler {
+  border-left-color: #777;
+  background: #f5f5f5;
+}
+.callout-handler .callout-label { color: #777; }
+
+.callout-scholar {
+  border-left-color: #2a7a8a;
+}
+.callout-scholar .callout-label { color: #2a7a8a; }
+
+.callout-street {
+  border-left-color: #b8860b;
+}
+.callout-street .callout-label { color: #b8860b; }
+
+.callout-believer {
+  border-left-color: #4a8a4a;
+}
+.callout-believer .callout-label { color: #4a8a4a; }
+
+/* ── Flavor Text ──────────────────────────────────────────────── */
+.flavor {
+  font-style: italic;
+  color: #444;
+  border-left: 2pt solid #999;
+  padding-left: 1em;
+  margin: 1em 0;
+}
+
+/* ── Spell Meta ───────────────────────────────────────────────── */
+.spell-meta {
+  margin: 0 0 0.3em;
+  font-size: 9pt;
+  color: #555;
+}
+
+.spell-school {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+  margin-left: 0.6em;
+}
+
+/* ── Section Divider ──────────────────────────────────────────── */
+.section-divider {
+  border: none;
+  border-top: 1pt solid #ccc;
+  margin: 1.5em 0;
+}
+
+/* ── Sheet Mock (character sheet examples) ────────────────────── */
+.sheet-mock {
+  border: 0.5pt solid #ccc;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  font-size: 9pt;
+  break-inside: avoid;
+}
+
+.sheet-mock h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 10pt;
+  color: #2a5a8a;
+  margin: 0 0 0.5em;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  border: none;
+  padding: 0;
+}
+
+.sheet-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0;
+  border-bottom: 0.25pt solid #eee;
+}
+
+.sheet-row:last-child { border-bottom: none; }
+
+.sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: none;
+  border: none;
+}
+
+.sheet-table td,
+.sheet-table th {
+  padding: 0.2em 0;
+  border: none;
+  background: none;
+}
+
+/* ── Sheet Skill Rows (grid layout from web) ──────────────────── */
+.sheet-skill-row {
+  display: grid;
+  grid-template-columns: 1fr 50pt 30pt 40pt;
+  gap: 0.3em;
+  padding: 0.2em 0;
+  border-bottom: 0.25pt solid #eee;
+  font-size: 9pt;
+}
+
+.sheet-skill-row span:not(:first-child) {
+  text-align: center;
+  color: #555;
+}
+
+/* ── Stat Blocks (NPC/PC cards) ───────────────────────────────── */
+.stat-block {
+  margin: 1em 0;
+  border: 0.5pt solid #ccc;
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.stat-block-header {
+  padding: 0.6em 1em 0.4em;
+  border-bottom: 0.5pt solid #ddd;
+  text-align: center;
+}
+
+.stat-block-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.stat-block-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+  margin: 0.1em 0 0;
+}
+
+.stat-block-body {
+  padding: 0.6em 1em;
+}
+
+.stat-block-attrs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.25pt solid #eee;
+}
+
+.stat-block-attr {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-block-attr-label {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.1em;
+}
+
+.stat-block-attr-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #111;
+}
+
+.stat-block-derived {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.25pt solid #eee;
+  font-size: 8.5pt;
+}
+
+.stat-block-derived span { color: #555; }
+.stat-block-derived strong { color: #111; font-weight: 600; }
+
+.stat-block-rows {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2em 0.6em;
+  font-size: 9pt;
+}
+
+.stat-block-rows dt {
+  color: #111;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stat-block-rows dd {
+  color: #444;
+  margin: 0;
+}
+
+/* ── Location Blocks ──────────────────────────────────────────── */
+.location-block {
+  margin: 1em 0;
+  border: 0.5pt solid #ccc;
+  break-inside: avoid;
+}
+
+.location-block::before {
+  content: '';
+  display: block;
+  height: 2pt;
+  width: 100%;
+  background: #999;
+}
+
+.location-block.zone-galvanic::before { background: #b8860b; }
+.location-block.zone-aetheric::before { background: #2a7a8a; }
+.location-block.zone-neutral::before { background: #6a5fa8; }
+
+.location-block-header {
+  padding: 0.6em 1em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  border-bottom: 0.25pt solid #eee;
+}
+
+.location-block-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.location-block-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15em 0.4em;
+  border: 0.5pt solid #ccc;
+}
+
+.location-block-body {
+  padding: 0.6em 1em;
+}
+
+.location-block-desc {
+  color: #444;
+  font-style: italic;
+  font-size: 9pt;
+  margin: 0 0 0.5em;
+}
+
+.location-block-effects {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2em 0.6em;
+  font-size: 9pt;
+}
+
+.location-block-effects dt {
+  color: #111;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.location-block-effects dd {
+  color: #444;
+  margin: 0;
+}
+
+/* ── Cheat Sheet ──────────────────────────────────────────────── */
+.cheat-sheet {
+  border: 0.5pt solid #ccc;
+  padding: 1em;
+  margin: 1em 0;
+  break-inside: avoid;
+}
+
+.cheat-sheet h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 10pt;
+  color: #2a5a8a;
+  text-align: center;
+  margin-bottom: 0.8em;
+  border: none;
+  padding: 0;
+}
+
+.cheat-sheet pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* ── Galvanic Weapon Descriptions ─────────────────────────────── */
+dl.galvanic-weapons dt {
+  font-family: 'Playfair Display', serif;
+  font-size: 10pt;
+  font-weight: 700;
+  color: #b8860b;
+  margin: 1em 0 0.2em;
+}
+
+dl.galvanic-weapons dd {
+  margin: 0 0 0.4em 0;
+  padding-left: 0.8em;
+  border-left: 1.5pt solid #b8860b;
+  font-size: 9.5pt;
+}
+
+dl.galvanic-weapons dd em {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7.5pt;
+  color: #666;
+  margin-bottom: 0.2em;
+}
+
+/* ── HP Track Boxes ───────────────────────────────────────────── */
+.hp-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+  margin: 0.2em 0;
+}
+
+.hp-box {
+  width: 12pt;
+  height: 12pt;
+  border: 0.5pt solid #999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6pt;
+  color: #c45c3e;
+}
+
+.hp-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7pt;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+
+/* ── Prevent Page Breaks Inside Key Elements ──────────────────── */
+.callout,
+.sheet-mock,
+.page-hero,
+blockquote {
+  break-inside: avoid;
+}
+
+/* Keep headings with their following content */
+h2, h3, h4, h5 {
+  break-after: avoid;
+}
+
+/* ── Hide Web-Only Elements ───────────────────────────────────── */
+.page-nav-compact,
+.page-nav,
+.sidebar,
+.site-header,
+.site-footer,
+#atmosphere,
+#page-transition,
+.sidebar-overlay,
+.header-toggle {
+  display: none !important;
+}
