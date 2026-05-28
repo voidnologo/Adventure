@@ -46,10 +46,34 @@ The stories showcase different facets of the Aetherfall world: urban investigati
 
 **Outcome:** Site confirmed but artifact inaccessible. Ironwork Solutions revealed as willing to use lethal force outside city limits. The Collective knows about the site. The Margin knows the site is real. Deadlock: everyone wants what's inside the mill and nobody can get it.
 
-### Story 3: "The Lamplighter's Price" (Planned)
+### Story 3: "The Lamplighter's Price — A Tale of the Ash & Veil Society"
 
-**Status:** Plan complete. Not yet written.
-**Premise:** Corrigan Fels blackmails the Society into retrieving lost Syndicate cargo from the deep tunnels beneath the Ashworth Foundry. What they find -- the same transformative agency from the mill, operating beneath a Galvanic factory -- reframes the world's central mystery. Thematic focus: magic as lived experience (wild casting vs. scholarly casting showcased through Sera and Aldric).
+**Status:** Complete. Published at `/fiction/the-lamplighters-price.html`.
+**Summary:** Three weeks after the mill job, Corrigan Fels walks into the Wet Ember uninvited. The Ashwick Job cost him product, money, and a smuggling route -- he hasn't forgotten. He doesn't frame it as a debt; he frames it as leverage. He knows details about the Society's operations (the Ironwork encounter, the Covenant commission) that he can repackage and sell to people the Society can't afford to have informed. The job: retrieve a sealed transport case from the deep tunnels beneath the decommissioned Ashworth Foundry, where the Syndicate's smuggling route has been closed -- not by the Greycoats, but by the tunnels themselves. The carrot: intelligence on the Ashworth Collective's response to the mill discovery, delivered only after the job is done.
+
+The Society takes the job because Fels has left them no real choice. What they find beneath the foundry reframes the central mystery: the same agency that remade the mill is at work here, beneath a Galvanic factory, in territory where Aetheric activity should be impossible. The Syndicate's lost cargo is an Aetheric artifact from the Lamplighter's stockpile, resonating with the tunnel environment. They retrieve it. They get out. The knowledge they carry is more dangerous than the artifact.
+
+**Key events:**
+- Fels arrives at the Wet Ember. Professional charm masking real anger. The blackmail delivered, the job and the carrot laid out. Hesper Brack behind the bar reads the room. Kael's hand drifts to his revolver under the table; Mira is already three moves ahead
+- Flat on Harrier Street, next morning: team debate. Four positions. Kael refuses the moral compromise; Aldric wants to investigate the tunnels for scientific reasons; Sera wants to go back for a pull she can't articulate. Mira picks the hit she can manage. She softens the blackmail in the briefing -- presents it as a trade rather than coercion. Kael notices the edit and says nothing
+- Night approach to the foundry. Sera feels the Galvanic suppression from the surface -- bone-deep hum, dampened sensitivity, compass locked. The descent changes it -- the gradient runs as a staircase, sharp zone transitions instead of a smooth slope
+- **Force that sputters**: Sera reaches for Kinesis in a Galvanic pocket to clear debris; the magic barely comes. Kael climbs over the rubble by hand. The wild caster's reality: sometimes you're just a person with a belt knife
+- **Barrier that erupts Spectacular**: an Aetheric surge floods into Sera's reach when she calls for a shield against a shedding wall. The cast erupts -- a dome of rippling force that bulges the collapse outward, sealing the team away from it. The team clears to stable ground before she drops the dome; the held collapse comes down behind them. Backlash: Caster's Mark, eyes glowing brighter than the accumulation ring. She plays it off. Nobody believes her
+- **Sera's internal wild-casting POV** (the river metaphor) and **Aldric's internal scholarly POV** (the lattice metaphor): two contrasting relationships with the same force, woven into the tunnel descent
+- Aldric documents the transformation: same pale seamless material as the mill, same luminous veins, same warm surfaces. The mill was fully transformed; the tunnels are mid-process. Same agency, radically different zones, the polarity framework starting to crack
+- The collapse zone isn't damage -- the walls have grown together. Architecture, not rubble. They navigate around through older service passages predating the foundry
+- The cargo: a sealed Syndicate transport case integrated into the transformed wall. Aldric's Reshape (precision under environmental pressure) separates it. Inside: a smaller dark-stone vessel, carved symbols pulsing faintly -- a Lamplighter artifact
+- **Kael's revolver feels wrong**: the accumulated Aether pressing against Galvanic engineering. The mechanism sluggish, the metal cold. The non-caster's experience of the magic/tech interference. He trusts his knife more
+- **Sera's almost-involuntary Amplify on the artifact**: not a decision -- her hand extends, the magic in her reaching toward the magic in the stone. Her eyes flare pure white. For three seconds she sees the tunnels as they will be: a network, a convergence beneath the city. She tears herself free. Her first caution toward the magic
+- The ascent: Sera casting through depletion. Kinesis costs more each time, returns less. The fog of exhaustion made physical. Aldric counts her reserves silently. The zone transition on exit hits harder with no reserves to buffer
+- The handoff: Fels's crew (not Fels himself) waits at the storm drain. The case delivered, the knowledge retained
+- Coffee house the next day in Central. Sera has slept fourteen hours. Kael's revolver works properly again in Galvanic territory -- confirms the interference. Fels pays in intelligence: the Collective is assembling a second expedition to the mill, two additional hired Societies, industrial-grade Galvanic suppression equipment, within the month. Fels's warning about the tunnels comes unguarded: "stop asking. The people already curious don't share well"
+- The trust confrontation: Kael calls Mira's edit openly. "You filtered it." "That's the same thing." "No. It isn't." Not resolved. Stated
+- The flat, evening. Aldric's three-column synthesis: Mill, Tunnels, Connection. Unvoiced theory: something operating beneath both forces, the polarity itself wrong. He keeps it to himself -- some knowledge is safer unspoken. Sera asks about her eyes; Aldric gives an honest but incomplete answer. She hasn't told him about the vision. The compass on the coat hook spins once and settles. Points true. For now.
+
+**Outcome:** Syndicate cargo delivered; Fels's leverage spent; relationship transactional. Collective expedition to the mill confirmed (armed, imminent). Mill and tunnels confirmed as a shared phenomenon that defies the zone system. Sera's first step toward caution about her own magic. First explicit crack in the Kael-Mira trust dynamic. Aldric's polarity-questioning theory held in reserve.
+
+**Thematic focus delivered:** Magic as lived experience -- Sera's wild path (the river, variance, backlash, the riptide) contrasted with Aldric's scholarly path (the lattice, control, measured cost, the resource counted like ammunition). The reader feels the mechanics without seeing the numbers.
 
 ---
 
@@ -137,69 +161,73 @@ These are seeds, not outlines. Each should be developed into a full premise when
 
 ## Character Status Tracker
 
-*Updated after Story 02. Will update again after Story 03 is written.*
+*Updated after Story 03.*
 
 | Character | Physical Status | Magical Status | Personal Arc | Notable Changes |
 |---|---|---|---|---|
-| Kael Dunn | Healthy (forearm cut healed by Aldric) | N/A | Agency arc: stood with the team through lethal danger; knife-and-revolver identity tested by zones where his gun fails | Blood on the knife that isn't his. Forearm scar from the mill wall. |
-| Sera Voss | Healthy | Blue-white ring around irises (permanent after Story 02); eyes glow under Aetheric stress; first Force cast that hurt someone badly | Control arc: power amplified in the Wilds, navigating by Aetheric feel, accumulation accelerating faster than documented cases | First visible accumulation marker now permanent baseline. Cast Anchor to save the team in the mill. |
-| Aldric Wynn | Healthy | Normal capability; spells come in too eager/hot in strong Aetheric zones | Knowledge vs. action: documented the mill's impossible dual-resonance material; recognized Sera's accumulation but hasn't told her the full picture | Three-heading analysis: Shell, Interior, Material. Noticed the container challenges every existing theory. |
-| Mira Cade | Healthy | N/A | Trust arc: filtered information from Thessaly's briefing; gave Dace the story without the meaning; managing what the team knows vs. what she knows | First patron job completed. Reputation growing. Information management becoming a pattern. |
+| Kael Dunn | Healthy | N/A | Agency tested: bent principles working for the Syndicate, didn't break; confronted Mira about filtering; knife-and-revolver identity now complicated by environment-dependent reliability | Moral compromise survived without catastrophe. New awareness: his revolver is environment-dependent the way Sera's casting is -- sluggish in deep Aetheric territory, crisp in Galvanic Central. Open acknowledgment of Mira's information pattern. |
+| Sera Voss | Healthy but deeply fatigued after Story 03 (slept ~14 hours on return) | Blue-white accumulation ring permanent; Caster's Mark backlash (eyes glow under stress, fades slower than in Story 02); untold vision of the tunnel network; **new hesitation before every reach** after the artifact amplification | Accumulation accelerating faster than documented; keeping secrets from the team for the first time; **the wild caster learning the river has a riptide** -- not fear, but awareness | Turning point: the artifact vision. She tears herself free and it leaves a mark. First caution toward her own magic. Navigated underground by Aetheric pathfinding (passive, cost-free). |
+| Aldric Wynn | Healthy | Normal capability; spells still eager in transformed spaces; managed resources carefully on this job | Knowledge accumulating faster than he can safely act on it; recognized Sera's new caution as growth and chose not to name it | Three-column synthesis: Mill, Tunnels, Connection. Unvoiced theory: something operating beneath both forces, the polarity wrong. Holding it back because the people already interested "don't share well." Monitoring Sera's accumulation; noted that uncontrolled burns accelerate the change. |
+| Mira Cade | Healthy | N/A | Trust arc pressured and stated openly -- Kael called her filtering ("You filtered it." "That's the same thing." "No. It isn't."); didn't apologize, didn't stop | First open acknowledgment of the information gap inside the team. The briefing edit for the Fels job was the moment Kael decided to say it aloud. Unresolved. |
 
 ## Society Status
 
-*Updated after Story 02.*
+*Updated after Story 03.*
 
 | Element | Status | Notes |
 |---|---|---|
-| Ledger | Stable | Covenant payment from Story 02 sustaining. |
-| Patron (Covenant) | Good standing | First patron job completed. Thessaly receiving Mira's reports. |
-| Greycoat Authority | Positive | Inspector Laine is a reliable contact. Not briefed on mill findings. |
-| Lamplighter Syndicate | Debt pending | Fels has leverage from the Ashwick Job. Knows the Society's faces and operations. (Resolved in Story 03.) |
-| Ironwork Solutions | Hostile | Attempted lethal force in the Wilds during Story 02. Working for the Ashworth Collective. |
-| The Margin | Informed | Dace Rennick knows the mill site is real. Has the story without the meaning. Hasn't moved on the intel yet. |
+| Ledger | Stable | Covenant payment from Story 02 sustaining. Fels paid in intelligence, not marks -- no income from the tunnel job. |
+| Patron (Covenant) | Good standing | Thessaly receiving Mira's reports, including the Collective expedition intel from Fels. |
+| Greycoat Authority | Positive | Inspector Laine remains a reliable contact. Not briefed on the tunnel findings or the Fels job. |
+| Lamplighter Syndicate | Transactional | Fels's grudge satisfied. Blackmail leverage spent. No current hold on the Society. Relationship shifts from coercive to straight business -- he'll hire them again when it suits him. |
+| Ironwork Solutions | Hostile | Still hostile. Collective planning a larger expedition to the mill, within the month, with industrial-grade Galvanic suppression equipment. |
+| The Margin | Watching | Dace Rennick has the Story 02 mill-site confirmation. Hasn't moved on the intel. Not briefed on the tunnels. |
 
 ## World State
 
-*Updated after Story 02.*
+*Updated after Story 03.*
 
 | Element | Status | Notes |
 |---|---|---|
 | Ashworth Expansion | Active | Dead zone pushing eastward. Border neighborhoods affected. |
 | Veilwright Rituals | Secret | Zone intensifying. Senior casters maintaining it. Society unaware. |
-| The Mill (Wilds) | Deadlocked | Site confirmed. Artifact visible but inaccessible behind spatial defenses. Interior actively remaking itself. Multiple factions aware. Collective planning armed expedition. |
-| Foundry Tunnels | Transforming | Same agency as the mill, mid-process. Aetheric staircase gradient. Deep tunnels nearly fully transformed. (Advanced in Story 03.) |
+| The Mill (Wilds) | Deadlocked, threatened | Site confirmed. Artifact visible but inaccessible behind spatial defenses. Interior actively remaking itself. Multiple factions aware. Collective expedition imminent (see below). |
+| Foundry Tunnels | Transforming, watched | Same agency as the mill, mid-process. Aetheric staircase gradient. Deep tunnels nearly fully transformed. Fels has warned the Society off asking further questions -- "the people already curious don't share well." Lamplighter's interest in the tunnels is deeper than smuggling. |
+| Mill-Tunnel Connection | Confirmed | Same agency operating at two radically different sites -- deep Aetheric Wilds and beneath a Galvanic factory. The transformation defies the zone system. Aldric holds the unvoiced implication: the polarity framework itself may be wrong. |
 | Dr. Crane's Expedition | Missing | Deep Wild research team silent for 6+ months. |
 | Ironveil Split | Simmering | Internal factions funding rival Societies. Public facade holding. |
-| Lamplighter Artifact Stockpile | Partially revealed | Syndicate deliberately moving Aetheric artifacts through the foundry tunnels. Purpose unclear. (Advanced in Story 03.) |
-| Collective Mill Expedition | Planned | Multiple Societies, freelance outfits, hired muscle. Industrial-grade Galvanic suppression equipment. Within the month. (Revealed in Story 03.) |
+| Lamplighter Artifact Stockpile | Active | Syndicate moving Aetheric artifacts through the foundry tunnels deliberately, not just transiting them. Purpose unclear; Fels unwilling to discuss. One such artifact (dark stone, carved symbols) retrieved and handed back. |
+| Collective Mill Expedition | Imminent | Confirmed via Fels: multiple hired Societies + Ironwork, industrial-grade Galvanic suppression equipment (field dampeners, resonance disruptors, portable dead-zone generators), within the month. Collective's working theory: the mill artifact is Engine-origin. |
+| Sera's Tunnel Vision | Private | Untold. Sera saw a network -- pale corridors spreading beneath the city toward a deep convergence. She holds the shape of it; the detail is dissolving. Not yet shared with the team. |
 
 ## Seeds Planted
 
-*Updated after Story 02. Seeds from Story 03 plan included as "Planned."*
+*Updated after Story 03.*
 
 | Seed | Planted In | Status |
 |---|---|---|
-| Anomalous readings beneath the foundry | The Ashwick Job | Advanced in Story 03 (tunnels actively transforming) |
-| Deep tunnels go further than mapped | The Ashwick Job | Advanced in Story 03 (deep tunnels fully transformed, network implied) |
-| Syndicate knows Society's faces | The Ashwick Job | Resolved in Story 03 (Fels uses leverage, gets his job) |
-| Sera's iris discoloration | Character backstory | Progressing -- ring permanent after Story 02, eyes glow under stress |
+| Anomalous readings beneath the foundry | The Ashwick Job | Active -- tunnels actively transforming, agency now identified as the same one remaking the mill |
+| Deep tunnels go further than mapped | The Ashwick Job | Active -- deep tunnels fully transformed; Sera's vision implies a network beneath the city |
+| Syndicate knows Society's faces | The Ashwick Job | Resolved in Story 03 -- Fels used his leverage; relationship now transactional |
+| Sera's iris discoloration | Character backstory | Progressing -- accumulation ring permanent, Caster's Mark backlash episodes layering on top, fading slower each time |
 | Covenant's interest in Galvanic tech | Patron design | Planted, not yet surfaced |
-| Pre-Tear artifact (sealed container in the mill) | Story 02 | Active -- visible, inaccessible. Collective expedition planned. |
+| Pre-Tear artifact (sealed container in the mill) | Story 02 | Active -- visible, inaccessible. Collective armed expedition imminent. |
 | The mill's dual-resonance material | Story 02 | Active -- both Aetheric and Engine-like properties in the same substance, which the literature says cannot exist |
-| Ironwork Solutions as lethal enemies | Story 02 | Active -- they tried to kill the Society in the Wilds |
-| Dace Rennick / The Margin watching | Story 02 | Active -- has the story, not the meaning |
+| Ironwork Solutions as lethal enemies | Story 02 | Active -- tried to kill the Society in the Wilds. Now leading the Collective's mill expedition. |
+| Dace Rennick / The Margin watching | Story 02 | Active -- has the story, not the meaning. Not briefed on the tunnels. |
 | Pell's family connection to the mill | Story 02 | Planted -- the Sootborn have a personal stake in the site |
 | Sootborn community's attitude | Story 02 | Planted -- shifted from hostility to grim understanding; potential future allies |
 | Time/space distortion in the Wilds | Story 02 | Active -- the explorers lost time; landmarks move; the mill looks an hour away but the journey takes days |
-| Aldric's three-heading analysis | Story 02 | Active -- Shell/Interior/Material framework, implications unvoiced |
-| Mill and tunnels share an agency | Story 03 (planned) | New -- same transformation, zone-independent |
-| The Lamplighter's artifact stockpile | Story 03 (planned) | New -- Syndicate moving artifacts through tunnels deliberately |
-| Sera's tunnel vision (the network) | Story 03 (planned) | New -- untold, the convergence beneath the city |
-| Sera's new caution after artifact | Story 03 (planned) | New -- hesitation before reaching, the wild caster learning the riptide |
-| Kael-Mira trust crack | Story 03 (planned) | New -- filtering called out, not resolved |
-| Collective expedition to the mill | Story 03 (planned) | New -- armed, within the month |
-| Something beneath both forces | Story 03 (planned) | New -- Aldric's unvoiced theory, the polarity questioned |
+| Aldric's three-heading analysis | Story 02 | Evolved -- synthesized with the tunnels into Mill/Tunnels/Connection framework in Story 03 |
+| Mill and tunnels share an agency | Story 03 | Active -- same transformation, zone-independent. Aldric documenting, no external party told. |
+| The Lamplighter's artifact stockpile | Story 03 | Active -- Syndicate moving artifacts through tunnels deliberately. One retrieved artifact returned; purpose of the stockpile unclear. Fels has warned the Society off asking. |
+| Sera's tunnel vision (the network) | Story 03 | Active, private -- untold, the convergence beneath the city, shape preserved even as detail fades |
+| Sera's new caution after artifact | Story 03 | Active -- the beat-before-the-reach is now baseline. The wild caster learning the riptide. |
+| Kael-Mira trust crack | Story 03 | Active, unresolved -- filtering called out in the coffee house. Neither apologized, neither stopped. |
+| Collective expedition to the mill | Story 03 | Imminent -- within the month, armed, industrial Galvanic suppression equipment. Ticking clock. |
+| Something beneath both forces | Story 03 | Active, unvoiced -- Aldric holding the theory back; the polarity framework questioned |
+| Kael's weapon reliability in zones | Story 03 | Active -- revolver sluggish in Aetheric territory, crisp in Galvanic. Seeds the combat-focused story. |
+| Fels's genuine warning about the tunnels | Story 03 | Active -- "the people already curious don't share well." Whoever those people are has not yet appeared on the board. |
 
 ---
 

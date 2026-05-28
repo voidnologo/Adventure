@@ -1,17 +1,14 @@
 # Pending Tasks
 
 ## Next Up
-- [ ] Address editing notes on PR #2 (Story 03 draft — user reviewing in GitHub)
-- [ ] Merge Story 03 PR, build web reader page, generalize `web/_data/fiction.js`
-- [ ] Update series bible with final Story 03 outcomes
-- [ ] Plan combat-focused story (next in series — Kael-heavy, timing track, Galvanic devices)
+- [ ] Plan Story 04 — combat-focused story (Kael-heavy, timing track, damage, Galvanic devices, weapon reliability)
+- [ ] Update series bible with final Story 03 outcomes (seeds, character status, Syndicate/Collective world state)
 - [ ] Cross-device reading test of published fiction reader (iPhone, iPad, desktop)
 - [ ] Social preview images (og:image) for /fiction/ landing and story reader
 - [ ] Review Wave 1 art (20 images in art/*/generated/) — select golden reference set
 - [ ] Lock LoRA preset and run Wave 2: character portraits (Kael, Sera, Aldric, Mira + archetypes)
 
 ## Backlog
-- [ ] Generalize `web/_data/fiction.js` to an array of stories (when Story 03 ships, not before)
 - [ ] Consider self-hosting or consolidating Google Fonts across fiction + rulebook
 - [ ] Rework weapons prompt — arc pistol needs more visual differentiation from revolver
 - [ ] Set up S3 bucket for art sync (create bucket, add .art-sync.conf)
